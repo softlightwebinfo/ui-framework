@@ -1,0 +1,45 @@
+{
+  "name": "@softlightweb/ui-framework",
+  "version": "0.0.1",
+  "description": "ui-framework React component",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "style": "lib/index.css",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "prepublishOnly": "npm run build",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server",
+    "storybook": "start-storybook"
+  },
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/react": "^5.2.8",
+    "babel-loader": "^8.0.6",
+    "styled-components": "^4.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "nwb": "^0.23.0"
+  },
+  "author": "musicos del mundo",
+  "license": "MIT",
+  "repository": "softlightwebinfo/ui-framework",
+  "homepage": "",
+  "keywords": [
+    "react-component"
+  ]
+}
