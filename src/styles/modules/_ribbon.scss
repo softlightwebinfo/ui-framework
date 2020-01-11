@@ -1,0 +1,23 @@
+@include bem_block(c-ribbon) {
+  position: relative;
+  padding:  20px 20px;
+  > a {
+    color:         $ColorMuted;
+    padding-top:   $PaddingDefault;
+    min-height:    80px;
+    text-align:    center;
+    margin-bottom: 0;
+    @include flex;
+    @include flex-direction-column;
+
+    i {
+      font-size: $FontSizeIcon;
+    }
+
+    span {
+      display:    block;
+      margin-top: 10px;
+      color:      $ColorMuted;
+    }
+  }
+}

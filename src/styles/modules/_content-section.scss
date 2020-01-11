@@ -1,0 +1,8 @@
+@include bem_block(c-content-section) {
+  display: block;
+  padding: $PaddingGran;
+  @include section-bg();
+  .c-feature-intro {
+    color: $ColorWhite;
+  }
+}

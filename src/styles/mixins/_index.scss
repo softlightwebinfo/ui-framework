@@ -1,0 +1,195 @@
+@import "./bem";
+@import "./border";
+@import './gradient';
+@import './rotate';
+@import './transition';
+@import './transform';
+@import './animation';
+@import './clearfix';
+@import './shadow';
+@import './userSelect';
+@import './flex';
+@import './link';
+
+@mixin colorBg($type) {
+  @if ($type == primary) {
+    background-color: $ColorPrimary;
+    border:           $BorderWidth solid $ColorPrimary;
+    color:            $ColorWhite;
+  } @else if ($type == secondary) {
+    background-color: $ColorSecondary;
+    color:            $ColorDark;
+    border:           $BorderWidth solid $ColorSecondary;
+  } @else if ($type == success) {
+    color:            $ColorWhite;
+    background-color: $ColorSuccess;
+    border:           $BorderWidth solid $ColorSuccess;
+  } @else if ($type == danger) {
+    color:            $ColorWhite;
+    background-color: $ColorDanger;
+    border:           1px solid $ColorDanger;
+  } @else if ($type == info) {
+    background-color: $ColorInfo;
+    border:           $BorderWidth solid $ColorInfo;
+    color:            $ColorWhite;
+  } @else if ($type == warning) {
+    color:            $ColorDark;
+    background-color: $ColorWarning;
+    border:           1px solid $ColorWarning;
+  } @else if ($type == white) {
+    color:            $ColorDark;
+    background-color: $ColorWhite;
+  } @else if ($type == info-hover) {
+    background-color: $ColorInfoHover;
+    border:           $BorderWidth solid $ColorInfoHover;
+    color:            $ColorWhite;
+  } @else if ($type == warning-hover) {
+    color:            $ColorDark;
+    background-color: $ColorWarning;
+    border:           1px solid $ColorWarning;
+  } @else if ($type == danger-hover) {
+    color:            $ColorWhite;
+    background-color: $ColorDangerHover;
+    border:           1px solid $ColorDangerHover;
+  } @else if ($type == primary-hover) {
+    background-color: $ColorPrimaryHover;
+    color:            $ColorWhite;
+    border-color:     $ColorPrimaryHover;
+  } @else if ($type == success-hover) {
+    background-color: $ColorSuccessHover;
+    color:            $ColorWhite;
+    border-color:     $ColorSuccessHover;
+  } @else if ($type == secondary-hover) {
+    background-color: $ColorSecondaryHover;
+    color:            $ColorWhite;
+    border-color:     $ColorSecondaryHover;
+  }
+}
+
+@mixin radius($radio: $BorderRadius) {
+  -moz-border-radius:    $radio;
+  -webkit-border-radius: $radio;
+  border-radius:         $radio;
+}
+
+@mixin padding($padding: $Padding) {
+  padding: 6px 14px;
+}
+
+@mixin transition($transition: $Transition) {
+  -webkit-transition: $transition;
+  -moz-transition:    $transition;
+  -ms-transition:     $transition;
+  -o-transition:      $transition;
+  transition:         $transition;
+}
+
+@mixin userNoSelect() {
+  -ms-user-select:     none;
+  user-select:         none;
+  -moz-user-select:    none;
+  -webkit-user-select: none;
+}
+
+@mixin hover() {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin focus() {
+  &:focus {
+    z-index: 1;
+    outline: 0 none;
+    @include transition(box-shadow .3s);
+    @include shadow(inset 0 0 0 0.2em #00c4e8);
+  }
+}
+
+@mixin shadow($attr) {
+  -webkit-box-shadow: $attr;
+  -moz-box-shadow:    $attr;
+  box-shadow:         $attr;
+}
+
+@mixin raised {
+  @include shadow($ShadowRaised);
+}
+
+@mixin rounded() {
+  @include radius($Rounded);
+}
+
+@mixin generateBgColors() {
+  @include hover() {
+    @include colorBg(primary-hover);
+  }
+  @include bem_modified(secondary) {
+    @include colorBg(secondary);
+    @include hover() {
+      @include colorBg(secondary-hover);
+    }
+  }
+  @include bem_modified(primary) {
+    @include colorBg(primary);
+    @include hover() {
+      @include colorBg(primary-hover);
+    }
+  }
+  @include bem_modified(success) {
+    @include colorBg(success);
+    @include hover() {
+      @include colorBg(success-hover);
+    }
+  }
+  @include bem_modified(info) {
+    @include colorBg(info);
+    @include hover() {
+      @include colorBg(info-hover);
+    }
+  }
+  @include bem_modified(danger) {
+    @include colorBg(danger);
+    @include hover() {
+      @include colorBg(danger-hover);
+    }
+  }
+  @include bem_modified(warning) {
+    @include colorBg(warning);
+    @include hover() {
+      @include colorBg(warning-hover);
+    }
+  }
+}
+
+@mixin card() {
+  @include shadow($Shadow);
+  @include border-radius($BorderRadius);
+  @include colorBg(white);
+}
+
+@mixin card-fluid() {
+  @include shadow(none);
+  @include border-radius($BorderRadiusFluid);
+  @include colorBg(white);
+}
+
+@mixin title() {
+  font-weight:   700;
+  margin-bottom: .5em;
+  font-size:     $FtzTitle;
+}
+
+@mixin subtitle() {
+  @include title();
+  opacity:   .7;
+  font-size: $FontSize;
+}
+
+@mixin section-bg {
+  background-color: #008fba;
+  background-image: -webkit-gradient(linear, left top, right top, from(#008fba), to(#03c4e8));
+  background-image: linear-gradient(90deg, #008fba, #03c4e8);
+  filter:           progid:DXImageTransform.Microsoft.gradient(startColorStr="#008fba", endColorStr="#03c4e8", gradientType="1");
+  color:            $ColorWhite;
+}

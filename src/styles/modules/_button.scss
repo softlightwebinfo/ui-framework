@@ -1,0 +1,45 @@
+@include bem_block(c-button) {
+  $then: &;
+  display:         inline-flex;
+  position:        relative;
+  padding:         0;
+  text-decoration: none;
+  cursor:          pointer;
+  text-align:      center;
+  zoom:            1;
+  overflow:        visible;
+  margin:          0;
+  font-size:       $FontSize;
+  @include userNoSelect();
+  @include colorBg(primary);
+  @include radius();
+  @include padding();
+  @include transition();
+  @include flex-align-center();
+  @include flex-justify-center();
+  @include generateBgColors();
+  @include bem_element(icon-left) {
+    margin-right: 5px;
+  }
+  @include bem_element(icon-right) {
+    margin-left: 5px;
+  }
+
+  @include bem_modified(rounded) {
+    @include rounded();
+  }
+  @include bem_modified(icon-only) {
+    width:         33px;
+    padding-left:  0;
+    padding-right: 0;
+    #{$then}__icon-left {
+      margin-right: 0px;
+    }
+    #{$then}__icon-right {
+      margin-left: 0px;
+    }
+  }
+  @include bem_modified(raised) {
+    @include raised();
+  }
+}

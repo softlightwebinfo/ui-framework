@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="135faa4f-f25b-4e65-8d17-0438d527e706" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/fonts/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/fonts/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/fonts/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/fonts/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/fonts/fontello.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/Button.spec.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/Button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Button/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Card/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ContentSection/ContentSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ContentSection/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FeatureIntro/FeatureIntro.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FeatureIntro/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Ribbon/RibbonBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Ribbon/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fonts/fontello.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/calc/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/dom/DomHandler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/dom/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/object.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/interfaces/PropsInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/interfaces/TitleSubtitleInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/types/ColorsTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/types/OnChangeEventType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/types/OnClickEventType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/types/PositionType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/libs/Tooltip.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/libs/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/FeatureIntro.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/buttons.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/cards.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/icons.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/ribbon.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stories/sections.stories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/animated/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/functions/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/grid/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/_animation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/_fontello-ie7.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/_fontello.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/fonts/fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/fonts/fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/fonts/fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/fonts/fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/icons/fonts/fontello.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_animation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_bem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_border.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_gradient.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_link.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_rotate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_transform.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/mixins/_userSelect.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_content-section.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_featureIntro.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_ribbon-box.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_ribbon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/pages/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/placeholders/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/reset/_index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/reset/_reset.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/responsive/_bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/theme-default.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/vars/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nwb.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/index.stories.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/index-test.js" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/vars/_index.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/FeatureIntro/FeatureIntro.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stories/FeatureIntro.stories.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/stories/sections.stories.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/modules/_content-section.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>“</find>
+      <find>”</find>
+      <find>p-</find>
+      <find>DomHandler</find>
+      <find>Tooltip</find>
+      <find>pi-</find>
+      <find>./font</find>
+      <find>icon-left</find>
+      <find>famil</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;</replace>
+      <replace>c-</replace>
+      <replace>DomHandlerUtils</replace>
+      <replace>TooltipLib</replace>
+      <replace>ic-</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.storybook/config.js" />
+        <option value="$PROJECT_DIR$/.storybook/addons.ts" />
+        <option value="$PROJECT_DIR$/src/styles/reset/_index.scss" />
+        <option value="$PROJECT_DIR$/src/styles/theme-default.scss" />
+        <option value="$PROJECT_DIR$/src/interfaces/types/ColorsTypes.ts" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_bem.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_border.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_gradient.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_rotate.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_transition.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_transform.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_animation.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_clearfix.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_shadow.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_userSelect.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_flex.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_link.scss" />
+        <option value="$PROJECT_DIR$/src/styles/index.scss" />
+        <option value="$PROJECT_DIR$/src/styles/icons/fontello/fontello.css" />
+        <option value="$PROJECT_DIR$/src/styles/icons/fonts/fontello/_fontello.scss" />
+        <option value="$PROJECT_DIR$/src/styles/icons/_index.scss" />
+        <option value="$PROJECT_DIR$/src/stories/buttons.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/stories/icons.stories.tsx" />
+        <option value="$PROJECT_DIR$/build/index.css" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_button.scss" />
+        <option value="$PROJECT_DIR$/src/components/Card/index.tsx" />
+        <option value="$PROJECT_DIR$/src/interfaces/interfaces/TitleSubtitleInterface.ts" />
+        <option value="$PROJECT_DIR$/src/styles/reset/_reset.scss" />
+        <option value="$PROJECT_DIR$/src/interfaces/interfaces/PropsInterface.ts" />
+        <option value="$PROJECT_DIR$/src/components/Button/Button.tsx" />
+        <option value="$PROJECT_DIR$/src/stories/cards.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Ribbon/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/Ribbon/RibbonBox.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_ribbon-box.scss" />
+        <option value="$PROJECT_DIR$/src/components/Card/Card.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_card.scss" />
+        <option value="$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx" />
+        <option value="$PROJECT_DIR$/src/stories/ribbon.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_ribbon.scss" />
+        <option value="$PROJECT_DIR$/src/styles/mixins/_index.scss" />
+        <option value="$PROJECT_DIR$/src/components/ContentSection/index.tsx" />
+        <option value="$PROJECT_DIR$/src/components/ContentSection/ContentSection.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_index.scss" />
+        <option value="$PROJECT_DIR$/src/components/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/FeatureIntro/index.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/vars/_index.scss" />
+        <option value="$PROJECT_DIR$/src/components/FeatureIntro/FeatureIntro.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_featureIntro.scss" />
+        <option value="$PROJECT_DIR$/src/stories/FeatureIntro.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_content-section.scss" />
+        <option value="$PROJECT_DIR$/src/stories/sections.stories.tsx" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name=".storybook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ContentSection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="FeatureIntro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="vars" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578755262051" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSS" />
+    <property name="standardjs.codestyle.accepted" value="true" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/stories" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/build" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/styles/icons/fontello" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/styles/icons" />
+      <recent name="$PROJECT_DIR$/src/styles/icons/fonts" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/styles/icons/fonts/fontello" />
+      <recent name="$PROJECT_DIR$/src/styles/fonts" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="135faa4f-f25b-4e65-8d17-0438d527e706" name="Default Changelist" comment="" />
+      <created>1578507299464</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578507299464</updated>
+      <workItem from="1578507300818" duration="2499000" />
+      <workItem from="1578675623315" duration="32814000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="35313000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Storybook" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
+      <window_info anchor="bottom" id="GraphQL" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32959184" />
+      <window_info anchor="bottom" id="Docker" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Codota" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Json Parser" order="7" />
+      <window_info anchor="right" id="SciView" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Storybook" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="TypeScript" order="1" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" />
+      <window_info anchor="bottom" id="Run" order="4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="GraphQL" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Docker" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Codota" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Json Parser" order="7" />
+      <window_info anchor="right" id="SciView" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/styles/mixins/_shadow.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/mixins/_userSelect.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/mixins/_flex.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/mixins/_link.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/_animation.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/fonts/fontello/_fontello-codes.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/fonts/fontello/_fontello-ie7-codes.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/_fontello-ie7.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/fonts/fontello/_fontello-embedded.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#290#982860#0" />
+            <element signature="e#326#371074#1" expanded="true" />
+            <element signature="e#371098#982838#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/icons/_fontello.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/fonts/fontello.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/fonts/fontello.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="7986" column="30" lean-forward="true" selection-start-line="7986" selection-start-column="30" selection-end-line="7986" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/mixins/_bem.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_button.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/fontello-a87f63e2/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="298" column="4" selection-start-line="298" selection-start-column="4" selection-end-line="2669" selection-end-column="10" />
+          <folding>
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/icons.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Button/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/interfaces/TitleSubtitleInterface.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/reset/_reset.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="8" lean-forward="true" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/csstype/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10918">
+          <caret line="4735" column="17" selection-start-line="4735" selection-start-column="17" selection-end-line="4735" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2840">
+          <caret line="1489" column="56" selection-start-line="1489" selection-start-column="56" selection-end-line="1489" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/interfaces/PropsInterface.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/buttons.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Button/Button.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Ribbon/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Ribbon/RibbonBox.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card/Card.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_card.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_ribbon-box.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="31" column="77" selection-start-line="31" selection-start-column="77" selection-end-line="31" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/ribbon.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_ribbon.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/mixins/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="188" column="17" selection-start-line="188" selection-start-column="7" selection-end-line="188" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContentSection.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContentSection/ContentSection.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ContentSection/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FeatureIntro/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/vars/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_featureIntro.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/FeatureIntro.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FeatureIntro/FeatureIntro.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_content-section.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/sections.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>@types/next-redux-saga</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ui-framework</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,40 @@
+$FontFamily: "Open Sans", "Helvetica Neue", sans-serif;
+$FontWeightBold: bold;
+$BackgroundColor: #f6f6f6;
+$TextColor: #333;
+$BorderRadius: 3px;
+$BorderRadiusFluid: 9px;
+$BorderWidth: 1px;
+$PaddingDefault: 14px;
+$PaddingGran: 30px;
+$Padding: 6px $PaddingDefault;
+$Transition: all .2s;
+$Rounded: 15px;
+$MarginBottom: 20px;
+$ShadowRaised: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+$Shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+// Font size
+$FontSizeIcon: 30px;
+$FtzTitleSuper: 28px;
+$FtzTitle: 21px;
+$FontSize-2: 16px;
+$FontSize: 14px;
+// Colors
+$ColorDark: #333333;
+$ColorWhite: #FFFFFF;
+$ColorPrimary: #007ad9;
+$ColorInfo: #007ad9;
+$ColorSecondary: #f4f4f4;
+$ColorSuccess: #34A835;
+$ColorWarning: #ffba01;
+$ColorDanger: #e91224;
+$ColorMuted: #6c757d;
+// Colors Hover
+$ColorPrimaryHover: #116fbf;
+$ColorInfoHover: #116fbf;
+$ColorDangerHover: #c01120;
+$ColorSuccessHover: #107D11;
+$ColorSecondaryHover: #c8c8c8;
+//BEM
+$BEMElementSeparator: "__";
+$BEMModifierSeparator: "--";

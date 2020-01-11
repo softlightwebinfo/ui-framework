@@ -1,0 +1,21 @@
+@mixin bem_block($block) {
+  .#{$block} {
+    @content;
+  }
+}
+
+@mixin bem_element($element) {
+  @at-root {
+    #{&}#{$BEMElementSeparator + $element} {
+      @content;
+    }
+  }
+}
+
+@mixin bem_modified($modifier) {
+  @at-root {
+    #{&}#{$BEMModifierSeparator + $modifier} {
+      @content;
+    }
+  }
+}

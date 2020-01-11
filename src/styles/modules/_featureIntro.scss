@@ -1,0 +1,15 @@
+@include bem_block(c-feature-intro) {
+  color:       $ColorDark;
+  h1 {
+    font-size:   $FtzTitleSuper;
+    margin:      0 0 $MarginBottom;
+    display:     block;
+    text-align:  left;
+    font-weight: 400;
+  }
+  p {
+    margin:      0;
+    line-height: 2em;
+    font-size:   $FontSize-2;
+  }
+}

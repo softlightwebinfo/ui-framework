@@ -1,0 +1,26 @@
+@include bem_block(c-card) {
+  @include card();
+  @include bem_element(body) {
+    padding: $PaddingDefault;
+    &--no-padding {
+      padding: 0;
+    }
+  }
+  @include bem_element(title) {
+    @include title();
+  }
+  @include bem_element(subtitle) {
+    @include subtitle();
+  }
+  @include bem_element(footer) {
+    padding-top: $PaddingDefault;
+  }
+  @include bem_element(header) {
+    img {
+      width: 100%;
+    }
+  }
+  @include bem_modified(fluid) {
+    @include card-fluid()
+  }
+}

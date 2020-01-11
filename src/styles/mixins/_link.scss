@@ -1,0 +1,11 @@
+@mixin link($hasChildSelector: false) {
+  @if $hasChildSelector {
+    > a, .c-link {
+      @content;
+    }
+  } @else {
+    a, .c-link {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@include bem_block(c-ribbon-box) {
+  $h: 32px;
+  @include flex;
+  @include flex-align-center;
+  @include flex-justify-center;
+  color:       $ColorWhite;
+  right:       auto;
+  left:        0;
+  top:         15px;
+  position:    absolute;
+  height:      $h;
+  min-width:   30px;
+  padding:     0 5px;
+  text-align:  center;
+  line-height: $h;
+  @include colorBg(danger);
+  &:before {
+    position:           absolute;
+    display:            block;
+    width:              0;
+    content:            '';
+    top:                0;
+    right:              -8px;
+    height:             $h;
+    border:             16px solid;
+    border-left-width:  0;
+    border-right-width: 8px;
+    border-color:       $ColorDanger;
+    border-right-color: transparent;
+    top:                -1px;
+  }
+}

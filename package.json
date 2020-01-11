@@ -1,45 +1,85 @@
 {
   "name": "@softlightweb/ui-framework",
-  "version": "0.0.1",
-  "description": "ui-framework React component",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "style": "lib/index.css",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "version": "0.0.1-1",
+  "description": "",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "jsnext:main": "build/index.es.js",
   "scripts": {
-    "build": "nwb build-react-component",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server",
-    "storybook": "start-storybook"
+    "build": "rollup -c",
+    "lint": "standard",
+    "format": "prettier-standard --format",
+    "test": "jest --coverage",
+    "storybook": "start-storybook --port 6006",
+    "build-storybook": "build-storybook -s public",
+    "build-css": "node-sass --include-path scss src/styles -o build --output-style compressed",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
-  "dependencies": {
+  "keywords": [],
+  "author": "Musicos del mundo",
+  "license": "ISC",
+  "devDependencies": {
     "@babel/core": "^7.7.7",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/addon-links": "^5.1.8",
+    "@storybook/addon-notes": "^5.1.8",
+    "@storybook/addon-storyshots": "^5.2.8",
+    "@storybook/addon-storysource": "^5.1.8",
+    "@storybook/addons": "^5.1.8",
     "@storybook/react": "^5.2.8",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.0.25",
+    "@types/storybook__addon-storyshots": "^5.1.2",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
-    "styled-components": "^4.4.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "jest": "^24.9.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-test-renderer": "^16.12.0",
+    "require-context.macro": "^1.2.2",
+    "rollup": "^1.29.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "standard": "^14.3.1",
+    "standard-prettier": "^1.0.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "build/"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/",
+      "build/"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "test",
+      "expect",
+      "afterAll",
+      "jest"
+    ]
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": "^16",
+    "react-dom": "^16"
   },
-  "devDependencies": {
-    "nwb": "^0.23.0"
-  },
-  "author": "musicos del mundo",
-  "license": "MIT",
-  "repository": "softlightwebinfo/ui-framework",
-  "homepage": "",
-  "keywords": [
-    "react-component"
-  ]
+  "dependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/storybook-addon-jsx": "^7.0.1",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.13.0",
+    "react": "latest",
+    "storybook-addon-jsx": "^7.1.13"
+  }
 }
