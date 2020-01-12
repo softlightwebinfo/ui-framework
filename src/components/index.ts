@@ -3,3 +3,8 @@ export * from "./Card";
 export * from "./Ribbon";
 export * from "./ContentSection";
 export * from "./FeatureIntro";
+export * from "./Badge";
+export * from "./Label";
+export * from "./List";
+export * from "./ListItem";
+export * from "./Table";

@@ -4,6 +4,10 @@
   display: flex;
 }
 
+@mixin flex-wrap() {
+  flex-wrap: wrap;
+}
+
 @mixin flex-direction-row() {
   -webkit-box-orient:    horizontal;
   -webkit-box-direction: normal;

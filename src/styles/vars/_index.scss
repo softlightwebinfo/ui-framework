@@ -1,13 +1,11 @@
 $FontFamily: "Open Sans", "Helvetica Neue", sans-serif;
 $FontWeightBold: bold;
+$FontWeightDefault: 700;
 $BackgroundColor: #f6f6f6;
 $TextColor: #333;
 $BorderRadius: 3px;
 $BorderRadiusFluid: 9px;
 $BorderWidth: 1px;
-$PaddingDefault: 14px;
-$PaddingGran: 30px;
-$Padding: 6px $PaddingDefault;
 $Transition: all .2s;
 $Rounded: 15px;
 $MarginBottom: 20px;
@@ -19,8 +17,22 @@ $FtzTitleSuper: 28px;
 $FtzTitle: 21px;
 $FontSize-2: 16px;
 $FontSize: 14px;
+$FontSize-m: 12px;
+// Padding
+$PaddingDefault: 14px;
+$PaddingGran: 30px;
+$Padding-xxs: 3px;
+$Padding-xs: 5px;
+$Padding-s: 8px;
+$Padding-m: 12px;
+$Padding-l: 15px;
+$Padding-xl: 20px;
+$Padding: 6px $PaddingDefault;
+// Margin
+$Margin-separator: 24px;
 // Colors
 $ColorDark: #333333;
+$ColorDark-2: #747879;
 $ColorWhite: #FFFFFF;
 $ColorPrimary: #007ad9;
 $ColorInfo: #007ad9;

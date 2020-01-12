@@ -1,0 +1,9 @@
+@include bem_block(c-label) {
+  @include colorBg(primary);
+  padding: $Padding-xs;
+  border-radius: $BorderRadius;
+  @include bem_modified(compact){
+    padding: $Padding-xxs;
+    font-size: $FontSize-m;
+  }
+}

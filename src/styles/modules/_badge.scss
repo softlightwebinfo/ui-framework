@@ -1,0 +1,20 @@
+@include bem_block(c-badge) {
+  display:       inline-flex;
+  @include flex-justify-center;
+  min-width:     32px;
+  padding-right: $Padding-s;
+  padding-left:  $Padding-s;
+  font-size:     $FontSize-m;
+  font-weight:   $FontWeightDefault;
+  color:         $ColorDark;
+  text-align:    center;
+  border-radius: $BorderRadiusFluid;
+  line-height:   18px;
+  min-height:    18px;
+  @include colorBg(primary);
+  @include bem_modified(read) {
+    background-color: rgb(240, 240, 240);
+    color:            $ColorDark;
+    border-color: transparent;
+  }
+}

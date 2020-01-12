@@ -1,0 +1,17 @@
+@include bem_block(c-list) {
+  list-style:   initial;
+  padding-left: $Padding-xl;
+
+  @include bem_modified(ol) {
+    list-style: decimal;
+  }
+  @include bem_modified(inline) {
+    @include flex;
+    @include flex-wrap;
+    list-style:   none;
+    padding-left: 0;
+    li:not(:last-child) {
+      margin-right: $Margin-separator;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@include bem_block(c-table) {
+  border-collapse: collapse;
+  white-space:     nowrap;
+  width:           100%;
+  color:           inherit;
+}
+
+@include bem_block(c-table-cel) {
+  @extend %TableCel;
+}
+
+@include bem_block(c-table-cel-head) {
+  @extend %TableCel;
+  font-weight:    400;
+  text-transform: uppercase;
+  color:          $ColorDark-2;
+}
+
+@include bem_block(c-table-thead) {
+  @include bem_block(c-table-cel-head) {
+    border-top:          0;
+    border-bottom-width: 1px;
+    padding-top:         .5rem;
+    padding-bottom:      .5rem;
+  }
+}
+
+@include bem_block(c-table-tfoot) {
+  @include bem_block(c-table-cel-head) {
+    border-bottom-width: 1px;
+    padding-top:         .5rem;
+    padding-bottom:      .5rem;
+  }
+}
+
+@include bem_block(c-table-tbody) {
+  @include bem_block(c-table-row) {
+    &:nth-of-type(odd) {
+      background: transparent;
+    }
+    &:nth-of-type(even) {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+}
+
+@include bem_block(c-table-responsive) {
+  display:    block;
+  width:      100%;
+  overflow-x: auto;
+}
