@@ -1,12 +1,12 @@
 {
   "name": "@softlightweb/ui-framework",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "scripts": {
-    "build": "rollup -c && yarn build-css && cp -r src/fonts build/fonts",
+    "build": "rm -rf build && rollup -c && yarn build-css && cp -r src/fonts build/fonts",
     "lint": "standard",
     "format": "prettier-standard --format",
     "test": "jest --coverage",
