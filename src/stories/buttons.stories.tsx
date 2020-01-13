@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Button} from '../'
+import {DropdownMenu} from '../'
 import {storiesOf} from "@storybook/react";
 import {action} from "@storybook/addon-actions";
 import {select, withKnobs, text, boolean} from "@storybook/addon-knobs";

@@ -1,0 +1,36 @@
+@include bem_block(c-context-menu) {
+  @include flex;
+  @include flex-direction-column;
+}
+
+@include bem_block(c-context-divider) {
+  height:     0;
+  margin:     .5rem 0;
+  overflow:   hidden;
+  border-top: 1px solid #e9ecef;
+}
+
+@include bem_block(c-context-item) {
+  @include transition();
+  @include flex;
+  @include flex-align-center;
+  width:            100%;
+  padding:          10px;
+  clear:            both;
+  font-weight:      400;
+  color:            $TextColor;
+  text-align:       inherit;
+  white-space:      nowrap;
+  background-color: transparent;
+  border:           0;
+  .c-badge {
+    margin-left: auto;
+  }
+  .icon {
+    margin-right: 5px;
+  }
+  @include hover {
+    background: #E8E9E9;
+    cursor:     pointer;
+  }
+}

@@ -1,0 +1,44 @@
+@include bem_block(c-dropdown-menu) {
+  position:         absolute;
+  top:              100%;
+  left:             0;
+  z-index:          1000;
+  padding:          .5rem 0;
+  color:            #212529;
+  text-align:       left;
+  list-style:       none;
+  background-color: $ColorWhite;
+  background-clip:  padding-box;
+  border-radius:    .25rem;
+  @include shadow(0 2px 20px 0 rgba(0, 0, 0, 0.25));
+  border:           0;
+  min-width:        12rem;
+  font-size:        14px;
+  margin:           #{$Triangle + 5} 0 0;
+  &:after {
+    display:       inline-block;
+    content:       '';
+    position:      absolute;
+    top:           -#{$Triangle};
+    left:          12px;
+    border-right:  $Triangle solid transparent;
+    border-bottom: $Triangle solid #fff;
+    border-left:   $Triangle solid transparent;
+  }
+  @include bem_modified(right) {
+    right: 0;
+    left:  auto;
+    &:after {
+      left:  auto;
+      right: 12px;
+    }
+  }
+  @include bem_modified(left) {
+    left:  0;
+    right: auto;
+    &:after {
+      left:  12px;
+      right: auto;
+    }
+  }
+}

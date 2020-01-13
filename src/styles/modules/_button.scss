@@ -42,4 +42,16 @@
   @include bem_modified(raised) {
     @include raised();
   }
+  @include bem_modified(empty) {
+    background: transparent;
+    border:     none;
+    color:      black;
+    font-size:  16px;
+    &:hover {
+      background: transparent;
+      border:     none;
+      color:      $ColorInfo;
+      font-size:  16px;
+    }
+  }
 }

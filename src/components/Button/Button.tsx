@@ -10,10 +10,11 @@ interface Props extends PropsInterface {
     icon?: string;
     iconPos?: PositionType;
     isDisabled?: boolean;
-    onCLick?: OnClickEventType;
+    onClick?: OnClickEventType;
     color?: ColorsTypes;
     raised?: boolean;
     rounded?: boolean;
+    empty?: boolean;
 }
 
 export class Button extends Component<Props> {
@@ -43,9 +44,10 @@ export class Button extends Component<Props> {
     }
 
     render() {
-        const classes = classNames("c-button", {
+        const classes = classNames("c-button", this.props.className, {
             [`c-button--${this.props.color}`]: !!this.props.color,
             "c-button--raised": this.props.raised,
+            "c-button--empty": this.props.empty,
             "c-button--rounded": this.props.rounded,
             "c-button--icon-only": !this.props.label && this.props.icon,
             "c-button--text-only": this.props.label && !this.props.icon,
@@ -54,6 +56,7 @@ export class Button extends Component<Props> {
             <button
                 className={classes}
                 style={this.props.style}
+                onClick={this.props.onClick}
             >
                 {this.props.iconPos == "left" && this.renderIcon}
                 {this.labelRender}
