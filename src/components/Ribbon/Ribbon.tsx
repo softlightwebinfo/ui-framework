@@ -1,4 +1,4 @@
-import {Fragment, PureComponent} from "react";
+import {PureComponent} from "react";
 import * as React from "react";
 import {Card} from "../Card";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
