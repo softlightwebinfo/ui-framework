@@ -1,4 +1,4 @@
-import {PureComponent} from "react";
+import {Fragment, PureComponent} from "react";
 import * as React from "react";
 import {Card} from "../Card";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
@@ -10,6 +10,7 @@ export interface RibbonInterfaceProps extends PropsInterface {
     title: string;
     icon: string;
     noCard?: boolean;
+    tagLink?: any;
 }
 
 export class Ribbon extends PureComponent<RibbonInterfaceProps> {
@@ -18,11 +19,14 @@ export class Ribbon extends PureComponent<RibbonInterfaceProps> {
     }
 
     get content() {
+        const Tag = (props) => this.props.tagLink ? this.props.tagLink(props) : props.children;
         return (
-            <a>
-                <i className={this.props.icon}/>
-                <span>{this.props.title}</span>
-            </a>
+            <Tag>
+                <a>
+                    <i className={this.props.icon}/>
+                    <span>{this.props.title}</span>
+                </a>
+            </Tag>
         )
     }
 

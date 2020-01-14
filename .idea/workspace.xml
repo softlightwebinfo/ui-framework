@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="135faa4f-f25b-4e65-8d17-0438d527e706" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Accessibility/KeyboardAccessible.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Accessibility/ScreenReaderOnly.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Accessibility/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextDivider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContextMenu/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dropdown/DropdownMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dropdown/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Observer/Observer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Observer/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Observer/mutation_observer/MutationObserver.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Observer/mutation_observer/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Observer/resize_observer/ResizeObserver.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Observer/resize_observer/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OutsideClickDetector/OutsideClickDetector.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OutsideClickDetector/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/Panel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/PanelBody.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/PanelFooter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/PanelHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Panel/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Popover/Popover.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Popover/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Portal/Portal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Portal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/PopoverExample.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/examples/PopoverExampleIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/common.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/generate/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/const/key_codes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/enum/keyCodes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/types/Popover.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/popover.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_Context.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_Dropdown.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_Popover.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/object.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/buttons.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/buttons.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/vars/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/vars/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn-error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +15,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/index.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/examples/PopoverExampleIcon.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/modules/_ribbon.scss">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -95,6 +88,7 @@
       <find>focus</find>
       <find>react-focus-lock</find>
       <find>FocusTrap</find>
+      <find>babel-preset-react-app</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -112,7 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/interfaces/types/RgbDefType.ts" />
         <option value="$PROJECT_DIR$/src/functions/check/index.ts" />
         <option value="$PROJECT_DIR$/src/components/Avatar/Avatar.tsx" />
         <option value="$PROJECT_DIR$/src/styles/modules/_Avatar.scss" />
@@ -163,6 +156,7 @@
         <option value="$PROJECT_DIR$/src/examples/PopoverExample.tsx" />
         <option value="$PROJECT_DIR$/src/examples/PopoverExampleIcon.tsx" />
         <option value="$PROJECT_DIR$/src/components/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx" />
       </list>
     </option>
   </component>
@@ -214,7 +208,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578949701103" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579021750496" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -268,12 +262,12 @@
       <option name="presentableId" value="Default" />
       <updated>1578507299464</updated>
       <workItem from="1578507300818" duration="2499000" />
-      <workItem from="1578675623315" duration="79060000" />
+      <workItem from="1578675623315" duration="80343000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81559000" />
+    <option name="totallyTimeSpent" value="82842000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,7 +282,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -306,7 +300,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
       <window_info anchor="bottom" id="GraphQL" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -366,26 +360,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Accessibility/KeyboardAccessible.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#2#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Accessibility/ScreenReaderOnly.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Accessibility/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -695,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/examples/PopoverExampleIcon.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContextMenu/ContextMenu.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -714,13 +681,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/functions/object.ts">
       <provider selected="true" editor-type-id="text-editor" />
@@ -735,10 +695,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/examples/PopoverExampleIcon.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_ribbon.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Ribbon/Ribbon.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
