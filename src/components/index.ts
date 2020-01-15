@@ -18,3 +18,4 @@ export * from "./Observer";
 export * from "./Dropdown";
 export * from "./ContextMenu";
 export * from "./Row";
+export * from "./Input";

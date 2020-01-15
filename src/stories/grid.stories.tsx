@@ -1,9 +1,8 @@
 import * as React from 'react';
 import {storiesOf} from "@storybook/react";
-import {boolean, text, withKnobs, number} from "@storybook/addon-knobs";
+import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Avatar, AvatarList} from "../components/Avatar";
 import {Row, RowCol} from "../components/Row";
 
 storiesOf("Layout|Grid", module)

@@ -193,3 +193,26 @@
   filter:           progid:DXImageTransform.Microsoft.gradient(startColorStr="#008fba", endColorStr="#03c4e8", gradientType="1");
   color:            $ColorWhite;
 }
+
+@mixin form-control() {
+  @include transition();
+  display:          block;
+  width:            100%;
+  padding:          .375rem .75rem;
+  font-weight:      400;
+  line-height:      1.5;
+  color:            #495057;
+  background-color: #fff;
+  background-clip:  padding-box;
+  border-radius:    .25rem;
+  border:           1px solid #E8E9E9;
+  font-size:        14px;
+  height:           auto;
+  &:focus {
+    color:            #495057;
+    background-color: #fff;
+    border-color:     #80bdff;
+    outline:          0;
+    @include shadow(0 0 0 0.2rem rgba(26, 80, 137, 0.25))
+  }
+}
