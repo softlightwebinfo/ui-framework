@@ -4,6 +4,8 @@ import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
 import {Table, TableBody, TableCel, TableCelHead, TableFooter, TableHead, TableRow, TableSimple, TableSimpleEnumType} from "../components/Table";
+import moment from 'moment';
+import {Card} from "../components/Card";
 
 storiesOf("Layout|Table", module)
     .addDecorator(withKnobs)
@@ -145,6 +147,28 @@ storiesOf("Layout|Table", module)
                         }
                     }))}
                 />
+            </div>
+        )
+    )
+    .add("List",
+        () => (
+            <div style={{padding: 20}}>
+                <Card>
+                    <TableSimple
+                        type={"list"}
+                        columns={[
+                            {key: "day", data: "DAY", type: TableSimpleEnumType.STRING},
+                            {key: "date", data: "DATE", type: TableSimpleEnumType.DATE},
+                            {key: "holiday", data: "HOLIDAY", type: TableSimpleEnumType.STRING},
+                        ]}
+                        rows={[...new Array(20)].map((_, index) => ({
+                            id: index,
+                            day: "Monday",
+                            date: moment(),
+                            holiday: "rafa gonzalez muñoz"
+                        }))}
+                    />
+                </Card>
             </div>
         )
     );

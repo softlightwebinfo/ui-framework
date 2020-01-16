@@ -1,9 +1,8 @@
 import * as React from 'react';
 import {storiesOf} from "@storybook/react";
-import {text, withKnobs} from "@storybook/addon-knobs";
+import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Input} from "../components/Input";
 import {Select} from "../components/Select";
 
 storiesOf("Form|Select", module)

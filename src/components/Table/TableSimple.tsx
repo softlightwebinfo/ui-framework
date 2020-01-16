@@ -1,7 +1,7 @@
 import {PureComponent} from "react";
 import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
-import {Table} from "./Table";
+import {Table, TableInterfacePropsType} from "./Table";
 import {TableHead} from "./TableHead";
 import {TableCelHead} from "./TableCelHead";
 import {TableFooter} from "./TableFooter";
@@ -43,7 +43,9 @@ export interface TableSimpleInterfaceProps extends PropsInterface {
     columns: TableSimpleInterfaceColumn[];
     rows: TableSimpleInterfaceRow[];
     noData?: any;
+    type?: TableInterfacePropsType;
 }
+
 
 export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
     constructor(props) {
@@ -114,7 +116,7 @@ export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
 
     render() {
         return (
-            <Table>
+            <Table type={this.props.type}>
                 <TableHead>
                     <TableRow>
                         {this.props.columns.map((item) => (

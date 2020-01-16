@@ -1,10 +1,3 @@
-@include bem_block(c-table) {
-  border-collapse: collapse;
-  white-space:     nowrap;
-  width:           100%;
-  color:           inherit;
-}
-
 @include bem_block(c-table-cel) {
   @extend %TableCel;
 }
@@ -48,4 +41,57 @@
   display:    block;
   width:      100%;
   overflow-x: auto;
+}
+
+@include bem_block(c-table) {
+  border-collapse: collapse;
+  white-space:     nowrap;
+  width:           100%;
+  color:           inherit;
+  @include bem_modified(list) {
+    border-collapse: separate;
+    border-spacing:  0 5px;
+    .c-table-thead .c-table-cel-head {
+      color: rgba(41, 43, 48, 0.5);
+    }
+    .c-table-cel,
+    .c-table-cel-head {
+      border: 0;
+
+      &:first-child {
+        border-radius: .55rem 0 0 .55rem;
+      }
+
+      &:last-child {
+        border-right:  1px solid #E6E9ED;
+        border-radius: 0 .55rem .55rem 0;
+      }
+    }
+    .c-table-cel {
+      border-top:    1px solid #E6E9ED;
+      border-bottom: 1px solid #E6E9ED;
+      border-left:   1px solid #E6E9ED;
+    }
+    .c-table-cel-head {
+      border: 0 !important;
+    }
+    .c-table-row {
+      background: transparent !important;
+
+      &:hover {
+        .c-table-cel {
+          border-top-color:    #2185d0;
+          border-bottom-color: #2185d0;
+
+          &:first-child {
+            border-left-color: #2185d0;
+          }
+
+          &:last-child {
+            border-right-color: #2185d0;
+          }
+        }
+      }
+    }
+  }
 }
