@@ -21,3 +21,4 @@ export * from "./Row";
 export * from "./Input";
 export * from "./FormGroup";
 export * from "./Form";
+export * from "./Select";

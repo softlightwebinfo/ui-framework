@@ -196,6 +196,7 @@
 
 @mixin form-control() {
   @include transition();
+  min-height:       35px;
   display:          block;
   width:            100%;
   padding:          .375rem .75rem;
@@ -207,7 +208,7 @@
   border-radius:    .25rem;
   border:           1px solid #E8E9E9;
   font-size:        14px;
-  height:           auto;
+  height:           35px;
   &:focus {
     color:            #495057;
     background-color: #fff;

@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {DropdownMenu} from '../'
 import {storiesOf} from "@storybook/react";
 import {action} from "@storybook/addon-actions";
 import {select, withKnobs, text, boolean} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
+import {Button} from "../components/Button";
 
 storiesOf("Form|Button", module)
     .addDecorator(withKnobs)
