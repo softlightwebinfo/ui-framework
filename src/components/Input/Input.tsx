@@ -10,6 +10,8 @@ export interface InputInterfaceProps extends PropsInterface {
     placeholder?: string;
     value?: string;
     onChange?: OnChangeEventType;
+    onKeyUp?: any;
+    onKeyPress?: any;
 }
 
 export class Input extends PureComponent<InputInterfaceProps> {
@@ -25,6 +27,8 @@ export class Input extends PureComponent<InputInterfaceProps> {
         const classes = classNames("c-input", this.props.className);
         return (
             <input
+                onKeyUp={this.props.onKeyUp}
+                onKeyPress={this.props.onKeyPress}
                 placeholder={this.props.placeholder}
                 type={this.props.type}
                 style={this.props.style}
