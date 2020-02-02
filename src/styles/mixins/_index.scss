@@ -11,58 +11,110 @@
 @import './flex';
 @import './link';
 
-@mixin colorBg($type) {
+@mixin colorBg($type, $color: false) {
   @if ($type == primary) {
-    background-color: $ColorPrimary;
-    border:           $BorderWidth solid $ColorPrimary;
-    color:            $ColorWhite;
+    @if ($color) {
+      color:            $ColorPrimary;
+    } @else {
+      background-color: $ColorPrimary;
+      border:           $BorderWidth solid $ColorPrimary;
+      color:            $ColorWhite;
+    }
   } @else if ($type == secondary) {
-    background-color: $ColorSecondary;
-    color:            $ColorDark;
-    border:           $BorderWidth solid $ColorSecondary;
+    @if ($color) {
+      color:            $ColorSecondary;
+    } @else {
+      background-color: $ColorSecondary;
+      color:            $ColorDark;
+      border:           $BorderWidth solid $ColorSecondary;
+    }
   } @else if ($type == success) {
-    color:            $ColorWhite;
-    background-color: $ColorSuccess;
-    border:           $BorderWidth solid $ColorSuccess;
+    @if ($color) {
+      color:            $ColorSuccess;
+    } @else {
+      color:            $ColorWhite;
+      background-color: $ColorSuccess;
+      border:           $BorderWidth solid $ColorSuccess;
+    }
   } @else if ($type == danger) {
-    color:            $ColorWhite;
-    background-color: $ColorDanger;
-    border:           1px solid $ColorDanger;
+    @if ($color) {
+      color:            $ColorDanger;
+    } @else {
+      color:            $ColorWhite;
+      background-color: $ColorDanger;
+      border:           1px solid $ColorDanger;
+    }
   } @else if ($type == info) {
-    background-color: $ColorInfo;
-    border:           $BorderWidth solid $ColorInfo;
-    color:            $ColorWhite;
+    @if ($color) {
+      color:            $ColorInfo;
+    } @else {
+      background-color: $ColorInfo;
+      border:           $BorderWidth solid $ColorInfo;
+      color:            $ColorWhite;
+    }
   } @else if ($type == warning) {
-    color:            $ColorDark;
-    background-color: $ColorWarning;
-    border:           1px solid $ColorWarning;
+    @if ($color) {
+      color:            $ColorWarning;
+    } @else {
+      color:            $ColorDark;
+      background-color: $ColorWarning;
+      border:           1px solid $ColorWarning;
+    }
   } @else if ($type == white) {
-    color:            $ColorDark;
-    background-color: $ColorWhite;
+    @if ($color) {
+      color:            $ColorWhite;
+    } @else {
+      color:            $ColorDark;
+      background-color: $ColorWhite;
+    }
   } @else if ($type == info-hover) {
-    background-color: $ColorInfoHover;
-    border:           $BorderWidth solid $ColorInfoHover;
-    color:            $ColorWhite;
+    @if ($color) {
+      color:            $ColorInfoHover;
+    } @else {
+      background-color: $ColorInfoHover;
+      border:           $BorderWidth solid $ColorInfoHover;
+      color:            $ColorWhite;
+    }
   } @else if ($type == warning-hover) {
-    color:            $ColorDark;
-    background-color: $ColorWarning;
-    border:           1px solid $ColorWarning;
+    @if ($color) {
+      color:            $ColorWarning;
+    } @else {
+      color:            $ColorDark;
+      background-color: $ColorWarning;
+      border:           1px solid $ColorWarning;
+    }
   } @else if ($type == danger-hover) {
-    color:            $ColorWhite;
-    background-color: $ColorDangerHover;
-    border:           1px solid $ColorDangerHover;
+    @if ($color) {
+      color:            $ColorDangerHover;
+    } @else {
+      color:            $ColorWhite;
+      background-color: $ColorDangerHover;
+      border:           1px solid $ColorDangerHover;
+    }
   } @else if ($type == primary-hover) {
-    background-color: $ColorPrimaryHover;
-    color:            $ColorWhite;
-    border-color:     $ColorPrimaryHover;
+    @if ($color) {
+      color:            $ColorPrimaryHover;
+    } @else {
+      background-color: $ColorPrimaryHover;
+      color:            $ColorWhite;
+      border-color:     $ColorPrimaryHover;
+    }
   } @else if ($type == success-hover) {
-    background-color: $ColorSuccessHover;
-    color:            $ColorWhite;
-    border-color:     $ColorSuccessHover;
+    @if ($color) {
+      color:            $ColorSuccessHover;
+    } @else {
+      background-color: $ColorSuccessHover;
+      color:            $ColorWhite;
+      border-color:     $ColorSuccessHover;
+    }
   } @else if ($type == secondary-hover) {
-    background-color: $ColorSecondaryHover;
-    color:            $ColorWhite;
-    border-color:     $ColorSecondaryHover;
+    @if ($color) {
+      color:            $ColorSecondaryHover;
+    } @else {
+      background-color: $ColorSecondaryHover;
+      color:            $ColorWhite;
+      border-color:     $ColorSecondaryHover;
+    }
   }
 }
 
@@ -120,44 +172,44 @@
   @include radius($Rounded);
 }
 
-@mixin generateBgColors() {
+@mixin generateBgColors($color:false) {
   @include hover() {
-    @include colorBg(primary-hover);
+    @include colorBg(primary-hover, $color);
   }
   @include bem_modified(secondary) {
-    @include colorBg(secondary);
+    @include colorBg(secondary, $color);
     @include hover() {
-      @include colorBg(secondary-hover);
+      @include colorBg(secondary-hover, $color);
     }
   }
   @include bem_modified(primary) {
-    @include colorBg(primary);
+    @include colorBg(primary, $color);
     @include hover() {
-      @include colorBg(primary-hover);
+      @include colorBg(primary-hover, $color);
     }
   }
   @include bem_modified(success) {
-    @include colorBg(success);
+    @include colorBg(success, $color);
     @include hover() {
-      @include colorBg(success-hover);
+      @include colorBg(success-hover, $color);
     }
   }
   @include bem_modified(info) {
-    @include colorBg(info);
+    @include colorBg(info, $color);
     @include hover() {
-      @include colorBg(info-hover);
+      @include colorBg(info-hover, $color);
     }
   }
   @include bem_modified(danger) {
-    @include colorBg(danger);
+    @include colorBg(danger, $color);
     @include hover() {
-      @include colorBg(danger-hover);
+      @include colorBg(danger-hover, $color);
     }
   }
   @include bem_modified(warning) {
-    @include colorBg(warning);
+    @include colorBg(warning, $color);
     @include hover() {
-      @include colorBg(warning-hover);
+      @include colorBg(warning-hover, $color);
     }
   }
 }

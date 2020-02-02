@@ -1,19 +1,23 @@
 import * as React from 'react'
 import {storiesOf} from "@storybook/react";
-import {boolean, text, withKnobs} from "@storybook/addon-knobs";
+import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Ribbon} from "../components/Ribbon";
+import {WidgetNumber} from "../components/Widget";
+import {Row, RowCol} from "../components/Row";
 
-storiesOf("Layout|Ribbon", module)
-    .addDecorator(withKnobs)
+storiesOf("Layout|Widgets", module)
     .addDecorator(jsxDecorator)
+    .addDecorator(withKnobs)
     .add("Default",
         () => (
             <div style={{padding: 20}}>
-                <Ribbon fluid={boolean("fluid", false)} number={5} title={text("title", "users")} icon={text("icon", "icon icon-user")} style={{width: 300, marginBottom: 15}}/>
-                <Ribbon fluid={boolean("fluid", false)} title={text("title", "users")} icon={text("icon", "icon icon-user")} style={{width: 300, marginBottom: 15}}/>
-                <Ribbon fluid={boolean("fluid", false)} number={20} title={text("title", "users")} icon={text("icon", "icon icon-user")} style={{width: 300}}/>
+                <Row>
+                    <RowCol><WidgetNumber fluid card title={"Web Developer"} subtitle={"Since last month"} money={"€"} numberLast={10} number={10}/></RowCol>
+                    <RowCol><WidgetNumber fluid card title={"Web Developer"} subtitle={"Since last month"} money={"€"} numberLast={20} number={10}/></RowCol>
+                    <RowCol><WidgetNumber fluid card title={"Web Developer"} subtitle={"Since last month"} money={"€"} numberLast={30} number={60}/></RowCol>
+                    <RowCol><WidgetNumber fluid card title={"Web Developer"} subtitle={"Since last month"} money={"€"} numberLast={40} number={45}/></RowCol>
+                </Row>
             </div>
         )
     );

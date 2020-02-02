@@ -1,0 +1,9 @@
+@include bem_block(c-widget) {
+  &--card {
+    @include card;
+    padding: $Padding-xl;
+  }
+  &--fluid {
+    @include card-fluid;
+  }
+}

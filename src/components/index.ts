@@ -22,3 +22,5 @@ export * from "./Input";
 export * from "./FormGroup";
 export * from "./Form";
 export * from "./Select";
+export * from "./Widget";
+export * from "./Text";

@@ -1,4 +1,4 @@
-import {PureComponent} from "react";
+import {CSSProperties, PureComponent} from "react";
 import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import {Table, TableInterfacePropsType} from "./Table";
@@ -37,6 +37,7 @@ export interface TableSimpleInterfaceColumn {
     data: string;
     type: TableSimpleEnumType;
     format?: string;
+    style?: CSSProperties;
 }
 
 export interface TableSimpleInterfaceProps extends PropsInterface {
@@ -120,7 +121,7 @@ export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
                 <TableHead>
                     <TableRow>
                         {this.props.columns.map((item) => (
-                            <TableCelHead key={item.key}>
+                            <TableCelHead style={item.style} key={item.key}>
                                 {item.data}
                             </TableCelHead>
                         ))}

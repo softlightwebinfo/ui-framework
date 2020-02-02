@@ -3,22 +3,25 @@ import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
 
-export interface BadgeInterfaceProps extends PropsInterface {
+export interface WidgetInterfaceProps extends PropsInterface {
     isRead?: boolean;
+    fluid?: boolean;
+    card?: boolean;
 }
 
-export class Badge extends PureComponent<BadgeInterfaceProps> {
+export class Widget extends PureComponent<WidgetInterfaceProps> {
     constructor(props) {
         super(props);
     }
 
 
     render() {
-        const classes = classNames("c-badge", this.props.className, {
-            "c-badge--read": this.props.isRead,
+        const classes = classNames("c-widget", this.props.className, {
+            "c-widget--fluid": this.props.fluid,
+            "c-widget--card": this.props.card,
         });
         return (
-            <span style={this.props.style} className={classes}>{this.props.children}</span>
+            <div className={classes}>{this.props.children}</div>
         )
     }
 }
