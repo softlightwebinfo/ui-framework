@@ -1,0 +1,22 @@
+@include bem_block(c-widget-percentage) {
+  @include bem_element(percentage) {
+    line-height: 3.4rem;
+    height:      3.4rem;
+    display:     flex;
+    align-items: center;
+    font-weight: 400;
+    color:       #45aaf2;
+    font-size:   40px;
+    float:       right !important;
+  }
+  @include bem_element(price) {
+    font-size:     24px;
+    margin-bottom: 4px;
+  }
+  @include bem_element(title) {
+    font-size: 16px;
+  }
+  @include bem_element(progress) {
+    margin-top: 24px;
+  }
+}

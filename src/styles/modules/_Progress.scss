@@ -1,0 +1,23 @@
+@include bem_block(c-progress) {
+  display:          flex;
+  overflow:         hidden;
+  font-size:        .75rem;
+  background-color: #e9ecef;
+  border-radius:    .25rem;
+  position:         relative;
+  height:           4px;
+  @include bem_element(bar) {
+    display:            -ms-flexbox;
+    display:            flex;
+    -ms-flex-direction: column;
+    flex-direction:     column;
+    -ms-flex-pack:      center;
+    justify-content:    center;
+    overflow:           hidden;
+    color:              #fff;
+    text-align:         center;
+    white-space:        nowrap;
+    transition:         width .6s ease;
+    background-color:   #1A5089;
+  }
+}

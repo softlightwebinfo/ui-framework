@@ -1,0 +1,15 @@
+@include bem_block(c-widget-number-center) {
+  .c-widget-number {
+    &__number {
+      color: $ColorDanger;
+      text-align: center;
+      font-size: 40px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+    &__span{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
