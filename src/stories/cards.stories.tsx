@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {boolean, text, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Card, CardUserDescription} from "../components/Card";
+import {Card, CardStadistics, CardUserDescription} from "../components/Card";
 import {Button} from "../components/Button";
 import {CardUser} from "../components/Card";
 import {Row, RowCol} from "../components/Row";
@@ -289,6 +289,29 @@ storiesOf("Layout|Cards", module)
                             subTitle={"Web developer"}
                             avatar={"https://cdn3.f-cdn.com/contestentries/1483263/26039261/5c988ddb8ee9a_thumb900.jpg"}
                             description={"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."}
+                        />
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    )
+    .add("Stadistics",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol>
+                        <CardStadistics
+                            card
+                            fluid
+                            list={[
+                                {title: "Project", subTitle: "45"},
+                                {title: "Growth", subTitle: "87%"},
+                            ]}
+                            progressBars={[
+                                {value: 77, label: "Laravel"},
+                                {value: 50, label: "HTML"},
+                                {value: 23, label: "Photoshop"},
+                            ]}
                         />
                     </RowCol>
                 </Row>

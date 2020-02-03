@@ -10,6 +10,8 @@ export interface WidgetListHorizontalInterfaceProps extends PropsInterface {
     fluid?: boolean;
     card?: boolean;
     list: WidgetListHorizontalInterfacePropsList[];
+    custom?: boolean;
+    center?: boolean;
 }
 
 export interface WidgetListHorizontalInterfacePropsList extends TitleSubtitleOInterface {
@@ -25,10 +27,17 @@ export class WidgetListHorizontal extends PureComponent<WidgetListHorizontalInte
         const classes = classNames("c-widget-list-horizontal", this.props.className, {});
         return (
             <Widget className={classes}{...this.props}>
-                {this.props.list.map((item, index) => (
+                {!this.props.custom && this.props.list.map((item, index) => (
                     <RowCol key={index} className={"c-widget-list-horizontal__item"}>
                         <h4 className={"c-widget-list-horizontal__item__title"}>{item.title}</h4>
                         <div className={"c-widget-list-horizontal__item__subTitle"}>{item.subTitle}</div>
+                    </RowCol>
+                ))}
+                {this.props.custom && this.props.list.map((item, index) => (
+                    <RowCol key={index} className={classNames("c-widget-list-horizontal__item", {
+                        "c-widget-list-horizontal__item--center": this.props.center,
+                    })}>
+                        {item}
                     </RowCol>
                 ))}
             </Widget>

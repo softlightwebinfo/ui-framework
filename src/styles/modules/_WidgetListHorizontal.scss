@@ -2,6 +2,11 @@
   @extend .c-row;
   margin: 0;
   @include bem_element(item) {
+    &--center {
+      display:         flex;
+      justify-content: center;
+      ext-align:       center;
+    }
     @include bem_element(title) {
       font-size:   $FtzTitle;
       text-align:  center;
