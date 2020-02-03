@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="135faa4f-f25b-4e65-8d17-0438d527e706" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Social/Social.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Social/SocialIcons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Social/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Widget/WidgetUserAvatar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/interfaces/CardUserDescriptionInterface.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/types/SizeTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stories/social.stories.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_Social.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_SocialIcons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_WidgetUserAvatar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Group/Group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Group/Group.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Group/GroupTitleSubtitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Group/GroupTitleSubtitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Group/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Group/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Text/Text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Text/Text.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Widget/WidgetSparkLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Widget/WidgetSparkLine.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Widget/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Widget/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/cards.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/cards.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/widget.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/widget.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/mixins/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_Avatar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_Avatar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_Group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_Group.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_GroupTitleSubtitle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_GroupTitleSubtitle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_Text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_Text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,14 +16,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="240" column="30" selection-start-line="240" selection-start-column="30" selection-end-line="240" selection-end-column="30" />
+            <state relative-caret-position="138">
+              <caret line="250" column="32" lean-forward="true" selection-start-line="250" selection-start-column="32" selection-end-line="250" selection-end-column="32" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
                 <element signature="e#2392#11557#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,16 +164,16 @@
         <option value="$PROJECT_DIR$/src/styles/modules/_WidgetUserAvatar.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/_SocialIcons.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/_Social.scss" />
-        <option value="$PROJECT_DIR$/src/stories/widget.stories.tsx" />
         <option value="$PROJECT_DIR$/src/stories/social.stories.tsx" />
         <option value="$PROJECT_DIR$/src/components/Text/Text.tsx" />
         <option value="$PROJECT_DIR$/src/interfaces/types/SizeTypes.ts" />
         <option value="$PROJECT_DIR$/src/styles/modules/_Avatar.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/_Text.scss" />
-        <option value="$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx" />
         <option value="$PROJECT_DIR$/src/interfaces/interfaces/CardUserDescriptionInterface.tsx" />
         <option value="$PROJECT_DIR$/src/styles/mixins/_index.scss" />
         <option value="$PROJECT_DIR$/src/stories/cards.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/stories/widget.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx" />
       </list>
     </option>
   </component>
@@ -273,7 +259,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580767068109" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580767622264" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -334,12 +320,12 @@
       <workItem from="1579510352429" duration="2346000" />
       <workItem from="1579551130547" duration="2415000" />
       <workItem from="1580142968299" duration="12000" />
-      <workItem from="1580638788476" duration="26232000" />
+      <workItem from="1580638788476" duration="26792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130692000" />
+    <option name="totallyTimeSpent" value="131252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,16 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stories/widget.stories.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="298" column="41" lean-forward="true" selection-start-line="298" selection-start-column="41" selection-end-line="298" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Card/Card.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -828,23 +804,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx">
+    <entry file="file://$PROJECT_DIR$/src/stories/widget.stories.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="228">
+          <caret line="278" column="29" lean-forward="true" selection-start-line="278" selection-start-column="29" selection-end-line="278" selection-end-column="29" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="240" column="30" selection-start-line="240" selection-start-column="30" selection-end-line="240" selection-end-column="30" />
+        <state relative-caret-position="138">
+          <caret line="250" column="32" lean-forward="true" selection-start-line="250" selection-start-column="32" selection-end-line="250" selection-end-column="32" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
             <element signature="e#2392#11557#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card/CardUserDescription.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

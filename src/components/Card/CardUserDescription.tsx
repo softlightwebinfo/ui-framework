@@ -21,6 +21,7 @@ export class CardUserDescription extends PureComponent<CardUserDescriptionInterf
                 footer={this.props.footer}
             >
                 <WidgetUserAvatar
+                    fluid={this.props.fluid}
                     avatar={this.props.avatar}
                     title={this.props.title}
                     subTitle={this.props.subTitle}
