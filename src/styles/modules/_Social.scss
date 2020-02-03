@@ -1,0 +1,13 @@
+@include bem_block(c-social) {
+  $h: 28px;
+  display:         flex;
+  background:      #f8f8f8;
+  border-radius:   50%;
+  color:           #9aa0ac;
+  height:          $h;
+  width:           $h;
+  line-height:     $h;
+  text-align:      center;
+  justify-content: center;
+  align-items:     center;
+}

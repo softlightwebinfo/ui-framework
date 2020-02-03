@@ -1,0 +1,11 @@
+@include bem_block(c-group-title-subtitle) {
+  @include bem_element(title) {
+    font-size: $FontSize-2;
+    color:     #202121;
+  }
+  @include bem_element(subTitle) {
+    font-size: $FtzTitleSuper;
+    line-height: 34px;
+    font-weight: bold;
+  }
+}

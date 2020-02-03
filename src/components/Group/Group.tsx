@@ -3,22 +3,22 @@ import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
 
-export interface BadgeInterfaceProps extends PropsInterface {
-    isRead?: boolean;
+export interface GroupInterfaceProps extends PropsInterface {
+
 }
 
-export class Badge extends PureComponent<BadgeInterfaceProps> {
+export class Group extends PureComponent<GroupInterfaceProps> {
     constructor(props) {
         super(props);
     }
 
 
     render() {
-        const classes = classNames("c-badge", this.props.className, {
-            "c-badge--read": this.props.isRead,
-        });
+        const classes = classNames("c-group", this.props.className, {});
         return (
-            <span style={this.props.style} className={classes}>{this.props.children}</span>
+            <div style={this.props.style} className={classes}>
+                {this.props.children}
+            </div>
         )
     }
 }

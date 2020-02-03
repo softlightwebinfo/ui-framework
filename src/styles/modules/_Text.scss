@@ -1,3 +1,5 @@
 @include bem_block(c-text) {
   @include generateBgColors(true);
+  @include generateSizes();
+  line-height: 20px;
 }

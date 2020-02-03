@@ -1,0 +1,9 @@
+@include bem_block(c-social-icons) {
+  display:   flex;
+  flex-wrap: wrap;
+  li {
+    + li {
+      margin-left: 10px;
+    }
+  }
+}

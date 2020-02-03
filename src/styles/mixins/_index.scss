@@ -173,9 +173,9 @@
 }
 
 @mixin generateBgColors($color:false) {
-  @include hover() {
-    @include colorBg(primary-hover, $color);
-  }
+  //@include hover() {
+  //  @include colorBg(primary-hover, $color);
+  //}
   @include bem_modified(secondary) {
     @include colorBg(secondary, $color);
     @include hover() {
@@ -267,5 +267,18 @@
     border-color:     #80bdff;
     outline:          0;
     @include shadow(0 0 0 0.2rem rgba(26, 80, 137, 0.25))
+  }
+}
+
+@mixin generateSizes() {
+  $types: xxs xs s sm m l xl xxl;
+  $base-size: 5px;
+
+  $modular-scale: 0.2;
+  @each $type in $types {
+    &--ftz-#{$type} {
+      font-size: $base-size * $modular-scale;
+      $modular-scale: $modular-scale + 1;
+    }
   }
 }

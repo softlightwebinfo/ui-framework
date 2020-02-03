@@ -30,7 +30,7 @@
     margin-left: 10px;
     cursor:      pointer;
     @include transition();
-    @include hover(){
+    @include hover() {
       @include transform(translateY(-4px) scale(1.02));
     }
   }
@@ -44,6 +44,9 @@
     @include hover() {
       @include transform(translateY(-4px) scale(1.02));
       z-index: 999;
+    }
+    .c-avatar {
+      border-width: 2px;
     }
   }
 }

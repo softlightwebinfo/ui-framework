@@ -3,11 +3,12 @@ import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {WidgetNumber, WidgetNumberCenter, WidgetPercentage} from "../components/Widget";
+import {WidgetNumber, WidgetNumberCenter, WidgetPercentage, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
 import {Row, RowCol} from "../components/Row";
 import {WidgetUser} from "../components/Widget/WidgetUser";
 import {Button} from "../components/Button";
 import {WidgetListHorizontal} from "../components/Widget/WidgetListHorizontal";
+import {SocialIcons} from "../components/Social";
 
 storiesOf("Layout|Widgets", module)
     .addDecorator(jsxDecorator)
@@ -201,6 +202,116 @@ storiesOf("Layout|Widgets", module)
                                 {title: "3100 €", subTitle: "Earnings"},
                             ]}
                         />
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    )
+    .add("Spark line",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol><WidgetSparkLine title={"Total Employee"} subTitle={"614"}/></RowCol>
+                    <RowCol><WidgetSparkLine title={"New Employee"} subTitle={"124"}/></RowCol>
+                    <RowCol><WidgetSparkLine title={"Male"} subTitle={"504"}/></RowCol>
+                    <RowCol><WidgetSparkLine title={"Female"} subTitle={"110"}/></RowCol>
+                </Row>
+                <Row>
+                    <RowCol><WidgetSparkLine card={boolean("card", true)} fluid={boolean("fluid", true)} title={"Total Employee"} subTitle={"614"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={boolean("card", true)} fluid={boolean("fluid", true)} title={"New Employee"} subTitle={"124"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={boolean("card", true)} fluid={boolean("fluid", true)} title={"Male"} subTitle={"504"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={boolean("card", true)} fluid={boolean("fluid", true)} title={"Female"} subTitle={"110"}/></RowCol>
+                </Row>
+                <Row>
+                    <RowCol><WidgetSparkLine card={false} fluid={true} title={"Total Employee"} subTitle={"614"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={false} fluid={true} title={"New Employee"} subTitle={"124"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={false} fluid={true} title={"Male"} subTitle={"504"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={false} fluid={true} title={"Female"} subTitle={"110"}/></RowCol>
+                </Row>
+                <Row>
+                    <RowCol><WidgetSparkLine card={true} fluid={false} title={"Total Employee"} subTitle={"614"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={true} fluid={false} title={"New Employee"} subTitle={"124"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={true} fluid={false} title={"Male"} subTitle={"504"}/></RowCol>
+                    <RowCol><WidgetSparkLine card={true} fluid={false} title={"Female"} subTitle={"110"}/></RowCol>
+                </Row>
+            </div>
+        )
+    )
+    .add("User Avatar",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol>
+                        <WidgetUserAvatar
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
+                            title={"Sara Hopkins"}
+                            subTitle={"Web developer"}
+                            avatar={"https://cdn3.f-cdn.com/contestentries/1483263/26039261/5c988ddb8ee9a_thumb900.jpg"}
+                        >
+                            <SocialIcons
+                                socials={[
+                                    {icon: "facebook"},
+                                    {icon: "twitter"},
+                                    {icon: "phone"},
+                                    {icon: "skype"},
+                                ]}
+                            />
+                        </WidgetUserAvatar>
+                    </RowCol>
+                    <RowCol>
+                        <WidgetUserAvatar
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
+                            title={"Sara Hopkins"}
+                            subTitle={"Web developer"}
+                            avatar={"https://cdn3.f-cdn.com/contestentries/1483263/26039261/5c988ddb8ee9a_thumb900.jpg"}
+                        >
+                            <SocialIcons
+                                socials={[
+                                    {icon: "facebook"},
+                                    {icon: "twitter"},
+                                    {icon: "phone"},
+                                    {icon: "skype"},
+                                ]}
+                            />
+                        </WidgetUserAvatar>
+                    </RowCol>
+                    <RowCol>
+                        <WidgetUserAvatar
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
+                            title={"Sara Hopkins"}
+                            subTitle={"Web developer"}
+                            avatar={"https://cdn3.f-cdn.com/contestentries/1483263/26039261/5c988ddb8ee9a_thumb900.jpg"}
+                        >
+                            <SocialIcons
+                                socials={[
+                                    {icon: "facebook"},
+                                    {icon: "twitter"},
+                                    {icon: "phone"},
+                                    {icon: "skype"},
+                                ]}
+                            />
+                        </WidgetUserAvatar>
+                    </RowCol>
+                    <RowCol>
+                        <WidgetUserAvatar
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
+                            title={"Sara Hopkins"}
+                            subTitle={"Web developer"}
+                            avatar={"https://cdn3.f-cdn.com/contestentries/1483263/26039261/5c988ddb8ee9a_thumb900.jpg"}
+                        >
+                            <SocialIcons
+                                socials={[
+                                    {icon: "facebook"},
+                                    {icon: "twitter"},
+                                    {icon: "phone"},
+                                    {icon: "skype"},
+                                ]}
+                            />
+                        </WidgetUserAvatar>
                     </RowCol>
                 </Row>
             </div>

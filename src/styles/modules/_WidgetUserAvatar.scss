@@ -1,0 +1,22 @@
+@include bem_block(c-widget-user-avatar) {
+  display: flex;
+  @include bem_element(avatar) {
+    margin-right: $Margin;
+  }
+  @include bem_element(body) {
+    flex: 1;
+  }
+  @include bem_element(title) {
+    font-weight: 500;
+    line-height: 22px;
+    font-size:   $FtzTitle;
+  }
+  @include bem_element(subTitle) {
+    line-height: 22px;
+    color:       $ColorMuted;
+    font-size:   $FontSize-2;
+  }
+  @include bem_element(footer) {
+    margin-top: $Margin-simple;
+  }
+}

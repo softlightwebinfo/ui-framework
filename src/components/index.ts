@@ -26,3 +26,5 @@ export * from "./Widget";
 export * from "./Text";
 export * from "./Progress";
 export * from "./Separator";
+export * from "./Group";
+export * from "./Social";
