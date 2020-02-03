@@ -5,7 +5,7 @@
     &--center {
       display:         flex;
       justify-content: center;
-      ext-align:       center;
+      text-align:       center;
     }
     @include bem_element(title) {
       font-size:   $FtzTitle;

@@ -20,15 +20,15 @@ export class CardStadistics extends PureComponent<CardStadisticsInterface> {
                 footer={this.props.footer}
             >
                 <WidgetListHorizontal
-                    custom={true}
                     center
-                    list={this.props.list.map((item, index) => (
+                    list={this.props.list}
+                    data={(item, index) => (
                         <WidgetSparkLine
-                            {...item}
+                            key={index}
                             title={item.title}
                             subTitle={item.subTitle}
                         />
-                    ))}
+                    )}
                 />
                 {this.props.progressBars.map((bar, index) => (
                     <ProgressLabel
