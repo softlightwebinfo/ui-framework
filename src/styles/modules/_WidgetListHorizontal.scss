@@ -1,0 +1,17 @@
+@include bem_block(c-widget-list-horizontal) {
+  @extend .c-row;
+  margin: 0;
+  @include bem_element(item) {
+    @include bem_element(title) {
+      font-size:   $FtzTitle;
+      text-align:  center;
+      line-height: 24px;
+    }
+    @include bem_element(subTitle) {
+      font-size:   $FontSize-2;
+      color:       $ColorMuted;
+      text-align:  center;
+      line-height: 24px;
+    }
+  }
+}

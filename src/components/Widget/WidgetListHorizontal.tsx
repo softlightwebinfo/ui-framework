@@ -2,39 +2,35 @@ import React, {PureComponent} from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
 import {Widget} from "./Widget";
-import {Avatar} from "../Avatar";
 import {TitleSubtitleOInterface} from "../../interfaces/interfaces/TitleSubtitleInterface";
+import {RowCol} from "../Row";
 
 
-export interface WidgetUserInterfaceProps extends PropsInterface, TitleSubtitleOInterface {
+export interface WidgetListHorizontalInterfaceProps extends PropsInterface {
     fluid?: boolean;
     card?: boolean;
-    avatar: string;
-    footer?: any;
+    list: WidgetListHorizontalInterfacePropsList[];
 }
 
-export class WidgetUser extends PureComponent<WidgetUserInterfaceProps> {
+export interface WidgetListHorizontalInterfacePropsList extends TitleSubtitleOInterface {
+
+}
+
+export class WidgetListHorizontal extends PureComponent<WidgetListHorizontalInterfaceProps> {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const classes = classNames("c-widget-user", this.props.className, {});
+        const classes = classNames("c-widget-list-horizontal", this.props.className, {});
         return (
             <Widget className={classes}{...this.props}>
-                <Avatar
-                    size={80}
-                    fluid={false}
-                    name={this.props.title}
-                    image={this.props.avatar}
-                />
-                <h3 className={"c-widget-user__title"}>{this.props.title}</h3>
-                <div className="c-widget-user__subTitle">{this.props.subTitle}</div>
-                {this.props.footer && (
-                    <div className={"c-widget-user__footer"}>
-                        {this.props.footer}
-                    </div>
-                )}
+                {this.props.list.map((item, index) => (
+                    <RowCol key={index} className={"c-widget-list-horizontal__item"}>
+                        <h4 className={"c-widget-list-horizontal__item__title"}>{item.title}</h4>
+                        <div className={"c-widget-list-horizontal__item__subTitle"}>{item.subTitle}</div>
+                    </RowCol>
+                ))}
             </Widget>
         )
     }

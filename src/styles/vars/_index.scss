@@ -14,7 +14,7 @@ $Shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 
 // Font size
 $FontSizeIcon: 30px;
 $FtzTitleSuper: 28px;
-$FtzTitle: 21px;
+$FtzTitle: 20px;
 $FontSize-2: 16px;
 $FontSize: 14px;
 $FontSize-m: 12px;
@@ -31,6 +31,7 @@ $Padding: 6px $PaddingDefault;
 // Margin
 $Margin-separator: 24px;
 $Margin: 16px;
+$Margin-simple: $Margin / 2;
 // Colors
 $ColorDark: #333333;
 $ColorDark-2: #747879;

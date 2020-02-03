@@ -3,11 +3,11 @@ import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
 
-export interface BadgeInterfaceProps extends PropsInterface {
-    isRead?: boolean;
+export interface SeparatorInterfaceProps extends PropsInterface {
+
 }
 
-export class Separator extends PureComponent<BadgeInterfaceProps> {
+export class Separator extends PureComponent<SeparatorInterfaceProps> {
     constructor(props) {
         super(props);
     }

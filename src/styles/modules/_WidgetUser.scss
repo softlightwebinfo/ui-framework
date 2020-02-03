@@ -1,0 +1,16 @@
+@include bem_block(c-widget-user) {
+  display:         flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items:     center;
+  @include bem_element(title) {
+    margin-top:  $Margin;
+    margin-bottom: $Margin-simple;
+    font-size:   16px;
+    font-weight: bold;
+  }
+  @include bem_element(subTitle) {
+    margin-bottom: $Margin;
+    color: #6c757d;
+  }
+}

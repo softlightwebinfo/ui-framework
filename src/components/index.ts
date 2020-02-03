@@ -25,3 +25,4 @@ export * from "./Select";
 export * from "./Widget";
 export * from "./Text";
 export * from "./Progress";
+export * from "./Separator";

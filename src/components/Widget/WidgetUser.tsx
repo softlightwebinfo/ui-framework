@@ -2,30 +2,39 @@ import React, {PureComponent} from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
 import {Widget} from "./Widget";
-import {Progress} from "../Progress";
+import {Avatar} from "../Avatar";
+import {TitleSubtitleOInterface} from "../../interfaces/interfaces/TitleSubtitleInterface";
 
-export interface WidgetPercentageInterfaceProps extends PropsInterface {
+
+export interface WidgetUserInterfaceProps extends PropsInterface, TitleSubtitleOInterface {
     fluid?: boolean;
     card?: boolean;
-    title: string;
-    percentage: number;
-    money: string;
-    price: number;
+    avatar: string;
+    footer?: any;
 }
 
-export class WidgetPercentage extends PureComponent<WidgetPercentageInterfaceProps> {
+export class WidgetUser extends PureComponent<WidgetUserInterfaceProps> {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const classes = classNames("c-widget-percentage", this.props.className, {});
+        const classes = classNames("c-widget-user", this.props.className, {});
         return (
             <Widget className={classes}{...this.props}>
-                <div className={"c-widget-percentage__percentage"}>{this.props.percentage} %</div>
-                <h4 className={"c-widget-percentage__price"}>{this.props.price} {this.props.money}</h4>
-                <div className={"c-widget-percentage__title"}>{this.props.title}</div>
-                <Progress className={"c-widget-percentage__progress"} value={this.props.percentage}/>
+                <Avatar
+                    size={80}
+                    fluid={false}
+                    name={this.props.title}
+                    image={this.props.avatar}
+                />
+                <h3 className={"c-widget-user__title"}>{this.props.title}</h3>
+                <div className="c-widget-user__subTitle">{this.props.subTitle}</div>
+                {this.props.footer && (
+                    <div className={"c-widget-user__footer"}>
+                        {this.props.footer}
+                    </div>
+                )}
             </Widget>
         )
     }

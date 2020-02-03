@@ -21,7 +21,7 @@ export class Widget extends PureComponent<WidgetInterfaceProps> {
             "c-widget--card": this.props.card,
         });
         return (
-            <div className={classes}>{this.props.children}</div>
+            <div style={this.props.style} className={classes}>{this.props.children}</div>
         )
     }
 }
