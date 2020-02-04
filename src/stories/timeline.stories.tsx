@@ -17,6 +17,8 @@ storiesOf("Layout|Timeline", module)
                 <Row>
                     <RowCol>
                         <Timeline
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
                             timeline={[
                                 {
                                     type: "success",
