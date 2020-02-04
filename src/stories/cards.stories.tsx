@@ -314,6 +314,21 @@ storiesOf("Layout|Cards", module)
                             ]}
                         />
                     </RowCol>
+                    <RowCol>
+                        <CardStadistics
+                            card
+                            fluid
+                            list={[
+                                {title: "Project", subTitle: "45"},
+                                {title: "Growth", subTitle: "87%"},
+                            ]}
+                            progressBars={[
+                                {value: 77, label: "Laravel"},
+                                {value: 50, label: "HTML"},
+                                {value: 23, label: "Photoshop"},
+                            ]}
+                        />
+                    </RowCol>
                 </Row>
             </div>
         )

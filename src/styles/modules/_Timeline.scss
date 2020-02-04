@@ -1,0 +1,15 @@
+@include bem_block(c-timeline) {
+  padding:    0 0 0 5px;
+  list-style: none;
+  position:   relative;
+  @include before() {
+    background-color: #D1D3D4;
+    content:          ' ';
+    height:           100%;
+    width:            1px;
+    position:         absolute;
+    top:              0;
+    left:             10px;
+    z-index:          1;
+  }
+}

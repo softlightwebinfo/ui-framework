@@ -1,0 +1,22 @@
+@include bem_block(c-timeline-item) {
+  padding-bottom: 25px;
+  padding-left:   20px;
+  @include bem_element(desc) {
+    margin-top: $Margin-simple;
+    @include bem_element(title) {
+      font-weight: 600;
+      font-size:   $FontSize-2;
+      line-height: 15px;
+    }
+    @include bem_element(subTitle) {
+      font-weight: 400;
+      color: #4D5052;
+      font-size: 13px;
+      margin-bottom: 10px;
+      line-height: 15px;
+    }
+    .c-text{
+      margin-bottom: $Margin;
+    }
+  }
+}

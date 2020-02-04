@@ -2,4 +2,5 @@
   @include generateBgColors(true);
   @include generateSizes();
   line-height: 20px;
+  display: block;
 }

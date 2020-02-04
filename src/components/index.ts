@@ -28,3 +28,6 @@ export * from "./Progress";
 export * from "./Separator";
 export * from "./Group";
 export * from "./Social";
+export * from "./Timeline";
+export * from "./Bullet";
+export * from "./Time";
