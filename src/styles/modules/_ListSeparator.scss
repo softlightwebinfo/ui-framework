@@ -1,0 +1,25 @@
+@include bem_block(c-list-separator) {
+  > li {
+    padding:        12px;
+    vertical-align: top;
+    border-top:     1px solid #E8E9E9;
+    font-size:      14px;
+  }
+  @include bem_modified(inline) {
+    display: flex;
+    width:   100%;
+    > li {
+      border-top:      0;
+      flex:            1;
+      justify-content: center;
+      display:         flex;
+      align-items:     center;
+      text-align:      center;
+      border-right:    1px solid #dee2e6;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}

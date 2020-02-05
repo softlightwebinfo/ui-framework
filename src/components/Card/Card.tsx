@@ -11,6 +11,7 @@ export interface CardInterfaceProps extends PropsInterface, TitleSubtitleInterfa
     bodyNoPadding?: boolean;
     classNameBody?: string;
     classNameContent?: string;
+    styleContent?: any;
 }
 
 export class Card extends PureComponent<CardInterfaceProps> {
@@ -33,7 +34,7 @@ export class Card extends PureComponent<CardInterfaceProps> {
             footer = <div className="c-card__footer"> {this.props.footer}</div>;
         }
         if (this.props.children) {
-            children = <div className={classNames("c-card__content", this.props.classNameContent)}> {this.props.children} </div>;
+            children = <div style={this.props.styleContent} className={classNames("c-card__content", this.props.classNameContent)}> {this.props.children} </div>;
         }
         return (
             <div className={classNames("c-card__body", this.props.classNameBody, {"c-card__body--no-padding": this.props.bodyNoPadding})}>

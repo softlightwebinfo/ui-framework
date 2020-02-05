@@ -3,10 +3,11 @@ import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {List} from "../components/List";
+import {List, ListSeparator} from "../components/List";
 import {ListItem} from "../components/ListItem";
 import {ListVariant} from "../interfaces/enum/ListVariant";
 import {ListComponent} from "../interfaces/enum/ListComponent";
+import {ProgressLabel} from "../components/Progress";
 
 storiesOf("Layout|List", module)
     .addDecorator(withKnobs)
@@ -148,6 +149,25 @@ storiesOf("Layout|List", module)
                             ]
                         }
                     ]}
+                />
+            </div>
+        )
+    )
+    .add("List separator",
+        () => (
+            <div style={{padding: 20}}>
+                <ListSeparator
+                    component={ListComponent.UL}
+                    list={[...Array(5)].map((_, index) => ({
+                        id: index,
+                        value: Math.round(Math.random() * 100),
+                    }))}
+                    data={(item) => (
+                        <ProgressLabel
+                            value={item.value}
+                            label={"Design Team"}
+                        />
+                    )}
                 />
             </div>
         )

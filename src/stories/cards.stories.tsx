@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {boolean, text, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Card, CardStadistics, CardUserDescription} from "../components/Card";
+import {Card, CardProgressStadistics, CardStadistics, CardUserDescription} from "../components/Card";
 import {Button} from "../components/Button";
 import {CardUser} from "../components/Card";
 import {Row, RowCol} from "../components/Row";
@@ -326,6 +326,52 @@ storiesOf("Layout|Cards", module)
                                 {value: 77, label: "Laravel"},
                                 {value: 50, label: "HTML"},
                                 {value: 23, label: "Photoshop"},
+                            ]}
+                        />
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    )
+    .add("Progress Stadistics",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol>
+                        <CardProgressStadistics
+                            card
+                            fluid
+                            title={"Project Stadistics"}
+                            list={[
+                                {title: "Total Project", subTitle: "42"},
+                                {title: "On Going", subTitle: "23"},
+                                {title: "Pending", subTitle: "8"},
+                            ]}
+                            progressBars={[
+                                {value: 77, label: "Design Team"},
+                                {value: 50, label: "Developer Team"},
+                                {value: 23, label: "Marketing"},
+                                {value: 23, label: "Management"},
+                                {value: 23, label: "Other"},
+                            ]}
+                        />
+                    </RowCol>
+                    <RowCol>
+                        <CardProgressStadistics
+                            card
+                            fluid
+                            title={"Project Stadistics"}
+                            list={[
+                                {title: "Total Project", subTitle: "42"},
+                                {title: "On Going", subTitle: "23"},
+                                {title: "Pending", subTitle: "8"},
+                            ]}
+                            progressBars={[
+                                {value: 77, label: "Design Team"},
+                                {value: 50, label: "Developer Team"},
+                                {value: 23, label: "Marketing"},
+                                {value: 23, label: "Management"},
+                                {value: 23, label: "Other"},
                             ]}
                         />
                     </RowCol>
