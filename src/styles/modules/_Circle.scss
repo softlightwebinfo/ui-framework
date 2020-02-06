@@ -1,0 +1,7 @@
+@include bem_block(c-circle) {
+  background-color: #2185d0;
+  width:            12px;
+  height:           12px;
+  display:          inline-block;
+  border-radius:    50%;
+}

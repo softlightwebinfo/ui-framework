@@ -1,0 +1,8 @@
+@include bem_block(c-numbers-base-stadistic) {
+  display:     flex;
+  align-items: baseline;
+  @include bem_element(value){
+    font-size: 40px;
+    margin-right: $Margin-simple;
+  }
+}

@@ -10,6 +10,7 @@ import {TableRow} from "./TableRow";
 import {TableCel} from "./TableCel";
 import {Label} from "../Label";
 import moment from 'moment';
+import {Circle} from "../Circle";
 
 export enum TableSimpleEnumType {
     DATE_NOW = "date_now",
@@ -21,7 +22,8 @@ export enum TableSimpleEnumType {
     NUMBER = "number",
     MONEY = "money",
     DECIMAL = "decimal",
-    DEFAULT = "default"
+    DEFAULT = "default",
+    CIRCLE = 'circle'
 }
 
 export type TableSimpleInterfaceRowComponent = (row?: TableSimpleInterfaceRow, col?: TableSimpleInterfaceColumn, indexRow?: number, indexCol?: number) => void
@@ -29,7 +31,7 @@ export type TableSimpleInterfaceRowComponent = (row?: TableSimpleInterfaceRow, c
 export interface TableSimpleInterfaceRow {
     id: string | number;
 
-    [p: string]: { label: string, style: CSSStyleSheet } | string | number | any | TableSimpleInterfaceRowComponent;
+    [p: string]: { label: string, style: CSSStyleSheet } | { color: string, style: CSSStyleSheet } | string | number | any | TableSimpleInterfaceRowComponent;
 }
 
 export interface TableSimpleInterfaceColumn {
@@ -45,6 +47,8 @@ export interface TableSimpleInterfaceProps extends PropsInterface {
     rows: TableSimpleInterfaceRow[];
     noData?: any;
     type?: TableInterfacePropsType;
+    noHeader?: boolean;
+    noFooter?: boolean;
 }
 
 
@@ -79,6 +83,9 @@ export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
             }
             case TableSimpleEnumType.DATE_NOW: {
                 return moment(item[col.key]).fromNow(false);
+            }
+            case TableSimpleEnumType.CIRCLE: {
+                return <Circle {...item[col.key]}/>
             }
             case TableSimpleEnumType.LABEL: {
                 return (
@@ -118,27 +125,31 @@ export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
     render() {
         return (
             <Table type={this.props.type}>
-                <TableHead>
-                    <TableRow>
-                        {this.props.columns.map((item) => (
-                            <TableCelHead style={item.style} key={item.key}>
-                                {item.data}
-                            </TableCelHead>
-                        ))}
-                    </TableRow>
-                </TableHead>
+                {!this.props.noHeader && (
+                    <TableHead>
+                        <TableRow>
+                            {this.props.columns.map((item) => (
+                                <TableCelHead style={item.style} key={item.key}>
+                                    {item.data}
+                                </TableCelHead>
+                            ))}
+                        </TableRow>
+                    </TableHead>
+                )}
                 <TableBody>
                     {this.table}
                 </TableBody>
-                <TableFooter>
-                    <TableRow>
-                        {this.props.columns.map((item) => (
-                            <TableCelHead key={item.key}>
-                                {item.data}
-                            </TableCelHead>
-                        ))}
-                    </TableRow>
-                </TableFooter>
+                {!this.props.noFooter && (
+                    <TableFooter>
+                        <TableRow>
+                            {this.props.columns.map((item) => (
+                                <TableCelHead key={item.key}>
+                                    {item.data}
+                                </TableCelHead>
+                            ))}
+                        </TableRow>
+                    </TableFooter>
+                )}
             </Table>
         )
     }

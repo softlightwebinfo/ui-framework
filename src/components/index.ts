@@ -33,3 +33,5 @@ export * from "./Bullet";
 export * from "./Time";
 export * from "./Modules";
 export * from "./Spacer";
+export * from "./Circle";
+export * from "./Numbers";

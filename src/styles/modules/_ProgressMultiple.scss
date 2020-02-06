@@ -1,0 +1,9 @@
+@include bem_block(c-progress-multiple) {
+  @include bem_element(progress) {
+    @extend .c-progress;
+  }
+  .c-group-text-separate {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}

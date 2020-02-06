@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Progress, ProgressLabel} from "../components/Progress";
+import {Progress, ProgressExtendsLabel, ProgressLabel, ProgressMultiple} from "../components/Progress";
 
 storiesOf("Layout|Progress", module)
     .addDecorator(withKnobs)
@@ -24,7 +24,7 @@ storiesOf("Layout|Progress", module)
             </div>
         )
     )
-    .add("Title - Subtitle",
+    .add("Title Subtitle",
         () => (
             <div style={{padding: 20}}>
                 <ProgressLabel title={"05"} subTitle={"NEW TICKETS"} label={"Laravel"} value={70} style={{marginBottom: 5}}/>
@@ -32,4 +32,33 @@ storiesOf("Layout|Progress", module)
                 <ProgressLabel title={"06"} subTitle={"SOLVED TICKETS"} label={"Photoshop"} value={23}/>
             </div>
         )
-    );
+    )
+    .add("Multiple",
+        () => (
+            <div style={{padding: 20}}>
+                <ProgressMultiple
+                    title={"PERFORMANCE SCOPE"}
+                    progress={[
+                        {value: 29, color: "red"},
+                        {value: 10, color: "blue"},
+                        {value: 42, color: "yellow"},
+                    ]}
+                />
+            </div>
+        )
+    ).add("Extends Multiple",
+    () => (
+        <div style={{padding: 20}}>
+            <ProgressExtendsLabel
+                value={9.8}
+                oldValue={8}
+                progress={[
+                    {value: 29, color: "red"},
+                    {value: 10, color: "blue"},
+                    {value: 42, color: "yellow"},
+                ]}
+                title={"PERFORMANCE SCOPE"}
+            />
+        </div>
+    )
+);
