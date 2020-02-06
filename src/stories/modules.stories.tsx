@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {ModuleProgressContent, ModuleProgressTable} from "../components/Modules";
+import {ModuleCardTable, ModuleProgressContent, ModuleProgressTable} from "../components/Modules";
 import {Spacer} from "../components/Spacer";
 import {TableSimpleEnumType} from "../components/Table";
 import {Row, RowCol} from "../components/Row";
@@ -199,6 +199,28 @@ storiesOf("Modules|Cards", module)
                             title={"OVERALL RATING"}
                             stars={4.2}
                             description={"Overall the quality or your support team’s efforts Rating."}
+                        />
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    )
+    .add("Card Table",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol column={4}>
+                        <ModuleCardTable
+                            card
+                            fluid
+                            title={"TRANSACTION HISTORY"}
+                            list={[
+                                {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€"},
+                                {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€", leftBottomColor: "danger"},
+                                {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€"},
+                                {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€"},
+                                {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€"},
+                            ]}
                         />
                     </RowCol>
                 </Row>

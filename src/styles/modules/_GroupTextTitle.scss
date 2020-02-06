@@ -1,0 +1,11 @@
+@include bem_block(c-group-text-title) {
+  @include bem_element(title) {
+    line-height: 21px;
+    font-size:   14px;
+  }
+  @include bem_element(subTitle) {
+    font-size:   13px;
+    line-height: 21px;
+    color:       $ColorMuted;
+  }
+}

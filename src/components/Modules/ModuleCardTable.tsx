@@ -2,22 +2,18 @@ import {PureComponent} from "react";
 import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import {Card} from "../Card";
-import {TableSimple, TableSimpleInterfaceColumn, TableSimpleInterfaceRow} from "../Table";
 import {TitleSubtitleInterface} from "../../interfaces/interfaces/TitleSubtitleInterface";
-import {WidgetOverallRating} from "../Widget";
+import {ListSeparator} from "../List";
+import {WidgetCardTable, WidgetCardTableInterfaceProps} from "../Widget";
 
 
-export interface ModuleRatingTableInterfaceProps extends PropsInterface, TitleSubtitleInterface {
+export interface ModuleCardTableInterfaceProps extends PropsInterface, TitleSubtitleInterface {
     fluid?: boolean;
     card?: boolean;
-    columns: TableSimpleInterfaceColumn[];
-    rows: TableSimpleInterfaceRow[];
-    styleContent?: any;
-    stars: number;
-    description: string;
+    list: WidgetCardTableInterfaceProps[];
 }
 
-export class ModuleRatingTable extends PureComponent<ModuleRatingTableInterfaceProps> {
+export class ModuleCardTable extends PureComponent<ModuleCardTableInterfaceProps> {
     constructor(props) {
         super(props);
     }
@@ -26,16 +22,19 @@ export class ModuleRatingTable extends PureComponent<ModuleRatingTableInterfaceP
     render() {
         const template = (
             <>
-                <WidgetOverallRating
-                    style={{padding: 15, minHeight: 101}}
-                    stars={this.props.stars}
-                    description={this.props.description}
-                />
-                <TableSimple
-                    noHeader
-                    noFooter
-                    columns={this.props.columns}
-                    rows={this.props.rows}
+                <ListSeparator
+                    list={this.props.list}
+                    data={(item: WidgetCardTableInterfaceProps, index) => (
+                        <WidgetCardTable
+                            key={index}
+                            {...item}
+                            icon={item.icon}
+                            leftTop={item.leftTop}
+                            leftBottom={item.leftBottom}
+                            title={item.title}
+                            subTitle={item.subTitle}
+                        />
+                    )}
                 />
             </>
         );

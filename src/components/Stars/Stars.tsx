@@ -65,8 +65,7 @@ export class Stars extends Component<StarsInterfaceProps> {
                 onMouseOut={this.setRating}
             >
                 {
-                    // @ts-ignore
-                    [...Array(+this.props.numberOfStars).keys()].map(n => {
+                    Object.keys([...Array(this.props.numberOfStars)]).map(n => {
                         return (
                             <span
                                 className="star"

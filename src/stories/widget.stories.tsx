@@ -3,12 +3,13 @@ import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {WidgetNumber, WidgetNumberCenter, WidgetOverallRating, WidgetPercentage, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
+import {WidgetCardTable, WidgetNumber, WidgetNumberCenter, WidgetOverallRating, WidgetPercentage, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
 import {Row, RowCol} from "../components/Row";
 import {WidgetUser} from "../components/Widget/WidgetUser";
 import {Button} from "../components/Button";
 import {WidgetListHorizontal} from "../components/Widget";
 import {SocialIcons} from "../components/Social";
+import {Spacer} from "../components/Spacer";
 
 storiesOf("Layout|Widgets", module)
     .addDecorator(jsxDecorator)
@@ -316,33 +317,89 @@ storiesOf("Layout|Widgets", module)
                 </Row>
             </div>
         )
-    ).add("Overall Rating",
-    () => (
-        <div style={{padding: 20}}>
-            <Row>
-                <RowCol>
-                    <WidgetOverallRating stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
-                </RowCol>
-                <RowCol>
-                    <WidgetOverallRating stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
-                </RowCol>
-            </Row>
-            <Row>
-                <RowCol>
-                    <WidgetOverallRating card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
-                </RowCol>
-                <RowCol>
-                    <WidgetOverallRating card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
-                </RowCol>
-            </Row>
-            <Row>
-                <RowCol>
-                    <WidgetOverallRating fluid card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
-                </RowCol>
-                <RowCol>
-                    <WidgetOverallRating fluid card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
-                </RowCol>
-            </Row>
-        </div>
     )
-)
+    .add("Overall Rating",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol>
+                        <WidgetOverallRating stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                    </RowCol>
+                    <RowCol>
+                        <WidgetOverallRating stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                    </RowCol>
+                </Row>
+                <Row>
+                    <RowCol>
+                        <WidgetOverallRating card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                    </RowCol>
+                    <RowCol>
+                        <WidgetOverallRating card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                    </RowCol>
+                </Row>
+                <Row>
+                    <RowCol>
+                        <WidgetOverallRating fluid card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                    </RowCol>
+                    <RowCol>
+                        <WidgetOverallRating fluid card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    )
+    .add("Card Table",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol>
+                        <WidgetCardTable
+                            icon={"check"}
+                            title={"Payment from #1567"}
+                            subTitle={"Feb 21, 2019, 3:30pm"}
+                            leftTop={"300€"}
+                            leftBottom={"Done"}
+                            leftBottomColor={"danger"}
+                        />
+                    </RowCol>
+                    <RowCol>
+                        <WidgetCardTable
+                            icon={"check"}
+                            title={"Payment from #1567"}
+                            subTitle={"Feb 21, 2019, 3:30pm"}
+                            leftTop={"300€"}
+                            leftBottom={"Done"}
+                            leftBottomColor={"danger"}
+                        />
+                    </RowCol>
+                </Row>
+                <Spacer/>
+                <Row>
+                    <RowCol>
+                        <WidgetCardTable
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
+                            icon={"check"}
+                            title={"Payment from #1567"}
+                            subTitle={"Feb 21, 2019, 3:30pm"}
+                            leftTop={"300€"}
+                            leftBottom={"Done"}
+                            leftBottomColor={"danger"}
+                        />
+                    </RowCol>
+                    <RowCol>
+                        <WidgetCardTable
+                            card={boolean("card", true)}
+                            fluid={boolean("fluid", true)}
+                            icon={"check"}
+                            title={"Payment from #1567"}
+                            subTitle={"Feb 21, 2019, 3:30pm"}
+                            leftTop={"300€"}
+                            leftBottom={"Done"}
+                            leftBottomColor={"danger"}
+                        />
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    );
