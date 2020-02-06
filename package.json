@@ -1,6 +1,6 @@
 {
   "name": "@softlightweb/ui-framework",
-  "version": "0.20.4",
+  "version": "0.20.5",
   "description": "",
   "main": "build/index.js",
   "module": "build/index.es.js",
