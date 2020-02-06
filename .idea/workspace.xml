@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="135faa4f-f25b-4e65-8d17-0438d527e706" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/List/ListSeparator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_ListSeparator.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/ListSeparator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/ListSeparator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stories/cards.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/cards.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/list.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/list.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/modules/_ListSeparator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_ListSeparator.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,10 +38,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="361" column="47" lean-forward="true" selection-start-line="361" selection-start-column="47" selection-end-line="361" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state relative-caret-position="675">
+              <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -57,20 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/modules/_ListSeparator.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="362" column="56" selection-start-line="362" selection-start-column="56" selection-end-line="362" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -178,9 +173,9 @@
         <option value="$PROJECT_DIR$/src/components/Card/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Card/Card.tsx" />
         <option value="$PROJECT_DIR$/src/components/List/ListSeparator.tsx" />
-        <option value="$PROJECT_DIR$/src/stories/cards.stories.tsx" />
         <option value="$PROJECT_DIR$/src/styles/modules/_ListSeparator.scss" />
         <option value="$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx" />
+        <option value="$PROJECT_DIR$/src/stories/cards.stories.tsx" />
       </list>
     </option>
   </component>
@@ -239,7 +234,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580919903867" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580981633231" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -300,12 +295,12 @@
       <workItem from="1579510352429" duration="2346000" />
       <workItem from="1579551130547" duration="2415000" />
       <workItem from="1580142968299" duration="12000" />
-      <workItem from="1580638788476" duration="44131000" />
+      <workItem from="1580638788476" duration="47234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148591000" />
+    <option name="totallyTimeSpent" value="151694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -320,7 +315,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.26495728" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.26495728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -767,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/List/ListSeparator.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -781,29 +769,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="362" column="56" selection-start-line="362" selection-start-column="56" selection-end-line="362" selection-end-column="56" />
+        <state relative-caret-position="675">
+          <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/List/ListSeparator.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/modules/_ListSeparator.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="450">
+          <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Card/CardProgressStadistics.tsx">
+    <entry file="file://$PROJECT_DIR$/src/stories/cards.stories.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        <state relative-caret-position="528">
+          <caret line="361" column="47" lean-forward="true" selection-start-line="361" selection-start-column="47" selection-end-line="361" selection-end-column="47" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>

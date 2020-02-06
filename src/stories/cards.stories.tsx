@@ -339,6 +339,8 @@ storiesOf("Layout|Cards", module)
                 <Row>
                     <RowCol>
                         <CardProgressStadistics
+                            zebraList={boolean("zebraList", true)}
+                            zebraSpark={boolean("zebraSpark", false)}
                             card
                             fluid
                             title={"Project Stadistics"}

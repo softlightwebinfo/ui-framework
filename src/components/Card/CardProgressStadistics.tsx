@@ -14,6 +14,8 @@ export interface CardProgressStadisticsInterfaceProps extends PropsInterface, Ti
     header?: any;
     list: WidgetSparkLineInterfaceProps[];
     progressBars: ProgressLabelInterfaceProps[];
+    zebraList?: boolean;
+    zebraSpark?: boolean;
 }
 
 export class CardProgressStadistics extends PureComponent<CardProgressStadisticsInterfaceProps> {
@@ -30,6 +32,7 @@ export class CardProgressStadistics extends PureComponent<CardProgressStadistics
                 styleContent={{marginLeft: -15, marginRight: -15}}
             >
                 <ListSeparator
+                    zebra={this.props.zebraSpark}
                     style={{marginBottom: 20}}
                     variant={"inline"}
                     component={ListComponent.UL}
@@ -39,6 +42,7 @@ export class CardProgressStadistics extends PureComponent<CardProgressStadistics
                     )}
                 />
                 <ListSeparator
+                    zebra={this.props.zebraList}
                     component={ListComponent.UL}
                     list={this.props.progressBars}
                     data={(item: ProgressLabelInterfaceProps) => (
