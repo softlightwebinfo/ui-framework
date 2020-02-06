@@ -31,3 +31,5 @@ export * from "./Social";
 export * from "./Timeline";
 export * from "./Bullet";
 export * from "./Time";
+export * from "./Modules";
+export * from "./Spacer";

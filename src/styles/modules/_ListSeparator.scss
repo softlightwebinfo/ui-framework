@@ -29,4 +29,18 @@
       }
     }
   }
+  @include bem_modified(default) {
+    > li {
+      display:      block;
+      text-align:   inherit;
+      border-right: 0;
+    }
+  }
+  @include bem_modified(separator) {
+    > li {
+      display:      block;
+      text-align:   inherit;
+      border-right: 1px solid #dee2e6;
+    }
+  }
 }

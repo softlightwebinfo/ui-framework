@@ -23,4 +23,13 @@ storiesOf("Layout|Progress", module)
                 <ProgressLabel label={"Photoshop"} value={23}/>
             </div>
         )
+    )
+    .add("Title - Subtitle",
+        () => (
+            <div style={{padding: 20}}>
+                <ProgressLabel title={"05"} subTitle={"NEW TICKETS"} label={"Laravel"} value={70} style={{marginBottom: 5}}/>
+                <ProgressLabel title={"18"} subTitle={"OPEN TICKETS"} label={"HTML"} value={50} style={{marginBottom: 5}}/>
+                <ProgressLabel title={"06"} subTitle={"SOLVED TICKETS"} label={"Photoshop"} value={23}/>
+            </div>
+        )
     );

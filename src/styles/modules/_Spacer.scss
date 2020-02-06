@@ -1,0 +1,8 @@
+@include bem_block(c-spacer) {
+
+  @each $name, $size in $spacerSizes {
+    &--#{$name} {
+      height: $size;
+    }
+  }
+}

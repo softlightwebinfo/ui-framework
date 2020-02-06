@@ -7,9 +7,13 @@ export interface ListSeparatorInterfaceProps extends PropsInterface {
     component?: ListComponent;
     list: any[];
     data: (item, index) => any;
-    variant?: "inline" | "vertical",
+    variant?: ListSeparatorInterfacePropsVariant,
     zebra?: boolean;
+    default?: boolean;
+    separator?: boolean;
 }
+
+export type ListSeparatorInterfacePropsVariant = "inline" | "vertical"
 
 export class ListSeparator extends PureComponent<ListSeparatorInterfaceProps> {
     constructor(props) {
@@ -19,7 +23,9 @@ export class ListSeparator extends PureComponent<ListSeparatorInterfaceProps> {
     render() {
         const classes = classNames("c-list-separator", this.props.className, {
             "c-list-separator--inline": this.props.variant === "inline",
-            "c-list-separator--zebra": this.props.zebra
+            "c-list-separator--zebra": this.props.zebra,
+            "c-list-separator--default": this.props.default,
+            "c-list-separator--separator": this.props.separator,
         });
         const Component = this.props.component || ListComponent.UL;
         return (

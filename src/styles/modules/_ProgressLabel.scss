@@ -2,4 +2,15 @@
   .c-group-text-separate {
     margin-bottom: $Margin-simple;
   }
+  @include bem_element(title) {
+    font-size:     20px;
+    margin-bottom: $Margin-simple;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  @include bem_element(subTitle) {
+    font-size: 10px;
+    margin-top: 5px;
+    display: block;
+  }
 }

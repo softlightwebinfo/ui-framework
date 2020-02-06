@@ -67,3 +67,21 @@ $ZIndexLevel9: 9000;
 $Triangle: 10px;
 //BORDER
 $BorderColor: $ColorWhite;
+// SIZE
+$Size: 16px !default;
+
+$SizeXS: $Size * .25 !default;
+$SizeS: $Size * .5 !default;
+$SizeM: $Size * .75 !default;
+$SizeL: $Size * 1.5 !default;
+$SizeXL: $Size * 2 !default;
+$SizeXXL: $Size * 2.5 !default;
+$SizeXXXL: $Size * 3 !default;
+$spacerSizes: (
+                      xs: $SizeXS,
+                      s: $SizeS,
+                      m: $Size,
+                      l: $SizeL,
+                      xl: $SizeXL,
+                      xxl: $SizeXXL,
+              );
