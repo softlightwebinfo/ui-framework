@@ -11,8 +11,10 @@ import {TableCel} from "./TableCel";
 import {Label} from "../Label";
 import moment from 'moment';
 import {Circle} from "../Circle";
+import {Stars} from "../Stars";
 
 export enum TableSimpleEnumType {
+    STARS = "stars",
     DATE_NOW = "date_now",
     LABEL = "label",
     COMPONENT = "component",
@@ -86,6 +88,15 @@ export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
             }
             case TableSimpleEnumType.CIRCLE: {
                 return <Circle {...item[col.key]}/>
+            }
+            case TableSimpleEnumType.NUMBER: {
+                return Number(item[col.key]);
+            }
+            case TableSimpleEnumType.DECIMAL: {
+                return Number(item[col.key]).toFixed(2);
+            }
+            case TableSimpleEnumType.STARS: {
+                return <Stars isHover={false} stars={item[col.key]}/>
             }
             case TableSimpleEnumType.LABEL: {
                 return (

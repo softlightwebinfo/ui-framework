@@ -3,11 +3,11 @@ import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {WidgetNumber, WidgetNumberCenter, WidgetPercentage, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
+import {WidgetNumber, WidgetNumberCenter, WidgetOverallRating, WidgetPercentage, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
 import {Row, RowCol} from "../components/Row";
 import {WidgetUser} from "../components/Widget/WidgetUser";
 import {Button} from "../components/Button";
-import {WidgetListHorizontal} from "../components/Widget/WidgetListHorizontal";
+import {WidgetListHorizontal} from "../components/Widget";
 import {SocialIcons} from "../components/Social";
 
 storiesOf("Layout|Widgets", module)
@@ -316,4 +316,33 @@ storiesOf("Layout|Widgets", module)
                 </Row>
             </div>
         )
-    );
+    ).add("Overall Rating",
+    () => (
+        <div style={{padding: 20}}>
+            <Row>
+                <RowCol>
+                    <WidgetOverallRating stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                </RowCol>
+                <RowCol>
+                    <WidgetOverallRating stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                </RowCol>
+            </Row>
+            <Row>
+                <RowCol>
+                    <WidgetOverallRating card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                </RowCol>
+                <RowCol>
+                    <WidgetOverallRating card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                </RowCol>
+            </Row>
+            <Row>
+                <RowCol>
+                    <WidgetOverallRating fluid card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                </RowCol>
+                <RowCol>
+                    <WidgetOverallRating fluid card stars={5} description={"Overall the quality or your support team’s efforts Rating."}/>
+                </RowCol>
+            </Row>
+        </div>
+    )
+)

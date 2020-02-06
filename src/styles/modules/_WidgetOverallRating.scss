@@ -1,0 +1,13 @@
+@include bem_block(c-widget-overall-rating) {
+  @include bem_element(stars) {
+    &__number {
+      font-size: 28px;
+      margin-right: 10px;
+    }
+    display:     flex;
+    align-items: center;
+  }
+  .c-text{
+    margin-top: 10px;
+  }
+}

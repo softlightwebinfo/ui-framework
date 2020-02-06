@@ -35,3 +35,4 @@ export * from "./Modules";
 export * from "./Spacer";
 export * from "./Circle";
 export * from "./Numbers";
+export * from "./Stars";

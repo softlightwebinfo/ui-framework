@@ -5,3 +5,4 @@ export * from './WidgetPercentage';
 export * from './WidgetListHorizontal';
 export * from './WidgetSparkLine';
 export * from './WidgetUserAvatar';
+export * from './WidgetOverallRating';
