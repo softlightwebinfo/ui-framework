@@ -135,7 +135,7 @@ export class TableSimple extends PureComponent<TableSimpleInterfaceProps> {
 
     render() {
         return (
-            <Table type={this.props.type}>
+            <Table style={this.props.style} type={this.props.type} className={this.props.className}>
                 {!this.props.noHeader && (
                     <TableHead>
                         <TableRow>
