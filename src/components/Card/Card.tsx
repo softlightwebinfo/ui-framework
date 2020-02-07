@@ -12,13 +12,20 @@ export interface CardInterfaceProps extends PropsInterface, TitleSubtitleInterfa
     classNameBody?: string;
     classNameContent?: string;
     styleContent?: any;
+    open?: boolean;
 }
 
 export class Card extends PureComponent<CardInterfaceProps> {
+    static defaultProps = {
+        open: true,
+    };
+
     get renderHeader() {
-        return <div className="c-card__header">
-            {this.props.header}
-        </div>;
+        return (
+            <div className="c-card__header">
+                {this.props.header}
+            </div>
+        )
     }
 
     get renderBody() {
@@ -60,7 +67,7 @@ export class Card extends PureComponent<CardInterfaceProps> {
         return (
             <div className={className} style={this.props.style}>
                 {header}
-                {body}
+                {this.props.open && body}
             </div>
         );
     }

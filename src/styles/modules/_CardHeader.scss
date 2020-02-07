@@ -1,0 +1,20 @@
+@include bem_block(c-card-header) {
+  padding:     15px 15px 15px 15px;
+  border:      0;
+  background:  none;
+  display:     flex;
+  align-items: center;
+  @include bem_element(options) {
+    color:       #9aa0ac;
+    margin-left: auto;
+    display:     flex;
+    order:       100;
+    align-self:  center;
+  }
+  .c-card__title {
+    margin: 0;
+  }
+  i {
+    cursor: pointer;
+  }
+}

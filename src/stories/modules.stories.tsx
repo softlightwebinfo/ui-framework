@@ -1,13 +1,14 @@
 import * as React from 'react'
 import {storiesOf} from "@storybook/react";
-import {boolean, withKnobs} from "@storybook/addon-knobs";
+import {boolean, number, text, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {ModuleCardTable, ModuleProgressContent, ModuleProgressTable} from "../components/Modules";
+import {ModuleCardTable, ModuleProgressContent, ModuleProgressTable, ModuleProjectCard} from "../components/Modules";
 import {Spacer} from "../components/Spacer";
 import {TableSimpleEnumType} from "../components/Table";
 import {Row, RowCol} from "../components/Row";
-import {ModuleRatingTable} from "../components/Modules/ModuleRatingTable";
+import {ModuleRatingTable} from "../components/Modules";
+import {Avatar, AvatarList} from "../components/Avatar";
 
 storiesOf("Modules|Cards", module)
     .addDecorator(jsxDecorator)
@@ -221,6 +222,773 @@ storiesOf("Modules|Cards", module)
                                 {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€"},
                                 {title: "Payment from #1598", subTitle: "Feb 21, 2019, 3:30pm", leftBottom: "Done", icon: "check", leftTop: "300€"},
                             ]}
+                        />
+                    </RowCol>
+                </Row>
+            </div>
+        )
+    );
+storiesOf("Modules|Projects", module)
+    .addDecorator(jsxDecorator)
+    .addDecorator(withKnobs)
+    .add("Cards",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
+                        />
+                    </RowCol>
+                    <RowCol column={3}>
+                        <ModuleProjectCard
+                            title={"New Admin Design"}
+                            tags={[
+                                {label: "REDUX", style: {backgroundColor: "red"}},
+                            ]}
+                            description={"Aperiam deleniti fugit incidunt, iste, itaque minima neque pariatur perferendis temporibus!"}
+                            progress={{
+                                value: 75,
+                                label: "Progress"
+                            }}
+                            list={[
+                                {left: "Created:", right: "09 Jun 2019 11:32AM"},
+                                {left: "Creator:", right: "Nathan Guerrero"},
+                                {left: "Question:", right: "23"},
+                                {left: "Comments:", right: "32"},
+                                {left: "Bug:", right: "5"},
+                                {
+                                    left: "Team:", right: (
+                                        <AvatarList>
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                            <Avatar
+                                                name={text("name", "Rafael gonzalez muñoz")}
+                                                fluid={boolean("fluid", false)}
+                                                size={number("size", 30)}
+                                                image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                                            />
+                                        </AvatarList>
+                                    )
+                                },
+                            ]}
+                            show={true}
                         />
                     </RowCol>
                 </Row>

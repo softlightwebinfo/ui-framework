@@ -6,7 +6,8 @@ import {Group} from "./Group";
 
 export interface GroupTextSeparateInterfaceProps extends PropsInterface {
     left: string;
-    right: string;
+    right: string | any;
+    bold?: boolean;
 }
 
 export class GroupTextSeparate extends PureComponent<GroupTextSeparateInterfaceProps> {
@@ -16,7 +17,9 @@ export class GroupTextSeparate extends PureComponent<GroupTextSeparateInterfaceP
 
 
     render() {
-        const classes = classNames("c-group-text-separate", this.props.className, {});
+        const classes = classNames("c-group-text-separate", this.props.className, {
+            'c-group-text-separate--bold': this.props.bold,
+        });
         return (
             <Group style={this.props.style} className={classes}>
                 <span className={"c-group-text-separate__left"}>{this.props.left}</span>
