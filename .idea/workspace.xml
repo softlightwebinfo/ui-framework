@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="135faa4f-f25b-4e65-8d17-0438d527e706" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardCollapse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/CardHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modules/ModuleProjectCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/interfaces/CardCollapseInterface.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/interfaces/CardHeaderInterface.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/modules/_CardHeader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Progress/ProgressRadial.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Widget/WidgetProgressCircle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_ProgressRadial.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/modules/_WidgetProgressCircle.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Group/GroupTextSeparate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Group/GroupTextSeparate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modules/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modules/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/interfaces/TitleSubtitleInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/interfaces/TitleSubtitleInterface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stories/modules.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/modules.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_GroupTextSeparate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_GroupTextSeparate.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Progress/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Progress/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Widget/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Widget/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/widget.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/widget.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/modules/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/modules/_label.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/modules/_label.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,47 +23,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/stories/modules.stories.tsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Widget/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="930" column="27" selection-start-line="930" selection-start-column="27" selection-end-line="930" selection-end-column="27" />
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/modules/_index.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stories/widget.stories.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="410" column="35" selection-start-line="410" selection-start-column="35" selection-end-line="410" selection-end-column="35" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#684#3161#0" />
+                <element signature="e#17852#19994#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/modules/_label.scss">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Widget/WidgetProgressCircle.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Card/CardCollapse.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="480">
+              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Card/CardHeader.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,11 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Progress/ProgressExtendslabel.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Numbers/Numbers.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Numbers/index.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Numbers/NumbersBaseStadistics.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Progress/Progress.tsx" />
         <option value="$PROJECT_DIR$/src/components/Progress/ProgressBar.tsx" />
         <option value="$PROJECT_DIR$/src/components/Progress/ProgressMultiple.tsx" />
         <option value="$PROJECT_DIR$/src/styles/modules/_ProgressMultiple.scss" />
@@ -152,18 +137,15 @@
         <option value="$PROJECT_DIR$/src/styles/modules/_WidgetOverallRating.scss" />
         <option value="$PROJECT_DIR$/src/components/Stars/Stars.tsx" />
         <option value="$PROJECT_DIR$/src/components/Modules/ModuleRatingTable.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Widget/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Group/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Widget/WidgetCardTable.tsx" />
         <option value="$PROJECT_DIR$/src/components/List/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Group/GroupTextTitle.tsx" />
         <option value="$PROJECT_DIR$/src/styles/modules/_GroupTextTitle.scss" />
         <option value="$PROJECT_DIR$/src/styles/modules/_WidgetCardTable.scss" />
-        <option value="$PROJECT_DIR$/src/stories/widget.stories.tsx" />
         <option value="$PROJECT_DIR$/src/components/Modules/ModuleCardTable.tsx" />
         <option value="$PROJECT_DIR$/src/styles/mixins/_index.scss" />
         <option value="$PROJECT_DIR$/src/components/Progress/ProgressIntermitate.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Progress/index.tsx" />
         <option value="$PROJECT_DIR$/src/stories/progress.stories.tsx" />
         <option value="$PROJECT_DIR$/src/styles/vars/_index.scss" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -171,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/styles/modules/_ProgressIntermittent.scss" />
         <option value="$PROJECT_DIR$/src/components/Modules/index.tsx" />
         <option value="$PROJECT_DIR$/src/components/Card/index.tsx" />
-        <option value="$PROJECT_DIR$/src/styles/modules/_index.scss" />
         <option value="$PROJECT_DIR$/src/interfaces/interfaces/CardHeaderInterface.tsx" />
         <option value="$PROJECT_DIR$/src/components/Card/CardHeader.tsx" />
         <option value="$PROJECT_DIR$/src/interfaces/interfaces/TitleSubtitleInterface.ts" />
@@ -184,6 +165,15 @@
         <option value="$PROJECT_DIR$/src/components/Group/GroupTextSeparate.tsx" />
         <option value="$PROJECT_DIR$/src/styles/modules/_GroupTextSeparate.scss" />
         <option value="$PROJECT_DIR$/src/stories/modules.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Widget/index.tsx" />
+        <option value="$PROJECT_DIR$/src/stories/widget.stories.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Progress/index.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_ProgressCircle.scss" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_index.scss" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_ProgressRadial.scss" />
+        <option value="$PROJECT_DIR$/src/styles/modules/_WidgetProgressCircle.scss" />
+        <option value="$PROJECT_DIR$/src/components/Progress/ProgressRadial.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Widget/WidgetProgressCircle.tsx" />
       </list>
     </option>
   </component>
@@ -223,13 +213,33 @@
               <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Card" type="462c0819:PsiDirectoryNode" />
+              <item name="Progress" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Widget" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
               <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ui-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ui-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -242,7 +252,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581097980783" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581106090415" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -262,11 +272,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Progress" />
+      <recent name="$PROJECT_DIR$/src/components/Widget" />
       <recent name="$PROJECT_DIR$/src/components/Card" />
       <recent name="$PROJECT_DIR$/src/components/Modules" />
-      <recent name="$PROJECT_DIR$/src/components/Progress" />
       <recent name="$PROJECT_DIR$/src/components/Group" />
-      <recent name="$PROJECT_DIR$/src/components/Widget" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/interfaces/types" />
@@ -304,12 +314,12 @@
       <workItem from="1579551130547" duration="2415000" />
       <workItem from="1580142968299" duration="12000" />
       <workItem from="1580638788476" duration="68338000" />
-      <workItem from="1581021355959" duration="18512000" />
+      <workItem from="1581021355959" duration="23429000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191310000" />
+    <option name="totallyTimeSpent" value="196227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -322,6 +332,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.2026862" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -401,43 +412,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Progress/ProgressExtendsLabel.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Progress/ProgressMultiple.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Modules/ModuleProgressTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Stars/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -486,13 +460,6 @@
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Widget/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -565,16 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stories/widget.stories.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="376" column="21" lean-forward="true" selection-start-line="376" selection-start-column="21" selection-end-line="376" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Widget/WidgetCardTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -629,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Progress/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -681,13 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/modules/_index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -748,7 +691,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/Card/CardHeader.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
@@ -759,13 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/modules/_label.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -812,11 +748,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stories/modules.stories.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="930" column="27" selection-start-line="930" selection-start-column="27" selection-end-line="930" selection-end-column="27" />
+        <state relative-caret-position="13380">
+          <caret line="952" column="44" lean-forward="true" selection-start-line="952" selection-start-column="44" selection-end-line="952" selection-end-column="44" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
             <element signature="e#684#3161#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Widget/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Progress/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_label.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_WidgetProgressCircle.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stories/widget.stories.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="410" column="35" selection-start-line="410" selection-start-column="35" selection-end-line="410" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#17852#19994#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Progress/ProgressRadial.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/modules/_ProgressRadial.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Widget/WidgetProgressCircle.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

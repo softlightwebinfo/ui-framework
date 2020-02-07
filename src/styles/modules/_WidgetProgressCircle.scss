@@ -1,0 +1,12 @@
+@include bem_block(c-widget-progress-circle) {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-direction:  column;
+  @include bem_element(title) {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}

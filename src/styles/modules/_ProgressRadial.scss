@@ -1,0 +1,22 @@
+@include bem_block(c-progress-radial) {
+  &__circle-background,
+  &__circle-progress {
+    fill: none;
+  }
+
+  &__circle-background {
+    stroke: #ddd;
+  }
+
+  &__circle-progress {
+    stroke:          red;
+    stroke-linecap:  round;
+    stroke-linejoin: round;
+  }
+
+  &__circle-text {
+    font-size:   25px;
+    font-weight: bold;
+    fill:        red;
+  }
+}

@@ -7,3 +7,4 @@ export * from './WidgetSparkLine';
 export * from './WidgetUserAvatar';
 export * from './WidgetOverallRating';
 export * from './WidgetCardTable';
+export * from './WidgetProgressCircle';

@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {boolean, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {WidgetCardTable, WidgetNumber, WidgetNumberCenter, WidgetOverallRating, WidgetPercentage, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
+import {WidgetCardTable, WidgetNumber, WidgetNumberCenter, WidgetOverallRating, WidgetPercentage, WidgetProgressCircle, WidgetSparkLine, WidgetUserAvatar} from "../components/Widget";
 import {Row, RowCol} from "../components/Row";
 import {WidgetUser} from "../components/Widget/WidgetUser";
 import {Button} from "../components/Button";
@@ -402,4 +402,45 @@ storiesOf("Layout|Widgets", module)
                 </Row>
             </div>
         )
-    );
+    )
+    .add("Progress",
+        () => (
+            <div style={{padding: 20}}>
+                <Row>
+                    <RowCol>
+                        <WidgetProgressCircle
+                            title={"Payment from #1567"}
+                            progress={20}
+                            card
+                            fluid
+                        />
+                    </RowCol>
+                    <RowCol>
+                        <WidgetProgressCircle
+                            title={"Payment from #1567"}
+                            progress={20}
+                            card
+                            fluid
+                        />
+                    </RowCol>
+                    <RowCol>
+                        <WidgetProgressCircle
+                            title={"Payment from #1567"}
+                            progress={20}
+                            card
+                            fluid
+                        />
+                    </RowCol>
+                    <RowCol>
+                        <WidgetProgressCircle
+                            title={"Payment from #1567"}
+                            progress={20}
+                            card
+                            fluid
+                        />
+                    </RowCol>
+                </Row>
+                <Spacer/>
+            </div>
+        )
+    )
