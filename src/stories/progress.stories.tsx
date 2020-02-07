@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Progress, ProgressExtendsLabel, ProgressLabel, ProgressMultiple} from "../components/Progress";
+import {Progress, ProgressExtendsLabel, ProgressIntermittent, ProgressLabel, ProgressMultiple} from "../components/Progress";
 
 storiesOf("Layout|Progress", module)
     .addDecorator(withKnobs)
@@ -46,19 +46,31 @@ storiesOf("Layout|Progress", module)
                 />
             </div>
         )
-    ).add("Extends Multiple",
-    () => (
-        <div style={{padding: 20}}>
-            <ProgressExtendsLabel
-                value={9.8}
-                oldValue={8}
-                progress={[
-                    {value: 29, color: "red"},
-                    {value: 10, color: "blue"},
-                    {value: 42, color: "yellow"},
-                ]}
-                title={"PERFORMANCE SCOPE"}
-            />
-        </div>
     )
-);
+    .add("Extends Multiple",
+        () => (
+            <div style={{padding: 20}}>
+                <ProgressExtendsLabel
+                    value={9.8}
+                    oldValue={8}
+                    progress={[
+                        {value: 29, color: "red"},
+                        {value: 10, color: "blue"},
+                        {value: 42, color: "yellow"},
+                    ]}
+                    title={"PERFORMANCE SCOPE"}
+                />
+            </div>
+        )
+    )
+    .add("Intermittent",
+        () => (
+            <div style={{padding: 20}}>
+                <ProgressIntermittent
+                    color={"primary"}
+                    position={"fixed"}
+                    size={"s"}
+                />
+            </div>
+        )
+    );

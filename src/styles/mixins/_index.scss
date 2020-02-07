@@ -229,7 +229,7 @@
 @mixin title() {
   font-weight:   700;
   margin-bottom: .5em;
-  font-size:     $FtzTitle;
+  font-size:     $FontSize-2;
 }
 
 @mixin subtitle() {

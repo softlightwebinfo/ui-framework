@@ -43,6 +43,67 @@ $ColorSuccess: #34A835;
 $ColorWarning: #ffba01;
 $ColorDanger: #e91224;
 $ColorMuted: #6c757d;
+$ColorAccent: #DD0A73 !default;
+$ColorHighlight: #FFFBF1 !default;
+$ColorGhost: #FFF !default;
+$ColorInfo: #039be5 !default;
+$ColorContext: #e0e0e0 !default;
+$ColorDark: #3C4252 !default;
+
+// Grays
+$ColorEmptyShade: #FFF !default;
+$ColorLightestShade: #F5F7FA !default;
+$ColorLightShade: #D3DAE6 !default;
+$ColorMediumShade: #98A2B3 !default;
+$ColorDarkShade: #69707D !default;
+$ColorDarkestShade: #343741 !default;
+$ColorFullShade: #000 !default;
+
+$TextColor: $ColorDarkestShade !default;
+$LinkColor: $ColorPrimary !default;
+
+// Visualization colors
+
+$ColorVis0: #00B3A4 !default;
+$ColorVis1: #3185FC !default;
+$ColorVis2: #DB1374 !default;
+$ColorVis3: #490092 !default;
+$ColorVis4: #FEB6DB !default;
+$ColorVis5: #E6C220 !default;
+$ColorVis6: #BFA180 !default;
+$ColorVis7: #F98510 !default;
+$ColorVis8: #461A0A !default;
+$ColorVis9: #920000 !default;
+
+// Code
+
+$CodeBlockBackgroundColor: $ColorLightestShade !default;
+$CodeBlockColor: $TextColor !default;
+$CodeBlockSelectedBackgroundColor: inherit !default;
+$CodeBlockCommentColor: #998 !default;
+$CodeBlockSelectorTagColor: inherit !default;
+$CodeBlockStringColor: #DD0A73 !default;
+$CodeBlockNumberColor: #00A69B !default;
+$CodeBlockKeywordColor: #333 !default;
+$CodeBlockFunctionTitleColor: inherit !default;
+$CodeBlockTagColor: #0079A5 !default;
+$CodeBlockNameColor: inherit !default;
+$CodeBlockTypeColor: #0079A5 !default;
+$CodeBlockAttributeColor: inherit !default;
+$CodeBlockSymbolColor: #990073 !default;
+$CodeBlockParamsColor: inherit !default;
+$CodeBlockMetaColor: #999 !default;
+$CodeBlockTitleColor: #900 !default;
+$CodeBlockRegexpColor: #009926 !default;
+$CodeBlockBuiltInColor: #0086B3 !default;
+$CodeBlockSectionColor: #FFC66D !default;
+$CodeBlockAdditionBackgroundColor: #DFD !default;
+$CodeBlockAdditionColor: inherit !default;
+$CodeBlockDeletionBackgroundColor: #FDD !default;
+$CodeBlockDeletionColor: inherit !default;
+$CodeBlockSelectorClassColor: inherit !default;
+$CodeBlockSelectorIdColor: inherit !default;
+
 // Colors Hover
 $ColorPrimaryHover: #116fbf;
 $ColorInfoHover: #116fbf;
@@ -85,3 +146,47 @@ $spacerSizes: (
                       xl: $SizeXL,
                       xxl: $SizeXXL,
               );
+// Animations
+$AnimSlightBounce: cubic-bezier(.34, 1.61, .7, 1) !default;
+$AnimSlightResistance: cubic-bezier(.694, .0482, .335, 1) !default;
+$AnimSpeedExtraFast: 90ms !default;
+$AnimSpeedFast: 150ms !default;
+$AnimSpeedNormal: 250ms !default;
+$AnimSpeedSlow: 350ms !default;
+$AnimSpeedExtraSlow: 500ms !default;
+$ZLevel0: 0;
+$ZLevel1: 1000;
+$ZLevel2: 2000;
+$ZLevel3: 3000;
+$ZLevel4: 4000;
+$ZLevel5: 5000;
+$ZLevel6: 6000;
+$ZLevel7: 7000;
+$ZLevel8: 8000;
+$ZLevel9: 9000;
+
+$ZContent: $ZLevel0;
+$ZHeader: $ZLevel1;
+$ZContentMenu: $ZLevel2;
+$ZNavigation: $ZLevel4;
+$ZMask: $ZLevel6;
+$ZModal: $ZLevel8;
+$ZComboBox: $ZModal + 1;
+$ZToastList: $ZLevel9;
+
+
+// PROGRESS
+$ProgressSizes: (
+                        xs: $SizeXS / 2,
+                        s: $SizeXS,
+                        m: $SizeS,
+                        l: $Size,
+                );
+$ProgressColors: (
+                         primary: $ColorPrimary,
+                         secondary: $ColorSecondary,
+                         warning: $ColorWarning,
+                         danger: $ColorDanger,
+                         accent: $ColorAccent,
+                         subdued: $ColorMediumShade,
+                 );

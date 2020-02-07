@@ -1,0 +1,16 @@
+@include bem_block(c-progress-intermittent) {
+  @include bem_modified(fixed){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .c-progress__bar {
+    animation: mymove 1s infinite;
+  }
+}
+
+@keyframes mymove {
+  from {width: 0;}
+  to {width: 100%;}
+}
