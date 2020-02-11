@@ -6,4 +6,5 @@ export interface CardHeaderInterface extends PropsInterface, TitleSubtitleInterf
     options?: any;
     open?: boolean;
     onClickOpen?: (open: boolean) => void;
+    icon?: string;
 }

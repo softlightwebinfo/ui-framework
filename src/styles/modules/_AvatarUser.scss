@@ -1,0 +1,11 @@
+@include bem_block(c-avatar-user) {
+  display:     flex;
+  align-items: center;
+  @include bem_element(content) {
+    margin-left: 10px;
+    > div {
+      font-size:     20px;
+      margin-bottom: 5px;
+    }
+  }
+}

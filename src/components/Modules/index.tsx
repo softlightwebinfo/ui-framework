@@ -3,3 +3,6 @@ export * from './ModuleProgressTable';
 export * from './ModuleRatingTable';
 export * from './ModuleCardTable';
 export * from './ModuleProjectCard';
+export * from './ModuleKanbanPanelTasks';
+export * from './ModuleCardTask';
+export * from './ModuleKanban';

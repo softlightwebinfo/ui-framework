@@ -1,0 +1,28 @@
+@function LoadingSpinnerBorderColors(
+  $main: $ColorLightShade,
+  $highlight: $ColorPrimary
+) {
+  @return $highlight $main $main $main;
+}
+
+// For theming. Checks the text color and tells us whether it's light or dark.
+// Based on that we either tint (add white) or shade (add black).
+@function tintOrShade($color, $tint, $shade) {
+  @if (lightness($TextColor) > 50) {
+    @return shade($color, $shade);
+  } @else {
+    @return tint($color, $tint);
+  }
+}
+
+@function convertToRem($size) {
+  @return #{$size / $FontSize}rem;
+}
+
+@function shadeOrTint($color, $shade, $tint) {
+  @if (lightness($TextColor) < 50) {
+    @return shade($color, $shade);
+  } @else {
+    @return tint($color, $tint);
+  }
+}

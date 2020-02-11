@@ -3,7 +3,7 @@ import {storiesOf} from "@storybook/react";
 import {boolean, text, withKnobs, number} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {Avatar, AvatarList} from "../components/Avatar";
+import {Avatar, AvatarList, AvatarUser} from "../components/Avatar";
 
 storiesOf("Layout|Avatar", module)
     .addDecorator(withKnobs)
@@ -74,6 +74,18 @@ storiesOf("Layout|Avatar", module)
                         image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
                     />
                 </AvatarList>
+            </div>
+        )
+    )
+    .add("User",
+        () => (
+            <div style={{padding: 20}}>
+                <AvatarUser
+                    name={text("name", "Rafael gonzalez muñoz")}
+                    fluid={boolean("fluid", false)}
+                    image={"http://www.liberterre.fr/metahistoire/espagnol/neytirisaldana.jpg"}
+                    subTitle={"@malory"}
+                />
             </div>
         )
     );

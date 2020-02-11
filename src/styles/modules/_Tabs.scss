@@ -1,0 +1,57 @@
+@include bem_block(c-tabs) {
+  @include ScrollBar;
+  display:    flex;
+  position:   relative;
+  max-width:  100%;
+  overflow-x: auto;
+  overflow-y: hidden; // don't scroll vertically when scrolling horizontally
+
+  &:before {
+    position:         absolute;
+    bottom:           0;
+    left:             0;
+    right:            0;
+    height:           1px;
+    background-color: $ColorLightShade;
+    content:          '';
+  }
+
+  // Changing height of scrollbar so it sits flush with border
+  // sass-lint:disable no-vendor-prefixes
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  &.softTabs--small {
+    .softTab {
+      @include fontSize($TabFontSizeS);
+      padding: $SizeS;
+    }
+  }
+
+  &.softTabs--expand {
+    .softTab {
+      flex-grow:  1;
+      flex-basis: 0;
+    }
+  }
+}
+
+.c-tab__content {
+  display:       block;
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+  transition:    transform $AnimSpeedFast $AnimSlightBounce;
+  transform:     translateY(0);
+}
+
+@keyframes softTab {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

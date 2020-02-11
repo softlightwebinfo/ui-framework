@@ -72,5 +72,15 @@ storiesOf("Form|Button", module)
                 iconPos={text("iconPos", "left")}
             />
         </div>
+    ))
+    .add("New", () => (
+        <div style={{padding: 20}}>
+            <Button
+                color={select("color", {Primary: "primary", Secondary: "secondary", Success: "success", Info: "info", Warning: "warning", Danger: "danger"}, "primary")}
+                border
+                new
+                icon={"icon-plus"}
+                label={"Add dashboard"}
+            />
+        </div>
     ));
-

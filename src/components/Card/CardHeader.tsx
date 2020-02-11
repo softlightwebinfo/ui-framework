@@ -14,7 +14,12 @@ export class CardHeader extends PureComponent<CardHeaderInterface> {
     render() {
         return (
             <header className={"c-card-header"}>
-                <h3 className={"c-card__title"}>{this.props.title}</h3>
+                <h3 className={"c-card__title"}>
+                    {this.props.icon && (
+                        <i style={{marginRight: 5}} className={`icon ${this.props.icon}`}/>
+                    )}
+                    {this.props.title}
+                </h3>
                 {(this.props.options || this.props.isCollapse) && (
                     <div className={"c-card-header__options"}>
                         {this.props.options}

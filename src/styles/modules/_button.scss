@@ -42,6 +42,19 @@
   @include bem_modified(raised) {
     @include raised();
   }
+  @include bem_modified(new) {
+    padding:   3px;
+    font-size: 11px;
+    @include shadow(0 1px 3px 0 rgba(0, 0, 0, 0.15))
+  }
+  @include bem_modified(border) {
+    background:   transparent;
+    border-width: 1px;
+    color:        inherit;
+  }
+  @include bem_modified(padding) {
+    @include padding();
+  }
   @include bem_modified(empty) {
     background: transparent;
     border:     none;

@@ -9,6 +9,7 @@ import {TitleSubtitleInterface} from "../../interfaces/interfaces/TitleSubtitleI
 export interface ProgressLabelInterfaceProps extends PropsInterface, TitleSubtitleInterface {
     value: number;
     label: string;
+    color?: string;
 }
 
 export class ProgressLabel extends PureComponent<ProgressLabelInterfaceProps> {
@@ -23,7 +24,7 @@ export class ProgressLabel extends PureComponent<ProgressLabelInterfaceProps> {
             <div className={classes} style={this.props.style}>
                 {this.props.title && (<h5 className={"c-progress-label__title"}>{this.props.title}</h5>)}
                 <GroupTextSeparate left={this.props.label} right={`${this.props.value}%`}/>
-                <Progress value={this.props.value}/>
+                <Progress color={this.props.color} value={this.props.value}/>
                 {this.props.subTitle && (<span className={"c-progress-label__subTitle"}>{this.props.subTitle}</span>)}
             </div>
         )

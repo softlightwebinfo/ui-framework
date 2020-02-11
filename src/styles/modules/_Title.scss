@@ -1,0 +1,33 @@
+.c-title {
+  + .c-title {
+    margin-top: $SizeL;
+  }
+}
+
+.c-title--uppercase {
+  text-transform: uppercase;
+}
+
+.c-title--xxxsmall {
+  @include Title('xxxs');
+}
+
+.c-title--xxsmall {
+  @include Title('xxs');
+}
+
+.c-title--xsmall {
+  @include Title('xs');
+}
+
+.c-title--small {
+  @include Title('s');
+}
+
+.c-title--medium {
+  @include Title('m');
+}
+
+.c-title--large {
+  @include Title('l');
+}

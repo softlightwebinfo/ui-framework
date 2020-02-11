@@ -1,0 +1,8 @@
+@include bem_block(m-card-task) {
+  @include bem_element(avatar) {
+    margin-left: auto;
+  }
+  b {
+    color: $ColorInfo;
+  }
+}

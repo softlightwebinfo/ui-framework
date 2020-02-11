@@ -1,0 +1,48 @@
+@include bem_block(c-message) {
+  $then: &;
+  background-color: #f5f5f5;
+  border-radius:    4px;
+  font-size:        16px;
+  .icon {
+    margin-right: 5px;
+  }
+  @include bem_element(body) {
+    border-color:  #dbdbdb;
+    border-radius: 4px;
+    border-style:  solid;
+    border-width:  0 0 0 4px;
+    color:         #4a4a4a;
+    padding:       20px 24px;
+    font-size:     13px;
+  }
+  @include bem_modified(separate) {
+    margin-bottom: $MarginBottom;
+  }
+  @each $key, $color in $ColorsType {
+    @include bem_modified($key) {
+      #{$then}__body {
+        background-color:  lighten($color, 25%);
+        color:             white;
+        border-left-color: darken($color, 15%);
+        @if ($key == secondary or $key == light) {
+          color: black;
+        }
+      }
+    }
+    &.c-message--empty.c-message--#{$key} {
+      #{$then}__body {
+        color: lighten($color, 0%);
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  @include bem_modified(empty) {
+    background: none;
+    padding:    0;
+    #{$then}__body {
+      background: none;
+      border:     0;
+    }
+  }
+}

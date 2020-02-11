@@ -5,7 +5,7 @@ import {OnClickEventType} from "../../interfaces/types/OnClickEventType";
 import {ColorsTypes} from "../../interfaces/types/ColorsTypes";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 
-interface Props extends PropsInterface {
+export interface ButtonInterfaceProps extends PropsInterface {
     label?: string;
     icon?: string;
     iconPos?: PositionType;
@@ -15,9 +15,12 @@ interface Props extends PropsInterface {
     raised?: boolean;
     rounded?: boolean;
     empty?: boolean;
+    new?: boolean;
+    border?: boolean;
+    padding?: boolean;
 }
 
-export class Button extends Component<Props> {
+export class Button extends Component<ButtonInterfaceProps> {
     static defaultProps = {
         iconPos: "left"
     };
@@ -51,6 +54,9 @@ export class Button extends Component<Props> {
             "c-button--rounded": this.props.rounded,
             "c-button--icon-only": !this.props.label && this.props.icon,
             "c-button--text-only": this.props.label && !this.props.icon,
+            "c-button--new": this.props.new,
+            "c-button--border": this.props.border,
+            "c-button--padding": this.props.padding,
         });
         return (
             <button

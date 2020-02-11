@@ -1,0 +1,56 @@
+@include bem_block(c-tab) {
+  font-size:        $TabFontSize;
+  line-height:      $LineHeight;
+
+  position:         relative;
+  cursor:           pointer;
+  padding:          $SizeM $Size;
+  background-color: transparent;
+  transition:       color $AnimSpeedNormal $AnimSlightResistance, background-color $AnimSpeedNormal $AnimSlightResistance;
+
+  &:hover:not(.c-tab-isSelected) {
+    color:           $TextColor;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    background-color: $FocusBackgroundColor;
+    text-decoration:  underline;
+
+    &:before {
+      position:         absolute;
+      bottom:           0;
+      left:             0;
+      right:            0;
+      height:           1px;
+      background-color: $ColorLightShade;
+      content:          '';
+    }
+  }
+
+  &-isDisabled {
+    color: $ColorMediumShade;
+
+    &:hover {
+      cursor:          not-allowed;
+      text-decoration: none;
+      color:           $ColorMediumShade;
+    }
+  }
+
+  &-isSelected {
+    cursor: default;
+    color:  $ColorPrimary;
+
+    &:after {
+      position:         absolute;
+      bottom:           0;
+      left:             0;
+      content:          ' ';
+      width:            100%;
+      height:           $BorderWidthThick;
+      background-color: $ColorPrimary;
+      animation:        softTab $AnimSpeedFast $AnimSlightResistance;
+    }
+  }
+}

@@ -5,3 +5,4 @@ export * from './CardStadistics';
 export * from './CardProgressStadistics';
 export * from './CardCollapse';
 export * from './CardHeader';
+export * from './CardBlock';

@@ -3,6 +3,10 @@
   flex-direction:  row;
   justify-content: space-between;
   font-size:       $FontSize-2;
+  @include bem_element(left) {
+    @include truncate;
+    margin-right: 10px;
+  }
   @include bem_modified(bold) {
     #{$then}__left {
       font-weight: 600;

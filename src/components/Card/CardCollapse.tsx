@@ -19,6 +19,7 @@ export class CardCollapse extends PureComponent<CardCollapseInterface> {
                 footer={this.props.footer}
                 header={(
                     <CardHeader
+                        icon={this.props.icon}
                         open={this.props.open}
                         onClickOpen={this.props.onClickOpen}
                         options={this.props.options}

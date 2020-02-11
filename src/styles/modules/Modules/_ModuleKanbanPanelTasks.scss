@@ -1,0 +1,41 @@
+@include bem_block(m-kanban-panel-tasks) {
+  display:         flex;
+  justify-content: space-between;
+  .c-card-block {
+    &.moving { box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0), 0 0 4px 0 rgba(0, 0, 0, 0), 0 12px 12px 0 rgba(0, 0, 0, 0); }
+  }
+
+  @include bem_element(content) {
+    display: flex;
+    flex:    1;
+    .c-box {
+      flex:      1 1 100%;
+      min-width: calc(100% / 4);
+
+      &-header {
+        border-left: 0;
+      }
+
+      &-body {
+        border-left: 0;
+      }
+
+      &:last-child {
+        .c-box-header {
+          border-right: 0;
+        }
+
+        .c-box-body {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.card-placeholder {
+  background-color: #e2e3e8;
+  border-radius:    10px;
+  position:         fixed;
+  display:          none;
+}

@@ -49,7 +49,7 @@ $ColorGhost: #FFF !default;
 $ColorInfo: #039be5 !default;
 $ColorContext: #e0e0e0 !default;
 $ColorDark: #3C4252 !default;
-
+$ColorLight: #e0ebf4;
 // Grays
 $ColorEmptyShade: #FFF !default;
 $ColorLightestShade: #F5F7FA !default;
@@ -138,6 +138,16 @@ $SizeL: $Size * 1.5 !default;
 $SizeXL: $Size * 2 !default;
 $SizeXXL: $Size * 2.5 !default;
 $SizeXXXL: $Size * 3 !default;
+$TextScale: 2.25, 1.75, 1.25, 1.125, 1, .875, .75 !default;
+
+$FontSize: $Size !default; // 5th position in scale
+
+$FontSizeXS: $FontSize * nth($TextScale, 7) !default; // 12px
+$FontSizeS: $FontSize * nth($TextScale, 6) !default; // 14px
+$FontSizeM: $FontSize * nth($TextScale, 4) !default; // 18px
+$FontSizeL: $FontSize * nth($TextScale, 3) !default; // 20px
+$FontSizeXL: $FontSize * nth($TextScale, 2) !default; // 28px
+$FontSizeXXL: $FontSize * nth($TextScale, 1) !default; // 36px
 $spacerSizes: (
                       xs: $SizeXS,
                       s: $SizeS,
@@ -190,3 +200,37 @@ $ProgressColors: (
                          accent: $ColorAccent,
                          subdued: $ColorMediumShade,
                  );
+$ColorsType: (
+                     primary: $ColorPrimary,
+                     light: $ColorLight,
+                     secondary: $ColorSecondary,
+                     warning: $ColorWarning,
+                     info: $ColorInfo,
+                     danger: $ColorDanger,
+                     accent: $ColorAccent,
+                     subdued: $ColorMediumShade,
+             );
+// TABS
+$LineHeight: 1.5;
+$TabFontSize: $FontSize !default;
+$TabFontSizeS: $FontSizeS !default;
+$FocusBackgroundColor: tintOrShade($ColorPrimary, 90%, 50%) !default;
+$PageBackgroundColor: tintOrShade($ColorLightestShade, 50%, 30%) !default;
+$BorderWidthThin: 1px !default;
+$BorderWidthThick: 2px !default;
+
+$BorderColor: $ColorLightShade !default;
+$BorderRadius: 4px !default;
+$BorderThick: $BorderWidthThick solid $BorderColor !default;
+$BorderThin: $BorderWidthThin solid $BorderColor !default;
+$BorderEditable: $BorderWidthThick dotted $BorderColor !default;
+$ButtonMinWidth: $Size * 7 !default;
+$ScrollBar: $Size !default;
+$ScrollBarCorner: $SizeS * .75 !default;
+
+$FontWeightLight: 300 !default;
+$FontWeightRegular: 400 !default;
+$FontWeightMedium: 500 !default;
+$FontWeightSemiBold: 600 !default;
+$FontWeightBold: 700 !default;
+$TitleColor: shadeOrTint($TextColor, 50%, 0%) !default;

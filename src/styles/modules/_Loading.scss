@@ -1,0 +1,43 @@
+@include bem_block(c-loading) {
+  flex-shrink:   0; // Ensures it never scales down below it's intended size
+  display:       inline-block;
+  width:         $SizeXL;
+  height:        $SizeXL;
+  border-radius: 50%;
+  border:        solid $SizeXS / 2 $ColorLightShade;
+  border-color:  LoadingSpinnerBorderColors();
+  animation:     LoadingSpinner .6s infinite linear;
+
+  &--s {
+    width:        $SizeS;
+    height:       $SizeS;
+    border-width: 1px;
+  }
+
+  &--m {
+    width:        $Size;
+    height:       $Size;
+    border-width: 1px;
+  }
+
+  &--l {
+    width:  $SizeL;
+    height: $SizeL;
+  }
+
+  &--xl {
+    width:  $SizeXL;
+    height: $SizeXL;
+  }
+
+  @keyframes LoadingSpinner {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+}

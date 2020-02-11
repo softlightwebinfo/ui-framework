@@ -15,11 +15,11 @@ interface PropsMenuContextInterface {
     }
 }
 
-interface Props extends PropsInterface {
+export interface ContextMenuInterfaceProps extends PropsInterface {
     menu: PropsMenuContextInterface[];
 }
 
-export class ContextMenu extends Component<Props> {
+export class ContextMenu extends Component<ContextMenuInterfaceProps> {
     static defaultProps = {};
 
 

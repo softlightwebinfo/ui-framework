@@ -288,3 +288,138 @@
     @content;
   }
 }
+
+@mixin fontSize($size: $FontSize) {
+  font-size: $size;
+}
+
+@mixin ScrollBar {
+  // Firefox's scrollbar coloring cascades, but the sizing does not,
+  // so it's being added to this mixin for allowing support wherever custom scrollbars are
+  // sass-lint:disable-block no-misspelled-properties
+  scrollbar-width: thin;
+
+  // sass-lint:disable-block no-vendor-prefixes
+  &::-webkit-scrollbar {
+    width:  $ScrollBar;
+    height: $ScrollBar;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparentize($ColorDarkShade, .5);
+    border:           $ScrollBarCorner solid transparent;
+    background-clip:  content-box;
+  }
+
+  &::-webkit-scrollbar-corner,
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+// Spit out rem and px
+
+// Our base gridline is at 1/2 the font-size, ensure line-heights stay on that gridline.
+// EX: A proper line-height for text is 1.5 times the font-size.
+//     If our base font size (softFontSize) is 16, our baseline is 8 (16*1.5 / 3). To ensure the
+//     text stays on the baseline, we pass a multiplier to calculate a line-height in rems.
+@mixin lineHeightFromBaseline($multiplier: 3) {
+  line-height: convertToRem(($FontSize/2)*$multiplier);
+}
+
+
+@mixin Font {
+  font-family:              $FontFamily;
+  font-weight:              $FontWeightRegular;
+  letter-spacing:           -.005em;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust:     100%;
+  font-kerning:             normal;
+}
+
+@mixin Text {
+  color:       $TextColor;
+  font-weight: $FontWeightRegular;
+}
+
+
+// Font sizing extends, using rem mixin
+
+@mixin FontSizeXS {
+  @include fontSize($FontSizeXS);
+  line-height: $LineHeight;
+}
+
+@mixin FontSizeS {
+  @include fontSize($FontSizeS);
+  line-height: $LineHeight;
+}
+
+@mixin FontSize {
+  @include fontSize($FontSize);
+  line-height: $LineHeight;
+}
+
+@mixin FontSizeM {
+  @include fontSize($FontSizeM);
+  line-height: $LineHeight;
+}
+
+@mixin FontSizeL {
+  @include fontSize($FontSizeL);
+  line-height: $LineHeight;
+}
+
+@mixin FontSizeXL {
+  @include fontSize($FontSizeXL);
+  line-height:    1.25;
+  font-weight:    $FontWeightLight; // always apply light weight to x-large type
+  letter-spacing: -.05em;
+}
+
+@mixin FontSizeXXL {
+  @include fontSize($FontSizeXXL);
+  line-height:    1.25;
+  font-weight:    $FontWeightLight; // always apply light weight to xx-large type
+  letter-spacing: -.03em;
+}
+
+@mixin Title($size: 'm') {
+  color: $TitleColor;
+
+  @if $size == 'xxxs' {
+    @include FontSizeXS;
+    @include lineHeightFromBaseline(3);
+    font-weight:    $FontWeightBold;
+  } @else if $size == 'xxs' {
+    @include FontSizeS;
+    @include lineHeightFromBaseline(3);
+    font-weight:    $FontWeightBold;
+  } @else if $size == 'xs' {
+    @include FontSize;
+    @include lineHeightFromBaseline(3);
+    font-weight:    $FontWeightSemiBold;
+    letter-spacing: -.02em;
+  } @else if $size == 's' {
+    @include FontSizeL;
+    @include lineHeightFromBaseline(4);
+    font-weight:    $FontWeightMedium;
+    letter-spacing: -.025em;
+  } @else if $size == 'm' {
+    @include FontSizeXL;
+    @include lineHeightFromBaseline(5);
+    letter-spacing: -.04em;
+  } @else if $size == 'l' {
+    @include FontSizeXXL;
+    @include lineHeightFromBaseline(6);
+  } @else {
+    @include fontSize($size);
+    @include lineHeightFromBaseline(3);
+  }
+}
+
+@mixin truncate() {
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
