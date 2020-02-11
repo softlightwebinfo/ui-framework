@@ -74,7 +74,9 @@ export class AppKanban extends Component<AppKanbanInterfaceProps, {
     }
 
     onDragEnd = (data) => {
+        // @ts-ignore
         const result = this.selectedTabs.kanban[0].panelCenter.panels;
+        // @ts-ignore
         result[data.destination.droppableId].tasks = [result[data.source.droppableId].tasks.find(i => i.id == data.draggableId), ...result[data.destination.droppableId].tasks];
         result[data.source.droppableId].tasks = result[data.source.droppableId].tasks.filter(i => i.id != data.draggableId);
         this.props.onChangeKanban(result, data);

@@ -6,7 +6,7 @@ import "../../build/index.css";
 import {AppKanban} from "../apps";
 import {Button} from "../components/Button";
 import {ProgressLabel} from "../components/Progress";
-import {Fragment, useState} from 'react';
+import {Fragment} from 'react';
 import {Spacer} from "../components/Spacer";
 import {ModuleKanbanPanelTasksInterfacePropsCenterPanel} from "../components/Modules";
 
@@ -289,6 +289,7 @@ storiesOf("Apps|Kanban", module)
                     return (
                         <AppKanban
                             onChangeKanban={(panel: ModuleKanbanPanelTasksInterfacePropsCenterPanel[], dataTask) => {
+                                // @ts-ignore
                                 this.state.kanban[0].panelCenter.panels = panel;
                                 this.setState({
                                     kanban: this.state.kanban,

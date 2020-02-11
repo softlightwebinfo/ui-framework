@@ -3,11 +3,11 @@ import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
 
-export interface BadgeInterfaceProps extends PropsInterface {
+export interface ErrorInterfaceProps extends PropsInterface {
 
 }
 
-export class Error extends PureComponent<BadgeInterfaceProps> {
+export class Error extends PureComponent<ErrorInterfaceProps> {
     constructor(props) {
         super(props);
     }
