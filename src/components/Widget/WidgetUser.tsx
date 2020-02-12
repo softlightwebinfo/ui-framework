@@ -11,6 +11,7 @@ export interface WidgetUserInterfaceProps extends PropsInterface, TitleSubtitleO
     card?: boolean;
     avatar: string;
     footer?: any;
+    size?: number;
 }
 
 export class WidgetUser extends PureComponent<WidgetUserInterfaceProps> {
@@ -23,7 +24,7 @@ export class WidgetUser extends PureComponent<WidgetUserInterfaceProps> {
         return (
             <Widget className={classes}{...this.props}>
                 <Avatar
-                    size={80}
+                    size={this.props.size || 80}
                     fluid={false}
                     name={this.props.title}
                     image={this.props.avatar}

@@ -44,3 +44,4 @@ export * from "./Title";
 export * from "./Box";
 export * from "./Error";
 export * from "./Jumbotron";
+export * from "./Textarea";

@@ -1,0 +1,24 @@
+@include bem_block(c-textarea) {
+  box-sizing: border-box;
+  font-size:  16px;
+  position:   relative;
+  text-align: left;
+  textarea {
+    background-color: #fff;
+    border-color:     #dbdbdb;
+    border-radius:    4px;
+    color:            inherit;
+    box-shadow:       inset 0 0.0625em 0.125em rgba(10, 10, 10, .05);
+    max-width:        100%;
+    width:            100%;
+    display:          block;
+    min-width:        100%;
+    padding:          calc(.75em - 1px);
+    resize:           vertical;
+
+    &:not([rows]) {
+      max-height: 40em;
+      min-height: 8em;
+    }
+  }
+}
