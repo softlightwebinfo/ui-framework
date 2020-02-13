@@ -1,0 +1,3 @@
+export {
+  SoftFocusTrap,
+} from './SoftFocusTrap';

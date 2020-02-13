@@ -1,0 +1,1 @@
+export {SoftCenter} from './SoftCenter';

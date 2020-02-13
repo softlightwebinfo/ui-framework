@@ -1,0 +1,1 @@
+export {SoftOverlayMask} from './SoftOverlayMask';
