@@ -1,33 +1,30 @@
 import {PureComponent} from "react";
-import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
-export interface CarouselSlideInterfaceProps extends PropsInterface {
+import {OnClickEventType} from "../../interfaces/types/OnClickEventType";
+import * as React from "react";
+
+export interface CarouselIndicatorInterfaceProps extends PropsInterface {
+    onClick: OnClickEventType;
     index: number;
     activeIndex: number;
 }
 
-export class CarouselSlide extends PureComponent<CarouselSlideInterfaceProps> {
+export class CarouselIndicator extends PureComponent<CarouselIndicatorInterfaceProps> {
     constructor(props) {
         super(props);
 
     }
 
     render() {
-        const classes = classNames("c-carousel", this.props.className, this.props.index == this.props.activeIndex ? "c-carousel__slide carousel__slide--active" : "c-carousel__slide");
+        const classes = classNames("c-carousel-indicator", this.props.className);
 
         return (
             <li className={classes} style={this.props.style}>
-                <p className="carousel-slide__content">{this.props.slide.content}</p>
-                <p>
-                    <strong className="carousel-slide__author">
-                        {this.props.slide.author}
-                    </strong>,
-                    {" "}
-                    <small className="carousel-slide__source">
-                        {this.props.slide.source}
-                    </small>
-                </p>
+                <a
+                    className={this.props.index == this.props.activeIndex ? "c-carousel-indicator__indicator c-carousel-indicator__indicator--active" : "c-carousel-indicator__indicator"}
+                    onClick={this.props.onClick}
+                />
             </li>
         );
     }

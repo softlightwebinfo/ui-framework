@@ -3,12 +3,13 @@ import {storiesOf} from "@storybook/react";
 import {boolean, number, text, withKnobs} from "@storybook/addon-knobs";
 import {jsxDecorator} from "storybook-addon-jsx";
 import "../../build/index.css";
-import {ModuleCardTable, ModuleProgressContent, ModuleProgressTable, ModuleProjectCard} from "../components/Modules";
+import {ModuleAuthLogin, ModuleCardTable, ModuleProgressContent, ModuleProgressTable, ModuleProjectCard} from "../components/Modules";
 import {Spacer} from "../components/Spacer";
 import {TableSimpleEnumType} from "../components/Table";
 import {Row, RowCol} from "../components/Row";
 import {ModuleRatingTable} from "../components/Modules";
 import {Avatar, AvatarList} from "../components/Avatar";
+import {ModuleAuthRegister} from "../components/Modules/ModuleAuthRegister";
 
 storiesOf("Modules|Cards", module)
     .addDecorator(jsxDecorator)
@@ -992,6 +993,49 @@ storiesOf("Modules|Projects", module)
                         />
                     </RowCol>
                 </Row>
+            </div>
+        )
+    );
+storiesOf("Modules|Auth", module)
+    .addDecorator(jsxDecorator)
+    .addDecorator(withKnobs)
+    .add("Login",
+        () => (
+            <div style={{padding: 20, width: 400}}>
+                <ModuleAuthLogin
+                    logo={"https://www.musicosdelmundo.com/static/images/logo_mobile.png"}
+                    title={"LOGIN TO YOUR ACCOUNT"}
+                    form={{
+                        email: {value: "", placeholder: "Email", onChange: console.log},
+                        password: {value: "", placeholder: "Password", onChange: console.log},
+                        button: {
+                            label: "Sign in",
+                            color: "primary",
+                            block: true,
+                        }
+                    }}
+                />
+            </div>
+        )
+    )
+    .add("Register",
+        () => (
+            <div style={{padding: 20, width: 400}}>
+                <ModuleAuthRegister
+                    title={"REGISTER TO YOUR ACCOUNT"}
+                    form={{
+                        email: {value: "", placeholder: "Email", onChange: console.log},
+                        password: {value: "", placeholder: "Password", onChange: console.log},
+                        name: {value: "", placeholder: "Name", onChange: console.log},
+                        button: {
+                            label: "Sign in",
+                            color: "primary",
+                            block: true,
+                        }
+                    }}
+                    size={"m"}
+                    logo={"https://www.musicosdelmundo.com/static/images/logo_mobile.png"}
+                />
             </div>
         )
     );

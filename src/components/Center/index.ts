@@ -1,1 +1,1 @@
-export {SoftCenter} from './SoftCenter';
+export {Center} from './Center';

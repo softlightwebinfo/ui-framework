@@ -104,6 +104,15 @@ $CodeBlockDeletionColor: inherit !default;
 $CodeBlockSelectorClassColor: inherit !default;
 $CodeBlockSelectorIdColor: inherit !default;
 
+//Gray
+$ColorEmptyShade: #FFF !default;
+$ColorLightestShade: #F5F7FA !default;
+$ColorLightShade: #D3DAE6 !default;
+$ColorMediumShade: #98A2B3 !default;
+$ColorDarkShade: #69707D !default;
+$ColorDarkestShade: #343741 !default;
+$ColorFullShade: #000 !default;
+
 // Colors Hover
 $ColorPrimaryHover: #116fbf;
 $ColorInfoHover: #116fbf;
@@ -234,3 +243,7 @@ $FontWeightMedium: 500 !default;
 $FontWeightSemiBold: 600 !default;
 $FontWeightBold: 700 !default;
 $TitleColor: shadeOrTint($TextColor, 50%, 0%) !default;
+// Shadows
+// Transparency only affects the use of variable this outside of the shadow mixins (borders)
+$ShadowColor: $ColorMediumShade !default;
+$ShadowColorLarge: shade(saturate($ColorMediumShade, 25%), 50%) !default;

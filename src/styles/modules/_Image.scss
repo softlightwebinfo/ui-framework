@@ -1,0 +1,101 @@
+/**
+ * 1. Fix for IE where the image correctly resizes in width but doesn't collapse it's height
+      (https://github.com/philipwalton/flexbugs/issues/75#issuecomment-134702421)
+ */
+
+// Main <figure> that wraps images.
+.c-image {
+  display:     inline-block;
+  max-width:   100%;
+  position:    relative;
+  min-height:  1px; /* 1 */
+  line-height: 0; // Fixes cropping when image is resized by forcing it's height to be determined by the image not line-height
+
+  &.c-image--hasShadow {
+    .c-image__img {
+      @include BottomShadowMedium;
+    }
+  }
+
+  &.c-image--allowFullScreen:hover {
+    .c-image__img {
+      cursor: pointer;
+    }
+
+    .c-image__icon {
+      visibility: visible;
+      opacity:    1;
+    }
+  }
+
+  // These sizes are mostly suggestions. Don't look too hard for meaning in their values.
+  &.c-image--small {
+    width: convertToRem(120px);
+  }
+
+  &.c-image--medium {
+    width: convertToRem(200px);
+  }
+
+  &.c-image--large {
+    width: convertToRem(360px);
+  }
+
+  &.c-image--xlarge {
+    width: convertToRem(600px);
+  }
+
+  &.c-image--fullWidth {
+    width: 100%;
+  }
+}
+
+// The image itself is full width within the container.
+.c-image__img {
+  width: 100%;
+}
+
+.c-image__caption {
+  @include FontSizeS;
+  text-align: center;
+}
+
+.c-image__icon {
+  visibility: hidden;
+  opacity:    0;
+  position:   absolute;
+  right:      $Size;
+  top:        $Size;
+  transition: opacity $AnimSpeedSlow $AnimSlightResistance;
+  cursor:     pointer;
+}
+
+// The FullScreen image that optionally pops up on click.
+.c-imageFullScreen {
+  max-height: 80vh;
+  max-width:  80vw;
+  animation:  c-imageFullScreen $AnimSpeedExtraSlow $AnimSlightBounce;
+
+  .c-imageFullScreen__img {
+    max-height: 80vh;
+    max-width:  80vw;
+    cursor:     pointer;
+  }
+
+  &:hover .c-imageFullScreen__img {
+    cursor: pointer;
+  }
+}
+
+
+@keyframes c-imageFullScreen {
+  0% {
+    opacity:   0;
+    transform: translateY($SizeXL * 2);
+  }
+
+  100% {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}

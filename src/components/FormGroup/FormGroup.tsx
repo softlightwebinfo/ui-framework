@@ -5,6 +5,7 @@ import classNames from 'classnames';
 
 export interface FormGroupInterfaceProps extends PropsInterface {
     isCompact?: boolean;
+    label?: string;
 }
 
 export class FormGroup extends PureComponent<FormGroupInterfaceProps> {
@@ -14,11 +15,12 @@ export class FormGroup extends PureComponent<FormGroupInterfaceProps> {
 
 
     render() {
-        const classes = classNames("c-form-group", this.props.className, {
-
-        });
+        const classes = classNames("c-form-group", this.props.className, {});
         return (
-            <div style={this.props.style} className={classes}>{this.props.children}</div>
+            <div style={this.props.style} className={classes}>
+                {this.props.label && (<label>{this.props.label}</label>)}
+                {this.props.children}
+            </div>
         )
     }
 }

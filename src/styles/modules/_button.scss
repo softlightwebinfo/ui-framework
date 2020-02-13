@@ -55,6 +55,10 @@
   @include bem_modified(padding) {
     @include padding();
   }
+  @include bem_modified(block) {
+    display: flex;
+    width:   100%;
+  }
   @include bem_modified(empty) {
     background: transparent;
     border:     none;

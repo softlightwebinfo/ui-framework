@@ -1,3 +1,3 @@
 export {
-  SoftFocusTrap,
-} from './SoftFocusTrap';
+  FocusTrap,
+} from './FocusTrap';

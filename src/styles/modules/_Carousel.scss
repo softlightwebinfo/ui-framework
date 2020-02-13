@@ -1,0 +1,150 @@
+$breakpoint-desktop: 992px;
+@include bem_block(c-carousel) {
+  position: relative;
+  @include bem_modified(container) {
+    display:         flex;
+    flex-direction:  column;
+    justify-content: center;
+    min-height:      210px;
+  }
+}
+
+@include bem_block(c-carousel-left-arrow) {
+  position:           absolute;
+  top:                50%;
+  display:            block;
+  color:              #111;
+  cursor:             pointer;
+  opacity:            .75;
+  -webkit-transform:  translateY(-50%);
+  transform:          translateY(-50%);
+  -webkit-transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+  transition:         opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+  left:               32px;
+}
+
+@include bem_block(c-carousel-right-arrow) {
+  position:           absolute;
+  top:                50%;
+  display:            block;
+  color:              #111;
+  cursor:             pointer;
+  opacity:            .75;
+  -webkit-transform:  translateY(-50%);
+  transform:          translateY(-50%);
+  -webkit-transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+  transition:         opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+  right:              32px;
+}
+
+@include bem_block(c-carousel-slide) {
+  margin-right:    auto;
+  margin-left:     auto;
+  display:         none;
+  max-width:       900px;
+  list-style-type: none;
+  text-align:      center;
+  @include bem_element(content) {
+    margin-bottom: 19px;
+    font-family:   'Open Sans', 'Trebuchet MS', sans-serif;
+    font-size:     16px;
+  }
+  @include bem_element(author) {
+    font-family: 'Roboto', arial, sans-serif;
+    font-size:   14px;
+    @media (min-width: 992px) {
+      font-size: 16px;
+    }
+  }
+  @include bem_element(source) {
+    font-family: 'Roboto', arial, sans-serif;
+    font-size:   14px;
+    font-style:  italic;
+    color:       #888;
+    @media (min-width: 992px) {
+      font-size: 16px;
+    }
+  }
+  @include bem_modified(active) {
+    display: block;
+  }
+}
+
+@include bem_block(c-carousel-images) {
+  .c-carousel-left-arrow {
+    background-color: black;
+    z-index:          1;
+    color:            white;
+    border-radius:    50%;
+    height:           40px;
+    font-size:        24px;
+    width:            40px;
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
+    box-shadow:       0px 0px 7px 0px black;
+  }
+
+  .c-carousel-right-arrow {
+    background-color: black;
+    z-index:          1;
+    color:            white;
+    border-radius:    50%;
+    height:           40px;
+    font-size:        24px;
+    width:            40px;
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
+    box-shadow:       0px 0px 7px 0px black;
+  }
+}
+
+@include bem_block(c-carousel-slide-image) {
+  display:         none;
+  list-style-type: none;
+  text-align:      center;
+  height:          600px;
+  figure {
+    height: 100%;
+  }
+  img {
+    height: 100%;
+  }
+  @include bem_modified(active) {
+    display: block;
+  }
+}
+
+@include bem_block(c-carousel-indicators) {
+  display:               -webkit-box;
+  display:               flex;
+  -webkit-box-orient:    horizontal;
+  -webkit-box-direction: normal;
+  flex-direction:        row;
+  -webkit-box-pack:      center;
+  justify-content:       center;
+  margin-top:            20px;
+}
+
+@include bem_block(c-carousel-indicator) {
+  @include bem_element(indicator) {
+    display:            block;
+    width:              24px;
+    height:             3px;
+    background-color:   #111;
+    cursor:             pointer;
+    opacity:            .15;
+    -webkit-transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+    transition:         opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+    @include bem_modified(active) {
+      opacity: .75;
+    }
+    @include hover {
+      opacity: .75;
+    }
+  }
+  &:nth-of-type(n + 2) {
+    margin-left: 9px;
+  }
+}

@@ -4,12 +4,12 @@ import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import {Carousel, CarouselInterfaceProps} from "./Carousel";
 import {CarouselSlide} from "./CarouselSlide";
 
-export interface CarouselImagesInterfaceProps extends PropsInterface, CarouselInterfaceProps {
+export interface CarouselTextInterfaceProps extends PropsInterface, CarouselInterfaceProps {
 
 }
 
 
-export class CarouselImages extends PureComponent<CarouselImagesInterfaceProps> {
+export class CarouselText extends PureComponent<CarouselTextInterfaceProps> {
     constructor(props) {
         super(props);
 

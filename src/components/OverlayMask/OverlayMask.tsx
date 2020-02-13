@@ -21,7 +21,7 @@ export class OverlayMask extends Component<{
     const {className, children, onClick, ...rest} = this.props;
 
     this.overlayMaskNode = document.createElement('div');
-    this.overlayMaskNode.className = classNames('softOverlayMask', className);
+    this.overlayMaskNode.className = classNames('c-overlay-mask', className);
     if (onClick) {
       this.overlayMaskNode.addEventListener('click', onClick);
     }
@@ -38,11 +38,11 @@ export class OverlayMask extends Component<{
   }
 
   componentDidMount() {
-    document.body.classList.add('softBody-hasOverlayMask');
+    document.body.classList.add('h-body-hasOverlayMask');
   }
 
   componentWillUnmount() {
-    document.body.classList.remove('softBody-hasOverlayMask');
+    document.body.classList.remove('h-Body-hasOverlayMask');
 
     if (this.props.onClick) {
       this.overlayMaskNode.removeEventListener('click', this.props.onClick);

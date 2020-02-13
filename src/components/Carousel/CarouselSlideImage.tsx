@@ -1,43 +1,37 @@
 import {PureComponent} from "react";
-import React from "react";
+import * as React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
+import {Image} from '../Image';
 
-export interface CarouselSlideInterfacePropsSlide {
-    content: string;
-    author: string;
-    source: string;
+export interface CarouselSlideImageInterfacePropsSlide {
+    image: string;
+    title: string;
 }
 
-export interface CarouselSlideInterfaceProps extends PropsInterface, CarouselSlideInterfacePropsSlide {
+export interface CarouselSlideImageInterfaceProps extends PropsInterface, CarouselSlideImageInterfacePropsSlide {
     index: number;
     activeIndex: number;
 }
 
 
-export class CarouselSlide extends PureComponent<CarouselSlideInterfaceProps> {
+export class CarouselSlideImage extends PureComponent<CarouselSlideImageInterfaceProps> {
     constructor(props) {
         super(props);
 
     }
 
     render() {
-        const classes = classNames("c-carousel-slide", this.props.className, {
-            "c-carousel-slide--active": this.props.index == this.props.activeIndex,
+        const classes = classNames("c-carousel-slide-image", this.props.className, {
+            "c-carousel-slide-image--active": this.props.index == this.props.activeIndex,
         });
 
         return (
-            <li className={classes} style={this.props.style}>
-                <p className="c-carousel-slide__content">{this.props.content}</p>
-                <p>
-                    <strong className="c-carousel-slide__author">
-                        {this.props.author}
-                    </strong>,
-                    {" "}
-                    <small className="c-carousel-slide__source">
-                        {this.props.source}
-                    </small>
-                </p>
+            <li title={this.props.title} className={classes} style={this.props.style}>
+                <Image
+                    allowFullScreen={true}
+                    url={this.props.image}
+                />
             </li>
         );
     }

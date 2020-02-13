@@ -12,20 +12,21 @@ import {Input} from "../Input";
 import {OnChangeEventType} from "../../interfaces/types/OnChangeEventType";
 import {Button, ButtonInterfaceProps} from "../Button";
 
-export interface ModuleAuthLoginInterfacePropsInput {
+export interface ModuleAuthRegisterInterfacePropsInput {
     value: string;
     onChange: OnChangeEventType;
     placeholder: string;
 }
 
-export interface ModuleAuthLoginInterfaceProps extends PropsInterface, FormInterfaceProps {
+export interface ModuleAuthRegisterInterfaceProps extends PropsInterface, FormInterfaceProps {
     size?: string;
     logo: string;
     allowFullScreen?: boolean;
     title: string;
     form: {
-        email: ModuleAuthLoginInterfacePropsInput;
-        password: ModuleAuthLoginInterfacePropsInput;
+        name: ModuleAuthRegisterInterfacePropsInput;
+        email: ModuleAuthRegisterInterfacePropsInput;
+        password: ModuleAuthRegisterInterfacePropsInput;
         button: ButtonInterfaceProps;
         top?: any;
         bottom?: any;
@@ -33,7 +34,7 @@ export interface ModuleAuthLoginInterfaceProps extends PropsInterface, FormInter
     fluid?: boolean;
 }
 
-export class ModuleAuthLogin extends PureComponent<ModuleAuthLoginInterfaceProps> {
+export class ModuleAuthRegister extends PureComponent<ModuleAuthRegisterInterfaceProps> {
     constructor(props) {
         super(props);
     }
@@ -58,8 +59,16 @@ export class ModuleAuthLogin extends PureComponent<ModuleAuthLoginInterfaceProps
                 <Spacer size={"s"}/>
                 <Form onSubmit={this.props.onSubmit}>
                     {this.props.form.top}
+                    <FormGroup label={this.props.form.name.placeholder}>
+                        <Input
+                            value={this.props.form.name.value}
+                            placeholder={this.props.form.name.placeholder}
+                            onChange={this.props.form.name.onChange}
+                        />
+                    </FormGroup>
                     <FormGroup label={this.props.form.email.placeholder}>
                         <Input
+                            type={"email"}
                             value={this.props.form.email.value}
                             placeholder={this.props.form.email.placeholder}
                             onChange={this.props.form.email.onChange}

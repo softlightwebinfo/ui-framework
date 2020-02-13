@@ -1,0 +1,21 @@
+@include bem_block(c-overlay-mask){
+  position: fixed;
+  z-index: $ZMask;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10vh;
+  animation: softAnimFadeIn $AnimSpeedFast ease-in;
+
+  $backgroundColor: $ColorFullShade;
+
+  @if (lightness($TextColor) > 50) {
+    $backgroundColor: $ColorLightShade;
+  }
+
+  background: transparentize($backgroundColor, .5);
+}

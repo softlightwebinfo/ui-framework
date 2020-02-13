@@ -33,6 +33,7 @@ export class CardUser extends PureComponent<CardUserInterface> {
                     avatar={this.props.avatar}
                     card={this.props.card}
                     fluid={this.props.fluid}
+                    size={this.props.size}
                     footer={this.props.footer || (
                         <>
                             {this.props.onClickEdit && <Button onClick={this.props.onClickEdit} icon={"icon icon-edit"}/>}

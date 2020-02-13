@@ -1,4 +1,8 @@
 @include bem_block(c-form-group) {
-  display: block;
+  display:       block;
   margin-bottom: $Margin;
+  label {
+    margin-bottom: 5px;
+    display:       block;
+  }
 }

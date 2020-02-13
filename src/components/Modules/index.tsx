@@ -6,3 +6,7 @@ export * from './ModuleProjectCard';
 export * from './ModuleKanbanPanelTasks';
 export * from './ModuleCardTask';
 export * from './ModuleKanban';
+export * from './ModulePageAuthLogin';
+export * from './ModuleAuthLogin';
+export * from './ModuleAuthRegister';
+export * from './ModulePageAuthRegister';

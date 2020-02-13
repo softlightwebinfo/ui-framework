@@ -1,1 +1,1 @@
-export {SoftOverlayMask} from './SoftOverlayMask';
+export {OverlayMask} from './OverlayMask';

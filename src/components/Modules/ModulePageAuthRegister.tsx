@@ -2,14 +2,14 @@ import {PureComponent, ReactNode} from "react";
 import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import {Page} from "../Page";
-import {ModuleAuthLogin, ModuleAuthLoginInterfaceProps} from "./ModuleAuthLogin";
+import {ModuleAuthRegister, ModuleAuthRegisterInterfaceProps} from "./ModuleAuthRegister";
 
-
-export interface ModulePageAuthLoginInterfaceProps extends PropsInterface, ModuleAuthLoginInterfaceProps {
+export interface ModulePageAuthRegisterInterfaceProps extends PropsInterface, ModuleAuthRegisterInterfaceProps {
     authChildren?: ReactNode;
+    right?: ReactNode;
 }
 
-export class ModulePageAuthLogin extends PureComponent<ModulePageAuthLoginInterfaceProps> {
+export class ModulePageAuthRegister extends PureComponent<ModulePageAuthRegisterInterfaceProps> {
     constructor(props) {
         super(props);
     }
@@ -19,7 +19,7 @@ export class ModulePageAuthLogin extends PureComponent<ModulePageAuthLoginInterf
         return (
             <Page
                 left={
-                    <ModuleAuthLogin
+                    <ModuleAuthRegister
                         title={this.props.title}
                         logo={this.props.logo}
                         allowFullScreen={this.props.allowFullScreen}
@@ -28,8 +28,9 @@ export class ModulePageAuthLogin extends PureComponent<ModulePageAuthLoginInterf
                         form={this.props.form}
                     >
                         {this.props.authChildren}
-                    </ModuleAuthLogin>
+                    </ModuleAuthRegister>
                 }
+                right={this.props.right}
             >
 
             </Page>

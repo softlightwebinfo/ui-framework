@@ -18,6 +18,7 @@ export interface ButtonInterfaceProps extends PropsInterface {
     new?: boolean;
     border?: boolean;
     padding?: boolean;
+    block?: boolean;
 }
 
 export class Button extends Component<ButtonInterfaceProps> {
@@ -57,6 +58,7 @@ export class Button extends Component<ButtonInterfaceProps> {
             "c-button--new": this.props.new,
             "c-button--border": this.props.border,
             "c-button--padding": this.props.padding,
+            "c-button--block": this.props.block,
         });
         return (
             <button

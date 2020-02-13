@@ -43,7 +43,8 @@ export default {
           'createElement'
         ],
         'node_modules/react-dom/index.js': ['render'],
-        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer']
+        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
+        'node_modules/prop-types/index.js': ['node', 'bool', 'string', 'any', 'arrayOf', 'oneOfType', 'object', 'func']
       }
     })
   ]
