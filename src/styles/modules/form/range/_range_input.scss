@@ -1,0 +1,12 @@
+.softRangeInput {
+  width: auto;
+  min-width: $softSize * 4;
+
+  &--min {
+    margin-right: $softSize;
+  }
+
+  &--max {
+    margin-left: $softSize;
+  }
+}

@@ -1,0 +1,120 @@
+/*
+ *  Input Range Customization by browser
+ */
+
+// The following code is inspired by...
+
+// Github: https://github.com/darlanrod/input-range-sass
+// Author: Darlan Rod https://github.com/darlanrod
+// Version 1.4.1
+// MIT License
+
+// It has been modified to fit the styling patterns of Kibana and
+// to be more easily maintained / themeable going forward.
+
+.softRangeSlider {
+  // Auto means the height isn't defined
+  height: $softFormControlHeight;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent; // Otherwise white in Chrome
+  width: 100%; // ensures the slider expands to fill flex display
+  position: relative;
+  z-index: $softZLevel2; // stay above tick marks
+  cursor: pointer; // Keep cursor to full range bounds
+
+  &:disabled {
+    cursor: not-allowed;
+
+    // sass-lint:disable-block mixins-before-declarations
+    @include softRangeThumbPerBrowser {
+      cursor: not-allowed;
+      border-color: $softRangeThumbBorderColor;
+      background-color: $softRangeThumbBorderColor;
+      box-shadow: none;
+    }
+
+    ~ .softRangeThumb {
+      cursor: not-allowed;
+      border-color: $softRangeThumbBorderColor;
+      background-color: $softRangeThumbBorderColor;
+      box-shadow: none;
+    }
+  }
+
+  @include softRangeThumbPerBrowser {
+    @include softCustomControl($type: 'round');
+    @include softRangeThumbStyle;
+  }
+
+  @include softRangeTrackPerBrowser {
+    @include softRangeTrackSize;
+    background: $softRangeTrackColor;
+    border: $softRangeTrackBorderWidth solid $softRangeTrackBorderColor;
+    border-radius: $softRangeTrackRadius;
+  }
+
+  &:focus,
+  &--hasFocus {
+    @include softRangeThumbPerBrowser {
+      @include softCustomControlFocused;
+    }
+
+    ~ .softRangeThumb {
+      border-color: $softColorPrimary;
+    }
+
+    @include softRangeTrackPerBrowser {
+      background-color: $softColorPrimary;
+      border-color: $softColorPrimary;
+    }
+
+    ~ .softRangeHighlight .softRangeHighlight__progress {
+      background-color: $softColorPrimary;
+    }
+
+    ~ .softRangeTooltip .softRangeTooltip__value {
+      @include softBottomShadowMedium;
+
+      &.softRangeTooltip__value--right,
+      &.softRangeTooltip__value--left {
+        transform: translateX(0) translateY(-50%) scale(1.1);
+      }
+    }
+  }
+
+  // Resets
+
+  // Disable linter for these very unique vendor controls
+  // sass-lint:disable-block no-vendor-prefixes
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: ((-$softRangeTrackBorderWidth * 2 + $softRangeTrackHeight) / 2) - ($softRangeThumbHeight / 2);
+  }
+
+  &::-ms-thumb {
+    margin-top: 0;
+  }
+
+  &::-ms-track {
+    @include softRangeTrackSize;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($softRangeThumbHeight / 2) 0;
+    color: transparent;
+  }
+
+  // States
+  &--hasTicks {
+    height: $softFormControlHeight / 2; // Adjust vertical alignment based on extras
+  }
+}
+
+// Lighten the track when showing the range
+.softRangeSlider--hasRange {
+  @include softRangeTrackPerBrowser {
+    background-color: transparentize($softRangeTrackColor, .6);
+    border-color: transparentize($softRangeTrackBorderColor, .6);
+  }
+}

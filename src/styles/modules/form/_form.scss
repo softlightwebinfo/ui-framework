@@ -1,0 +1,8 @@
+.softForm__error {
+  @include softFontSizeS;
+  list-style: disc;
+}
+
+.softForm__errors {
+  margin-bottom: $softSize;
+}

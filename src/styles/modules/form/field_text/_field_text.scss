@@ -1,0 +1,18 @@
+.softFieldText {
+  @include softFormControlStyle;
+  @include softFormControlWithIcon($isIconOptional: true);
+  @include softFormControlIsLoading;
+
+  /* Invalid state normally comes from :invalid, but several components
+  /* like EuiDatePicker need it toggled through an extra class.
+  */
+  &.softFieldText-isInvalid {
+    @include softFormControlInvalidStyle;
+  }
+
+  &.softFieldText--default {
+    border-bottom: 1px solid gainsboro;
+    box-shadow: none;
+    background: none;
+  }
+}

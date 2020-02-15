@@ -1,0 +1,1 @@
+export {SoftFormLabel} from './SoftFormLabel';

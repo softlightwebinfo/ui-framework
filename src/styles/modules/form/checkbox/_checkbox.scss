@@ -1,0 +1,97 @@
+.softCheckbox {
+  position: relative;
+
+  .softCheckbox__input {
+    @include softScreenReaderOnly;
+
+    ~ .softCheckbox__label {
+      display: block;
+      padding-left: ($softCheckBoxSize * 1.5);
+      line-height: $softSizeL;
+      font-size: $softFontSizeS;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    + .softCheckbox__square {
+      @include softCustomControl($type: 'square', $size: $softCheckBoxSize);
+
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: (($softSizeL - $softCheckBoxSize) / 2) - 1px;
+    }
+
+    &:checked {
+      + .softCheckbox__square {
+        @include softCustomControlSelected($type: 'check');
+      }
+    }
+
+    &:indeterminate {
+      + .softCheckbox__square {
+        @include softCustomControlSelected($type: 'square');
+      }
+    }
+
+    &[disabled] {
+      // sass-lint:disable-block no-important
+      cursor: not-allowed !important;
+
+      ~ .softCheckbox__label {
+        color: $softFormControlDisabledColor;
+        cursor: not-allowed !important;
+      }
+
+      + .softCheckbox__square {
+        @include softCustomControlDisabled;
+      }
+    }
+
+    &:checked[disabled] {
+      + .softCheckbox__square {
+        @include softCustomControlDisabled($type: 'check');
+      }
+    }
+
+    &:indeterminate[disabled] {
+      + .softCheckbox__square {
+        @include softCustomControlDisabled($type: 'dot');
+      }
+    }
+
+    &:focus,
+    &:active:not(:disabled) {
+      + .softCheckbox__square {
+        @include softCustomControlFocused;
+      }
+    }
+  }
+
+  /**
+   * 1. Float above the visual radio and match its dimension, so that when users try to click it
+   *    they actually click this input.
+   */
+
+  &.softCheckbox--inList,
+  &.softCheckbox--noLabel {
+    min-height: $softCheckBoxSize;
+    min-width: $softCheckBoxSize;
+
+    .softCheckbox__square {
+      top: 0;
+    }
+
+    .softCheckbox__input {
+      @include size($softCheckBoxSize); /* 1 */
+
+      position: absolute; /* 1 */
+      opacity: 0; /* 1 */
+      z-index: 1; /* 1 */
+      margin: 0; /* 1 */
+      left: 0; /* 1 */
+      cursor: pointer;
+    }
+  }
+}

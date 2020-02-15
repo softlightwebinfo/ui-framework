@@ -1,0 +1,3 @@
+export {
+  SoftHighlight,
+} from './SoftHighlight';

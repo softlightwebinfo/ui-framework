@@ -1,0 +1,1 @@
+export {SoftSwitch} from './SoftSwitch';

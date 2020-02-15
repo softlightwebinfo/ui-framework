@@ -1,0 +1,16 @@
+@import '../panel/variables'; // grab the $softPanelPaddingModifiers map
+
+.softPopoverFooter {
+  @include softPopoverFooter;
+
+  // If the popover's containing panel has padding applied,
+  // ensure the footer expands to cover that padding and
+  // take on the same amount of padding horizontally
+
+  @each $modifier, $amount in $softPanelPaddingModifiers {
+    .softPopover__panel.softPanel--#{$modifier} & {
+      padding: $softSizeM $amount;
+      margin: $amount ($amount * -1) ($amount * -1);
+    }
+  }
+}

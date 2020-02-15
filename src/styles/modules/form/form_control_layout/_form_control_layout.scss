@@ -1,0 +1,77 @@
+@import '../variables';
+@import '../mixins';
+
+.softFormControlLayout {
+  // Let the height expand as needed
+  @include softFormControlSize(auto, $includeAlternates: true);
+}
+
+.softFormControlLayout__childrenWrapper {
+  position: relative;
+}
+
+/**
+ * 1. Account for inner box-shadow style border
+ */
+
+.softFormControlLayout--group {
+  // Match just the regular drop shadow of inputs
+  @include softFormControlDefaultShadow;
+  display: flex;
+  align-items: center;
+  padding: 1px; /* 1 */
+
+  .softFormControlLayout__childrenWrapper {
+    flex-grow: 1;
+  }
+
+  .softFormControlLayout__prepend,
+  .softFormControlLayout__append {
+    flex-shrink: 0;
+    height: $softFormControlHeight - 2px; /* 1 */
+    line-height: $softFontSize;
+
+    &:disabled {
+      background-color: $softFormBackgroundDisabledColor;
+      color: $softFormControlDisabledColor; // ensures established contrast
+    }
+
+    // This is the only way to target specific components to override styling
+    &.softFormLabel,
+    &.softText {
+      white-space: nowrap;
+      margin-bottom: 0;
+      padding: $softFormControlPadding;
+      border: none;
+      background-color: shadeOrTint($softFormBackgroundDisabledColor, 0, 3%);
+      line-height: $softFontSize;
+    }
+  }
+
+  //
+  // Borders
+
+  .softFormControlLayout__prepend {
+    border-right: 1px solid $softFormBorderColor;
+  }
+
+  .softFormControlLayout__append {
+    border-left: 1px solid $softFormBorderColor;
+  }
+
+  //
+  // Compressed alterations
+
+  &.softFormControlLayout--compressed {
+    .softFormControlLayout__prepend,
+    .softFormControlLayout__append {
+      height: $softFormControlCompressedHeight - 2px; /* 1 */
+
+      &.softFormLabel,
+      &.softText {
+        padding-top: $softFormControlCompressedPadding;
+        padding-bottom: $softFormControlCompressedPadding;
+      }
+    }
+  }
+}

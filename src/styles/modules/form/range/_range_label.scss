@@ -1,0 +1,18 @@
+.softRangeLabel {
+  &--min,
+  &--max {
+    font-size: $softFontSizeXS;
+  }
+
+  &--min {
+    margin-right: $softSizeS;
+  }
+
+  &--max {
+    margin-left: $softSizeS;
+  }
+
+  &--isDisabled {
+    opacity: $softRangeDisabledOpacity;
+  }
+}

@@ -1,0 +1,85 @@
+.softRadio {
+  position: relative;
+
+  .softRadio__input {
+    @include softScreenReaderOnly;
+
+    ~ .softRadio__label {
+      display: block;
+      padding-left: ($softRadioSize * 1.5);
+      line-height: $softSizeL;
+      font-size: $softFontSizeS;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    + .softRadio__circle {
+      @include softCustomControl($type: 'round', $size: $softRadioSize);
+
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: (($softSizeL - $softRadioSize) / 2) - 1px;
+    }
+
+    &:checked {
+      + .softRadio__circle {
+        @include softCustomControlSelected($type: 'dot');
+      }
+    }
+
+    &[disabled] {
+      //sass-lint:disable no-important
+      cursor: not-allowed !important;
+
+      ~ .softRadio__label {
+        color: $softFormControlDisabledColor;
+        cursor: not-allowed !important;
+      }
+
+      + .softRadio__circle {
+        @include softCustomControlDisabled;
+      }
+    }
+
+    &:checked[disabled] {
+      + .softRadio__circle {
+        @include softCustomControlDisabled($type: 'dot');
+      }
+    }
+
+    &:focus,
+    &:active:not(:disabled) {
+      + .softRadio__circle {
+        @include softCustomControlFocused;
+      }
+    }
+  }
+
+  /**
+   * 1. Float above the visual radio and match its dimension, so that when users try to click it
+   *    they actually click this input.
+   */
+
+  &.softRadio--inList,
+  &.softRadio--noLabel {
+    min-height: $softRadioSize;
+    min-width: $softRadioSize;
+
+    .softRadio__circle {
+      top: 0;
+    }
+
+    .softRadio__input {
+      @include size($softRadioSize); /* 1 */
+
+      position: absolute; /* 1 */
+      opacity: 0; /* 1 */
+      z-index: 1; /* 1 */
+      margin: 0; /* 1 */
+      left: 0; /* 1 */
+      cursor: pointer;
+    }
+  }
+}

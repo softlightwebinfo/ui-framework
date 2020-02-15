@@ -1,0 +1,7 @@
+.softCheckboxGroup__item + .softCheckboxGroup__item {
+  margin-top: $softSizeXS;
+
+  &.softCheckbox--compressed {
+    margin-top: 0;
+  }
+}

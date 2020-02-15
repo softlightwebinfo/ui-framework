@@ -1,0 +1,1 @@
+export {SoftSelectableSearch} from './SoftSelectableSearch';

@@ -1,0 +1,44 @@
+/*
+ * 1. Make popover the same width as the form control
+ * 2. Style popover similar to combobox
+ * 3. Use attribute selector to match popover position without needing the full popover class name
+ */
+
+.softSuperSelect {
+  width: 100%;
+
+  &:not(.softSuperSelect--fullWidth) { /* 1 */
+    // sass-lint:disable-block no-important
+    max-width: $softFormMaxWidth !important; // override default popover styles
+  }
+
+  .softSuperSelect__popoverAnchor {
+    display: block;
+  }
+}
+
+.softSuperSelect__popoverPanel[class*='bottom'] { /* 3 */
+  border-top-color: transparentize($softBorderColor, .2);
+  border-top-right-radius: 0; /* 2 */
+  border-top-left-radius: 0; /* 2 */
+}
+
+.softSuperSelect__popoverPanel[class*='top'] { /* 3 */
+  @include softBottomShadowFlat; /* 2 */
+
+  border-bottom-color: transparentize($softBorderColor, .2);
+  border-bottom-right-radius: 0; /* 2 */
+  border-bottom-left-radius: 0; /* 2 */
+}
+
+.softSuperSelect__item {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $softFocusBackgroundColor;
+  }
+}
+
+.softSuperSelect__item--hasDividers:not(:last-of-type) {
+  border-bottom: $softBorderThin;
+}

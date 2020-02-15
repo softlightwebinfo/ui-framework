@@ -1,0 +1,12 @@
+import React from "react";
+
+export default ({ className }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+      <path id="editor_align_left-a" d="M2,4 L2,3 L8,3 L8,4 L2,4 Z M2,7 L2,6 L12,6 L12,7 L2,7 Z M2,10 L2,9 L8,9 L8,10 L2,10 Z M2,13 L2,12 L12,12 L12,13 L2,13 Z"/>
+    </defs>
+    <g>
+      <use xlinkHref="#editor_align_left-a"/>
+    </g>
+  </svg>
+);

@@ -1,0 +1,41 @@
+@mixin softFormControlLayoutPadding($numOfIcons, $side: 'right') {
+  $iconPaddingStart: $softSizeXXL;
+
+  @if variable-exists(numOfIcons) == false {
+    @error '$numOfIcons:integer (1-3) must be provided to @mixin softFormControlLayoutPadding().';
+  } @else if $numOfIcons == 1 {
+    padding-#{$side}: $iconPaddingStart;
+  } @else if $numOfIcons == 2 {
+    padding-#{$side}: $iconPaddingStart + $softSize;
+  } @else if $numOfIcons == 3 {
+    padding-#{$side}: $iconPaddingStart + ($softSize * 2) + $softSizeS;
+  }
+}
+
+@mixin softFormControlLayoutClearIcon($iconClass) {
+  $clearSize: $softSize;
+  @include size($clearSize);
+
+  pointer-events: all;
+  background-color: lightOrDarkTheme($softColorMediumShade, $softColorDarkShade);
+  border-radius: $clearSize;
+  line-height: 0; // ensures the icon stays vertically centered
+
+  &:focus {
+    @include softFocusRing;
+  }
+
+  #{$iconClass} {
+    @include size($softSizeS);
+    fill: $softColorEmptyShade;
+    stroke: $softColorEmptyShade;
+    stroke-width: 2px; // increase thickness of icon at such a small size
+  }
+}
+
+// Deprecated mixins below. This was changed in Nov. 2018
+
+@mixin softFormControlLayout__padding($numOfIcons, $side: 'right') { // sass-lint:disable-line mixin-name-format
+  @include softFormControlLayoutPadding($numOfIcons, $side: 'right');
+  @warn '@mixin softFormControlLayout__padding is deprecated, please use softFormControlLayoutPadding instead';
+}

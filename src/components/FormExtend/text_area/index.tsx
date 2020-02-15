@@ -1,0 +1,1 @@
+export { SoftTextArea } from './SoftTextArea';

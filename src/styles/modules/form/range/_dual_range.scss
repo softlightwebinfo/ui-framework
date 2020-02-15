@@ -1,0 +1,7 @@
+.softDualRange {
+  &__slider {
+    @include softRangeThumbPerBrowser {
+      visibility: hidden;
+    }
+  }
+}

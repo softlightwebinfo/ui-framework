@@ -1,0 +1,23 @@
+/**
+ * 1. Focused state overrides invalid state.
+ */
+.softFormLabel {
+  @include softFontSizeXS;
+  display: inline-block;
+  margin-bottom: $softSizeXS;
+  transition: all $softAnimSpeedFast $softAnimSlightResistance;
+  color: $softTitleColor;
+  font-weight: $softFontWeightSemiBold;
+
+  &.softFormLabel-isInvalid {
+    color: $softColorDanger; /* 1 */
+  }
+
+  &.softFormLabel-isFocused {
+    color: $softColorPrimary; /* 1 */
+  }
+}
+
+.softFormLabel[for] {
+  cursor: pointer;
+}

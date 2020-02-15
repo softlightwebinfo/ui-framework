@@ -1,0 +1,39 @@
+.softDescribedFormGroup {
+  max-width: $softFormMaxWidth * 2;
+
+  + * {
+    margin-top: $softSizeL;
+  }
+
+  &.softDescribedFormGroup--fullWidth {
+    max-width: 100%;
+  }
+
+  .softDescribedFormGroup__description {
+    padding-top: $softSizeS;
+  }
+
+  .softDescribedFormGroup__fields {
+    width: $softFormMaxWidth;
+    max-width: 100%;
+  }
+
+  .softDescribedFormGroup__fieldPadding {
+    &--xxxsmall {padding-top: ($softFontSizeXS * 1.5) - $softFontSizeXS + 2px;}
+    &--xxsmall {padding-top: ($softFontSizeS * 1.5) - $softFontSizeXS + 2px;}
+    &--xsmall {padding-top: ($softFontSize * 1.5) - $softFontSizeXS + 2px;}
+    &--small {padding-top: ($softFontSizeL * 1.5) - $softFontSizeXS + 2px;}
+    &--medium {padding-top: ($softFontSizeXL * 1.5) - $softFontSizeXS + 2px;}
+    &--large {padding-top: ($softFontSizeXXL * 1.5) - $softFontSizeXS + 2px;}
+  }
+
+  @include softBreakpoint('xs', 's') {
+    .softDescribedFormGroup__fields {
+      padding-top: 0;
+
+      > .softFormRow--hasEmptyLabelSpace:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+}

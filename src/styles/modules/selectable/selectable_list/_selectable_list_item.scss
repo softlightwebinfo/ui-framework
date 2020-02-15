@@ -1,0 +1,55 @@
+.softSelectableListItem {
+  @include softFontSizeS;
+
+  padding: $softSizeXS $softSizeM;
+  display: block; // Necessary to make sure it doesn't force the whole popover to be too wide
+  width: 100%;
+  text-align: left;
+  color: $softTextColor;
+
+  &:not(:last-of-type) {
+    border-bottom: $softSelectableListItemBorder;
+  }
+
+  &:hover,
+  &:focus {
+    .softSelectableListItem__text {
+      text-decoration: underline;
+    }
+  }
+
+  &:focus,
+  &-isFocused {
+    cursor: pointer;
+    color: $softColorPrimary;
+    background-color: $softFocusBackgroundColor;
+  }
+
+  &[disabled] {
+    color: $softColorMediumShade;
+    cursor: not-allowed;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.softSelectableListItem__content {
+  display: flex;
+  align-items: center;
+}
+
+.softSelectableListItem__icon,
+.softSelectableListItem__prepend {
+  margin-right: $softSizeM;
+}
+
+.softSelectableListItem__append {
+  margin-left: $softSizeM;
+}
+
+.softSelectableListItem__text {
+  @include softTextTruncate;
+  flex-grow: 1; // Pushed appended content to the far right
+}

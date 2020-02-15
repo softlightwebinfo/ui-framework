@@ -1,0 +1,1 @@
+export { SoftFieldSearch } from './SoftFieldSearch';

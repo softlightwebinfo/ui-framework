@@ -1,0 +1,5 @@
+.softFieldNumber {
+  @include softFormControlStyle;
+  @include softFormControlWithIcon($isIconOptional: true);
+  @include softFormControlIsLoading;
+}

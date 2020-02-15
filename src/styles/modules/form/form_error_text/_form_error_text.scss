@@ -1,0 +1,5 @@
+.softFormErrorText {
+  @include softFontSizeXS;
+  padding-top: $softSizeS;
+  color: $softColorDanger;
+}

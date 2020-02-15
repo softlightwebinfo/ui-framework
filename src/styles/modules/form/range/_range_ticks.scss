@@ -1,0 +1,46 @@
+.softRangeTicks {
+  position: absolute;
+  left: ($softRangeThumbWidth / 2);
+  right: ($softRangeThumbWidth / 2);
+  top: $softSizeS;
+  display: flex;
+  z-index: $softZLevel1;
+}
+
+.softRangeTick {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  font-size: $softFontSizeXS;
+  position: relative;
+  padding-top: $softSize;
+
+  &::before {
+    @include size($softSizeXS);
+
+    content: '';
+    background-color: $softColorDarkShade;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - #{($softSizeXS/2)});
+  }
+
+  &--isCustom {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &:enabled:hover,
+  &:focus,
+  &--selected {
+    color: $softColorPrimary;
+  }
+
+  &--selected {
+    font-weight: $softFontWeightMedium;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

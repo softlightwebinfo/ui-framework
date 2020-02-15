@@ -1,0 +1,35 @@
+/**
+ * 1. Leave room for caret.
+ * 2. Ensure the descenders don't get cut off
+ * 3. Makes sure the height is correct when there's no selection
+ */
+
+.softSuperSelectControl {
+  @include softFormControlStyle;
+  @include softFormControlWithIcon($side: 'right'); /* 1 */
+  @include softFormControlIsLoading($isNextToIcon: true);
+
+  display: block; /* 3 */
+  text-align: left;
+  line-height: $softFormControlHeight; /* 2 */
+  padding-top: 0; /* 2 */
+  padding-bottom: 0; /* 2 */
+  // Truncate the text
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &-isInvalid {
+    @include softFormControlInvalidStyle;
+  }
+
+  &--compressed {
+    line-height: $softFormControlCompressedHeight; /* 2 */
+    padding-top: 0; /* 2 */
+    padding-bottom: 0; /* 2 */
+  }
+
+  &.softSuperSelect--isOpen__button { // since this is a button, we also want the visual indicator of active when options are shown
+    @include softFormControlFocusStyle;
+  }
+}

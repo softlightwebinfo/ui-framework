@@ -1,0 +1,1 @@
+export {SoftFormErrorText} from './SoftFormErrorText';

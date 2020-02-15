@@ -1,0 +1,27 @@
+.softSelectableList {
+  .ReactVirtualized__List {
+    @include softScrollBar;
+  }
+}
+
+// Expand height of list via flex box
+.softSelectableList-fullHeight {
+  flex-grow: 1;
+}
+
+.softSelectableList-bordered {
+  overflow: hidden;
+  border: $softBorderThin;
+  border-radius: $softBorderRadius;
+}
+
+.softSelectableList-overflowing {
+  @include softOverflowShadow;
+}
+
+.softSelectableList__groupLabel {
+  @include softTitle('xxxs');
+  display: flex;
+  align-items: center;
+  border-bottom: $softSelectableListItemBorder;
+}

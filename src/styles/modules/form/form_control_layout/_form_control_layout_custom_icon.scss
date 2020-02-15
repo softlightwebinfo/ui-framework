@@ -1,0 +1,27 @@
+.softFormControlLayoutCustomIcon {
+  pointer-events: none;
+
+  .softFormControlLayoutCustomIcon__icon {
+    transform: translateY(-1px);
+  }
+}
+
+.softFormControlLayoutCustomIcon--clickable {
+  @include size($softSize);
+
+  pointer-events: all;
+
+  .softFormControlLayoutCustomIcon__icon {
+    vertical-align: baseline;
+    transform: none;
+  }
+
+  &:focus {
+    @include softFocusRing;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: $softFormControlDisabledColor;
+  }
+}

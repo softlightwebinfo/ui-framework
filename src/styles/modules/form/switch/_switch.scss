@@ -1,0 +1,141 @@
+.softSwitch {
+  position: relative;
+  display: inline-block;
+  min-height: $softSwitchHeight;
+
+  .softSwitch__label {
+    padding-left: $softSizeS;
+    line-height: $softSwitchHeight;
+    font-size: $softFontSizeS;
+    vertical-align: middle;
+  }
+
+  /**
+   * 1. The input is "hidden" but still focusable.
+   * 2. Make sure it's still hidden when [disabled].
+   */
+  .softSwitch__input,
+  .softSwitch__input[disabled] /* 2 */
+  {
+    position: absolute;
+    opacity: 0; /* 1 */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .softSwitch__input:focus + .softSwitch__body {
+
+    .softSwitch__thumb {
+      @include softCustomControlFocused;
+    }
+  }
+
+  .softSwitch__body {
+    pointer-events: none;
+    width: $softSwitchWidth;
+    height: $softSwitchHeight;
+    background-color: $softColorPrimary;
+    display: inline-block;
+    position: relative;
+    border-radius: $softSwitchHeight;
+    vertical-align: middle;
+  }
+
+  .softSwitch__thumb {
+    @include softCustomControl($type: 'round', $size: $softSwitchThumbSize);
+
+    position: absolute;
+    display: inline-block;
+    left: $softSwitchWidth - $softSwitchThumbSize;
+    transition: border-color $softAnimSpeedNormal $softAnimSlightBounce, background-color $softAnimSpeedNormal $softAnimSlightBounce, left $softAnimSpeedNormal $softAnimSlightBounce, transform $softAnimSpeedNormal $softAnimSlightBounce;
+  }
+
+  .softSwitch__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: $softSwitchHeight;
+  }
+
+  .softSwitch__icon {
+    position: absolute;
+    right: -($softSwitchWidth - ($softSwitchThumbSize / 2));
+    top: ($softSwitchHeight - $softSwitchIconHeight) / 2;
+    bottom: 0;
+    width: $softSwitchWidth - ($softSwitchThumbSize / 2) + $softSizeS;
+    height: $softSwitchIconHeight;
+    transition: left $softAnimSpeedNormal $softAnimSlightBounce, right $softAnimSpeedNormal $softAnimSlightBounce;
+    fill: $softTextColor;
+  }
+
+  .softSwitch__icon--checked {
+    right: auto;
+    left: -$softSizeS;
+    fill: $softColorEmptyShade;
+  }
+
+  /**
+   * The thumb is slightly scaled when in use, unless it's disabled.
+   */
+  &:hover {
+    .softSwitch__input:not(:disabled) ~ .softSwitch__body {
+      .softSwitch__thumb {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &:active {
+    .softSwitch__thumb {
+      transform: scale(.95);
+    }
+  }
+
+  .softSwitch__input:disabled:hover {
+    cursor: not-allowed;
+  }
+
+  .softSwitch__input:disabled ~ .softSwitch__body,
+  .softSwitch__input:checked:disabled ~ .softSwitch__body {
+    background-color: lightOrDarkTheme(transparentize($softColorMediumShade, .8), transparentize($softColorMediumShade, .3));
+
+    .softSwitch__thumb {
+      @include softCustomControlDisabled;
+      background-color: lightOrDarkTheme(transparentize($softColorMediumShade, .8), transparentize($softColorMediumShade, .3));
+    }
+
+    .softSwitch__icon {
+      fill: $softFormCustomControlDisabledIconColor;
+    }
+
+    + label {
+      color: $softFormControlDisabledColor;
+    }
+  }
+
+  .softSwitch__input:not(:checked):not(:disabled) ~ .softSwitch__body {
+    background-color: lightOrDarkTheme(transparentize($softColorMediumShade, .8), transparentize($softColorMediumShade, .3));
+  }
+
+  /**
+   * When input is not checked, we shift around the positioning of sibling/child selectors.
+   */
+  .softSwitch__input:not(:checked) ~ .softSwitch__body {
+    .softSwitch__thumb {
+      left: 0;
+    }
+
+    .softSwitch__icon {
+      right: -$softSizeS;
+
+      &.softSwitch__icon--checked {
+        right: auto;
+        left: -($softSwitchWidth - ($softSwitchThumbSize / 2));
+      }
+    }
+  }
+}

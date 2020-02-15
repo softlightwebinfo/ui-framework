@@ -1,0 +1,1 @@
+export {SoftSelectableMessage} from './SoftSelectableMessage';

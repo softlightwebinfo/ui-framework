@@ -1,0 +1,23 @@
+.softRangeHighlight {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: ($softFormControlHeight / 2) - 2px;
+  z-index: $softZLevel0;
+  overflow: hidden;
+
+  &__progress {
+    height: 4px;
+    border-radius: 4px;
+    background-color: $softRangeTrackColor;
+
+    &--hasFocus {
+      background-color: $softColorPrimary;
+    }
+  }
+
+  &--hasTicks {
+    top: ($softFormControlHeight / 4) - 2px;
+    left: 0;
+  }
+}

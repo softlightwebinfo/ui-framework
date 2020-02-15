@@ -1,0 +1,24 @@
+.softFormControlLayoutIcons {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: $softFormControlPadding;
+  display: flex;
+  align-items: center;
+
+  > * + * {
+    margin-left: $softFormControlPadding / 2;
+  }
+}
+
+.softFormControlLayoutIcons--right {
+  left: auto;
+  right: $softFormControlPadding;
+}
+
+// If the control is disabled, change the color of the icons
+*:disabled + .softFormControlLayoutIcons {
+  cursor: not-allowed;
+  color: $softFormControlDisabledColor;
+}
