@@ -1,0 +1,8 @@
+.softComboBoxPlaceholder {
+  position: absolute;
+  pointer-events: none;
+  padding: 0 $softSizeXS;
+  line-height: $softSizeXL;
+  color: $softColorMediumShade;
+  margin-bottom: 0 !important; // sass-lint:disable-line no-important
+}

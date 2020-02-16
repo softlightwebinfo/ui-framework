@@ -1,0 +1,109 @@
+/**
+ * 1. Not always needed, but fixes an IE11 issue when flex-groups are nested under display: flex elements.
+ * 2. IE requires a unit to grow.
+ */
+
+.softFlexGroup {
+  display: flex;
+  align-items: stretch;
+  flex-grow: 1; /* 1 */
+
+  .softFlexItem {
+    @include internetExplorerOnly {
+      min-width: 1px;
+    }
+
+    flex-grow: 1;
+    flex-basis: 0%; /* 2 */
+  }
+}
+
+$gutterTypes: (
+  gutterExtraSmall: $softSizeXS,
+  gutterSmall: $softSizeS,
+  gutterMedium: $softSize,
+  gutterLarge: $softSizeL,
+  gutterExtraLarge: $softSizeXXL,
+);
+
+// Gutter Sizes
+@each $gutterName, $gutterSize in $gutterTypes {
+  $halfGutterSize: $gutterSize * .5;
+
+  .softFlexGroup--#{$gutterName} {
+    margin: -$halfGutterSize;
+
+    & > .softFlexItem {
+      margin: $halfGutterSize;
+    }
+  }
+}
+
+// Justify the grid
+.softFlexGroup--justifyContentSpaceEvenly {
+  justify-content: space-evenly;
+}
+
+.softFlexGroup--justifyContentSpaceBetween {
+  justify-content: space-between;
+}
+
+.softFlexGroup--justifyContentSpaceAround {
+  justify-content: space-around;
+}
+
+.softFlexGroup--justifyContentCenter {
+  justify-content: center;
+}
+
+.softFlexGroup--justifyContentFlexEnd {
+  justify-content: flex-end;
+}
+
+// Align Items
+.softFlexGroup--alignItemsFlexStart {
+  align-items: flex-start;
+}
+
+.softFlexGroup--alignItemsCenter {
+  align-items: center;
+}
+
+.softFlexGroup--alignItemsFlexEnd {
+  align-items: flex-end;
+}
+
+.softFlexGroup--alignItemsBaseline {
+  align-items: baseline;
+}
+
+// Direction
+
+.softFlexGroup--directionRow {
+  flex-direction: row;
+}
+
+.softFlexGroup--directionRowReverse {
+  flex-direction: row-reverse;
+}
+
+.softFlexGroup--directionColumn {
+  flex-direction: column;
+}
+
+.softFlexGroup--directionColumnReverse {
+  flex-direction: column-reverse;
+}
+
+// Wrap
+.softFlexGroup--wrap {
+  flex-wrap: wrap;
+}
+
+@include softBreakpoint('xs', 's') {
+  .softFlexGroup--responsive {
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

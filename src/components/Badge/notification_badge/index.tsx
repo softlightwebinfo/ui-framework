@@ -1,0 +1,1 @@
+export {SoftNotificationBadge} from './SoftBadgeNotification';

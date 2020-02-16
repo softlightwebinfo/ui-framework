@@ -1,0 +1,30 @@
+.softLink {
+  @include softLink;
+}
+
+$textColors: (
+  subdued: $softColorDarkShade,
+  primary: $softColorPrimary,
+  secondary: $softColorSecondary,
+  accent: $softColorAccent,
+  warning: $softColorWarning,
+  danger: $softColorDanger,
+  text: $softTextColor,
+  ghost: $softColorGhost,
+);
+
+// Create color modifiers based on the map
+@each $name, $color in $textColors {
+  .softLink.softLink--#{$name} {
+    color: $color;
+
+    &:hover {
+      color: darken($color, 10%);
+    }
+
+    &:focus {
+      outline: solid 3px transparentize($color, .9);
+      background-color: transparentize($color, .9);
+    }
+  }
+}

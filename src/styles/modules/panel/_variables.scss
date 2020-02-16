@@ -1,0 +1,13 @@
+/**
+ * Padding map referenced in:
+ *  - Popover
+ *  - PageContentHeader
+ *  - PageContentHeaderSection
+*/
+$softPanelPaddingModifiers: (
+  'paddingSmall': $softSizeS,
+  'paddingMedium': $softSize,
+  'paddingLarge': $softSizeL
+) !default;
+
+$softPanelBorderColor: tintOrShade($softShadowColor, 40%, 0%) !default; // match shadow

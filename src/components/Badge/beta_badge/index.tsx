@@ -1,0 +1,3 @@
+export {
+  SoftBetaBadge,
+} from './SoftBetaBadge';

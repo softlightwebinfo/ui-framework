@@ -1,0 +1,40 @@
+.softNotificationBadge {
+  flex-shrink: 0; // Ensures it never scales down below it's intended size
+  display: inline-block;
+  border-radius: $softBorderRadius;
+  background: $softColorAccent;
+  color: $softColorEmptyShade;
+  font-size: $softFontSizeXS;
+  font-weight: $softFontWeightMedium;
+  line-height: $softSize;
+  height: $softSize;
+  min-width: $softSize;
+  padding-left: $softSizeXS;
+  padding-right: $softSizeXS;
+  vertical-align: middle;
+  text-align: center;
+  transition: all $softAnimSpeedFast ease-in;
+
+  &--medium {
+    // Increase the default size a bit
+    $size: $softSize + $softSizeXS;
+    line-height: $size;
+    height: $size;
+    min-width: $softSizeL;
+  }
+
+  &--subdued {
+    background-color: tint($softColorLightShade, 30%);
+    color: $softColorFullShade;
+  }
+
+  &--warning {
+    background-color: tint($softColorWarning, 30%);
+    color: $softColorFullShade;
+  }
+
+  &--success {
+    background-color: tint($softColorSuccess, 30%);
+    color: $softColorFullShade;
+  }
+}

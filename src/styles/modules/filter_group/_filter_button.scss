@@ -1,0 +1,63 @@
+@import '../form/variables';
+
+.softFilterButton {
+  background-color: $softFormBackgroundColor;
+  height: $softFormControlHeight;
+  width: auto;
+  border: 1px solid $softFormBorderColor;
+  border-right: none;
+  font-size: $softFontSizeS;
+
+  &:disabled {
+    color: $softButtonColorDisabled;
+    pointer-events: none;
+
+    .softFilterButton__notification {
+      opacity: .5;
+    }
+  }
+
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
+    // Remove underline from whole button so notifications don't get the underline
+    text-decoration: none;
+
+    .softFilterButton__textShift {
+      // Add put it only on the actual text part
+      text-decoration: underline;
+    }
+  }
+}
+
+.softFilterButton-hasActiveFilters {
+  font-weight: $softFontWeightBold;
+}
+
+.softFilterButton--hasIcon .softButtonEmpty__content {
+  justify-content: space-between;
+}
+
+.softFilterButton--withNext + .softFilterButton {
+  margin-left: $softSizeXS * -1;
+  border-left: none;
+}
+
+.softFilterButton-isSelected {
+  background-color: $softColorLightestShade;
+}
+
+.softFilterButton__text-hasNotification {
+  display: flex;
+  align-items: center;
+}
+
+.softFilterButton__notification {
+  margin-left: $softSizeS;
+  vertical-align: text-bottom;
+}
+
+.softFilterButton__textShift {
+  @include softTextShift;
+  @include softTextTruncate;
+  min-width: $softSize * 3;
+}

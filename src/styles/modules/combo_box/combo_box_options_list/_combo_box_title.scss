@@ -1,0 +1,11 @@
+/**
+ * 1. Force each title to be the same height as an option, so that the virtualized scroll logic
+ *    works.
+ */
+.softComboBoxTitle {
+  font-size: $softFontSizeXS;
+  padding: ($softSizeXS + $softSizeS - 1px) $softSizeS $softSizeXS; /* 1 */
+  width: 100%;
+  font-weight: $softFontWeightBold;
+  color: $softColorFullShade;
+}

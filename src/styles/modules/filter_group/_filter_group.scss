@@ -1,0 +1,63 @@
+@import '../form/variables';
+
+.softFilterGroup {
+  display: inline-flex;
+  max-width: 100%;
+  border-right: 1px solid $softFormBorderColor;
+  box-shadow: 0 1px 2px -1px transparentize($softShadowColor, .8), 0 3px 3px -2px transparentize($softShadowColor, .8);
+  overflow-x: auto;
+
+  > * {
+    flex: 1 1 auto;
+    min-width: $softSize * 3;
+  }
+
+  > .softFilterButton--noGrow  {
+    flex-grow: 0;
+  }
+
+  > .softFilterButton-hasNotification {
+    min-width: $softSize * 6;
+  }
+
+  > .softFilterButton--hasIcon {
+    min-width: $softSize * 8;
+  }
+
+  // Force popover anchors to expand for now
+  .softPopover__anchor {
+    display: block;
+
+    .softFilterButton {
+      width: 100%;
+    }
+  }
+}
+
+.softFilterGroup--fullWidth {
+  display: flex;
+}
+
+// A fixed width is required in IE11 because of the shift in widths that can be caused
+// by the loading animation that precedes the results.
+.softFilterGroup__popoverPanel {
+  width: $softSize * 18;
+}
+
+@include softBreakpoint('xs', 's') {
+  .softFilterGroup {
+    flex-wrap: wrap;
+  }
+}
+
+@include softBreakpoint('xs') {
+  // Force all tiny screens to take up the entire width
+  .softFilterGroup {
+    display: flex;
+
+    .softFilterButton {
+      // sass-lint:disable-block no-important
+      flex-grow: 1 !important;
+    }
+  }
+}
