@@ -1,120 +1,103 @@
 import React, {Fragment, Component} from 'react';
-import PropTypes from 'prop-types';
-
-import {SoftLoadingSpinner} from '../../Loading';
-import {FormControlLayoutClearButton} from './SoftFormControlLayoutClearButton';
-import {FormControlLayoutCustomIcon} from './SoftFormControlLayoutCustomIcon';
+import {Loading} from '../../Loading';
+import {FormControlLayoutClearButton} from './FormControlLayoutClearButton';
+import {FormControlLayoutCustomIcon} from './FormControlLayoutCustomIcon';
 
 export const ICON_SIDES = ['left', 'right'];
 
 export class FormControlLayoutIcons extends Component<{
-  icon?: any,
-  isLoading?: boolean,
-  clear?: any
+    icon?: any,
+    isLoading?: boolean,
+    clear?: any
 }> {
-  static propTypes: {};
+    static propTypes: {};
 
-  render() {
-    const {icon} = this.props;
+    render() {
+        const {icon} = this.props;
 
-    const iconSide = icon && icon.side ? icon.side : 'left';
-    const customIcon = this.renderCustomIcon();
-    const loadingSpinner = this.renderLoadingSpinner();
-    const clearButton = this.renderClearButton();
+        const iconSide = icon && icon.side ? icon.side : 'left';
+        const customIcon = this.renderCustomIcon();
+        const loadingSpinner = this.renderLoadingSpinner();
+        const clearButton = this.renderClearButton();
 
-    let leftIcons;
+        let leftIcons;
 
-    if (customIcon && iconSide === 'left') {
-      leftIcons = (
-        <div className="softFormControlLayoutIcons">
-          {customIcon}
-        </div>
-      );
+        if (customIcon && iconSide === 'left') {
+            leftIcons = (
+                <div className="c-form-control-layout-icons">
+                    {customIcon}
+                </div>
+            );
+        }
+
+        let rightIcons;
+
+        // If the icon is on the right, it should be placed after the clear button in the DOM.
+        if (clearButton || loadingSpinner || (customIcon && iconSide === 'right')) {
+            rightIcons = (
+                <div className="c-form-control-layout-icons c-form-control-layout-icons--right">
+                    {clearButton}
+                    {loadingSpinner}
+                    {iconSide === 'right' ? customIcon : undefined}
+                </div>
+            );
+        }
+
+        return (
+            <Fragment>
+                {leftIcons}
+                {rightIcons}
+            </Fragment>
+        );
     }
 
-    let rightIcons;
+    renderCustomIcon() {
+        const {icon} = this.props;
 
-    // If the icon is on the right, it should be placed after the clear button in the DOM.
-    if (clearButton || loadingSpinner || (customIcon && iconSide === 'right')) {
-      rightIcons = (
-        <div className="softFormControlLayoutIcons softFormControlLayoutIcons--right">
-          {clearButton}
-          {loadingSpinner}
-          {iconSide === 'right' ? customIcon : undefined}
-        </div>
-      );
+        if (!icon) {
+            return null;
+        }
+
+        // Normalize the icon to an object if it's a string.
+        const iconProps = typeof icon === 'string' ? {
+            type: icon,
+        } : icon;
+
+        const {
+            ref: iconRef,
+            side, // eslint-disable-line no-unused-vars
+            ...iconRest
+        } = iconProps;
+
+        return (
+            <FormControlLayoutCustomIcon
+                iconRef={iconRef}
+                {...iconRest}
+            />
+        );
     }
 
-    return (
-      <Fragment>
-        {leftIcons}
-        {rightIcons}
-      </Fragment>
-    );
-  }
+    renderLoadingSpinner() {
+        const {isLoading} = this.props;
 
-  renderCustomIcon() {
-    const {icon} = this.props;
+        if (!isLoading) {
+            return null;
+        }
 
-    if (!icon) {
-      return null;
+        return (
+            <Loading size="m"/>
+        );
     }
 
-    // Normalize the icon to an object if it's a string.
-    const iconProps = typeof icon === 'string' ? {
-      type: icon,
-    } : icon;
+    renderClearButton() {
+        const {clear} = this.props;
 
-    const {
-      ref: iconRef,
-      side, // eslint-disable-line no-unused-vars
-      ...iconRest
-    } = iconProps;
+        if (!clear) {
+            return null;
+        }
 
-    return (
-      <FormControlLayoutCustomIcon
-        iconRef={iconRef}
-        {...iconRest}
-      />
-    );
-  }
-
-  renderLoadingSpinner() {
-    const {isLoading} = this.props;
-
-    if (!isLoading) {
-      return null;
+        return (
+            <FormControlLayoutClearButton {...clear} />
+        );
     }
-
-    return (
-      <SoftLoadingSpinner size="m"/>
-    );
-  }
-
-  renderClearButton() {
-    const {clear} = this.props;
-
-    if (!clear) {
-      return null;
-    }
-
-    return (
-      <FormControlLayoutClearButton {...clear} />
-    );
-  }
 }
-
-FormControlLayoutIcons.propTypes = {
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      type: PropTypes.string,
-      side: PropTypes.oneOf(ICON_SIDES),
-      onClick: PropTypes.func,
-    }),
-  ]),
-  clear: PropTypes.shape({
-    onClick: PropTypes.func,
-  }),
-  isLoading: PropTypes.bool,
-};

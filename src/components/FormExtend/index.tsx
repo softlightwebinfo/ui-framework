@@ -19,4 +19,4 @@ export * from './switch';
 export * from './text_area';
 export * from './text_area';
 export * from './validatable_control';
-export {SoftForm} from './SoftForm';
+export {FormExtend} from './Form';

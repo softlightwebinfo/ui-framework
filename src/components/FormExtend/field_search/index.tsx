@@ -1,1 +1,1 @@
-export { SoftFieldSearch } from './SoftFieldSearch';
+export { FieldSearch } from './FieldSearch';

@@ -8,7 +8,7 @@ export class PopoverTitle extends Component<{ children: any, className?: any }> 
       className,
       ...rest
     } = this.props;
-    const classes = classNames('softPopoverTitle', className);
+    const classes = classNames('c-popoverTitle', className);
 
     return (
       <div className={classes} {...rest}>

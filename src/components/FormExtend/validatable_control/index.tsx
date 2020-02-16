@@ -1,3 +1,3 @@
 export {
-  SoftValidatableControl,
-} from './SoftValidatableControl';
+    ValidatableControl,
+} from './ValidatableControl';

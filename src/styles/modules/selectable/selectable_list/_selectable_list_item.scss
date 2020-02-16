@@ -1,32 +1,32 @@
-.softSelectableListItem {
-  @include softFontSizeS;
+.c-selectableListItem {
+  @include FontSizeS;
 
-  padding: $softSizeXS $softSizeM;
-  display: block; // Necessary to make sure it doesn't force the whole popover to be too wide
-  width: 100%;
+  padding:    $SizeXS $SizeM;
+  display:    block; // Necessary to make sure it doesn't force the whole popover to be too wide
+  width:      100%;
   text-align: left;
-  color: $softTextColor;
+  color:      $TextColor;
 
   &:not(:last-of-type) {
-    border-bottom: $softSelectableListItemBorder;
+    border-bottom: $SelectableListItemBorder;
   }
 
   &:hover,
   &:focus {
-    .softSelectableListItem__text {
+    .c-selectableListItem__text {
       text-decoration: underline;
     }
   }
 
   &:focus,
   &-isFocused {
-    cursor: pointer;
-    color: $softColorPrimary;
-    background-color: $softFocusBackgroundColor;
+    cursor:           pointer;
+    color:            $ColorPrimary;
+    background-color: $FocusBackgroundColor;
   }
 
   &[disabled] {
-    color: $softColorMediumShade;
+    color:  $ColorMediumShade;
     cursor: not-allowed;
 
     &:hover {
@@ -35,21 +35,21 @@
   }
 }
 
-.softSelectableListItem__content {
-  display: flex;
+.c-selectableListItem__content {
+  display:     flex;
   align-items: center;
 }
 
-.softSelectableListItem__icon,
-.softSelectableListItem__prepend {
-  margin-right: $softSizeM;
+.c-selectableListItem__icon,
+.c-selectableListItem__prepend {
+  margin-right: $SizeM;
 }
 
-.softSelectableListItem__append {
-  margin-left: $softSizeM;
+.c-selectableListItem__append {
+  margin-left: $SizeM;
 }
 
-.softSelectableListItem__text {
-  @include softTextTruncate;
+.c-selectableListItem__text {
+  @include TextTruncate;
   flex-grow: 1; // Pushed appended content to the far right
 }

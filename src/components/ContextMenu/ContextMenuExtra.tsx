@@ -1,326 +1,306 @@
 import React, {
-  Component,
+    Component,
 } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-import {SoftContextMenuPanel} from './SoftContextMenuPanel';
-import {SoftContextMenuItem} from './SoftContextMenuItem';
+import {ContextMenuExtraPanel} from './ContextMenuExtraPanel';
+import {ContextMenuExtraItem} from './ContextMenuExtraItem';
 
 function mapIdsToPanels(panels) {
-  const map = {};
+    const map = {};
 
-  panels.forEach(panel => {
-    map[panel.id] = panel;
-  });
+    panels.forEach(panel => {
+        map[panel.id] = panel;
+    });
 
-  return map;
+    return map;
 }
 
 function mapIdsToPreviousPanels(panels) {
-  const idToPreviousPanelIdMap = {};
+    const idToPreviousPanelIdMap = {};
 
-  panels.forEach(panel => {
-    if (Array.isArray(panel.items)) {
-      panel.items.forEach(item => {
-        const isCloseable = item.panel !== undefined;
-        if (isCloseable) {
-          idToPreviousPanelIdMap[item.panel] = panel.id;
+    panels.forEach(panel => {
+        if (Array.isArray(panel.items)) {
+            panel.items.forEach(item => {
+                const isCloseable = item.panel !== undefined;
+                if (isCloseable) {
+                    idToPreviousPanelIdMap[item.panel] = panel.id;
+                }
+            });
         }
-      });
-    }
-  });
+    });
 
-  return idToPreviousPanelIdMap;
+    return idToPreviousPanelIdMap;
 }
 
 function mapPanelItemsToPanels(panels) {
-  const idAndItemIndexToPanelIdMap = {};
+    const idAndItemIndexToPanelIdMap = {};
 
-  panels.forEach(panel => {
-    idAndItemIndexToPanelIdMap[panel.id] = {};
+    panels.forEach(panel => {
+        idAndItemIndexToPanelIdMap[panel.id] = {};
 
-    if (panel.items) {
-      panel.items.forEach((item, index) => {
-        if (item.panel) {
-          idAndItemIndexToPanelIdMap[panel.id][index] = item.panel;
+        if (panel.items) {
+            panel.items.forEach((item, index) => {
+                if (item.panel) {
+                    idAndItemIndexToPanelIdMap[panel.id][index] = item.panel;
+                }
+            });
         }
-      });
-    }
-  });
+    });
 
-  return idAndItemIndexToPanelIdMap;
+    return idAndItemIndexToPanelIdMap;
 }
 
-export const SoftContextMenuPanelItemShape = PropTypes.shape({
-  name: PropTypes.string,
-  icon: PropTypes.node,
-  onClick: PropTypes.func,
-  // If given, shows the panel with this id when clicked:
-  panel: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  disabled: PropTypes.bool,
-});
-
-export const SoftContextMenuPanelShape = PropTypes.shape({
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  width: PropTypes.number,  // Pixel value to set the panel width to
-  content: PropTypes.node,  // Either content or items array should be given.
-  items: PropTypes.arrayOf(SoftContextMenuPanelItemShape),
-  title: PropTypes.string,
-});
-
-export class SoftContextMenu extends Component<{
-  panels?: any,
-  className?: any,
-  initialPanelId?: any,
+export class ContextMenuExtra extends Component<{
+    panels?: any,
+    className?: any,
+    initialPanelId?: any,
 }> {
-  static propTypes = {
-    className: PropTypes.string,
-    panels: PropTypes.arrayOf(SoftContextMenuPanelShape),
-    initialPanelId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  };
-
-  static defaultProps = {
-    panels: [],
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const {panels} = nextProps;
-
-    if (prevState.prevProps.panels !== panels) {
-      return {
-        prevProps: {panels},
-        idToPanelMap: mapIdsToPanels(panels),
-        idToPreviousPanelIdMap: mapIdsToPreviousPanels(panels),
-        idAndItemIndexToPanelIdMap: mapPanelItemsToPanels(panels)
-      };
-    }
-
-    return null;
-  }
-
-  state = {
-    prevProps: {},
-    idToPanelMap: {},
-    idToPreviousPanelIdMap: {},
-    idAndItemIndexToPanelIdMap: {},
-    idToRenderedItemsMap: null,
-    height: undefined,
-    outgoingPanelId: undefined,
-    incomingPanelId: this.props.initialPanelId,
-    transitionDirection: undefined,
-    isOutgoingPanelVisible: false,
-    focusedItemIndex: undefined,
-    isUsingKeyboardToNavigate: false,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      ...this.state,
-      idToRenderedItemsMap: this.mapIdsToRenderedItems(this.props.panels),
+    static defaultProps = {
+        panels: [],
     };
-  }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.panels !== this.props.panels) {
-      this.setState({ // eslint-disable-line react/no-did-update-set-state
-        idToRenderedItemsMap: this.mapIdsToRenderedItems(this.props.panels),
-      });
-    }
-  }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        const {panels} = nextProps;
 
-  hasPreviousPanel = panelId => {
-    const previousPanelId = this.state.idToPreviousPanelIdMap[panelId];
-    return typeof previousPanelId !== 'undefined';
-  };
+        if (prevState.prevProps.panels !== panels) {
+            return {
+                prevProps: {panels},
+                idToPanelMap: mapIdsToPanels(panels),
+                idToPreviousPanelIdMap: mapIdsToPreviousPanels(panels),
+                idAndItemIndexToPanelIdMap: mapPanelItemsToPanels(panels)
+            };
+        }
 
-  showPanel(panelId, direction) {
-    this.setState({
-      outgoingPanelId: this.state.incomingPanelId,
-      incomingPanelId: panelId,
-      transitionDirection: direction,
-      isOutgoingPanelVisible: true,
-    });
-  }
-
-  showNextPanel = itemIndex => {
-    const nextPanelId = this.state.idAndItemIndexToPanelIdMap[this.state.incomingPanelId][itemIndex];
-    if (nextPanelId) {
-      if (this.state.isUsingKeyboardToNavigate) {
-        this.setState({
-          focusedItemIndex: 0,
-        });
-      }
-
-      this.showPanel(nextPanelId, 'next');
-    }
-  };
-
-  showPreviousPanel = () => {
-    // If there's a previous panel, then we can close the current panel to go back to it.
-    if (this.hasPreviousPanel(this.state.incomingPanelId)) {
-      const previousPanelId = this.state.idToPreviousPanelIdMap[this.state.incomingPanelId];
-
-      // Set focus on the item which shows the panel we're leaving.
-      const previousPanel = this.state.idToPanelMap[previousPanelId];
-      const focusedItemIndex = previousPanel.items.findIndex(
-        item => item.panel === this.state.incomingPanelId
-      );
-
-      if (focusedItemIndex !== -1) {
-        this.setState({
-          focusedItemIndex,
-        });
-      }
-
-      this.showPanel(previousPanelId, 'previous');
-    }
-  };
-
-  onIncomingPanelHeightChange = height => {
-    // @ts-ignore
-    this.setState(({height: prevHeight}): any => {
-      if (height === prevHeight) {
         return null;
-      } else {
-        return {height};
-      }
-    });
-  };
-
-  onOutGoingPanelTransitionComplete = () => {
-    this.setState({
-      isOutgoingPanelVisible: false,
-    });
-  };
-
-  onUseKeyboardToNavigate = () => {
-    if (!this.state.isUsingKeyboardToNavigate) {
-      this.setState({
-        isUsingKeyboardToNavigate: true,
-      });
-    }
-  };
-
-  mapIdsToRenderedItems = (panels): any => {
-    const idToRenderedItemsMap = {};
-
-    // Pre-rendering the items lets us check reference equality inside of SoftContextMenuPanel.
-    panels.forEach(panel => {
-      idToRenderedItemsMap[panel.id] = this.renderItems(panel.items);
-    });
-
-    return idToRenderedItemsMap;
-  };
-
-  renderItems(items = []): any {
-    return items.map((item, index) => {
-      const {
-        panel,
-        name,
-        icon,
-        onClick,
-        toolTipTitle,
-        toolTipContent,
-        ...rest
-      } = item;
-
-      const onClickHandler = panel
-        ? (event) => {
-          if (onClick && event) {
-            event.persist();
-          }
-          // This component is commonly wrapped in a SoftOutsideClickDetector, which means we'll
-          // need to wait for that logic to complete before re-rendering the DOM via showPanel.
-          window.requestAnimationFrame(() => {
-            if (onClick) onClick(event);
-            this.showNextPanel(index);
-          });
-        } : onClick;
-
-      return (
-        <SoftContextMenuItem
-          key={name}
-          icon={icon}
-          onClick={onClickHandler}
-          hasPanel={Boolean(panel)}
-          toolTipTitle={toolTipTitle}
-          toolTipContent={toolTipContent}
-          {...rest}
-        >
-          {name}
-        </SoftContextMenuItem>
-      );
-    });
-  }
-
-  renderPanel(panelId, transitionType) {
-    const panel = this.state.idToPanelMap[panelId];
-
-    if (!panel) {
-      return;
     }
 
-    // As above, we need to wait for SoftOutsideClickDetector to complete its logic before
-    // re-rendering via showPanel.
-    let onClose;
-    if (this.hasPreviousPanel(panelId)) {
-      onClose = () => window.requestAnimationFrame(this.showPreviousPanel);
+    state = {
+        prevProps: {},
+        idToPanelMap: {},
+        idToPreviousPanelIdMap: {},
+        idAndItemIndexToPanelIdMap: {},
+        idToRenderedItemsMap: null,
+        height: undefined,
+        outgoingPanelId: undefined,
+        incomingPanelId: this.props.initialPanelId,
+        transitionDirection: undefined,
+        isOutgoingPanelVisible: false,
+        focusedItemIndex: undefined,
+        isUsingKeyboardToNavigate: false,
+    };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            ...this.state,
+            idToRenderedItemsMap: this.mapIdsToRenderedItems(this.props.panels),
+        };
     }
 
-    return (
-      <SoftContextMenuPanel
-        key={panelId}
-        className="softContextMenu__panel"
-        onHeightChange={(transitionType === 'in') ? this.onIncomingPanelHeightChange : undefined}
-        onTransitionComplete={(transitionType === 'out') ? this.onOutGoingPanelTransitionComplete : undefined}
-        title={panel.title}
-        onClose={onClose}
-        transitionType={this.state.isOutgoingPanelVisible ? transitionType : undefined}
-        transitionDirection={this.state.isOutgoingPanelVisible ? this.state.transitionDirection : undefined}
-        hasFocus={transitionType === 'in'}
-        items={this.state.idToRenderedItemsMap[panelId]}
-        initialFocusedItemIndex={this.state.isUsingKeyboardToNavigate ? this.state.focusedItemIndex : undefined}
-        onUseKeyboardToNavigate={this.onUseKeyboardToNavigate}
-        showNextPanel={this.showNextPanel}
-        showPreviousPanel={this.showPreviousPanel}
-      >
-        {panel.content}
-      </SoftContextMenuPanel>
-    );
-  }
-
-  render() {
-    const {
-      panels, // eslint-disable-line no-unused-vars
-      className,
-      initialPanelId, // eslint-disable-line no-unused-vars
-      ...rest
-    } = this.props;
-
-    const incomingPanel = this.renderPanel(this.state.incomingPanelId, 'in');
-    let outgoingPanel;
-
-    if (this.state.isOutgoingPanelVisible) {
-      outgoingPanel = this.renderPanel(this.state.outgoingPanelId, 'out');
+    componentDidUpdate(prevProps) {
+        if (prevProps.panels !== this.props.panels) {
+            this.setState({ // eslint-disable-line react/no-did-update-set-state
+                idToRenderedItemsMap: this.mapIdsToRenderedItems(this.props.panels),
+            });
+        }
     }
 
-    const width =
-      this.state.idToPanelMap[this.state.incomingPanelId] &&
-      this.state.idToPanelMap[this.state.incomingPanelId].width ?
-        this.state.idToPanelMap[this.state.incomingPanelId].width : undefined;
+    hasPreviousPanel = panelId => {
+        const previousPanelId = this.state.idToPreviousPanelIdMap[panelId];
+        return typeof previousPanelId !== 'undefined';
+    };
 
-    const classes = classNames('softContextMenu', className);
-    return (
-      <div
-        className={classes}
-        style={{height: this.state.height, width: width}}
-        {...rest}
-      >
-        {outgoingPanel}
-        {incomingPanel}
-      </div>
-    );
-  }
+    showPanel(panelId, direction) {
+        this.setState({
+            outgoingPanelId: this.state.incomingPanelId,
+            incomingPanelId: panelId,
+            transitionDirection: direction,
+            isOutgoingPanelVisible: true,
+        });
+    }
+
+    showNextPanel = itemIndex => {
+        const nextPanelId = this.state.idAndItemIndexToPanelIdMap[this.state.incomingPanelId][itemIndex];
+        if (nextPanelId) {
+            if (this.state.isUsingKeyboardToNavigate) {
+                this.setState({
+                    focusedItemIndex: 0,
+                });
+            }
+
+            this.showPanel(nextPanelId, 'next');
+        }
+    };
+
+    showPreviousPanel = () => {
+        // If there's a previous panel, then we can close the current panel to go back to it.
+        if (this.hasPreviousPanel(this.state.incomingPanelId)) {
+            const previousPanelId = this.state.idToPreviousPanelIdMap[this.state.incomingPanelId];
+
+            // Set focus on the item which shows the panel we're leaving.
+            const previousPanel = this.state.idToPanelMap[previousPanelId];
+            const focusedItemIndex = previousPanel.items.findIndex(
+                item => item.panel === this.state.incomingPanelId
+            );
+
+            if (focusedItemIndex !== -1) {
+                this.setState({
+                    focusedItemIndex,
+                });
+            }
+
+            this.showPanel(previousPanelId, 'previous');
+        }
+    };
+
+    onIncomingPanelHeightChange = height => {
+        // @ts-ignore
+        this.setState(({height: prevHeight}): any => {
+            if (height === prevHeight) {
+                return null;
+            } else {
+                return {height};
+            }
+        });
+    };
+
+    onOutGoingPanelTransitionComplete = () => {
+        this.setState({
+            isOutgoingPanelVisible: false,
+        });
+    };
+
+    onUseKeyboardToNavigate = () => {
+        if (!this.state.isUsingKeyboardToNavigate) {
+            this.setState({
+                isUsingKeyboardToNavigate: true,
+            });
+        }
+    };
+
+    mapIdsToRenderedItems = (panels): any => {
+        const idToRenderedItemsMap = {};
+
+        // Pre-rendering the items lets us check reference equality inside of SoftContextMenuPanel.
+        panels.forEach(panel => {
+            idToRenderedItemsMap[panel.id] = this.renderItems(panel.items);
+        });
+
+        return idToRenderedItemsMap;
+    };
+
+    renderItems(items = []): any {
+        return items.map((item, index) => {
+            const {
+                panel,
+                name,
+                icon,
+                onClick,
+                toolTipTitle,
+                toolTipContent,
+                // @ts-ignore
+                ...rest
+            } = item;
+
+            const onClickHandler = panel
+                ? (event) => {
+                    if (onClick && event) {
+                        event.persist();
+                    }
+                    // This component is commonly wrapped in a SoftOutsideClickDetector, which means we'll
+                    // need to wait for that logic to complete before re-rendering the DOM via showPanel.
+                    window.requestAnimationFrame(() => {
+                        if (onClick) {
+                            // @ts-ignore
+                            onClick(event);
+                        }
+                        this.showNextPanel(index);
+                    });
+                } : onClick;
+
+            return (
+                <ContextMenuExtraItem
+                    key={name}
+                    icon={icon}
+                    onClick={onClickHandler}
+                    hasPanel={Boolean(panel)}
+                    toolTipTitle={toolTipTitle}
+                    toolTipContent={toolTipContent}
+                    {...rest}
+                >
+                    {name}
+                </ContextMenuExtraItem>
+            );
+        });
+    }
+
+    renderPanel(panelId, transitionType) {
+        const panel = this.state.idToPanelMap[panelId];
+
+        if (!panel) {
+            return;
+        }
+
+        // As above, we need to wait for SoftOutsideClickDetector to complete its logic before
+        // re-rendering via showPanel.
+        let onClose;
+        if (this.hasPreviousPanel(panelId)) {
+            onClose = () => window.requestAnimationFrame(this.showPreviousPanel);
+        }
+
+        return (
+            <ContextMenuExtraPanel
+                key={panelId}
+                className="c-context-menu-extra__panel"
+                onHeightChange={(transitionType === 'in') ? this.onIncomingPanelHeightChange : undefined}
+                onTransitionComplete={(transitionType === 'out') ? this.onOutGoingPanelTransitionComplete : undefined}
+                title={panel.title}
+                onClose={onClose}
+                transitionType={this.state.isOutgoingPanelVisible ? transitionType : undefined}
+                transitionDirection={this.state.isOutgoingPanelVisible ? this.state.transitionDirection : undefined}
+                hasFocus={transitionType === 'in'}
+                // @ts-ignore
+                items={this.state.idToRenderedItemsMap[panelId]}
+                initialFocusedItemIndex={this.state.isUsingKeyboardToNavigate ? this.state.focusedItemIndex : undefined}
+                onUseKeyboardToNavigate={this.onUseKeyboardToNavigate}
+                showNextPanel={this.showNextPanel}
+                showPreviousPanel={this.showPreviousPanel}
+            >
+                {panel.content}
+            </ContextMenuExtraPanel>
+        );
+    }
+
+    render() {
+        const {
+            panels, // eslint-disable-line no-unused-vars
+            className,
+            initialPanelId, // eslint-disable-line no-unused-vars
+            ...rest
+        } = this.props;
+
+        const incomingPanel = this.renderPanel(this.state.incomingPanelId, 'in');
+        let outgoingPanel;
+
+        if (this.state.isOutgoingPanelVisible) {
+            outgoingPanel = this.renderPanel(this.state.outgoingPanelId, 'out');
+        }
+
+        const width =
+            this.state.idToPanelMap[this.state.incomingPanelId] &&
+            this.state.idToPanelMap[this.state.incomingPanelId].width ?
+                this.state.idToPanelMap[this.state.incomingPanelId].width : undefined;
+
+        const classes = classNames('c-context-menu-extra', className);
+        return (
+            <div
+                className={classes}
+                style={{height: this.state.height, width: width}}
+                {...rest}
+            >
+                {outgoingPanel}
+                {incomingPanel}
+            </div>
+        );
+    }
 }

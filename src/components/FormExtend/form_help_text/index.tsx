@@ -1,1 +1,1 @@
-export {SoftFormHelpText} from './SoftFormHelpText';
+export {FormHelpText} from './FormHelpText';

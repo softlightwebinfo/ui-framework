@@ -1,8 +1,8 @@
 /**
   * 1. Prevent really long input from overflowing the container.
   */
-.softSelectableMessage {
-  padding: $softSizeS;
+.c-selectableMessage {
+  padding: $SizeS;
   text-align: center;
   word-wrap: break-word; /* 1 */
 }

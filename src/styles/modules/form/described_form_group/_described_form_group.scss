@@ -1,37 +1,42 @@
-.softDescribedFormGroup {
-  max-width: $softFormMaxWidth * 2;
+.c-described-form-group {
+  max-width: $FormMaxWidth * 2;
 
   + * {
-    margin-top: $softSizeL;
+    margin-top: $SizeL;
   }
 
-  &.softDescribedFormGroup--fullWidth {
+  &.c-described-form-group--fullWidth {
     max-width: 100%;
   }
 
-  .softDescribedFormGroup__description {
-    padding-top: $softSizeS;
+  .c-described-form-group__description {
+    padding-top: $SizeS;
   }
 
-  .softDescribedFormGroup__fields {
-    width: $softFormMaxWidth;
+  .c-described-form-group__fields {
+    width:     $FormMaxWidth;
     max-width: 100%;
   }
 
-  .softDescribedFormGroup__fieldPadding {
-    &--xxxsmall {padding-top: ($softFontSizeXS * 1.5) - $softFontSizeXS + 2px;}
-    &--xxsmall {padding-top: ($softFontSizeS * 1.5) - $softFontSizeXS + 2px;}
-    &--xsmall {padding-top: ($softFontSize * 1.5) - $softFontSizeXS + 2px;}
-    &--small {padding-top: ($softFontSizeL * 1.5) - $softFontSizeXS + 2px;}
-    &--medium {padding-top: ($softFontSizeXL * 1.5) - $softFontSizeXS + 2px;}
-    &--large {padding-top: ($softFontSizeXXL * 1.5) - $softFontSizeXS + 2px;}
+  .c-described-form-group__fieldPadding {
+    &--xxxsmall {padding-top: ($FontSizeXS * 1.5) - $FontSizeXS + 2px;}
+
+    &--xxsmall {padding-top: ($FontSizeS * 1.5) - $FontSizeXS + 2px;}
+
+    &--xsmall {padding-top: ($FontSize * 1.5) - $FontSizeXS + 2px;}
+
+    &--small {padding-top: ($FontSizeL * 1.5) - $FontSizeXS + 2px;}
+
+    &--medium {padding-top: ($FontSizeXL * 1.5) - $FontSizeXS + 2px;}
+
+    &--large {padding-top: ($FontSizeXXL * 1.5) - $FontSizeXS + 2px;}
   }
 
-  @include softBreakpoint('xs', 's') {
-    .softDescribedFormGroup__fields {
+  @include Breakpoint('xs', 's') {
+    .c-described-form-group__fields {
       padding-top: 0;
 
-      > .softFormRow--hasEmptyLabelSpace:first-child {
+      > .FormRow--hasEmptyLabelSpace:first-child {
         padding-top: 0;
       }
     }

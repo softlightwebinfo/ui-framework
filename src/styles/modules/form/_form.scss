@@ -1,8 +1,8 @@
-.softForm__error {
-  @include softFontSizeS;
+.c-form-extra__error {
+  @include FontSizeS;
   list-style: disc;
 }
 
-.softForm__errors {
-  margin-bottom: $softSize;
+.c-form-extra__errors {
+  margin-bottom: $Size;
 }

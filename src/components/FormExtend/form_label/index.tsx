@@ -1,1 +1,1 @@
-export {SoftFormLabel} from './SoftFormLabel';
+export {FormLabel} from './FormLabel';

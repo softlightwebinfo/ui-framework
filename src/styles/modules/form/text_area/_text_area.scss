@@ -1,6 +1,6 @@
-.softTextArea {
-  @include softFormControlStyle;
-  line-height: $softLineHeight; // give more spacing between multiple lines
+.c-textArea {
+  @include FormControlStyle;
+  line-height: $LineHeight; // give more spacing between multiple lines
 
   // Textareas have their own sizing
   &,
@@ -11,15 +11,15 @@
 
 // resize modifiers
 $textareaResizing: (
-  vertical: 'resizeVertical',
-  horizontal: 'resizeHorizontal',
-  both: 'resizeBoth',
-  none: 'resizeNone',
-);
+                           vertical: 'resizeVertical',
+                           horizontal: 'resizeHorizontal',
+                           both: 'resizeBoth',
+                           none: 'resizeNone',
+                   );
 
 // Create button modifiders based upon the map.
 @each $direction, $modifier in $textareaResizing {
-  .softTextArea--#{$modifier} {
+  .c-textArea--#{$modifier} {
     resize: #{$direction};
   }
 }

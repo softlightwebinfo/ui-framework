@@ -1,8 +1,8 @@
 import React, {Fragment, ReactChild} from 'react';
-import {SoftI18nConsumer} from '../Context';
+import {I18nConsumer} from '../Context';
 import {ExclusiveUnion} from '../common';
-import {I18nShape, Renderable, RenderableValues} from '../Context/SoftContext';
-import {processStringToChildren} from './SoftI18nUtil';
+import {I18nShape, Renderable, RenderableValues} from '../Context/Context';
+import {processStringToChildren} from './I18nUtil';
 
 function throwError(): never {
     throw new Error('asdf');
@@ -66,10 +66,10 @@ interface I18nTokensShape {
     children?: (x: ReactChild[]) => ReactChild;
 }
 
-type SoftI18nProps<T, DEFAULT extends Renderable<T>> = ExclusiveUnion<I18nTokenShape<T, DEFAULT>,
+type I18nProps<T, DEFAULT extends Renderable<T>> = ExclusiveUnion<I18nTokenShape<T, DEFAULT>,
     I18nTokensShape>;
 
-function hasTokens(x: SoftI18nProps<any, any>): x is I18nTokensShape {
+function hasTokens(x: I18nProps<any, any>): x is I18nTokensShape {
     return x.tokens != null;
 }
 
@@ -77,20 +77,24 @@ function hasTokens(x: SoftI18nProps<any, any>): x is I18nTokensShape {
 // If instead typed with React.FunctionComponent there isn't feedback given back to the dev
 // when using a `values` object with a renderer callback.
 const I18n = <T extends {}, DEFAULT extends Renderable<T>>(
-    props: SoftI18nProps<T, DEFAULT>
+    props: I18nProps<T, DEFAULT>
 ) => (
-    <SoftI18nConsumer>
+    <I18nConsumer>
         {i18nConfig => {
             const {mapping, mappingFunc} = i18nConfig;
             if (hasTokens(props)) {
+                // @ts-ignore
                 return props.children(
+                    // @ts-ignore
                     props.tokens.map((token, idx) =>
+                        // @ts-ignore
                         lookupToken(token, mapping, props.defaults[idx], mappingFunc)
                     )
                 );
             }
 
             const tokenValue = lookupToken(
+                // @ts-ignore
                 props.token,
                 mapping,
                 props.default,
@@ -103,7 +107,7 @@ const I18n = <T extends {}, DEFAULT extends Renderable<T>>(
                 return tokenValue;
             }
         }}
-    </SoftI18nConsumer>
+    </I18nConsumer>
 );
 
 export {I18n};

@@ -59,10 +59,13 @@ export class WrappingPopover extends Component<{
                 portalRef={this.setPortalRef}
                 insert={{sibling: this.props.button, position: 'after'}}
             >
-                <Popover
-                    {...rest}
-                    button={<div ref={this.setAnchorRef} className="c-wrappingPopover__anchor"/>}
-                />
+                {
+                    // @ts-ignore
+                    <Popover
+                        {...rest}
+                        button={<div ref={this.setAnchorRef} className="c-wrappingPopover__anchor"/>}
+                    />
+                }
             </Portal>
         );
     }

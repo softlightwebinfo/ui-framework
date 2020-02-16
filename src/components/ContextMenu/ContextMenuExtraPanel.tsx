@@ -1,459 +1,445 @@
 import React, {
-  cloneElement,
-  Component,
+    cloneElement,
+    Component,
 } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import tabbable from 'tabbable';
 
-import {SoftIcon} from '../Icon';
-import {SoftPopoverTitle} from '../Popover';
-import {SoftResizeObserver} from '../Observer/resize_observer';
+import {Icon} from '../Icon';
+import {PopoverTitle} from '../Popover';
+import {ResizeObserver} from '../Observer/resize_observer';
 import {cascadingMenuKeyCodes} from '../../services';
 
 const transitionDirectionAndTypeToClassNameMap = {
-  next: {
-    in: 'softContextMenuPanel-txInLeft',
-    out: 'softContextMenuPanel-txOutLeft',
-  },
-  previous: {
-    in: 'softContextMenuPanel-txInRight',
-    out: 'softContextMenuPanel-txOutRight',
-  },
+    next: {
+        in: 'softContextMenuPanel-txInLeft',
+        out: 'softContextMenuPanel-txOutLeft',
+    },
+    previous: {
+        in: 'softContextMenuPanel-txInRight',
+        out: 'softContextMenuPanel-txOutRight',
+    },
 };
 
-export class SoftContextMenuPanel extends Component<{
-  className?: string,
-  onHeightChange?: (e: any) => any,
-  items?: any,
-  initialFocusedItemIndex?: any,
-  transitionType?: any,
-  showPreviousPanel?: () => any,
-  onUseKeyboardToNavigate?: () => any,
-  onTransitionComplete?: () => any,
-  showNextPanel?: any,
-  hasFocus?: boolean,
-  watchedItemProps?: any,
-  onClose?: any,
-  title?: any,
-  transitionDirection?: any,
-  style?: any
+export class ContextMenuExtraPanel extends Component<{
+    className?: string,
+    onHeightChange?: (e: any) => any,
+    items?: any,
+    initialFocusedItemIndex?: any,
+    transitionType?: any,
+    showPreviousPanel?: () => any,
+    onUseKeyboardToNavigate?: () => any,
+    onTransitionComplete?: () => any,
+    showNextPanel?: any,
+    hasFocus?: boolean,
+    watchedItemProps?: any,
+    onClose?: any,
+    title?: any,
+    transitionDirection?: any,
+    style?: any
 }> {
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    title: PropTypes.node,
-    onClose: PropTypes.func,
-    onHeightChange: PropTypes.func,
-    transitionType: PropTypes.oneOf(['in', 'out']),
-    transitionDirection: PropTypes.oneOf(['next', 'previous']),
-    onTransitionComplete: PropTypes.func,
-    onUseKeyboardToNavigate: PropTypes.func,
-    hasFocus: PropTypes.bool,
-    items: PropTypes.array,
-    watchedItemProps: PropTypes.array,
-    showNextPanel: PropTypes.func,
-    showPreviousPanel: PropTypes.func,
-    initialFocusedItemIndex: PropTypes.number
-  };
 
-  static defaultProps = {
-    hasFocus: true,
-    items: [],
-  };
-  public state = {
-    prevProps: {
-      items: this.props.items
-    },
-    height: null,
-    menuItems: [],
-    isTransitioning: Boolean(this.props.transitionType),
-    focusedItemIndex: this.props.initialFocusedItemIndex,
-    currentHeight: undefined
-  };
-  private backButton: any;
-  private panel: any;
-  private _isMounted: any;
-  private content: any;
+    static defaultProps = {
+        hasFocus: true,
+        items: [],
+    };
+    public state = {
+        prevProps: {
+            items: this.props.items
+        },
+        height: null,
+        menuItems: [],
+        isTransitioning: Boolean(this.props.transitionType),
+        focusedItemIndex: this.props.initialFocusedItemIndex,
+        currentHeight: undefined
+    };
+    private backButton: any;
+    private panel: any;
+    private _isMounted: any;
+    private content: any;
 
-  constructor(props) {
-    super(props);
-  }
-
-  incrementFocusedItemIndex = amount => {
-    let nextFocusedItemIndex;
-
-    if (this.state.focusedItemIndex === undefined) {
-      // If this is the beginning of the user's keyboard navigation of the menu, then we'll focus
-      // either the first or last item.
-      nextFocusedItemIndex = amount < 0 ? this.state.menuItems.length - 1 : 0;
-    } else {
-      nextFocusedItemIndex = this.state.focusedItemIndex + amount;
-
-      if (nextFocusedItemIndex < 0) {
-        nextFocusedItemIndex = this.state.menuItems.length - 1;
-      } else if (nextFocusedItemIndex === this.state.menuItems.length) {
-        nextFocusedItemIndex = 0;
-      }
+    constructor(props) {
+        super(props);
     }
 
-    this.setState({
-      focusedItemIndex: nextFocusedItemIndex,
-    });
-  };
+    incrementFocusedItemIndex = amount => {
+        let nextFocusedItemIndex;
 
-  onKeyDown = e => {
-    // If this panel contains items you can use the left arrow key to go back at any time.
-    // But if it doesn't contain items, then you have to focus on the back button specifically,
-    // since there could be content inside the panel which requires use of the left arrow key,
-    // e.g. text inputs.
-    if (
-      this.props.items.length
-      || document.activeElement === this.backButton
-      || document.activeElement === this.panel
-    ) {
-      if (e.keyCode === cascadingMenuKeyCodes.LEFT) {
-        if (this.props.showPreviousPanel) {
-          e.preventDefault();
-          e.stopPropagation();
-          this.props.showPreviousPanel();
+        if (this.state.focusedItemIndex === undefined) {
+            // If this is the beginning of the user's keyboard navigation of the menu, then we'll focus
+            // either the first or last item.
+            nextFocusedItemIndex = amount < 0 ? this.state.menuItems.length - 1 : 0;
+        } else {
+            nextFocusedItemIndex = this.state.focusedItemIndex + amount;
 
-          if (this.props.onUseKeyboardToNavigate) {
-            this.props.onUseKeyboardToNavigate();
-          }
-        }
-      }
-    }
-
-    if (this.props.items.length) {
-      switch (e.keyCode) {
-        case cascadingMenuKeyCodes.TAB:
-          // We need to sync up with the user if s/he is tabbing through the items.
-          const focusedItemIndex = this.state.menuItems.indexOf(document.activeElement);
-
-          this.setState({
-            focusedItemIndex:
-              (focusedItemIndex >= 0 && focusedItemIndex < this.state.menuItems.length)
-                ? focusedItemIndex
-                : undefined,
-          });
-          break;
-
-        case cascadingMenuKeyCodes.UP:
-          e.preventDefault();
-          this.incrementFocusedItemIndex(-1);
-
-          if (this.props.onUseKeyboardToNavigate) {
-            this.props.onUseKeyboardToNavigate();
-          }
-          break;
-
-        case cascadingMenuKeyCodes.DOWN:
-          e.preventDefault();
-          this.incrementFocusedItemIndex(1);
-
-          if (this.props.onUseKeyboardToNavigate) {
-            this.props.onUseKeyboardToNavigate();
-          }
-          break;
-
-        case cascadingMenuKeyCodes.RIGHT:
-          if (this.props.showNextPanel) {
-            e.preventDefault();
-            this.props.showNextPanel(this.state.focusedItemIndex);
-
-            if (this.props.onUseKeyboardToNavigate) {
-              this.props.onUseKeyboardToNavigate();
+            if (nextFocusedItemIndex < 0) {
+                nextFocusedItemIndex = this.state.menuItems.length - 1;
+            } else if (nextFocusedItemIndex === this.state.menuItems.length) {
+                nextFocusedItemIndex = 0;
             }
-          }
-          break;
-
-        default:
-          break;
-      }
-    }
-  };
-
-  updateFocus() {
-    // Give positioning time to render before focus is applied. Otherwise page jumps.
-    requestAnimationFrame(() => {
-      if (!this._isMounted) {
-        return;
-      }
-
-      // If this panel has lost focus, then none of its content should be focused.
-      if (!this.props.hasFocus) {
-        if (this.panel.contains(document.activeElement)) {
-          // @ts-ignore
-          document.activeElement.blur();
-        }
-        return;
-      }
-
-      // Setting focus while transitioning causes the animation to glitch, so we have to wait
-      // until it's finished before we focus anything.
-      if (this.state.isTransitioning) {
-        return;
-      }
-
-      // If there aren't any items then this is probably a form or something.
-      if (!this.state.menuItems.length) {
-        // If we've already focused on something inside the panel, everything's fine.
-        if (this.panel.contains(document.activeElement)) {
-          return;
         }
 
-        // Otherwise let's focus the first tabbable item and expedite input from the user.
-        if (this.content) {
-          const tabbableItems = tabbable(this.content);
-          if (tabbableItems.length) {
-            tabbableItems[0].focus();
-          }
+        this.setState({
+            focusedItemIndex: nextFocusedItemIndex,
+        });
+    };
+
+    onKeyDown = e => {
+        // If this panel contains items you can use the left arrow key to go back at any time.
+        // But if it doesn't contain items, then you have to focus on the back button specifically,
+        // since there could be content inside the panel which requires use of the left arrow key,
+        // e.g. text inputs.
+        if (
+            this.props.items.length
+            || document.activeElement === this.backButton
+            || document.activeElement === this.panel
+        ) {
+            if (e.keyCode === cascadingMenuKeyCodes.LEFT) {
+                if (this.props.showPreviousPanel) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.props.showPreviousPanel();
+
+                    if (this.props.onUseKeyboardToNavigate) {
+                        this.props.onUseKeyboardToNavigate();
+                    }
+                }
+            }
         }
-        return;
-      }
 
-      // If an item is focused, focus it.
-      if (this.state.focusedItemIndex !== undefined) {
-        this.state.menuItems[this.state.focusedItemIndex].focus();
-        return;
-      }
+        if (this.props.items.length) {
+            switch (e.keyCode) {
+                case cascadingMenuKeyCodes.TAB:
+                    // We need to sync up with the user if s/he is tabbing through the items.
+                    // @ts-ignore
+                    const focusedItemIndex = this.state.menuItems.indexOf(document.activeElement);
 
-      // Focus on the panel as a last resort.
-      if (!this.panel.contains(document.activeElement)) {
-        this.panel.focus();
-      }
-    });
-  }
+                    this.setState({
+                        focusedItemIndex:
+                            (focusedItemIndex >= 0 && focusedItemIndex < this.state.menuItems.length)
+                                ? focusedItemIndex
+                                : undefined,
+                    });
+                    break;
 
-  onTransitionComplete = () => {
-    this.setState({
-      isTransitioning: false,
-    });
+                case cascadingMenuKeyCodes.UP:
+                    e.preventDefault();
+                    this.incrementFocusedItemIndex(-1);
 
-    if (this.props.onTransitionComplete) {
-      this.props.onTransitionComplete();
-    }
-  }
+                    if (this.props.onUseKeyboardToNavigate) {
+                        this.props.onUseKeyboardToNavigate();
+                    }
+                    break;
 
-  componentDidMount() {
-    this.updateFocus();
-    this._isMounted = true;
-  }
+                case cascadingMenuKeyCodes.DOWN:
+                    e.preventDefault();
+                    this.incrementFocusedItemIndex(1);
 
-  componentWillUnmount() {
-    this._isMounted = false;
-  }
+                    if (this.props.onUseKeyboardToNavigate) {
+                        this.props.onUseKeyboardToNavigate();
+                    }
+                    break;
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    let needsUpdate = false;
-    const nextState: any = {};
+                case cascadingMenuKeyCodes.RIGHT:
+                    if (this.props.showNextPanel) {
+                        e.preventDefault();
+                        this.props.showNextPanel(this.state.focusedItemIndex);
 
-    // Clear refs to menuItems if we're getting new ones.
-    if (nextProps.items !== prevState.prevProps.items) {
-      needsUpdate = true;
-      nextState.menuItems = [];
-      nextState.prevProps = {items: nextProps.items};
-    }
+                        if (this.props.onUseKeyboardToNavigate) {
+                            this.props.onUseKeyboardToNavigate();
+                        }
+                    }
+                    break;
 
-    if (nextProps.transitionType) {
-      needsUpdate = true;
-      nextState.isTransitioning = true;
-    }
+                default:
+                    break;
+            }
+        }
+    };
 
-    if (needsUpdate) {
-      return nextState;
-    }
-    return null;
-  }
+    updateFocus() {
+        // Give positioning time to render before focus is applied. Otherwise page jumps.
+        requestAnimationFrame(() => {
+            if (!this._isMounted) {
+                return;
+            }
 
-  getWatchedPropsForItems(items) {
-    // This lets us compare prevProps and nextProps among items so we can re-render if our items
-    // have changed.
-    const {watchedItemProps} = this.props;
+            // If this panel has lost focus, then none of its content should be focused.
+            if (!this.props.hasFocus) {
+                if (this.panel.contains(document.activeElement)) {
+                    // @ts-ignore
+                    document.activeElement.blur();
+                }
+                return;
+            }
 
-    // Create fingerprint of all item's watched properties
-    if (items.length && watchedItemProps && watchedItemProps.length) {
-      return JSON.stringify(items.map(item => {
-        // Create object of item properties and values
-        const props = {
-          key: item.key,
-        };
-        watchedItemProps.forEach(prop => props[prop] = item.props[prop]);
-        return props;
-      }));
-    }
+            // Setting focus while transitioning causes the animation to glitch, so we have to wait
+            // until it's finished before we focus anything.
+            if (this.state.isTransitioning) {
+                return;
+            }
 
-    return null;
-  }
+            // If there aren't any items then this is probably a form or something.
+            if (!this.state.menuItems.length) {
+                // If we've already focused on something inside the panel, everything's fine.
+                if (this.panel.contains(document.activeElement)) {
+                    return;
+                }
 
-  didItemsChange(prevItems, nextItems) {
-    // If the count of items has changed then update
-    if (prevItems.length !== nextItems.length) {
-      return true;
-    }
+                // Otherwise let's focus the first tabbable item and expedite input from the user.
+                if (this.content) {
+                    const tabbableItems = tabbable(this.content);
+                    if (tabbableItems.length) {
+                        tabbableItems[0].focus();
+                    }
+                }
+                return;
+            }
 
-    // Check if any watched item properties changed by quick string comparison
-    if (this.getWatchedPropsForItems(nextItems) !== this.getWatchedPropsForItems(prevItems)) {
-      return true;
-    }
-  }
+            // If an item is focused, focus it.
+            if (this.state.focusedItemIndex !== undefined) {
+                // @ts-ignore
+                this.state.menuItems[this.state.focusedItemIndex].focus();
+                return;
+            }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    // Prevent calling `this.updateFocus()` below if we don't have to.
-    if (nextProps.hasFocus !== this.props.hasFocus) {
-      return true;
-    }
-
-    if (nextState.isTransitioning !== this.state.isTransitioning) {
-      return true;
-    }
-
-    if (nextState.focusedItemIndex !== this.state.focusedItemIndex) {
-      return true;
-    }
-
-    // **
-    // this component should have either items or children,
-    // if there are items we can determine via `watchedItemProps` if we should update
-    // if there are children we can't know if they have changed so return true
-    // **
-
-    if (this.props.items.length > 0 || nextProps.items.length > 0) {
-      if (this.didItemsChange(this.props.items, nextProps.items)) {
-        return true;
-      }
+            // Focus on the panel as a last resort.
+            if (!this.panel.contains(document.activeElement)) {
+                this.panel.focus();
+            }
+        });
     }
 
-    // it's not possible (in any good way) to know if `children` has changed, assume they might have
-    if (this.props.children != null) {
-      return true;
+    onTransitionComplete = () => {
+        this.setState({
+            isTransitioning: false,
+        });
+
+        if (this.props.onTransitionComplete) {
+            this.props.onTransitionComplete();
+        }
     }
 
-    return false;
-  }
-
-  updateHeight() {
-    const currentHeight = this.panel ? this.panel.clientHeight : 0;
-
-    if (this.state.height !== currentHeight) {
-      if (this.props.onHeightChange) {
-        this.props.onHeightChange(currentHeight);
-
-        this.setState({height: currentHeight});
-      }
+    componentDidMount() {
+        this.updateFocus();
+        this._isMounted = true;
     }
-  }
 
-  componentDidUpdate() {
-    this.updateFocus();
-  }
-
-  menuItemRef = (index, node) => {
-    // There's a weird bug where if you navigate to a panel without items, then this callback
-    // is still invoked, so we have to do a truthiness check.
-    if (node) {
-      // Store all menu items.
-      this.state.menuItems[index] = node;
+    componentWillUnmount() {
+        this._isMounted = false;
     }
-  };
 
-  panelRef = node => {
-    this.panel = node;
+    static getDerivedStateFromProps(nextProps, prevState) {
+        let needsUpdate = false;
+        const nextState: any = {};
 
-    this.updateHeight();
-  };
+        // Clear refs to menuItems if we're getting new ones.
+        if (nextProps.items !== prevState.prevProps.items) {
+            needsUpdate = true;
+            nextState.menuItems = [];
+            nextState.prevProps = {items: nextProps.items};
+        }
 
-  contentRef = node => {
-    this.content = node;
-  };
+        if (nextProps.transitionType) {
+            needsUpdate = true;
+            nextState.isTransitioning = true;
+        }
 
-  render() {
-    const {
-      children,
-      className,
-      onClose,
-      title,
-      onHeightChange, // eslint-disable-line no-unused-vars
-      transitionType,
-      transitionDirection,
-      onTransitionComplete, // eslint-disable-line no-unused-vars
-      onUseKeyboardToNavigate, // eslint-disable-line no-unused-vars
-      hasFocus, // eslint-disable-line no-unused-vars
-      items,
-      watchedItemProps, // eslint-disable-line no-unused-vars
-      initialFocusedItemIndex, // eslint-disable-line no-unused-vars
-      showNextPanel, // eslint-disable-line no-unused-vars
-      showPreviousPanel, // eslint-disable-line no-unused-vars
-      ...rest
-    } = this.props;
-    let panelTitle;
+        if (needsUpdate) {
+            return nextState;
+        }
+        return null;
+    }
 
-    if (title) {
-      if (Boolean(onClose)) {
-        panelTitle = (
-          <button
-            className="softContextMenuPanelTitle"
-            type="button"
-            onClick={onClose}
-            ref={node => {
-              this.backButton = node;
-            }}
-            data-test-subj="contextMenuPanelTitleButton"
-          >
+    getWatchedPropsForItems(items) {
+        // This lets us compare prevProps and nextProps among items so we can re-render if our items
+        // have changed.
+        const {watchedItemProps} = this.props;
+
+        // Create fingerprint of all item's watched properties
+        if (items.length && watchedItemProps && watchedItemProps.length) {
+            return JSON.stringify(items.map(item => {
+                // Create object of item properties and values
+                const props = {
+                    key: item.key,
+                };
+                watchedItemProps.forEach(prop => props[prop] = item.props[prop]);
+                return props;
+            }));
+        }
+
+        return null;
+    }
+
+    // @ts-ignore
+    didItemsChange(prevItems, nextItems) {
+        // If the count of items has changed then update
+        if (prevItems.length !== nextItems.length) {
+            return true;
+        }
+
+        // Check if any watched item properties changed by quick string comparison
+        if (this.getWatchedPropsForItems(nextItems) !== this.getWatchedPropsForItems(prevItems)) {
+            return true;
+        }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        // Prevent calling `this.updateFocus()` below if we don't have to.
+        if (nextProps.hasFocus !== this.props.hasFocus) {
+            return true;
+        }
+
+        if (nextState.isTransitioning !== this.state.isTransitioning) {
+            return true;
+        }
+
+        if (nextState.focusedItemIndex !== this.state.focusedItemIndex) {
+            return true;
+        }
+
+        // **
+        // this component should have either items or children,
+        // if there are items we can determine via `watchedItemProps` if we should update
+        // if there are children we can't know if they have changed so return true
+        // **
+
+        if (this.props.items.length > 0 || nextProps.items.length > 0) {
+            if (this.didItemsChange(this.props.items, nextProps.items)) {
+                return true;
+            }
+        }
+
+        // it's not possible (in any good way) to know if `children` has changed, assume they might have
+        if (this.props.children != null) {
+            return true;
+        }
+
+        return false;
+    }
+
+    updateHeight() {
+        const currentHeight = this.panel ? this.panel.clientHeight : 0;
+
+        if (this.state.height !== currentHeight) {
+            if (this.props.onHeightChange) {
+                this.props.onHeightChange(currentHeight);
+
+                this.setState({height: currentHeight});
+            }
+        }
+    }
+
+    componentDidUpdate() {
+        this.updateFocus();
+    }
+
+    menuItemRef = (index, node) => {
+        // There's a weird bug where if you navigate to a panel without items, then this callback
+        // is still invoked, so we have to do a truthiness check.
+        if (node) {
+            // Store all menu items.
+            // @ts-ignore
+            this.state.menuItems[index] = node;
+        }
+    };
+
+    panelRef = node => {
+        this.panel = node;
+
+        this.updateHeight();
+    };
+
+    contentRef = node => {
+        this.content = node;
+    };
+
+    render() {
+        const {
+            children,
+            className,
+            onClose,
+            title,
+            onHeightChange, // eslint-disable-line no-unused-vars
+            transitionType,
+            transitionDirection,
+            onTransitionComplete, // eslint-disable-line no-unused-vars
+            onUseKeyboardToNavigate, // eslint-disable-line no-unused-vars
+            hasFocus, // eslint-disable-line no-unused-vars
+            items,
+            watchedItemProps, // eslint-disable-line no-unused-vars
+            initialFocusedItemIndex, // eslint-disable-line no-unused-vars
+            showNextPanel, // eslint-disable-line no-unused-vars
+            showPreviousPanel, // eslint-disable-line no-unused-vars
+            ...rest
+        } = this.props;
+        let panelTitle;
+
+        if (title) {
+            if (Boolean(onClose)) {
+                panelTitle = (
+                    <button
+                        className="softContextMenuPanelTitle"
+                        type="button"
+                        onClick={onClose}
+                        ref={node => {
+                            this.backButton = node;
+                        }}
+                        data-test-subj="contextMenuPanelTitleButton"
+                    >
             <span className="softContextMenu__itemLayout">
-              <SoftIcon
-                type="arrowLeft"
-                size="m"
-                className="softContextMenu__icon"
+              <Icon
+                  type="arrowLeft"
+                  size="m"
+                  className="softContextMenu__icon"
               />
 
               <span className="softContextMenu__text">
                 {title}
               </span>
             </span>
-          </button>
-        );
-      } else {
-        panelTitle = (
-          <SoftPopoverTitle>
+                    </button>
+                );
+            } else {
+                panelTitle = (
+                    <PopoverTitle>
             <span className="softContextMenu__itemLayout">
               {title}
             </span>
-          </SoftPopoverTitle>
+                    </PopoverTitle>
+                );
+            }
+        }
+
+        const classes = classNames('softContextMenuPanel', className, (
+            this.state.isTransitioning && transitionDirectionAndTypeToClassNameMap[transitionDirection]
+                ? transitionDirectionAndTypeToClassNameMap[transitionDirection][transitionType]
+                : undefined
+        ));
+
+        const content = items.length
+            ? items.map((MenuItem, index) => cloneElement(MenuItem, {
+                buttonRef: this.menuItemRef.bind(this, index),
+            }))
+            : children;
+
+        return (
+            <div
+                ref={this.panelRef}
+                className={classes}
+                onKeyDown={this.onKeyDown}
+                tabIndex={0}
+                onAnimationEnd={this.onTransitionComplete}
+                {...rest}
+            >
+                {panelTitle}
+
+                <div ref={this.contentRef}>
+                    <ResizeObserver onResize={() => this.updateHeight()}>
+                        {resizeRef => <div ref={resizeRef}>{content}</div>}
+                    </ResizeObserver>
+                </div>
+            </div>
         );
-      }
     }
-
-    const classes = classNames('softContextMenuPanel', className, (
-      this.state.isTransitioning && transitionDirectionAndTypeToClassNameMap[transitionDirection]
-        ? transitionDirectionAndTypeToClassNameMap[transitionDirection][transitionType]
-        : undefined
-    ));
-
-    const content = items.length
-      ? items.map((MenuItem, index) => cloneElement(MenuItem, {
-        buttonRef: this.menuItemRef.bind(this, index),
-      }))
-      : children;
-
-    return (
-      <div
-        ref={this.panelRef}
-        className={classes}
-        onKeyDown={this.onKeyDown}
-        tabIndex={0}
-        onAnimationEnd={this.onTransitionComplete}
-        {...rest}
-      >
-        {panelTitle}
-
-        <div ref={this.contentRef}>
-          <SoftResizeObserver onResize={() => this.updateHeight()}>
-            {resizeRef => <div ref={resizeRef}>{content}</div>}
-          </SoftResizeObserver>
-        </div>
-      </div>
-    );
-  }
 }

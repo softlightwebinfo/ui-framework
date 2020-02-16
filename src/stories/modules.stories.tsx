@@ -9,7 +9,8 @@ import {TableSimpleEnumType} from "../components/Table";
 import {Row, RowCol} from "../components/Row";
 import {ModuleRatingTable} from "../components/Modules";
 import {Avatar, AvatarList} from "../components/Avatar";
-import {ModuleAuthRegister} from "../components/Modules/ModuleAuthRegister";
+import {ModuleAuthRegister} from "../components/Modules";
+import {HeaderSpacesMenu} from "../components/Menu/HeaderSpacesMenu";
 
 storiesOf("Modules|Cards", module)
     .addDecorator(jsxDecorator)
@@ -1035,6 +1036,54 @@ storiesOf("Modules|Auth", module)
                     }}
                     size={"m"}
                     logo={"https://www.musicosdelmundo.com/static/images/logo_mobile.png"}
+                />
+            </div>
+        )
+    );
+storiesOf("Modules|Header", module)
+    .addDecorator(jsxDecorator)
+    .addDecorator(withKnobs)
+    .add("HeaderSpacesMenu",
+        () => (
+            <div style={{padding: 20, width: 400}}>
+                <HeaderSpacesMenu
+                    spaces={[
+                        {
+                            label: 'Sales team',
+                            prepend: <Avatar fluid type="space" name="Sales Team" size={35}/>,
+                            checked: 'on',
+                        },
+                        {
+                            label: 'Engineering',
+                            prepend: <Avatar fluid type="space" name="Engineering" size={35}/>,
+                        },
+                        {
+                            label: 'Security',
+                            prepend: <Avatar fluid type="space" name="Security" size={35}/>,
+                        },
+                        {
+                            label: 'Default',
+                            prepend: <Avatar fluid type="space" name="Default" size={35}/>,
+                        },
+                    ]}
+                    additionalSpaces={[
+                        {
+                            label: 'Sales team 2',
+                            prepend: <Avatar fluid type="space" name="Sales Team 2" size={35}/>,
+                        },
+                        {
+                            label: 'Engineering 2',
+                            prepend: <Avatar fluid type="space" name="Engineering 2" size={35}/>,
+                        },
+                        {
+                            label: 'Security 2',
+                            prepend: <Avatar fluid type="space" name="Security 2" size={35}/>,
+                        },
+                        {
+                            label: 'Default 2',
+                            prepend: <Avatar fluid type="space" name="Default 2" size={35}/>,
+                        },
+                    ]}
                 />
             </div>
         )

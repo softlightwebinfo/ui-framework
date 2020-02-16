@@ -1,7 +1,7 @@
 export {
-  SoftRadio,
-} from './SoftRadio';
+    Radio,
+} from './Radio';
 
 export {
-  SoftRadioGroup,
-} from './SoftRadioGroup';
+    RadioGroup,
+} from './RadioGroup';

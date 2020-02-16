@@ -11,8 +11,8 @@ import {PositionType} from "../../interfaces/types/PositionType";
 export interface PopoverInterfaceProps extends PropsInterface {
     isOpen: boolean;
     closePopover: () => void;
-    button: ReactElement;
-    children: ReactElement;
+    button?: ReactElement;
+    children?: ReactElement;
     hasArrow?: boolean;
     position?: PositionType;
 }
@@ -58,9 +58,11 @@ export class Popover extends PureComponent<PopoverInterfaceProps> {
                 onOutsideClick={this.props.closePopover}
             >
                 <div className={classes} onKeyDown={this.onKeyDown}>
-                    {React.cloneElement(this.props.button, {
-                        className: "c-popover__button"
-                    })}
+                    {
+                        // @ts-ignore
+                        React.cloneElement(this.props.button, {
+                            className: "c-popover__button"
+                        })}
                     {panel}
                 </div>
             </OutsideClickDetector>

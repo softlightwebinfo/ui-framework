@@ -1,12 +1,12 @@
 @import '../variables';
 @import '../mixins';
 
-.softFormControlLayout {
+.c-form-control-layout {
   // Let the height expand as needed
-  @include softFormControlSize(auto, $includeAlternates: true);
+  @include FormControlSize(auto, $includeAlternates: true);
 }
 
-.softFormControlLayout__childrenWrapper {
+.c-form-control-layout__childrenWrapper {
   position: relative;
 }
 
@@ -14,63 +14,63 @@
  * 1. Account for inner box-shadow style border
  */
 
-.softFormControlLayout--group {
+.c-form-control-layout--group {
   // Match just the regular drop shadow of inputs
-  @include softFormControlDefaultShadow;
-  display: flex;
+  @include FormControlDefaultShadow;
+  display:     flex;
   align-items: center;
-  padding: 1px; /* 1 */
+  padding:     1px; /* 1 */
 
-  .softFormControlLayout__childrenWrapper {
+  .c-form-control-layout__childrenWrapper {
     flex-grow: 1;
   }
 
-  .softFormControlLayout__prepend,
-  .softFormControlLayout__append {
+  .c-form-control-layout__prepend,
+  .c-form-control-layout__append {
     flex-shrink: 0;
-    height: $softFormControlHeight - 2px; /* 1 */
-    line-height: $softFontSize;
+    height:      $FormControlHeight - 2px; /* 1 */
+    line-height: $FontSize;
 
     &:disabled {
-      background-color: $softFormBackgroundDisabledColor;
-      color: $softFormControlDisabledColor; // ensures established contrast
+      background-color: $FormBackgroundDisabledColor;
+      color:            $FormControlDisabledColor; // ensures established contrast
     }
 
     // This is the only way to target specific components to override styling
-    &.softFormLabel,
-    &.softText {
-      white-space: nowrap;
-      margin-bottom: 0;
-      padding: $softFormControlPadding;
-      border: none;
-      background-color: shadeOrTint($softFormBackgroundDisabledColor, 0, 3%);
-      line-height: $softFontSize;
+    &.FormLabel,
+    &.Text {
+      white-space:      nowrap;
+      margin-bottom:    0;
+      padding:          $FormControlPadding;
+      border:           none;
+      background-color: shadeOrTint($FormBackgroundDisabledColor, 0, 3%);
+      line-height:      $FontSize;
     }
   }
 
   //
   // Borders
 
-  .softFormControlLayout__prepend {
-    border-right: 1px solid $softFormBorderColor;
+  .c-form-control-layout__prepend {
+    border-right: 1px solid $FormBorderColor;
   }
 
-  .softFormControlLayout__append {
-    border-left: 1px solid $softFormBorderColor;
+  .c-form-control-layout__append {
+    border-left: 1px solid $FormBorderColor;
   }
 
   //
   // Compressed alterations
 
-  &.softFormControlLayout--compressed {
-    .softFormControlLayout__prepend,
-    .softFormControlLayout__append {
-      height: $softFormControlCompressedHeight - 2px; /* 1 */
+  &.c-form-control-layout--compressed {
+    .c-form-control-layout__prepend,
+    .c-form-control-layout__append {
+      height: $FormControlCompressedHeight - 2px; /* 1 */
 
-      &.softFormLabel,
-      &.softText {
-        padding-top: $softFormControlCompressedPadding;
-        padding-bottom: $softFormControlCompressedPadding;
+      &.FormLabel,
+      &.Text {
+        padding-top:    $FormControlCompressedPadding;
+        padding-bottom: $FormControlCompressedPadding;
       }
     }
   }

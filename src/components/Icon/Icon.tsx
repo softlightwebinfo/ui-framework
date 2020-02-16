@@ -688,15 +688,15 @@ export type IconType = keyof typeof typeToIconMap;
 
 const colorToClassMap = {
     default: null,
-    primary: 'softIcon--primary',
-    secondary: 'softIcon--secondary',
-    success: 'softIcon--success',
-    accent: 'softIcon--accent',
-    warning: 'softIcon--warning',
-    danger: 'softIcon--danger',
-    text: 'softIcon--text',
-    subdued: 'softIcon--subdued',
-    ghost: 'softIcon--ghost',
+    primary: 'c-icon--primary',
+    secondary: 'c-icon--secondary',
+    success: 'c-icon--success',
+    accent: 'c-icon--accent',
+    warning: 'c-icon--warning',
+    danger: 'c-icon--danger',
+    text: 'c-icon--text',
+    subdued: 'c-icon--subdued',
+    ghost: 'c-icon--ghost',
 };
 
 // @ts-ignore
@@ -713,11 +713,11 @@ export type IconColor = string | NamedColor;
 
 const sizeToClassNameMap = {
     original: null,
-    s: 'softIcon--small',
-    m: 'softIcon--medium',
-    l: 'softIcon--large',
-    xl: 'softIcon--xLarge',
-    xxl: 'softIcon--xxLarge',
+    s: 'c-icon--small',
+    m: 'c-icon--medium',
+    l: 'c-icon--large',
+    xl: 'c-icon--xLarge',
+    xxl: 'c-icon--xxLarge',
 };
 
 // @ts-ignore
@@ -754,8 +754,10 @@ export class Icon extends PureComponent<{
 
         if (color) {
             if (isNamedColor(color)) {
+                // @ts-ignore
                 optionalColorClass = colorToClassMap[color];
             } else {
+                // @ts-ignore
                 optionalCustomStyles = {fill: color};
             }
         }
@@ -766,11 +768,12 @@ export class Icon extends PureComponent<{
             (/.+App$/.test(type) || /.+Job$/.test(type) || type === 'dataVisualizer');
 
         const classes = classNames(
-            'softIcon',
+            'c-icon',
+            // @ts-ignore
             sizeToClassNameMap[size],
             optionalColorClass,
             {
-                'softIcon--app': isAppIcon,
+                'c-icon--app': isAppIcon,
             },
             className
         );

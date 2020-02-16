@@ -1,1 +1,1 @@
-export { SoftSelect } from './SoftSelect';
+export { SelectExtra } from './Select';

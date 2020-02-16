@@ -1,1 +1,1 @@
-export {SoftCallOut} from './SoftCallOut';
+export {CallOut} from './CallOut';

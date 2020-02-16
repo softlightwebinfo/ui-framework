@@ -1,6 +1,6 @@
-.softDualRange {
+.c-dual-range {
   &__slider {
-    @include softRangeThumbPerBrowser {
+    @include RangeThumbPerBrowser {
       visibility: hidden;
     }
   }

@@ -1,5 +1,5 @@
-.softFieldNumber {
-  @include softFormControlStyle;
-  @include softFormControlWithIcon($isIconOptional: true);
-  @include softFormControlIsLoading;
+.c-field-number {
+  @include FormControlStyle;
+  @include FormControlWithIcon($isIconOptional: true);
+  @include FormControlIsLoading;
 }

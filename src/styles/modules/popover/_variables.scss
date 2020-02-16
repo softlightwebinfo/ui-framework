@@ -1,2 +1,9 @@
-$softPopoverArrowSize: $softSizeM !default;
-$softPopoverTranslateDistance: $softSizeS !default;
+$PopoverArrowSize: $SizeM !default;
+$PopoverTranslateDistance: $SizeS !default;
+$PanelPaddingModifiers: (
+                                'paddingSmall': $SizeS,
+                                'paddingMedium': $Size,
+                                'paddingLarge': $SizeL
+                        ) !default;
+
+$softPanelBorderColor: tintOrShade($ShadowColor, 40%, 0%) !default; // match shadow

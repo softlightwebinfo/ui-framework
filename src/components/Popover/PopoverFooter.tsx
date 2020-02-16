@@ -10,7 +10,7 @@ export const PopoverFooter: ({children, className, ...rest}: {
     ...rest
   }
 ) => {
-  const classes = classNames('softPopoverFooter', className);
+  const classes = classNames('c-popoverFooter', className);
   return (
     <div className={classes} {...rest}>
       {children}

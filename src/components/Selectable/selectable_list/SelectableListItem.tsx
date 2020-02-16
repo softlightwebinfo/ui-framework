@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
-import {SoftIcon} from '../../Icon';
+import {Icon} from '../../Icon';
 
 function resolveIconAndColor(checked) {
   if (!checked) {
@@ -43,9 +43,9 @@ export class SelectableListItem extends Component<{
     } = this.props;
 
     const classes = classNames(
-      'softSelectableListItem',
+      'c-selectableListItem',
       {
-        'softSelectableListItem-isFocused': isFocused,
+        'c-selectableListItem-isFocused': isFocused,
       },
       className
     );
@@ -54,8 +54,8 @@ export class SelectableListItem extends Component<{
     if (showIcons) {
       const {icon, color} = resolveIconAndColor(checked);
       buttonIcon = (
-        <SoftIcon
-          className="softSelectableListItem__icon"
+        <Icon
+          className="c-selectableListItem__icon"
           color={color}
           type={icon}
         />
@@ -65,14 +65,14 @@ export class SelectableListItem extends Component<{
     let prependNode;
     if (prepend) {
       prependNode = (
-        <span className="softSelectableListItem__prepend">{prepend}</span>
+        <span className="c-selectableListItem__prepend">{prepend}</span>
       );
     }
 
     let appendNode;
     if (append) {
       appendNode = (
-        <span className="softSelectableListItem__append">{append}</span>
+        <span className="c-selectableListItem__append">{append}</span>
       );
     }
 
@@ -85,10 +85,10 @@ export class SelectableListItem extends Component<{
         disabled={disabled}
         aria-disabled={disabled}
         {...rest}>
-        <span className="softSelectableListItem__content">
+        <span className="c-selectableListItem__content">
           {buttonIcon}
           {prependNode}
-          <span className="softSelectableListItem__text">{children}</span>
+          <span className="c-selectableListItem__text">{children}</span>
           {appendNode}
         </span>
       </button>

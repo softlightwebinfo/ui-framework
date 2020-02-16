@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import {omit} from '../../../services/objects';
 
 const typeToClassNameMap = {
-    inList: 'softCheckbox--inList',
+    inList: 'c-checkbox--inList',
 };
 
 export const TYPES = Object.keys(typeToClassNameMap);
 
-export class SoftCheckbox extends Component<{
+export class Checkbox extends Component<{
     className?: any,
     id?: any,
     readOnly?: boolean;
@@ -54,11 +54,11 @@ export class SoftCheckbox extends Component<{
         const inputProps = omit(rest, 'indeterminate');
 
         const classes = classNames(
-            'softCheckbox',
+            'c-checkbox',
             typeToClassNameMap[type],
             {
-                'softCheckbox--noLabel': !label,
-                'softCheckbox--compressed': compressed
+                'c-checkbox--noLabel': !label,
+                'c-checkbox--compressed': compressed
             },
             className
         );
@@ -68,7 +68,7 @@ export class SoftCheckbox extends Component<{
         if (label) {
             optionalLabel = (
                 <label
-                    className="softCheckbox__label"
+                    className="c-checkbox__label"
                     htmlFor={id}
                 >
                     {label}
@@ -82,7 +82,7 @@ export class SoftCheckbox extends Component<{
             >
                 <input
                     readOnly={readOnly}
-                    className="softCheckbox__input"
+                    className="c-checkbox__input"
                     type="checkbox"
                     id={id}
                     checked={checked}
@@ -92,7 +92,7 @@ export class SoftCheckbox extends Component<{
                     {...inputProps}
                 />
 
-                <div className="softCheckbox__square"/>
+                <div className="c-checkbox__square"/>
 
                 {optionalLabel}
             </div>
@@ -116,7 +116,7 @@ export class SoftCheckbox extends Component<{
     }
 }
 
-SoftCheckbox.propTypes = {
+Checkbox.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string.isRequired,
     checked: PropTypes.bool,
@@ -131,7 +131,7 @@ SoftCheckbox.propTypes = {
     compressed: PropTypes.bool,
 };
 
-SoftCheckbox.defaultProps = {
+Checkbox.defaultProps = {
     checked: false,
     disabled: false,
     indeterminate: false,

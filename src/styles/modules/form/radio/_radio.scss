@@ -1,31 +1,31 @@
-.softRadio {
+.c-radio {
   position: relative;
 
-  .softRadio__input {
-    @include softScreenReaderOnly;
+  .c-radio__input {
+    @include ScreenReaderOnly;
 
-    ~ .softRadio__label {
-      display: block;
-      padding-left: ($softRadioSize * 1.5);
-      line-height: $softSizeL;
-      font-size: $softFontSizeS;
-      position: relative;
-      z-index: 2;
-      cursor: pointer;
+    ~ .c-radio__label {
+      display:      block;
+      padding-left: ($RadioSize * 1.5);
+      line-height:  $SizeL;
+      font-size:    $FontSizeS;
+      position:     relative;
+      z-index:      2;
+      cursor:       pointer;
     }
 
-    + .softRadio__circle {
-      @include softCustomControl($type: 'round', $size: $softRadioSize);
+    + .c-radio__circle {
+      @include CustomControl($type: 'round', $size: $RadioSize);
 
-      display: inline-block;
+      display:  inline-block;
       position: absolute;
-      left: 0;
-      top: (($softSizeL - $softRadioSize) / 2) - 1px;
+      left:     0;
+      top:      (($SizeL - $RadioSize) / 2) - 1px;
     }
 
     &:checked {
-      + .softRadio__circle {
-        @include softCustomControlSelected($type: 'dot');
+      + .c-radio__circle {
+        @include CustomControlSelected($type: 'dot');
       }
     }
 
@@ -33,26 +33,26 @@
       //sass-lint:disable no-important
       cursor: not-allowed !important;
 
-      ~ .softRadio__label {
-        color: $softFormControlDisabledColor;
+      ~ .c-radio__label {
+        color:  $FormControlDisabledColor;
         cursor: not-allowed !important;
       }
 
-      + .softRadio__circle {
-        @include softCustomControlDisabled;
+      + .c-radio__circle {
+        @include CustomControlDisabled;
       }
     }
 
     &:checked[disabled] {
-      + .softRadio__circle {
-        @include softCustomControlDisabled($type: 'dot');
+      + .c-radio__circle {
+        @include CustomControlDisabled($type: 'dot');
       }
     }
 
     &:focus,
     &:active:not(:disabled) {
-      + .softRadio__circle {
-        @include softCustomControlFocused;
+      + .c-radio__circle {
+        @include CustomControlFocused;
       }
     }
   }
@@ -62,24 +62,24 @@
    *    they actually click this input.
    */
 
-  &.softRadio--inList,
-  &.softRadio--noLabel {
-    min-height: $softRadioSize;
-    min-width: $softRadioSize;
+  &.c-radio--inList,
+  &.c-radio--noLabel {
+    min-height: $RadioSize;
+    min-width:  $RadioSize;
 
-    .softRadio__circle {
+    .c-radio__circle {
       top: 0;
     }
 
-    .softRadio__input {
-      @include size($softRadioSize); /* 1 */
+    .c-radio__input {
+      @include size($RadioSize); /* 1 */
 
       position: absolute; /* 1 */
-      opacity: 0; /* 1 */
-      z-index: 1; /* 1 */
-      margin: 0; /* 1 */
-      left: 0; /* 1 */
-      cursor: pointer;
+      opacity:  0; /* 1 */
+      z-index:  1; /* 1 */
+      margin:   0; /* 1 */
+      left:     0; /* 1 */
+      cursor:   pointer;
     }
   }
 }

@@ -1,1 +1,1 @@
-export {SoftDescribedFormGroup} from './SoftDescribedFormGroup';
+export {DescribedFormGroup} from './DescribedFormGroup';

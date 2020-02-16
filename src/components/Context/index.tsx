@@ -1,1 +1,1 @@
-export {SoftContext, SoftI18nConsumer} from './SoftContext';
+export {Context, I18nConsumer} from './Context';

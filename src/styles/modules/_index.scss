@@ -12,7 +12,7 @@
 @import "./ListItem";
 @import "./Table";
 @import "./Avatar";
-@import "./Popover";
+@import "./Popover/index";
 @import "./Dropdown";
 @import "./Context";
 @import "./Input";
@@ -69,3 +69,6 @@
 @import "./Center";
 @import "./Carousel";
 @import "./OverlayMask";
+@import "./Icon";
+@import "./Selectable/index";
+@import "./form/index";

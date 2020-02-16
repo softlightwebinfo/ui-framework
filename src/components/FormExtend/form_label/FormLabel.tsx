@@ -1,38 +1,38 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export const SoftFormLabel: ({type, isFocused, isInvalid, children, className, ...rest}: {
-  type?: any; isFocused?: any; isInvalid?: any; children?: any; className?: any; [p: string]: any
+export const FormLabel: ({type, isFocused, isInvalid, children, className, ...rest}: {
+    type?: any; isFocused?: any; isInvalid?: any; children?: any; className?: any; [p: string]: any
 }) => (any | any) = (
-  {
-    type = 'label',
-    isFocused,
-    isInvalid,
-    children,
-    className,
-    ...rest
-  }
+    {
+        type = 'label',
+        isFocused,
+        isInvalid,
+        children,
+        className,
+        ...rest
+    }
 ) => {
-  const classes = classNames('softFormLabel', className, {
-    'softFormLabel-isFocused': isFocused,
-    'softFormLabel-isInvalid': isInvalid,
-  });
+    const classes = classNames('c-formLabel', className, {
+        'c-formLabel-isFocused': isFocused,
+        'c-formLabel-isInvalid': isInvalid,
+    });
 
-  if (type === 'legend') {
-    return (
-      <legend
-        className={classes}
-        {...rest}>
-        {children}
-      </legend>
-    );
-  } else {
-    return (
-      <label
-        className={classes}
-        {...rest}>
-        {children}
-      </label>
-    );
-  }
+    if (type === 'legend') {
+        return (
+            <legend
+                className={classes}
+                {...rest}>
+                {children}
+            </legend>
+        );
+    } else {
+        return (
+            <label
+                className={classes}
+                {...rest}>
+                {children}
+            </label>
+        );
+    }
 };

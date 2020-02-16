@@ -136,7 +136,6 @@ $ZIndexLevel9: 9000;
 // POPOVER
 $Triangle: 10px;
 //BORDER
-$BorderColor: $ColorWhite;
 // SIZE
 $Size: 16px !default;
 
@@ -247,3 +246,12 @@ $TitleColor: shadeOrTint($TextColor, 50%, 0%) !default;
 // Transparency only affects the use of variable this outside of the shadow mixins (borders)
 $ShadowColor: $ColorMediumShade !default;
 $ShadowColorLarge: shade(saturate($ColorMediumShade, 25%), 50%) !default;
+$Breakpoints: (
+                      'xs': 0,
+                      's': 575px,
+                      'm': 768px,
+                      'l': 992px,
+                      'xl': 1200px
+              ) !default;
+
+$BreakpointKeys: map-keys($Breakpoints);

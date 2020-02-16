@@ -1,18 +1,18 @@
-.softRangeLabel {
+.c-range-label {
   &--min,
   &--max {
-    font-size: $softFontSizeXS;
+    font-size: $FontSizeXS;
   }
 
   &--min {
-    margin-right: $softSizeS;
+    margin-right: $SizeS;
   }
 
   &--max {
-    margin-left: $softSizeS;
+    margin-left: $SizeS;
   }
 
   &--isDisabled {
-    opacity: $softRangeDisabledOpacity;
+    opacity: $RangeDisabledOpacity;
   }
 }

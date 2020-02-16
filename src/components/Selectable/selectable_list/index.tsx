@@ -1,2 +1,2 @@
-export {SoftSelectableList} from './SoftSelectableList';
-export {SoftSelectableListItem} from './SoftSelectableListItem';
+export {SelectableList} from './SelectableList';
+export {SelectableListItem} from './SelectableListItem';

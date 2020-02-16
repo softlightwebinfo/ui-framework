@@ -1,31 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export const LEVEL_COLORS = ['primary', 'success', 'warning', 'danger'];
 
-export const RangeWrapper = ({
-  children,
-  className,
-  fullWidth
-}) => {
-
-  const classes = classNames(
-    'softRangeWrapper',
+export const RangeWrapper = (
     {
-      'softRangeWrapper--fullWidth': fullWidth
-    },
-    className
-  );
+        children,
+        className,
+        fullWidth
+    }
+) => {
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
-};
+    const classes = classNames(
+        'c-range-wrapper',
+        {
+            'c-range-wrapper--fullWidth': fullWidth
+        },
+        className
+    );
 
-// @ts-ignore
-RangeWrapper.propTypes = {
-  fullWidth: PropTypes.bool
+    return (
+        <div className={classes}>
+            {children}
+        </div>
+    );
 };

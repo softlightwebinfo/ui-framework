@@ -6,7 +6,7 @@ import {ColorsTypes} from "../../interfaces/types/ColorsTypes";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 
 export interface ButtonInterfaceProps extends PropsInterface {
-    label?: string;
+    label?: string | any;
     icon?: string;
     iconPos?: PositionType;
     isDisabled?: boolean;

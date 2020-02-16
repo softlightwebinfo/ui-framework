@@ -1,1 +1,1 @@
-export { SoftFieldPassword } from './SoftFieldPassword';
+export { FieldPassword } from './FieldPassword';

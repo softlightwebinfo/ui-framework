@@ -1,65 +1,36 @@
-import {Component} from "react";
+import {Component, Fragment} from "react";
 import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
-import classNames from 'classnames';
+import {Button} from "../Button";
+import {Popover, PopoverFooter, PopoverTitle} from "../Popover";
+import {Selectable} from "../Selectable";
+
+export interface HeaderSpacesMenuItem {
+    label: string;
+    checked?: "on" | "off";
+    prepend?: any;
+}
 
 export interface HeaderSpacesMenuInterfaceProps extends PropsInterface {
     isRead?: boolean;
+    spaces: HeaderSpacesMenuItem[];
+    additionalSpaces: HeaderSpacesMenuItem[];
 }
 
-class HeaderSpacesMenu extends Component<HeaderSpacesMenuInterfaceProps> {
-    spaces = [];
-    additionalSpaces = [];
+export class HeaderSpacesMenu extends Component<HeaderSpacesMenuInterfaceProps> {
+    spaces = this.props.spaces;
+    additionalSpaces = this.props.additionalSpaces;
     state = {
-        spaces: this.spaces,
-        selectedSpace: this.spaces.filter(option => option.checked)[0],
+        spaces: this.props.spaces,
+        selectedSpace: this.props.spaces.filter(option => option.checked)[0],
         isOpen: false,
     };
 
     constructor(props) {
         super(props);
-
-        this.spaces = [
-            {
-                label: 'Sales team',
-                prepend: <SoftAvatar type="space" name="Sales Team" size="s"/>,
-                checked: 'on',
-            },
-            {
-                label: 'Engineering',
-                prepend: <SoftAvatar type="space" name="Engineering" size="s"/>,
-            },
-            {
-                label: 'Security',
-                prepend: <SoftAvatar type="space" name="Security" size="s"/>,
-            },
-            {
-                label: 'Default',
-                prepend: <SoftAvatar type="space" name="Default" size="s"/>,
-            },
-        ];
-
-        this.additionalSpaces = [
-            {
-                label: 'Sales team 2',
-                prepend: <SoftAvatar type="space" name="Sales Team 2" size="s"/>,
-            },
-            {
-                label: 'Engineering 2',
-                prepend: <SoftAvatar type="space" name="Engineering 2" size="s"/>,
-            },
-            {
-                label: 'Security 2',
-                prepend: <SoftAvatar type="space" name="Security 2" size="s"/>,
-            },
-            {
-                label: 'Default 2',
-                prepend: <SoftAvatar type="space" name="Default 2" size="s"/>,
-            },
-        ];
         this.state = {
-            spaces: this.spaces,
-            selectedSpace: this.spaces.filter(option => option.checked)[0],
+            spaces: props.spaces,
+            selectedSpace: props.spaces.filter(option => option.checked)[0],
             isOpen: false,
         };
     }
@@ -97,19 +68,18 @@ class HeaderSpacesMenu extends Component<HeaderSpacesMenuInterfaceProps> {
     render() {
         const {selectedSpace, isOpen, spaces} = this.state;
         const button = (
-            <SoftHeaderSectionItemButton
+            <Button
+                label={selectedSpace.prepend}
                 aria-controls="headerSpacesMenuList"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
                 aria-label="Apps menu"
                 onClick={this.onMenuButtonClick}
-            >
-                {selectedSpace.prepend}
-            </SoftHeaderSectionItemButton>
+            />
         );
 
         return (
-            <SoftPopover
+            <Popover
                 id="headerSpacesMenu"
                 ownFocus
                 button={button}
@@ -118,7 +88,7 @@ class HeaderSpacesMenu extends Component<HeaderSpacesMenuInterfaceProps> {
                 closePopover={this.closePopover}
                 panelPaddingSize="none"
             >
-                <SoftSelectable
+                <Selectable
                     searchable={this.isListExtended()}
                     searchProps={{
                         placeholder: 'Find a space',
@@ -135,22 +105,23 @@ class HeaderSpacesMenu extends Component<HeaderSpacesMenuInterfaceProps> {
                 >
                     {(list, search) => (
                         <Fragment>
-                            <SoftPopoverTitle>{search || 'Your spaces'}</SoftPopoverTitle>
+                            <PopoverTitle>{search || 'Your spaces'}</PopoverTitle>
                             {list}
-                            <SoftPopoverFooter>
-                                <SoftButton
-                                    size="s"
+                            <PopoverFooter>
+                                <Button
+                                    size={30}
                                     fullWidth
                                     onClick={this.addMoreSpaces}
                                     disabled={this.isListExtended()}
-                                >
-                                    Add more spaces
-                                </SoftButton>
-                            </SoftPopoverFooter>
+                                    label={"Add more spaces"}
+                                />
+                            </PopoverFooter>
                         </Fragment>
                     )}
-                </SoftSelectable>
-            </SoftPopover>
+                </Selectable>
+            </Popover>
         );
     }
 }
+
+

@@ -39,8 +39,6 @@ export class FieldSearch extends Component<{
     disabled?: boolean,
     onKeyDown?: () => any
 }> {
-
-    static propTypes = propTypes;
     static defaultProps = defaultProps;
     private inputElement: any;
     private cleanups: any;
@@ -81,12 +79,12 @@ export class FieldSearch extends Component<{
             }
         }
         if (onSearch && (incremental || event.keyCode === ENTER)) {
-            onSearch(event.target.value);
+            onSearch(event.target.value, event.target.value);
         }
     };
 
     onChange = (e, onChange) => {
-        if (onChange) onChange(e);
+        if (onChange) onChange(e, e.target.value);
     };
 
     render() {

@@ -2,42 +2,42 @@
  * 1. Coerce inline form elements to behave as block-level elements.
  * 2. For inline forms, we need to add margin if the label doesn't exist.
  */
-.softFormRow {
-  display: flex; /* 1 */
+.c-form-row {
+  display:        flex; /* 1 */
   flex-direction: column; /* 1 */
-  max-width: $softFormMaxWidth;
-  padding-bottom: $softSizeS;
+  max-width:      $FormMaxWidth;
+  padding-bottom: $SizeS;
 
   + * {
-    margin-top: $softSize;
+    margin-top: $Size;
   }
 }
 
-.softFormRow--fullWidth {
+.c-form-row--fullWidth {
   max-width: 100%;
 }
 
-.softFormRow--hasEmptyLabelSpace {
-  margin-top: $softFontSizeXS + $softSizeS; /* 2 */
+.c-form-row--hasEmptyLabelSpace {
+  margin-top:      $FontSizeXS + $SizeS; /* 2 */
   // the following ensure that contents that aren't inheritly the same height
   // as inputs will align to the vertical center
-  min-height: $softSizeXXL;
-  padding-bottom: 0;
+  min-height:      $SizeXXL;
+  padding-bottom:  0;
   justify-content: center;
 }
 
-.softFormRow--compressed {
+.c-form-row--compressed {
   + * {
-    margin-top: $softSizeS;
+    margin-top: $SizeS;
   }
 
-  .softFormRow__text {
-    padding-top: $softSizeM / 2;
+  .c-form-row__text {
+    padding-top: $SizeM / 2;
   }
 }
 
-.softFormRow__displayOnlyWrapper {
-  min-height: $softFormControlHeight;
-  display: flex;
+.c-form-row__displayOnlyWrapper {
+  min-height:  $FormControlHeight;
+  display:     flex;
   align-items: center;
 }

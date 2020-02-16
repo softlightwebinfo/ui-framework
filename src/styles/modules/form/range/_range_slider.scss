@@ -12,73 +12,73 @@
 // It has been modified to fit the styling patterns of Kibana and
 // to be more easily maintained / themeable going forward.
 
-.softRangeSlider {
+.c-range-slider {
   // Auto means the height isn't defined
-  height: $softFormControlHeight;
-  appearance: none;
+  height:             $FormControlHeight;
+  appearance:         none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent; // Otherwise white in Chrome
-  width: 100%; // ensures the slider expands to fill flex display
-  position: relative;
-  z-index: $softZLevel2; // stay above tick marks
-  cursor: pointer; // Keep cursor to full range bounds
+  -moz-appearance:    none;
+  background:         transparent; // Otherwise white in Chrome
+  width:              100%; // ensures the slider expands to fill flex display
+  position:           relative;
+  z-index:            $ZLevel2; // stay above tick marks
+  cursor:             pointer; // Keep cursor to full range bounds
 
   &:disabled {
     cursor: not-allowed;
 
     // sass-lint:disable-block mixins-before-declarations
-    @include softRangeThumbPerBrowser {
-      cursor: not-allowed;
-      border-color: $softRangeThumbBorderColor;
-      background-color: $softRangeThumbBorderColor;
-      box-shadow: none;
+    @include RangeThumbPerBrowser {
+      cursor:           not-allowed;
+      border-color:     $RangeThumbBorderColor;
+      background-color: $RangeThumbBorderColor;
+      box-shadow:       none;
     }
 
-    ~ .softRangeThumb {
-      cursor: not-allowed;
-      border-color: $softRangeThumbBorderColor;
-      background-color: $softRangeThumbBorderColor;
-      box-shadow: none;
+    ~ .RangeThumb {
+      cursor:           not-allowed;
+      border-color:     $RangeThumbBorderColor;
+      background-color: $RangeThumbBorderColor;
+      box-shadow:       none;
     }
   }
 
-  @include softRangeThumbPerBrowser {
-    @include softCustomControl($type: 'round');
-    @include softRangeThumbStyle;
+  @include RangeThumbPerBrowser {
+    @include CustomControl($type: 'round');
+    @include RangeThumbStyle;
   }
 
-  @include softRangeTrackPerBrowser {
-    @include softRangeTrackSize;
-    background: $softRangeTrackColor;
-    border: $softRangeTrackBorderWidth solid $softRangeTrackBorderColor;
-    border-radius: $softRangeTrackRadius;
+  @include RangeTrackPerBrowser {
+    @include RangeTrackSize;
+    background:    $RangeTrackColor;
+    border:        $RangeTrackBorderWidth solid $RangeTrackBorderColor;
+    border-radius: $RangeTrackRadius;
   }
 
   &:focus,
   &--hasFocus {
-    @include softRangeThumbPerBrowser {
-      @include softCustomControlFocused;
+    @include RangeThumbPerBrowser {
+      @include CustomControlFocused;
     }
 
-    ~ .softRangeThumb {
-      border-color: $softColorPrimary;
+    ~ .RangeThumb {
+      border-color: $ColorPrimary;
     }
 
-    @include softRangeTrackPerBrowser {
-      background-color: $softColorPrimary;
-      border-color: $softColorPrimary;
+    @include RangeTrackPerBrowser {
+      background-color: $ColorPrimary;
+      border-color:     $ColorPrimary;
     }
 
-    ~ .softRangeHighlight .softRangeHighlight__progress {
-      background-color: $softColorPrimary;
+    ~ .RangeHighlight .RangeHighlight__progress {
+      background-color: $ColorPrimary;
     }
 
-    ~ .softRangeTooltip .softRangeTooltip__value {
-      @include softBottomShadowMedium;
+    ~ .RangeTooltip .RangeTooltip__value {
+      @include BottomShadowMedium;
 
-      &.softRangeTooltip__value--right,
-      &.softRangeTooltip__value--left {
+      &.RangeTooltip__value--right,
+      &.RangeTooltip__value--left {
         transform: translateX(0) translateY(-50%) scale(1.1);
       }
     }
@@ -90,7 +90,7 @@
   // sass-lint:disable-block no-vendor-prefixes
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    margin-top: ((-$softRangeTrackBorderWidth * 2 + $softRangeTrackHeight) / 2) - ($softRangeThumbHeight / 2);
+    margin-top:         ((-$RangeTrackBorderWidth * 2 + $RangeTrackHeight) / 2) - ($RangeThumbHeight / 2);
   }
 
   &::-ms-thumb {
@@ -98,23 +98,23 @@
   }
 
   &::-ms-track {
-    @include softRangeTrackSize;
-    background: transparent;
+    @include RangeTrackSize;
+    background:   transparent;
     border-color: transparent;
-    border-width: ($softRangeThumbHeight / 2) 0;
-    color: transparent;
+    border-width: ($RangeThumbHeight / 2) 0;
+    color:        transparent;
   }
 
   // States
   &--hasTicks {
-    height: $softFormControlHeight / 2; // Adjust vertical alignment based on extras
+    height: $FormControlHeight / 2; // Adjust vertical alignment based on extras
   }
 }
 
 // Lighten the track when showing the range
-.softRangeSlider--hasRange {
-  @include softRangeTrackPerBrowser {
-    background-color: transparentize($softRangeTrackColor, .6);
-    border-color: transparentize($softRangeTrackBorderColor, .6);
+.c-range-slider--hasRange {
+  @include RangeTrackPerBrowser {
+    background-color: transparentize($RangeTrackColor, .6);
+    border-color:     transparentize($RangeTrackBorderColor, .6);
   }
 }

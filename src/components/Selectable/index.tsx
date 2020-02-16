@@ -1,4 +1,4 @@
-export { SoftSelectable } from './SoftSelectable';
-export { SoftSelectableList, SoftSelectableListItem } from './selectable_list';
-export { SoftSelectableMessage } from './selectable_message';
-export { SoftSelectableSearch } from './selectable_search';
+export { Selectable } from './Selectable';
+export { SelectableList, SelectableListItem } from './selectable_list';
+export { SelectableMessage } from './selectable_message';
+export { SelectableSearch } from './selectable_search';

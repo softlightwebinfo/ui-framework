@@ -1,0 +1,109 @@
+.c-icon {
+  flex-shrink: 0; // Ensures it never scales down below it's intended size
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+
+  svg {
+    transform: translate(0, 0); // Hack to fix Firefox "c-ness"
+  }
+
+  &:focus {
+    opacity: 1; // We often hide icons on hover. Make sure they appear on focus.
+    background: $FocusBackgroundColor;
+  }
+}
+
+// App icons are two-toned so get an extra class. This provides the base color.
+.c-icon--app {
+  fill: $TextColor;
+
+  // This provides the default secondary color
+  .c-icon__fillSecondary {
+    fill: $ColorSecondary;
+  }
+
+  // Primary icons are mono of that color
+  &.c-icon--primary {
+    fill: $ColorPrimary;
+
+    // Provides a way to make app icons close to our primary
+    .c-icon__fillSecondary {
+      fill: $ColorPrimary;
+    }
+  }
+}
+
+.c-icon--text {
+  fill: $TextColor;
+
+  // Text icons are fully mono
+  .c-icon__fillSecondary {
+    fill: $TextColor;
+  }
+}
+
+.c-icon--primary {
+  fill: $ColorPrimary;
+}
+
+.c-icon--subdued {
+  fill: $ColorMediumShade;
+
+  // Text icons are fully mono
+  .c-icon__fillSecondary {
+    fill: $ColorMediumShade;
+  }
+}
+
+
+.c-icon--secondary {
+  fill: $ColorSecondary;
+}
+
+.c-icon--success {
+  fill: $ColorSuccess;
+}
+
+.c-icon--accent {
+  fill: $ColorAccent;
+}
+
+.c-icon--warning {
+  fill: $ColorWarning;
+}
+
+.c-icon--danger {
+  fill: $ColorDanger;
+}
+
+.c-icon--ghost {
+  fill: $ColorGhost;
+}
+
+// Use the negative fill on SVG elements that need to flip portions
+// of the icon to light and dark compatible modes. You can see this
+// in use on the Elastic logo icons.
+.c-icon__fillNegative {
+  fill: $ColorDarkestShade;
+}
+
+.c-icon--small {
+  @include size($SizeM);
+}
+
+.c-icon--medium {
+  @include size($Size);
+}
+
+.c-icon--large {
+  @include size($SizeL);
+}
+
+.c-icon--xLarge {
+  @include size($SizeXL);
+}
+
+.c-icon--xxLarge {
+  @include size($SizeXXL);
+}

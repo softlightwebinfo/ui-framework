@@ -1,7 +1,7 @@
 export {
-  SoftSuperSelect,
-} from './SoftSuperSelect';
+    SuperSelect,
+} from './SuperSelect';
 
 export {
-  SoftSuperSelectControl,
-} from './SoftSuperSelectControl';
+    SuperSelectControl,
+} from './SuperSelectControl';

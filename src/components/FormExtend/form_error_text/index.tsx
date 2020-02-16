@@ -1,1 +1,1 @@
-export {SoftFormErrorText} from './SoftFormErrorText';
+export {FormErrorText} from './FormErrorText';

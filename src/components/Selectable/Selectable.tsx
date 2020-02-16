@@ -10,7 +10,7 @@ import {SelectableList} from './selectable_list';
 import {Loading} from '../Loading';
 import {getMatchingOptions} from './matching_options';
 import {comboBoxKeyCodes} from '../../services';
-import {TAB} from '../../interfaces/enum';
+import {TAB} from '../../services/key_codes';
 import {I18n} from '../I18n';
 
 export class Selectable extends Component<{
@@ -29,11 +29,6 @@ export class Selectable extends Component<{
     allowExclusions?: any,
     style?: any,
     onKeyDown?: any
-}, {
-    activeOptionIndex: any,
-    searchValue: any,
-    visibleOptions: any,
-    onKeyDown: any
 }> {
     static defaultProps = {
         options: [],
@@ -223,7 +218,7 @@ export class Selectable extends Component<{
                     <br/>
                     <p>
                         <I18n
-                            token="euiSelectable.loadingOptions"
+                            token="Selectable.loadingOptions"
                             default="Loading options"
                         />
                     </p>
@@ -235,7 +230,7 @@ export class Selectable extends Component<{
                 messageContent = (
                     <p>
                         <I18n
-                            token="euiSelectable.noMatchingOptions"
+                            token="Selectable.noMatchingOptions"
                             default="{searchValue} doesn't match any options"
                             values={{searchValue: <strong>{searchValue}</strong>}}
                         />
@@ -245,7 +240,7 @@ export class Selectable extends Component<{
                 messageContent = (
                     <p>
                         <I18n
-                            token="euiSelectable.noAvailableOptions"
+                            token="Selectable.noAvailableOptions"
                             default="No options available"
                         />
                     </p>
@@ -254,9 +249,9 @@ export class Selectable extends Component<{
         }
 
         const classes = classNames(
-            'euiSelectable',
+            'c-selectable',
             {
-                'euiSelectable-fullHeight': height === 'full',
+                'c-selectable-fullHeight': height === 'full',
             },
             className
         );

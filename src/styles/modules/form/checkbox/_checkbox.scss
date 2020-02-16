@@ -1,37 +1,37 @@
-.softCheckbox {
+.c-checkbox {
   position: relative;
 
-  .softCheckbox__input {
-    @include softScreenReaderOnly;
+  .c-checkbox__input {
+    @include ScreenReaderOnly;
 
-    ~ .softCheckbox__label {
-      display: block;
-      padding-left: ($softCheckBoxSize * 1.5);
-      line-height: $softSizeL;
-      font-size: $softFontSizeS;
-      position: relative;
-      z-index: 2;
-      cursor: pointer;
+    ~ .c-checkbox__label {
+      display:      block;
+      padding-left: ($CheckBoxSize * 1.5);
+      line-height:  $SizeL;
+      font-size:    $FontSizeS;
+      position:     relative;
+      z-index:      2;
+      cursor:       pointer;
     }
 
-    + .softCheckbox__square {
-      @include softCustomControl($type: 'square', $size: $softCheckBoxSize);
+    + .c-checkbox__square {
+      @include CustomControl($type: 'square', $size: $CheckBoxSize);
 
-      display: inline-block;
+      display:  inline-block;
       position: absolute;
-      left: 0;
-      top: (($softSizeL - $softCheckBoxSize) / 2) - 1px;
+      left:     0;
+      top:      (($SizeL - $CheckBoxSize) / 2) - 1px;
     }
 
     &:checked {
-      + .softCheckbox__square {
-        @include softCustomControlSelected($type: 'check');
+      + .c-checkbox__square {
+        @include CustomControlSelected($type: 'check');
       }
     }
 
     &:indeterminate {
-      + .softCheckbox__square {
-        @include softCustomControlSelected($type: 'square');
+      + .c-checkbox__square {
+        @include CustomControlSelected($type: 'square');
       }
     }
 
@@ -39,32 +39,32 @@
       // sass-lint:disable-block no-important
       cursor: not-allowed !important;
 
-      ~ .softCheckbox__label {
-        color: $softFormControlDisabledColor;
+      ~ .c-checkbox__label {
+        color:  $FormControlDisabledColor;
         cursor: not-allowed !important;
       }
 
-      + .softCheckbox__square {
-        @include softCustomControlDisabled;
+      + .c-checkbox__square {
+        @include CustomControlDisabled;
       }
     }
 
     &:checked[disabled] {
-      + .softCheckbox__square {
-        @include softCustomControlDisabled($type: 'check');
+      + .c-checkbox__square {
+        @include CustomControlDisabled($type: 'check');
       }
     }
 
     &:indeterminate[disabled] {
-      + .softCheckbox__square {
-        @include softCustomControlDisabled($type: 'dot');
+      + .c-checkbox__square {
+        @include CustomControlDisabled($type: 'dot');
       }
     }
 
     &:focus,
     &:active:not(:disabled) {
-      + .softCheckbox__square {
-        @include softCustomControlFocused;
+      + .c-checkbox__square {
+        @include CustomControlFocused;
       }
     }
   }
@@ -74,24 +74,24 @@
    *    they actually click this input.
    */
 
-  &.softCheckbox--inList,
-  &.softCheckbox--noLabel {
-    min-height: $softCheckBoxSize;
-    min-width: $softCheckBoxSize;
+  &.c-checkbox--inList,
+  &.c-checkbox--noLabel {
+    min-height: $CheckBoxSize;
+    min-width:  $CheckBoxSize;
 
-    .softCheckbox__square {
+    .c-checkbox__square {
       top: 0;
     }
 
-    .softCheckbox__input {
-      @include size($softCheckBoxSize); /* 1 */
+    .c-checkbox__input {
+      @include size($CheckBoxSize); /* 1 */
 
       position: absolute; /* 1 */
-      opacity: 0; /* 1 */
-      z-index: 1; /* 1 */
-      margin: 0; /* 1 */
-      left: 0; /* 1 */
-      cursor: pointer;
+      opacity:  0; /* 1 */
+      z-index:  1; /* 1 */
+      margin:   0; /* 1 */
+      left:     0; /* 1 */
+      cursor:   pointer;
     }
   }
 }

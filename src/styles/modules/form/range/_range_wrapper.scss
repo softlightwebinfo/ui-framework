@@ -3,16 +3,16 @@
  *    use the descendant selector to allow the width to shrink.
  */
 
-.softRangeWrapper {
-  @include softFormControlSize;
-  display: flex;
+.c-range-wrapper {
+  @include FormControlSize;
+  display:     flex;
   align-items: center;
 
   &--fullWidth {
     max-width: 100%;
   }
 
-  > .softFormControlLayout { /* 1 */
+  > .FormControlLayout { /* 1 */
     width: auto;
   }
 }

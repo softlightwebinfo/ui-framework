@@ -1,23 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export const RangeLabel: ({children, disabled, side}: { children?: any; disabled?: any; side?: any }) => any = ({children, disabled, side}) => {
-  const classes = classNames('softRangeLabel', `softRangeLabel--${side}`, {
-    'softRangeLabel--isDisabled': disabled
-  });
-  return (
-    <label className={classes}>
-      {children}
-    </label>
-  );
-};
-
-// @ts-ignore
-RangeLabel.propTypes = {
-  side: PropTypes.oneOf(['min', 'max'])
+    const classes = classNames('c-range-label', `c-range-label--${side}`, {
+        'c-range-label--isDisabled': disabled
+    });
+    return (
+        <label className={classes}>
+            {children}
+        </label>
+    );
 };
 // @ts-ignore
 RangeLabel.defaultProps = {
-  side: 'max'
+    side: 'max'
 };

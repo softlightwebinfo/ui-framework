@@ -1,7 +1,7 @@
-.softRadioGroup__item + .softRadioGroup__item {
-  margin-top: $softSizeS;
+.c-radio-group__item + .c-radio-group__item {
+  margin-top: $SizeS;
 
-  &.softRadio--compressed {
+  &.c-radio--compressed {
     margin-top: 0;
   }
 }

@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-import {
-    ValidatableControl,
-} from '../validatable_control';
-import string from "../../Icon/assets/string";
+import {ValidatableControl} from '../validatable_control';
 
 const resizeToClassNameMap = {
     vertical: 'c-textArea--resizeVertical',

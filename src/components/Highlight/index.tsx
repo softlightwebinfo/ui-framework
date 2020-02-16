@@ -1,3 +1,3 @@
 export {
-  SoftHighlight,
-} from './SoftHighlight';
+  Highlight,
+} from './Highlight';

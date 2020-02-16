@@ -1,1 +1,1 @@
-export {SoftSelectableSearch} from './SoftSelectableSearch';
+export {SelectableSearch} from './SelectableSearch';

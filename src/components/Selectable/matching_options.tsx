@@ -77,4 +77,5 @@ const collectMatchingOption = (
   if (normalizedOption.includes(normalizedSearchValue)) {
     accumulator.push(option);
   }
+  return
 };

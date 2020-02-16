@@ -1,27 +1,27 @@
-.softFormControlLayoutCustomIcon {
+.c-form-control-layout-custom-icon {
   pointer-events: none;
 
-  .softFormControlLayoutCustomIcon__icon {
+  .c-form-control-layout-custom-icon__icon {
     transform: translateY(-1px);
   }
 }
 
-.softFormControlLayoutCustomIcon--clickable {
-  @include size($softSize);
+.c-form-control-layout-custom-icon--clickable {
+  @include size($Size);
 
   pointer-events: all;
 
-  .softFormControlLayoutCustomIcon__icon {
+  .c-form-control-layout-custom-icon__icon {
     vertical-align: baseline;
-    transform: none;
+    transform:      none;
   }
 
   &:focus {
-    @include softFocusRing;
+    @include FocusRing;
   }
 
   &:disabled {
     cursor: not-allowed;
-    color: $softFormControlDisabledColor;
+    color:  $FormControlDisabledColor;
   }
 }

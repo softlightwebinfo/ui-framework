@@ -1,21 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {Checkbox} from './Checkbox';
 
-import {SoftCheckbox} from './SoftCheckbox';
-
-export interface SoftCheckboxGroup_optionsInterface {
+export interface CheckboxGroup_optionsInterface {
     id: any;
     label: string;
 }
 
-export const SoftCheckboxGroup: (
+export const CheckboxGroup: (
     {
         options, idToSelectedMap, onChange, className, disabled, compressed, ...rest
     }: {
-        options?: SoftCheckboxGroup_optionsInterface[]; idToSelectedMap?: any[]; onChange?: any; className?: any; disabled?: any; compressed?: any; [p: string]: any
+        options?: CheckboxGroup_optionsInterface[]; idToSelectedMap?: any[]; onChange?: any; className?: any; disabled?: any; compressed?: any; [p: string]: any
     }) => any = (
     {
-        options,
+        options = [],
         idToSelectedMap,
         onChange,
         className,
@@ -27,10 +25,11 @@ export const SoftCheckboxGroup: (
     <div className={className} {...rest}>
         {options.map((option, index) => {
             return (
-                <SoftCheckbox
-                    className="softCheckboxGroup__item"
+                <Checkbox
+                    className="c-checkbox-group__item"
                     key={index}
                     id={option.id}
+                    // @ts-ignore
                     checked={idToSelectedMap[option.id]}
                     label={option.label}
                     disabled={disabled}
@@ -41,26 +40,8 @@ export const SoftCheckboxGroup: (
         })}
     </div>
 );
-
 // @ts-ignore
-SoftCheckboxGroup.propTypes = {
-    options: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            label: PropTypes.node,
-        }),
-    ).isRequired,
-    idToSelectedMap: PropTypes.objectOf(PropTypes.bool).isRequired,
-    onChange: PropTypes.func.isRequired,
-    /**
-     * Tightens up the spacing between checkbox rows and sends down the
-     * compressed prop to the checkbox itself
-     */
-    compressed: PropTypes.bool,
-};
-
-// @ts-ignore
-SoftCheckboxGroup.defaultProps = {
+CheckboxGroup.defaultProps = {
     options: [],
     idToSelectedMap: {}
 };

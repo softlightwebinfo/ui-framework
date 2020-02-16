@@ -1,3 +1,3 @@
 export {
-  SoftFilePicker,
-} from './SoftFilePicker';
+  FilePicker,
+} from './FilePicker';

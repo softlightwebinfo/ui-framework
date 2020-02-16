@@ -1,4 +1,4 @@
 export {
-  SoftFormControlLayout,
+  FormControlLayout,
   ICON_SIDES,
-} from './SoftFormControlLayout';
+} from './FormControlLayout';

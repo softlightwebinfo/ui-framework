@@ -1,1 +1,1 @@
-export {SoftSelectableMessage} from './SoftSelectableMessage';
+export {SelectableMessage} from './SelectableMessage';

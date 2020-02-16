@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {SoftCallOut} from '../CallOut';
-import {SoftI18n} from '../I18n';
+import {CallOut} from '../CallOut';
+import {I18n} from '../I18n';
 
-export class SoftForm extends Component<{
+export class FormExtend extends Component<{
     isInvalid?: boolean;
     error?: any;
     className?: string;
@@ -20,7 +19,7 @@ export class SoftForm extends Component<{
             error,
             ...rest
         } = this.props;
-        const classes = classNames('softForm', className);
+        const classes = classNames('c-form-extend', className);
 
         let optionalErrors;
 
@@ -29,7 +28,7 @@ export class SoftForm extends Component<{
             optionalErrors = (
                 <ul>
                     {errorTexts.map(error => (
-                        <li className="softForm__error" key={error}>
+                        <li className="c-form-extend__error" key={error}>
                             {error}
                         </li>
                     ))}
@@ -41,17 +40,17 @@ export class SoftForm extends Component<{
 
         if (isInvalid) {
             optionalErrorAlert = (
-                <SoftI18n token="softForm.addressFormErrors" default="Please address the errors in your form.">
+                <I18n token="FormExtend.addressFormErrors" default="Please address the errors in your form.">
                     {addressFormErrors => (
-                        <SoftCallOut
-                            className="softForm__errors"
+                        <CallOut
+                            className="c-form-extend__errors"
                             title={addressFormErrors}
                             color="danger"
                         >
                             {optionalErrors}
-                        </SoftCallOut>
+                        </CallOut>
                     )}
-                </SoftI18n>
+                </I18n>
             );
         }
 
@@ -66,9 +65,3 @@ export class SoftForm extends Component<{
         );
     }
 }
-
-// @ts-ignore
-SoftForm.propTypes = {
-    isInvalid: PropTypes.bool,
-    error: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
-};

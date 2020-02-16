@@ -1,2 +1,2 @@
-export {SoftCheckbox} from './SoftCheckbox';
-export {SoftCheckboxGroup} from './SoftCheckboxGroup';
+export {Checkbox} from './Checkbox';
+export {CheckboxGroup} from './CheckboxGroup';

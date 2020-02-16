@@ -1,7 +1,2 @@
-export {
-  SoftToolTip,
-} from './SoftTooltip';
-
-export {
-  SoftIconTip,
-} from './SoftIconTip';
+export {ToolTip} from './Tooltip';
+export {IconTip} from './IconTip';

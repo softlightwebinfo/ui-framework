@@ -1,5 +1,5 @@
-.softFormErrorText {
-  @include softFontSizeXS;
-  padding-top: $softSizeS;
-  color: $softColorDanger;
+.c-form-error-text {
+  @include FontSizeXS;
+  padding-top: $SizeS;
+  color:       $ColorDanger;
 }

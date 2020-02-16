@@ -1,12 +1,12 @@
-.softRangeInput {
-  width: auto;
-  min-width: $softSize * 4;
+.c-range-input {
+  width:     auto;
+  min-width: $Size * 4;
 
   &--min {
-    margin-right: $softSize;
+    margin-right: $Size;
   }
 
   &--max {
-    margin-left: $softSize;
+    margin-left: $Size;
   }
 }

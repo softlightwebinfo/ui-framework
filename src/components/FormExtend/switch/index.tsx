@@ -1,1 +1,1 @@
-export {SoftSwitch} from './SoftSwitch';
+export {Switch} from './Switch';

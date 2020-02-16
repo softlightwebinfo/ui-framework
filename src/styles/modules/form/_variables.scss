@@ -1,43 +1,43 @@
 // Sizing
-$softFormMaxWidth: $softSizeXXL * 10 !default;
-$softFormControlHeight: $softSizeXXL !default;
-$softFormControlCompressedHeight: $softSizeXL !default;
-$softFormControlPadding: $softSizeM !default;
-$softFormControlCompressedPadding: $softSizeS !default;
+$FormMaxWidth: $SizeXXL * 10 !default;
+$FormControlHeight: $SizeXXL !default;
+$FormControlCompressedHeight: $SizeXL !default;
+$FormControlPadding: $SizeM !default;
+$FormControlCompressedPadding: $SizeS !default;
 
-$softRadioSize: $softSize !default;
-$softCheckBoxSize: $softSize !default;
+$RadioSize: $Size !default;
+$CheckBoxSize: $Size !default;
 
-$softSwitchHeight: $softSize * 1.25 !default;
-$softSwitchWidth: ($softSize * 2.5) + $softSizeXS !default;
-$softSwitchThumbSize: $softSwitchHeight !default;
-$softSwitchIconHeight: $softSize !default;
+$SwitchHeight: $Size * 1.25 !default;
+$SwitchWidth: ($Size * 2.5) + $SizeXS !default;
+$SwitchThumbSize: $SwitchHeight !default;
+$SwitchIconHeight: $Size !default;
 
 // Coloring
-$softFormBackgroundColor: tintOrShade($softColorLightestShade, 60%, 40%) !default;
-$softFormBackgroundDisabledColor: darken($softColorLightestShade, 2%) !default;
-$softFormBorderColor: transparentize($softColorFullShade, .9) !default;
-$softFormBorderDisabledColor: transparentize($softColorFullShade, .92) !default;
-$softFormCustomControlDisabledIconColor: shadeOrTint($softColorMediumShade, 38%, 48.5%) !default; // exact 508c foreground for $softColorLightShade
-$softFormControlDisabledColor: $softColorMediumShade !default;
-$softFormControlBoxShadow: 0 1px 1px -1px transparentize($softShadowColor, .8), 0 3px 2px -2px transparentize($softShadowColor, .8);
+$FormBackgroundColor: tintOrShade($ColorLightestShade, 60%, 40%) !default;
+$FormBackgroundDisabledColor: darken($ColorLightestShade, 2%) !default;
+$FormBorderColor: transparentize($ColorFullShade, .9) !default;
+$FormBorderDisabledColor: transparentize($ColorFullShade, .92) !default;
+$FormCustomControlDisabledIconColor: shadeOrTint($ColorMediumShade, 38%, 48.5%) !default; // exact 508c foreground for $ColorLightShade
+$FormControlDisabledColor: $ColorMediumShade !default;
+$FormControlBoxShadow: 0 1px 1px -1px transparentize($ShadowColor, .8), 0 3px 2px -2px transparentize($ShadowColor, .8);
 
 //** DEPRECATED **//
 //** DEPRECATED **//
 //** DEPRECATED **//
 //** DEPRECATED **//
 
-@if variable-exists(softFormControlHeight--compressed) {
-  $softFormControlCompressedHeight: $softFormControlHeightCompressed !global;
-  @warn '`$softFormControlHeightCompressed` is deprecated. Please use `$softFormControlCompressedHeight` instead';
+@if variable-exists(FormControlHeight--compressed) {
+  $FormControlCompressedHeight: $FormControlHeightCompressed !global;
+  @warn '`$FormControlHeightCompressed` is deprecated. Please use `$FormControlCompressedHeight` instead';
 }
 
-@if variable-exists(softFormControlPadding--compressed) {
-  $softFormControlCompressedPadding: $softFormControlPaddingCompressed !global;
-  @warn '`$softFormControlPaddingCompressed` is deprecated. Please use `$softFormControlCompressedPadding` instead';
+@if variable-exists(FormControlPadding--compressed) {
+  $FormControlCompressedPadding: $FormControlPaddingCompressed !global;
+  @warn '`$FormControlPaddingCompressed` is deprecated. Please use `$FormControlCompressedPadding` instead';
 }
 
-@if variable-exists(softFormBorderColorDisabled) {
-  $softFormBorderDisabledColor: $softFormBorderColorDisabled !global;
-  @warn '`$softFormBorderColorDisabled` is deprecated. Please use `$softFormBorderDisabledColor` instead';
+@if variable-exists(FormBorderColorDisabled) {
+  $FormBorderDisabledColor: $FormBorderColorDisabled !global;
+  @warn '`$FormBorderColorDisabled` is deprecated. Please use `$FormBorderDisabledColor` instead';
 }

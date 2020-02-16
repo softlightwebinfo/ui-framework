@@ -1,66 +1,66 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 // @ts-ignore
-import {Input} from '../../Input';
 import {getMatchingOptions} from '../matching_options';
+import {FieldSearch} from "../../FormExtend/field_search";
 
 export class SelectableSearch extends Component<{
-  onChange?: any,
-  options?: any,
-  searchValue?: any,
-  defaultValue?: any,
-  className?: any
+    onChange?: any,
+    options?: any,
+    searchValue?: any,
+    defaultValue?: any,
+    className?: any
 }> {
-  static defaultProps = {
-    defaultValue: '',
-  };
-  state = {
-    searchValue: null
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      searchValue: props.defaultValue,
+    static defaultProps = {
+        defaultValue: '',
     };
-  }
+    state = {
+        searchValue: null
+    };
 
-  componentDidMount() {
-    const {options} = this.props;
-    const {searchValue} = this.state;
-    const matchingOptions = getMatchingOptions(options, searchValue);
-    this.passUpMatches(matchingOptions, searchValue);
-  }
+    constructor(props) {
+        super(props);
 
-  onSearchChange = (value) => {
-    this.setState({searchValue: value});
-    const {options} = this.props;
-    const matchingOptions = getMatchingOptions(options, value);
-    this.passUpMatches(matchingOptions, value);
-  };
-
-  passUpMatches = (matches, searchValue) => {
-    if (this.props.onChange) {
-      this.props.onChange(matches, searchValue);
+        this.state = {
+            searchValue: props.defaultValue,
+        };
     }
-  };
 
-  render() {
-    const {className, onChange, options, defaultValue, ...rest} = this.props;
+    componentDidMount() {
+        const {options} = this.props;
+        const {searchValue} = this.state;
+        const matchingOptions = getMatchingOptions(options, searchValue);
+        this.passUpMatches(matchingOptions, searchValue);
+    }
 
-    const classes = classNames('SelectableSearch', className);
+    onSearchChange = (value) => {
+        this.setState({searchValue: value});
+        const {options} = this.props;
+        const matchingOptions = getMatchingOptions(options, value);
+        this.passUpMatches(matchingOptions, value);
+    };
 
-    return (
-      <Input
-        className={classes}
-        placeholder="Filter options"
-        onChange={this.onSearchChange}
-        incremental
-        defaultValue={defaultValue}
-        fullWidth
-        {...rest}
-      />
-    );
-  }
+    passUpMatches = (matches, searchValue) => {
+        if (this.props.onChange) {
+            this.props.onChange(matches, searchValue);
+        }
+    };
+
+    render() {
+        const {className, onChange, options, defaultValue, ...rest} = this.props;
+
+        const classes = classNames('c-selectableSearch', className);
+
+        return (
+            <FieldSearch
+                className={classes}
+                placeholder="Filter options"
+                onSearch={this.onSearchChange}
+                incremental
+                defaultValue={defaultValue}
+                fullWidth
+                {...rest}
+            />
+        );
+    }
 }

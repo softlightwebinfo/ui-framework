@@ -1,55 +1,54 @@
-.softRangeTooltip {
+.c-range-tooltip {
   // Keeps tooltip (value) aligned to percentage of actual slider
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: calc(100% - #{$softRangeThumbWidth});
-  margin-left: $softRangeThumbWidth / 2;
+  display:     block;
+  position:    absolute;
+  left:        0;
+  top:         0;
+  bottom:      0;
+  width:       calc(100% - #{$RangeThumbWidth});
+  margin-left: $RangeThumbWidth / 2;
 }
 
-.softRangeTooltip__value {
+.c-range-tooltip__value {
   // Indentation for legibility in transition
   // sass-lint:disable-block indentation
-  @include softFontSizeS;
-  border: 1px solid transparentize($softColorDarkestShade, .8);
-  position: absolute;
-  border-radius: $softBorderRadius;
-  padding: ($softSizeXS / 2) $softSizeS;
-  background-color: tintOrShade($softColorFullShade, 25%, 90%);
-  color: $softColorGhost;
-  max-width: 256px;
-  z-index: $softZLevel4;
-  top: ($softFormControlHeight / 2) - 1px;
-  transition:
-    box-shadow $softAnimSpeedNormal $softAnimSlightResistance,
-    transform $softAnimSpeedNormal $softAnimSlightResistance;
+  @include FontSizeS;
+  border:           1px solid transparentize($ColorDarkestShade, .8);
+  position:         absolute;
+  border-radius:    $BorderRadius;
+  padding:          ($SizeXS / 2) $SizeS;
+  background-color: tintOrShade($ColorFullShade, 25%, 90%);
+  color:            $ColorGhost;
+  max-width:        256px;
+  z-index:          $ZLevel4;
+  top:              ($FormControlHeight / 2) - 1px;
+  transition:       box-shadow $AnimSpeedNormal $AnimSlightResistance,
+                    transform $AnimSpeedNormal $AnimSlightResistance;
 
   // Custom sizing
-  $arrowSize: $softSizeM;
+  $arrowSize: $SizeM;
   $arrowMinusSize: (($arrowSize / 2) - 1px) * -1;
 
   &::after,
   &::before {
-    content: '';
-    position: absolute;
-    bottom: -$arrowSize / 2;
-    left: 50%;
+    content:          '';
+    position:         absolute;
+    bottom:           -$arrowSize / 2;
+    left:             50%;
     transform-origin: center;
-    background-color: tintOrShade($softColorFullShade, 25%, 90%);
-    width: $arrowSize;
-    height: $arrowSize;
-    border-radius: 2px;
+    background-color: tintOrShade($ColorFullShade, 25%, 90%);
+    width:            $arrowSize;
+    height:           $arrowSize;
+    border-radius:    2px;
   }
 
   &::before {
-    background-color: transparentize($softColorDarkestShade, .8);
+    background-color: transparentize($ColorDarkestShade, .8);
   }
 
   // Positions the arrow
-  &.softRangeTooltip__value--right {
-    margin-left: $softSizeL;
+  &.c-range-tooltip__value--right {
+    margin-left: $SizeL;
 
     &:before,
     &:after {
@@ -61,12 +60,12 @@
     }
   }
 
-  &.softRangeTooltip__value--left {
-    margin-right: $softSizeL;
+  &.c-range-tooltip__value--left {
+    margin-right: $SizeL;
 
     &:before,
     &:after {
-      left: auto;
+      left:  auto;
       right: $arrowMinusSize;
     }
 
@@ -75,18 +74,18 @@
     }
   }
 
-  &.softRangeTooltip__value--right,
-  &.softRangeTooltip__value--left {
+  &.c-range-tooltip__value--right,
+  &.c-range-tooltip__value--left {
     transform: translateX(0) translateY(-50%);
 
     &:before,
     &:after {
-      bottom: 50%;
+      bottom:    50%;
       transform: translateY(50%) rotateZ(45deg);
     }
   }
 
   &--hasTicks {
-    top: ($softFormControlHeight / 4) - 1px;
+    top: ($FormControlHeight / 4) - 1px;
   }
 }

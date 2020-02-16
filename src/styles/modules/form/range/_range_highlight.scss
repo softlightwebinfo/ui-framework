@@ -1,23 +1,23 @@
-.softRangeHighlight {
+.c-radio-highlight {
   position: absolute;
-  left: 0;
-  width: 100%;
-  top: ($softFormControlHeight / 2) - 2px;
-  z-index: $softZLevel0;
+  left:     0;
+  width:    100%;
+  top:      ($FormControlHeight / 2) - 2px;
+  z-index:  $ZLevel0;
   overflow: hidden;
 
   &__progress {
-    height: 4px;
-    border-radius: 4px;
-    background-color: $softRangeTrackColor;
+    height:           4px;
+    border-radius:    4px;
+    background-color: $RangeTrackColor;
 
     &--hasFocus {
-      background-color: $softColorPrimary;
+      background-color: $ColorPrimary;
     }
   }
 
   &--hasTicks {
-    top: ($softFormControlHeight / 4) - 2px;
+    top:  ($FormControlHeight / 4) - 2px;
     left: 0;
   }
 }

@@ -1,14 +1,11 @@
-$softRangeTrackColor: $softColorDarkShade !default;
-
-$softRangeThumbRadius: 50% !default;
-$softRangeThumbHeight: $softSize !default;
-$softRangeThumbWidth: $softSize !default;
-$softRangeThumbBorderColor: $softRangeTrackColor !default;
-
-$softRangeTrackWidth: 100% !default;
-$softRangeTrackHeight: 2px !default;
-$softRangeTrackBorderWidth: 0 !default;
-$softRangeTrackBorderColor: $softRangeTrackColor !default;
-$softRangeTrackRadius: $softBorderRadius !default;
-
-$softRangeDisabledOpacity: .25;
+$RangeTrackColor: $ColorDarkShade !default;
+$RangeThumbRadius: 50% !default;
+$RangeThumbHeight: $Size !default;
+$RangeThumbWidth: $Size !default;
+$RangeThumbBorderColor: $RangeTrackColor !default;
+$RangeTrackWidth: 100% !default;
+$RangeTrackHeight: 2px !default;
+$RangeTrackBorderWidth: 0 !default;
+$RangeTrackBorderColor: $RangeTrackColor !default;
+$RangeTrackRadius: $BorderRadius !default;
+$RangeDisabledOpacity: .25;

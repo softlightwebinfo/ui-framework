@@ -1,2 +1,2 @@
-export {SoftI18n} from './SoftI18n';
-export {SoftI18nNumber} from './SoftI18nNumber';
+export {I18n} from './I18n';
+export {I18nNumber} from './I18nNumber';

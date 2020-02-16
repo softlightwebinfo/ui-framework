@@ -1,5 +1,5 @@
-.softFormHelpText {
-  @include softFontSizeXS;
-  padding-top: $softSizeS;
-  color: $softColorDarkShade;
+.c-form-help-text {
+  @include FontSizeXS;
+  padding-top: $SizeS;
+  color:       $ColorDarkShade;
 }

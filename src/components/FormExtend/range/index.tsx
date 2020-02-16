@@ -1,2 +1,2 @@
-export {SoftDualRange} from './SoftDualRange';
-export {SoftRange} from './SoftRange';
+export {DualRange} from './DualRange';
+export {Range} from './Range';

@@ -1,28 +1,28 @@
 // Prefixes are unique in this file
 // sass-lint:disable no-vendor-prefixes
 
-@mixin softRangeTrackSize {
-  height: $softRangeTrackHeight;
-  transition: all $softAnimSpeedNormal ease-in;
-  width: $softRangeTrackWidth;
+@mixin RangeTrackSize {
+  height:     $RangeTrackHeight;
+  transition: all $AnimSpeedNormal ease-in;
+  width:      $RangeTrackWidth;
 }
 
-@mixin softRangeTrackPerBrowser {
+@mixin RangeTrackPerBrowser {
   &::-webkit-slider-runnable-track { @content; }
   &::-moz-range-track { @content; }
   &::-ms-fill-lower { @content; }
   &::-ms-fill-upper { @content; }
 }
 
-@mixin softRangeThumbStyle {
-  cursor: pointer;
-  border-color: $softRangeThumbBorderColor;
-  padding: 0;
-  height: $softRangeThumbHeight;
-  width: $softRangeThumbWidth;
+@mixin RangeThumbStyle {
+  cursor:       pointer;
+  border-color: $RangeThumbBorderColor;
+  padding:      0;
+  height:       $RangeThumbHeight;
+  width:        $RangeThumbWidth;
 }
 
-@mixin softRangeThumbPerBrowser {
+@mixin RangeThumbPerBrowser {
   &::-webkit-slider-thumb { @content; }
   &::-moz-range-thumb { @content; }
   &::-ms-thumb { @content; }
@@ -30,17 +30,17 @@
 
 // Deprecated mixins below. This was changed in Nov. 2018
 
-@mixin softRange__trackSize { // sass-lint:disable-line mixin-name-format
-  @include softRangeTrackSize;
-  @warn '@mixin softRange__trackSize is deprecated, please use softRangeTrackSize instead';
+@mixin Range__trackSize { // sass-lint:disable-line mixin-name-format
+  @include RangeTrackSize;
+  @warn '@mixin Range__trackSize is deprecated, please use RangeTrackSize instead';
 }
 
-@mixin softRange__track__perBrowser { // sass-lint:disable-line mixin-name-format
-  @include softRangeTrackPerBrowser;
-  @warn '@mixin softRange__track__perBrowser is deprecated, please use softRangeTrackPerBrowser instead';
+@mixin Range__track__perBrowser { // sass-lint:disable-line mixin-name-format
+  @include RangeTrackPerBrowser;
+  @warn '@mixin Range__track__perBrowser is deprecated, please use RangeTrackPerBrowser instead';
 }
 
-@mixin softRange__thumb__perBrowser { // sass-lint:disable-line mixin-name-format
-  @include softRangeThumbPerBrowser;
-  @warn '@mixin softRange__thumb__perBrowser is deprecated, please use softRangeThumbPerBrowser instead';
+@mixin Range__thumb__perBrowser { // sass-lint:disable-line mixin-name-format
+  @include RangeThumbPerBrowser;
+  @warn '@mixin Range__thumb__perBrowser is deprecated, please use RangeThumbPerBrowser instead';
 }

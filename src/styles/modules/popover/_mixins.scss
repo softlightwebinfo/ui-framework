@@ -1,22 +1,23 @@
-@mixin softPopoverTitle {
-  @include softTitle('xxs');
-  padding: $softSizeM;
-  text-transform: uppercase;
-  border-bottom: $softBorderThin;
+@mixin PopoverTitle {
+  @include Title('xxs');
+  padding:                 $SizeM;
+  text-transform:          uppercase;
+  border-bottom:           $BorderThin;
 
   // Subtract 1px from the border radius since it's inside another container that also has the border radius
   // -- makes for better rounded corners
-  border-top-left-radius: $softBorderRadius - 1px;
-  border-top-right-radius: $softBorderRadius - 1px;
+  border-top-left-radius:  $BorderRadius - 1px;
+  border-top-right-radius: $BorderRadius - 1px;
 
 }
-@mixin softPopoverFooter {
-  @include softFontSizeS;
-  padding: $softSizeM;
-  border-top: $softBorderThin;
+
+@mixin PopoverFooter {
+  @include FontSizeS;
+  padding:                    $SizeM;
+  border-top:                 $BorderThin;
 
   // Subtract 1px from the border radius since it's inside another container that also has the border radius
   // -- makes for better rounded corners
-  border-bottom-left-radius: $softBorderRadius - 1px;
-  border-bottom-right-radius: $softBorderRadius - 1px;
+  border-bottom-left-radius:  $BorderRadius - 1px;
+  border-bottom-right-radius: $BorderRadius - 1px;
 }

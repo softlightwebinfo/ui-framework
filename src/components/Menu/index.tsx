@@ -1,1 +1,2 @@
-export * from './Badge';
+export * from './Menu';
+export * from './HeaderSpacesMenu';

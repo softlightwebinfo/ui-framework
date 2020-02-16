@@ -1,29 +1,29 @@
 @import '../form_control_layout/mixins';
 
-.softFilePicker {
-  .softFilePicker__wrap {
+.c-file-picker {
+  .c-file-picker__wrap {
     // Auto means the height isn't set to a fixed size
-    @include softFormControlSize(auto);
+    @include FormControlSize(auto);
 
     position: relative;
-    display: inline-block;
+    display:  inline-block;
 
     @at-root {
-      .softFilePicker--compressed#{&} {
-        height: $softSizeXL;
+      .c-file-picker--compressed#{&} {
+        height: $SizeXL;
       }
     }
   }
 
   // The input is an invisiable dropzone / button
-  .softFilePicker__input {
+  .c-file-picker__input {
     position: absolute;
-    z-index: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+    z-index:  0;
+    left:     0;
+    top:      0;
+    width:    100%;
+    height:   100%;
+    opacity:  0;
     overflow: hidden;
 
     &:hover {
@@ -34,21 +34,21 @@
       cursor: not-allowed;
     }
 
-    &:disabled ~ .softFilePicker__prompt {
-      color: $softColorMediumShade;
+    &:disabled ~ .c-file-picker__prompt {
+      color: $ColorMediumShade;
     }
   }
 
-  .softFilePicker__icon {
-    margin-bottom: $softSize;
-    transition: transform $softAnimSpeedFast $softAnimSlightResistance;
+  .c-file-picker__icon {
+    margin-bottom: $Size;
+    transition:    transform $AnimSpeedFast $AnimSlightResistance;
 
     @at-root {
-      .softFilePicker--compressed#{&} {
+      .c-file-picker--compressed#{&} {
         // sass-lint:disable-block no-important
-        position: absolute;
-        top: $softSizeS;
-        left: $softSizeM;
+        position:  absolute;
+        top:       $SizeS;
+        left:      $SizeM;
         transform: scale(1) !important; // don't scale icon on hover
       }
     }
@@ -60,45 +60,45 @@
    * 3. Ensure space for import icon and clear button (only if it has files)
    * 4. Delay focus gradient or else it will only partially transition while file chooser opens
    */
-  .softFilePicker__prompt {
-    @include softFormControlDefaultShadow;
+  .c-file-picker__prompt {
+    @include FormControlDefaultShadow;
 
     pointer-events: none; /* 1 */
-    position: relative; /* 2 */
-    z-index: 1; /* 2 */
-    display: block;
-    padding: $softSizeL;
-    text-align: center;
+    position:       relative; /* 2 */
+    z-index:        1; /* 2 */
+    display:        block;
+    padding:        $SizeL;
+    text-align:     center;
 
     // sass-lint:disable-block indentation
-    transition: box-shadow $softAnimSpeedFast ease-in,
-    background-color $softAnimSpeedFast ease-in,
-    background-image $softAnimSpeedFast ease-in,
-    background-size $softAnimSpeedFast ease-in $softAnimSpeedFast; /* 4 */
+    transition:     box-shadow $AnimSpeedFast ease-in,
+                    background-color $AnimSpeedFast ease-in,
+                    background-image $AnimSpeedFast ease-in,
+                    background-size $AnimSpeedFast ease-in $AnimSpeedFast; /* 4 */
 
     // sass-lint:disable-block mixins-before-declarations
     @at-root {
-      .softFilePicker--compressed#{&} {
-        height: $softFormControlCompressedHeight;
-        padding: $softFormControlCompressedPadding;
-        @include softFormControlWithIcon; /* 3 */
+      .c-file-picker--compressed#{&} {
+        height:     $FormControlCompressedHeight;
+        padding:    $FormControlCompressedPadding;
+        @include FormControlWithIcon; /* 3 */
         text-align: left;
       }
     }
   }
 
-  .softFilePicker__promptText {
-    @include softFontSizeS;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
+  .c-file-picker__promptText {
+    @include FontSizeS;
+    display:       block;
+    white-space:   nowrap;
+    overflow:      hidden;
     text-overflow: ellipsis;
 
     @at-root {
       // make compressed prompt look like placeholder
-      .softFilePicker--compressed#{&} {
-        color: $softColorMediumShade;
-        line-height: $softSize;
+      .c-file-picker--compressed#{&} {
+        color:       $ColorMediumShade;
+        line-height: $Size;
       }
     }
   }
@@ -106,69 +106,69 @@
   /**
    * 1. Undo the pointer-events: none applied to the enclosing prompt.
    */
-  .softFilePicker__clearButton {
+  .c-file-picker__clearButton {
     pointer-events: auto; /* 1 */
 
     // sass-lint:disable-block mixins-before-declarations
     @at-root {
-      .softFilePicker--compressed#{&} {
-        @include softFormControlLayoutClearIcon('.softFilePicker__clearIcon');
+      .c-file-picker--compressed#{&} {
+        @include FormControlLayoutClearIcon('.c-file-picker__clearIcon');
         position: absolute;
-        top: $softSizeM / 2;
-        right: $softSizeM;
+        top:      $SizeM / 2;
+        right:    $SizeM;
       }
     }
   }
 
   // Hover and focus
-  .softFilePicker__input:hover:not(:disabled) + .softFilePicker__prompt,
-  .softFilePicker__input:focus + .softFilePicker__prompt {
-    .softFilePicker__promptText {
+  .c-file-picker__input:hover:not(:disabled) + .c-file-picker__prompt,
+  .c-file-picker__input:focus + .c-file-picker__prompt {
+    .c-file-picker__promptText {
       // Adding the underline to the prompt text ensures the underline
       // color is the same as the current text color
       text-decoration: underline;
     }
 
-    .softFilePicker__icon {
+    .c-file-picker__icon {
       transform: scale(1.1);
     }
   }
 
   // Focus
-  .softFilePicker__input:focus + .softFilePicker__prompt {
-    @include softFormControlFocusStyle;
+  .c-file-picker__input:focus + .c-file-picker__prompt {
+    @include FormControlFocusStyle;
   }
 
   // Disabled
-  .softFilePicker__input:disabled + .softFilePicker__prompt {
-    @include softFormControlDisabledStyle;
+  .c-file-picker__input:disabled + .c-file-picker__prompt {
+    @include FormControlDisabledStyle;
   }
 
-  &.softFilePicker-hasFiles.softFilePicker--compressed .softFilePicker__prompt {
-    @include softFormControlWithIcon(false, 'right'); /* 3 */
+  &.c-file-picker-hasFiles.c-file-picker--compressed .c-file-picker__prompt {
+    @include FormControlWithIcon(false, 'right'); /* 3 */
   }
 
   // When the filepicker has files in it, but not in compressed mode
-  &:not(.softFilePicker--compressed).softFilePicker-hasFiles .softFilePicker__promptText {
-    font-weight: $softFontWeightBold;
+  &:not(.c-file-picker--compressed).c-file-picker-hasFiles .c-file-picker__promptText {
+    font-weight: $FontWeightBold;
   }
 
   // When the filepicker has files in it, AND in compressed mode
-  &.softFilePicker--compressed.softFilePicker-hasFiles .softFilePicker__promptText {
-    color: $softTextColor;
+  &.c-file-picker--compressed.c-file-picker-hasFiles .c-file-picker__promptText {
+    color: $TextColor;
   }
 
   // When you are dragging files over the dropzone
-  &.softFilePicker__showDrop .softFilePicker__prompt {
-    @include softFormControlFocusStyle;
+  &.c-file-picker__showDrop .c-file-picker__prompt {
+    @include FormControlFocusStyle;
 
-    .softFilePicker__promptText {
+    .c-file-picker__promptText {
       text-decoration: underline;
     }
 
-    .softFilePicker__icon {
+    .c-file-picker__icon {
       transform: scale(1.1);
-      color: $softColorPrimary;
+      color:     $ColorPrimary;
     }
   }
 }

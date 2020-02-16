@@ -1,16 +1,16 @@
-.softRangeThumb {
-  @include softCustomControl($type: 'round');
-  @include softRangeThumbStyle;
+.c-range-thumb {
+  @include CustomControl($type: 'round');
+  @include RangeThumbStyle;
   content: '';
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -($softRangeThumbHeight / 2);
-  z-index: $softZLevel2;
+  margin-top: -($RangeThumbHeight / 2);
+  z-index: $ZLevel2;
   pointer-events: none;
 
   &:focus {
-    @include softCustomControlFocused;
+    @include CustomControlFocused;
   }
 
   &--hasTicks {

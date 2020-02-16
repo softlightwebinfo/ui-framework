@@ -10,6 +10,7 @@
 @import './userSelect';
 @import './flex';
 @import './link';
+@import './responsive';
 
 @mixin colorBg($type, $color: false) {
   @if ($type == primary) {
@@ -158,7 +159,7 @@
   }
 }
 
-@mixin shadow($attr) {
+@mixin shadow($attr...) {
   -webkit-box-shadow: $attr;
   -moz-box-shadow:    $attr;
   box-shadow:         $attr;
@@ -422,4 +423,18 @@
   white-space:   nowrap;
   overflow:      hidden;
   text-overflow: ellipsis;
+}
+
+@mixin size($size) {
+  width:  $size;
+  height: $size;
+}
+
+@mixin TextTruncate {
+  // sass-lint:disable-block no-important
+  max-width:     100%; /* 1 */
+  overflow:      hidden !important;
+  text-overflow: ellipsis !important;
+  white-space:   nowrap !important;
+  word-wrap:     normal !important; /* 2 */
 }

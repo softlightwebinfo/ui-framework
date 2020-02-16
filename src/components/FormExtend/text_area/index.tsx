@@ -1,1 +1,1 @@
-export { SoftTextArea } from './SoftTextArea';
+export {TextArea} from './TextArea';

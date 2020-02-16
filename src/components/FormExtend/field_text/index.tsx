@@ -1,1 +1,1 @@
-export {SoftFieldText} from './SoftFieldText';
+export {FieldText} from './FieldText';

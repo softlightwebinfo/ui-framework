@@ -1,36 +1,36 @@
-.softRangeLevels {
-  display: flex;
+.c-range-levels {
+  display:         flex;
   justify-content: stretch;
-  z-index: $softZLevel0;
+  z-index:         $ZLevel0;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: ($softFormControlHeight / 2) + 2px;
+  position:        absolute;
+  left:            0;
+  right:           0;
+  top:             ($FormControlHeight / 2) + 2px;
 
   &--hasTicks {
-    top: ($softFormControlHeight / 4) + 2px;
+    top: ($FormControlHeight / 4) + 2px;
   }
 }
 
-.softRangeLevel {
-  display: block;
-  height: 6px;
+.RangeLevel {
+  display:       block;
+  height:        6px;
   border-radius: 6px;
-  margin: 2px;
+  margin:        2px;
 }
 
 // Modifier naming and colors.
-$softRangeLevelColors: (
-  primary: $softColorPrimary,
-  success: $softColorSuccess,
-  warning: $softColorWarning,
-  danger: $softColorDanger,
-);
+$RangeLevelColors: (
+                           primary: $ColorPrimary,
+                           success: $ColorSuccess,
+                           warning: $ColorWarning,
+                           danger: $ColorDanger,
+                   );
 
 // Create level modifiers based upon the map.
-@each $name, $color in $softRangeLevelColors {
-  .softRangeLevel--#{$name} {
+@each $name, $color in $RangeLevelColors {
+  .RangeLevel--#{$name} {
     background-color: transparentize($color, .7);
   }
 }

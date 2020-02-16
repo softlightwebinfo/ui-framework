@@ -3,11 +3,11 @@ import React from 'react';
 import classNames from 'classnames';
 
 export const FormHelpText: ({children, className, ...rest}: { children?: any; className?: any; [p: string]: any }) => any = ({children, className, ...rest}) => {
-  const classes = classNames('softFormHelpText', className);
+    const classes = classNames('c-formHelpText', className);
 
-  return (
-    <div className={classes} {...rest}>
-      {children}
-    </div>
-  );
+    return (
+        <div className={classes} {...rest}>
+            {children}
+        </div>
+    );
 };
