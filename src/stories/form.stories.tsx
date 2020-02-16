@@ -10,8 +10,7 @@ import {Form} from "../components/Form";
 storiesOf("Form|Form", module)
     .addDecorator(withKnobs)
     .addDecorator(jsxDecorator)
-    .add("Default",
-        () => (
+    .add("Default", () => (
             <div style={{padding: 20}}>
                 <Form>
                     <FormGroup>

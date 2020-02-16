@@ -1,1 +1,1 @@
-export {SoftNotificationBadge} from './SoftBadgeNotification';
+export {NotificationBadge} from './BadgeNotification';

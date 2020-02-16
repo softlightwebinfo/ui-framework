@@ -1,21 +1,21 @@
-.softLink {
-  @include softLink;
+.c-link {
+  @include Link;
 }
 
 $textColors: (
-  subdued: $softColorDarkShade,
-  primary: $softColorPrimary,
-  secondary: $softColorSecondary,
-  accent: $softColorAccent,
-  warning: $softColorWarning,
-  danger: $softColorDanger,
-  text: $softTextColor,
-  ghost: $softColorGhost,
-);
+                     subdued: $ColorDarkShade,
+                     primary: $ColorPrimary,
+                     secondary: $ColorSecondary,
+                     accent: $ColorAccent,
+                     warning: $ColorWarning,
+                     danger: $ColorDanger,
+                     text: $TextColor,
+                     ghost: $ColorGhost,
+             );
 
 // Create color modifiers based on the map
 @each $name, $color in $textColors {
-  .softLink.softLink--#{$name} {
+  .c-link.c-link--#{$name} {
     color: $color;
 
     &:hover {
@@ -23,7 +23,7 @@ $textColors: (
     }
 
     &:focus {
-      outline: solid 3px transparentize($color, .9);
+      outline:          solid 3px transparentize($color, .9);
       background-color: transparentize($color, .9);
     }
   }

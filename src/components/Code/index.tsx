@@ -1,11 +1,11 @@
 export {
-  SoftCode,
-} from './SoftCode';
+  Code,
+} from './Code';
 
 export {
-  SoftCodeBlock,
-} from './SoftCodeBlock';
+  CodeBlock,
+} from './CodeBlock';
 
 export {
-  SoftCodeBlockImpl,
-} from './SoftCodeBlockImpl';
+  CodeBlockImpl,
+} from './CodeBlockImpl';

@@ -4,10 +4,10 @@
  *  - PageContentHeader
  *  - PageContentHeaderSection
 */
-$softPanelPaddingModifiers: (
-  'paddingSmall': $softSizeS,
-  'paddingMedium': $softSize,
-  'paddingLarge': $softSizeL
+$PanelPaddingModifiers: (
+  'paddingSmall': $SizeS,
+  'paddingMedium': $Size,
+  'paddingLarge': $SizeL
 ) !default;
 
-$softPanelBorderColor: tintOrShade($softShadowColor, 40%, 0%) !default; // match shadow
+$PanelBorderColor: tintOrShade($ShadowColor, 40%, 0%) !default; // match shadow

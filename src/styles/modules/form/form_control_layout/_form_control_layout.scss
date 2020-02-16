@@ -37,8 +37,8 @@
     }
 
     // This is the only way to target specific components to override styling
-    &.FormLabel,
-    &.Text {
+    &.c-form-label,
+    &.c-text {
       white-space:      nowrap;
       margin-bottom:    0;
       padding:          $FormControlPadding;
@@ -67,8 +67,8 @@
     .c-form-control-layout__append {
       height: $FormControlCompressedHeight - 2px; /* 1 */
 
-      &.FormLabel,
-      &.Text {
+      &.c-form-label,
+      &.c-text {
         padding-top:    $FormControlCompressedPadding;
         padding-bottom: $FormControlCompressedPadding;
       }

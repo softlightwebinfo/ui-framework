@@ -6,51 +6,50 @@
  * 3. The height can expand, hence auto
  * 4. Using specificity to override panel shadow
  */
-.softComboBoxOptionsList {
-  @include softFormControlSize(auto, $includeAlternates: true); /* 3 */
-  z-index: $softZComboBox;
+.c-combo-box-options-list {
+  @include FormControlSize(auto, $includeAlternates: true); /* 3 */
+  z-index:  $ZComboBox;
   position: absolute; /* 2 */
-  top: 0; /* 2 */
+  top:      0; /* 2 */
 
   .ReactVirtualized__List {
-    @include softScrollBar;
+    @include ScrollBar;
   }
 
-  &.softComboBoxOptionsList--bottom { /* 4 */
-    @include softBottomShadowMedium;
+  &.c-combo-box-options-list--bottom { /* 4 */
+    @include BottomShadowMedium;
   }
 
-  &.softComboBoxOptionsList--top { /* 4 */
+  &.c-combo-box-options-list--top { /* 4 */
     // sass-lint:disable-block indentation
-    box-shadow:
-      0 -2px 4px -1px transparentize($softShadowColor, .8),
-      0 0 2px 0 transparentize($softShadowColor, .8);
+    box-shadow: 0 -2px 4px -1px transparentize($ShadowColor, .8),
+                0 0 2px 0 transparentize($ShadowColor, .8);
   }
 }
 
-.softComboBoxOptionsList--bottom {
+.c-combo-box-options-list--bottom {
   // sass-lint:disable-block no-important
-  border-radius: 0 0 $softBorderRadius $softBorderRadius !important;
-  border-top: none !important;
+  border-radius: 0 0 $BorderRadius $BorderRadius !important;
+  border-top:    none !important;
 }
 
-.softComboBoxOptionsList--top {
+.c-combo-box-options-list--top {
   // sass-lint:disable-block no-important
-  border-radius: $softBorderRadius $softBorderRadius 0 0 !important;
+  border-radius: $BorderRadius $BorderRadius 0 0 !important;
 }
 
 /**
   * 1. Prevent really long input from overflowing the container.
   */
-.softComboBoxOptionsList__empty {
-  padding: $softSizeS;
+.c-combo-box-options-list__empty {
+  padding:    $SizeS;
   text-align: center;
-  color: $softColorDarkShade;
-  word-wrap: break-word; /* 1 */
+  color:      $ColorDarkShade;
+  word-wrap:  break-word; /* 1 */
 }
 
-.softComboBoxOptionsList__rowWrap {
-  padding: 0;
+.c-combo-box-options-list__rowWrap {
+  padding:    0;
   max-height: 200px;
-  overflow: hidden;
+  overflow:   hidden;
 }

@@ -222,7 +222,7 @@
 
   @if $size {
     $size: $size - 2px; // subtract 2px from size to account for border size
-    padding: $size / 2;
+    padding: ($size / 2) + 1px;
   }
 
   border:     1px solid shadeOrTint($ColorLightestShade, 18%, 30%);

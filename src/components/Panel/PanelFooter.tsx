@@ -8,7 +8,7 @@ export class PanelFooter extends PureComponent {
     }
 
     render() {
-        const classnames = classNames("softPanelFooter");
+        const classnames = classNames("c-panel-footer");
         return (
             <footer className={classnames}>
                 {this.props.children}

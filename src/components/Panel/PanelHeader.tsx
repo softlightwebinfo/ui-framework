@@ -11,11 +11,11 @@ export class PanelHeader extends PureComponent<{
     }
 
     render() {
-        const classnames = classNames("softPanelHeader");
+        const classnames = classNames("c-panel-header");
         return (
             <header className={classnames}>
-                <span className={"softPanelHeader__title"}>{this.props.title}</span>
-                {this.props.right && (<div className={"softPanelHeader__right"}>{this.props.right}</div>)}
+                <span className={"c-panel-header__title"}>{this.props.title}</span>
+                {this.props.right && (<div className={"c-panel-header__right"}>{this.props.right}</div>)}
             </header>
         );
     }

@@ -1,4 +1,4 @@
-import {PureComponent, ReactElement} from "react";
+import {CSSProperties, PureComponent, ReactElement} from "react";
 import React from "react";
 import {PropsInterface} from "../../interfaces/interfaces/PropsInterface";
 import classNames from 'classnames';
@@ -15,6 +15,7 @@ export interface PopoverInterfaceProps extends PropsInterface {
     children?: ReactElement;
     hasArrow?: boolean;
     position?: PositionType;
+    dropDownMenuStyle?: CSSProperties;
 }
 
 export class Popover extends PureComponent<PopoverInterfaceProps> {
@@ -47,7 +48,7 @@ export class Popover extends PureComponent<PopoverInterfaceProps> {
         let panel;
         if (this.props.isOpen) {
             panel = (
-                <DropdownMenu position={this.props.position}>
+                <DropdownMenu style={this.props.dropDownMenuStyle} position={this.props.position}>
                     {this.props.children}
                 </DropdownMenu>
             )

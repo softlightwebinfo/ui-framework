@@ -60,3 +60,4 @@ export * from "./Selectable";
 export * from "./FormExtend";
 export * from "./Flex";
 export * from "./Tooltip";
+export * from "./Link";

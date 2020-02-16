@@ -1,61 +1,61 @@
 @import '../form/variables';
 
-.softFilterGroup {
-  display: inline-flex;
-  max-width: 100%;
-  border-right: 1px solid $softFormBorderColor;
-  box-shadow: 0 1px 2px -1px transparentize($softShadowColor, .8), 0 3px 3px -2px transparentize($softShadowColor, .8);
-  overflow-x: auto;
+.c-filter-group {
+  display:      inline-flex;
+  max-width:    100%;
+  border-right: 1px solid $FormBorderColor;
+  box-shadow:   0 1px 2px -1px transparentize($ShadowColor, .8), 0 3px 3px -2px transparentize($ShadowColor, .8);
+  overflow-x:   auto;
 
   > * {
-    flex: 1 1 auto;
-    min-width: $softSize * 3;
+    flex:      1 1 auto;
+    min-width: $Size * 3;
   }
 
-  > .softFilterButton--noGrow  {
+  > .c-filter-button--noGrow {
     flex-grow: 0;
   }
 
-  > .softFilterButton-hasNotification {
-    min-width: $softSize * 6;
+  > .c-filter-button-hasNotification {
+    min-width: $Size * 6;
   }
 
-  > .softFilterButton--hasIcon {
-    min-width: $softSize * 8;
+  > .c-filter-button--hasIcon {
+    min-width: $Size * 8;
   }
 
   // Force popover anchors to expand for now
-  .softPopover__anchor {
+  .c-popover__anchor {
     display: block;
 
-    .softFilterButton {
+    .c-filter-button {
       width: 100%;
     }
   }
 }
 
-.softFilterGroup--fullWidth {
+.c-filter-group--fullWidth {
   display: flex;
 }
 
 // A fixed width is required in IE11 because of the shift in widths that can be caused
 // by the loading animation that precedes the results.
-.softFilterGroup__popoverPanel {
-  width: $softSize * 18;
+.c-filter-group__popoverPanel {
+  width: $Size * 18;
 }
 
-@include softBreakpoint('xs', 's') {
-  .softFilterGroup {
+@include Breakpoint('xs', 's') {
+  .c-filter-group {
     flex-wrap: wrap;
   }
 }
 
-@include softBreakpoint('xs') {
+@include Breakpoint('xs') {
   // Force all tiny screens to take up the entire width
-  .softFilterGroup {
+  .c-filter-group {
     display: flex;
 
-    .softFilterButton {
+    .c-filter-button {
       // sass-lint:disable-block no-important
       flex-grow: 1 !important;
     }

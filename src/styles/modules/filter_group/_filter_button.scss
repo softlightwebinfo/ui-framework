@@ -1,18 +1,18 @@
 @import '../form/variables';
 
-.softFilterButton {
-  background-color: $softFormBackgroundColor;
-  height: $softFormControlHeight;
-  width: auto;
-  border: 1px solid $softFormBorderColor;
-  border-right: none;
-  font-size: $softFontSizeS;
+.c-filter-button {
+  background-color: $FormBackgroundColor;
+  height:           $FormControlHeight;
+  width:            auto;
+  border:           1px solid $FormBorderColor;
+  border-right:     none;
+  font-size:        $FontSizeS;
 
   &:disabled {
-    color: $softButtonColorDisabled;
+    color:          $ButtonColorDisabled;
     pointer-events: none;
 
-    .softFilterButton__notification {
+    .c-filter-button__notification {
       opacity: .5;
     }
   }
@@ -22,42 +22,42 @@
     // Remove underline from whole button so notifications don't get the underline
     text-decoration: none;
 
-    .softFilterButton__textShift {
+    .c-filter-button__textShift {
       // Add put it only on the actual text part
       text-decoration: underline;
     }
   }
 }
 
-.softFilterButton-hasActiveFilters {
-  font-weight: $softFontWeightBold;
+.c-filter-button-hasActiveFilters {
+  font-weight: $FontWeightBold;
 }
 
-.softFilterButton--hasIcon .softButtonEmpty__content {
+.c-filter-button--hasIcon .ButtonEmpty__content {
   justify-content: space-between;
 }
 
-.softFilterButton--withNext + .softFilterButton {
-  margin-left: $softSizeXS * -1;
+.c-filter-button--withNext + .c-filter-button {
+  margin-left: $SizeXS * -1;
   border-left: none;
 }
 
-.softFilterButton-isSelected {
-  background-color: $softColorLightestShade;
+.c-filter-button-isSelected {
+  background-color: $ColorLightestShade;
 }
 
-.softFilterButton__text-hasNotification {
-  display: flex;
+.c-filter-button__text-hasNotification {
+  display:     flex;
   align-items: center;
 }
 
-.softFilterButton__notification {
-  margin-left: $softSizeS;
+.c-filter-button__notification {
+  margin-left:    $SizeS;
   vertical-align: text-bottom;
 }
 
-.softFilterButton__textShift {
-  @include softTextShift;
-  @include softTextTruncate;
-  min-width: $softSize * 3;
+.c-filter-button__textShift {
+  @include TextShift;
+  @include TextTruncate;
+  min-width: $Size * 3;
 }

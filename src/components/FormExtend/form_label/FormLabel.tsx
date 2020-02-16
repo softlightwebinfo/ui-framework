@@ -13,9 +13,9 @@ export const FormLabel: ({type, isFocused, isInvalid, children, className, ...re
         ...rest
     }
 ) => {
-    const classes = classNames('c-formLabel', className, {
-        'c-formLabel-isFocused': isFocused,
-        'c-formLabel-isInvalid': isInvalid,
+    const classes = classNames('c-form-label', className, {
+        'c-form-label-isFocused': isFocused,
+        'c-form-label-isInvalid': isInvalid,
     });
 
     if (type === 'legend') {

@@ -1,1 +1,1 @@
-export {SoftLink} from './SoftLink';
+export {Link} from './Link';

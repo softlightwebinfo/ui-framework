@@ -16,6 +16,9 @@
     background-position: center center;
     background-size:     contain;
   }
+  @include bem_modified(default) {
+    border: 0;
+  }
   img {
     visibility: hidden;
     width:      100%;

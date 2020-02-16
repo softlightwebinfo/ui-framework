@@ -11,7 +11,7 @@ export class PanelBody extends PureComponent<{
     }
 
     render() {
-        const classnames = classNames("softPanelBody", this.props.className);
+        const classnames = classNames("c-panel-body", this.props.className);
         return (
             <section className={classnames} style={this.props.style}>
                 {this.props.children}

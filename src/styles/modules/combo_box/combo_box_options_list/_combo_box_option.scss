@@ -1,25 +1,25 @@
-.softComboBoxOption {
-  font-size: $softFontSizeS;
-  padding: $softSizeXS $softSizeS $softSizeXS #{$softSizeM + $softSizeXS};
-  width: 100%;
-  text-align: left;
-  border: $softBorderThin;
+.c-combo-box-option {
+  font-size:    $FontSizeS;
+  padding:      $SizeXS $SizeS $SizeXS #{$SizeM + $SizeXS};
+  width:        100%;
+  text-align:   left;
+  border:       $BorderThin;
   border-color: transparent;
-  display: flex;
-  align-items: center;
+  display:      flex;
+  align-items:  center;
 
   &:hover {
     text-decoration: underline;
   }
 
-  &.softComboBoxOption-isFocused {
-    cursor: pointer;
-    color: $softColorPrimary;
-    background-color: $softFocusBackgroundColor;
+  &.c-combo-box-option-isFocused {
+    cursor:           pointer;
+    color:            $ColorPrimary;
+    background-color: $FocusBackgroundColor;
   }
 
-  &.softComboBoxOption-isDisabled {
-    color: $softColorMediumShade;
+  &.c-combo-box-option-isDisabled {
+    color:  $ColorMediumShade;
     cursor: not-allowed;
 
     &:hover {
@@ -28,8 +28,8 @@
   }
 }
 
-.softComboBoxOption__content {
+.c-combo-box-option__content {
   text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  overflow:      hidden;
+  white-space:   nowrap;
 }

@@ -3,107 +3,107 @@
  * 2. IE requires a unit to grow.
  */
 
-.softFlexGroup {
-  display: flex;
+.c-flex-group {
+  display:     flex;
   align-items: stretch;
-  flex-grow: 1; /* 1 */
+  flex-grow:   1; /* 1 */
 
-  .softFlexItem {
+  .c-flex-item {
     @include internetExplorerOnly {
       min-width: 1px;
     }
 
-    flex-grow: 1;
+    flex-grow:  1;
     flex-basis: 0%; /* 2 */
   }
 }
 
 $gutterTypes: (
-  gutterExtraSmall: $softSizeXS,
-  gutterSmall: $softSizeS,
-  gutterMedium: $softSize,
-  gutterLarge: $softSizeL,
-  gutterExtraLarge: $softSizeXXL,
-);
+                      gutterExtraSmall: $SizeXS,
+                      gutterSmall: $SizeS,
+                      gutterMedium: $Size,
+                      gutterLarge: $SizeL,
+                      gutterExtraLarge: $SizeXXL,
+              );
 
 // Gutter Sizes
 @each $gutterName, $gutterSize in $gutterTypes {
   $halfGutterSize: $gutterSize * .5;
 
-  .softFlexGroup--#{$gutterName} {
+  .c-flex-group--#{$gutterName} {
     margin: -$halfGutterSize;
 
-    & > .softFlexItem {
+    & > .c-flex-item {
       margin: $halfGutterSize;
     }
   }
 }
 
 // Justify the grid
-.softFlexGroup--justifyContentSpaceEvenly {
+.c-flex-group--justifyContentSpaceEvenly {
   justify-content: space-evenly;
 }
 
-.softFlexGroup--justifyContentSpaceBetween {
+.c-flex-group--justifyContentSpaceBetween {
   justify-content: space-between;
 }
 
-.softFlexGroup--justifyContentSpaceAround {
+.c-flex-group--justifyContentSpaceAround {
   justify-content: space-around;
 }
 
-.softFlexGroup--justifyContentCenter {
+.c-flex-group--justifyContentCenter {
   justify-content: center;
 }
 
-.softFlexGroup--justifyContentFlexEnd {
+.c-flex-group--justifyContentFlexEnd {
   justify-content: flex-end;
 }
 
 // Align Items
-.softFlexGroup--alignItemsFlexStart {
+.c-flex-group--alignItemsFlexStart {
   align-items: flex-start;
 }
 
-.softFlexGroup--alignItemsCenter {
+.c-flex-group--alignItemsCenter {
   align-items: center;
 }
 
-.softFlexGroup--alignItemsFlexEnd {
+.c-flex-group--alignItemsFlexEnd {
   align-items: flex-end;
 }
 
-.softFlexGroup--alignItemsBaseline {
+.c-flex-group--alignItemsBaseline {
   align-items: baseline;
 }
 
 // Direction
 
-.softFlexGroup--directionRow {
+.c-flex-group--directionRow {
   flex-direction: row;
 }
 
-.softFlexGroup--directionRowReverse {
+.c-flex-group--directionRowReverse {
   flex-direction: row-reverse;
 }
 
-.softFlexGroup--directionColumn {
+.c-flex-group--directionColumn {
   flex-direction: column;
 }
 
-.softFlexGroup--directionColumnReverse {
+.c-flex-group--directionColumnReverse {
   flex-direction: column-reverse;
 }
 
 // Wrap
-.softFlexGroup--wrap {
+.c-flex-group--wrap {
   flex-wrap: wrap;
 }
 
-@include softBreakpoint('xs', 's') {
-  .softFlexGroup--responsive {
-    flex-wrap: wrap;
-    margin-left: 0;
+@include Breakpoint('xs', 's') {
+  .c-flex-group--responsive {
+    flex-wrap:    wrap;
+    margin-left:  0;
     margin-right: 0;
   }
 }

@@ -1,8 +1,8 @@
-.softComboBoxPlaceholder {
+.c-combo-box-placeholder {
   position: absolute;
   pointer-events: none;
-  padding: 0 $softSizeXS;
-  line-height: $softSizeXL;
-  color: $softColorMediumShade;
+  padding: 0 $SizeXS;
+  line-height: $SizeXL;
+  color: $ColorMediumShade;
   margin-bottom: 0 !important; // sass-lint:disable-line no-important
 }

@@ -1,11 +1,3 @@
-export {
-  SoftFilterGroup,
-} from './SoftFilterGroup';
-
-export {
-  SoftFilterButton,
-} from './SoftFilterButton';
-
-export {
-  SoftFilterSelectItem,
-} from './SoftFilterSelectItem';
+export {FilterGroup} from './FilterGroup';
+export {FilterButton} from './FilterButton';
+export {FilterSelectItem} from './FilterSelectItem';

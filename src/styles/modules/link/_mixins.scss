@@ -1,4 +1,4 @@
-@mixin softLink {
+@mixin Link {
   text-align: left;
 
   &:hover {
@@ -7,6 +7,6 @@
 
   &:focus {
     text-decoration: underline;
-    background: $softFocusBackgroundColor;
+    background: $FocusBackgroundColor;
   }
 }

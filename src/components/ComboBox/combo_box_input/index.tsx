@@ -1,3 +1,3 @@
 export {
-  SoftComboBoxInput,
-} from './SoftComboBoxInput';
+    ComboBoxInput,
+} from './ComboBoxInput';

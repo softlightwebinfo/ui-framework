@@ -1,7 +1,7 @@
 .c-checkbox-group__item + .c-checkbox-group__item {
   margin-top: $SizeXS;
 
-  &.Checkbox--compressed {
+  &.c-checkbox--compressed {
     margin-top: 0;
   }
 }

@@ -3,17 +3,17 @@
  *  - EuiCard
  *  - EuiPageContent
 */
-@mixin softPanel($selector) {
+@mixin Panel($selector) {
   @if variable-exists(selector) == false {
-    @error 'A $selector must be provided to @mixin softPanel().';
+    @error 'A $selector must be provided to @mixin Panel().';
   } @else {
     .#{$selector} {
 
-      @include softBottomShadowSmall;
-      background-color: $softColorEmptyShade;
-      border: $softBorderThin;
-      border-radius: $softBorderRadius;
-      flex-grow: 1;
+      @include BottomShadowSmall;
+      background-color: $ColorEmptyShade;
+      border:           $BorderThin;
+      border-radius:    $BorderRadius;
+      flex-grow:        1;
 
       &.#{$selector}--flexGrowZero {
         flex-grow: 0;
@@ -21,34 +21,34 @@
 
       &.#{$selector}--isClickable {
         // in case of button wrapper which inherently is inline-block and no width
-        display: block;
-        width: 100%;
+        display:    block;
+        width:      100%;
         text-align: left;
 
         // transition the shadow
-        transition: all $softAnimSpeedFast $softAnimSlightResistance;
+        transition: all $AnimSpeedFast $AnimSlightResistance;
 
         &:hover,
         &:focus {
-          @include softSlightShadowHover;
+          @include SlightShadowHover;
           transform: translateY(-2px);
-          cursor: pointer;
+          cursor:    pointer;
         }
       }
 
       &.#{$selector}--shadow {
-        @include softBottomShadowMedium;
+        @include BottomShadowMedium;
 
-        @if (lightness($softTextColor) < 50) {
-          border-bottom-color: transparentize($softShadowColor, .5);
+        @if (lightness($TextColor) < 50) {
+          border-bottom-color: transparentize($ShadowColor, .5);
         } @else {
           // Applied again here in case dark theme overrides light
-          border-bottom-color: $softBorderColor;
+          border-bottom-color: $BorderColor;
         }
 
         &.#{$selector}--isClickable:hover,
         &.#{$selector}--isClickable:focus {
-          @include softBottomShadow($color: $softShadowColor, $opacity: .2);
+          @include BottomShadow($color: $ShadowColor, $opacity: .2);
         }
       }
     }

@@ -1,5 +1,5 @@
-.softComboBox {
-  @include softFormControlSize(auto, $includeAlternates: true);
+.c-combo-box {
+  @include FormControlSize(auto, $includeAlternates: true);
   position: relative;
 
   /**
@@ -9,26 +9,26 @@
    */
 
   &--compressed,
-  .softFormControlLayout--compressed {
+  .c-form-control-layout--compressed {
     height: auto;
   }
 
-  .softComboBox__inputWrap {
-    @include softFormControlStyle($includeStates: false, $includeSizes: false);
-    @include softFormControlWithIcon($isIconOptional: true);
-    @include softFormControlSize(auto, $includeAlternates: true);
-    padding: $softSizeXS $softSizeS;
+  .c-combo-box__inputWrap {
+    @include FormControlStyle($includeStates: false, $includeSizes: false);
+    @include FormControlWithIcon($isIconOptional: true);
+    @include FormControlSize(auto, $includeAlternates: true);
+    padding: $SizeXS $SizeS;
     // sass-lint:disable-block mixins-before-declarations
-    @include softFormControlLayoutPadding(1); /* 2 */
+    @include FormControlLayoutPadding(1); /* 2 */
 
     display: flex; /* 1 */
 
-    &.softComboBox__inputWrap-isClearable {
-      @include softFormControlLayoutPadding(2); /* 2 */
+    &.c-combo-box__inputWrap-isClearable {
+      @include FormControlLayoutPadding(2); /* 2 */
     }
 
-    &:not(.softComboBox__inputWrap--noWrap) {
-      padding: $softSizeXS;
+    &:not(.c-combo-box__inputWrap--noWrap) {
+      padding: $SizeXS;
       height: auto;  /* 3 */
       flex-wrap: wrap; /* 1 */
       align-content: flex-start;
@@ -46,46 +46,46 @@
    * 4. Fix react-input-autosize appearance.
    * 5. Prevent a lot of input from causing the react-input-autosize to overflow the container.
    */
-  .softComboBox__input {
+  .c-combo-box__input {
     // sass-lint:disable-block no-important
     display: inline-flex !important; /* 1 */
     height: 32px; /* 2 */
     overflow: hidden; /* 5 */
 
     > input {
-      @include softFont;
+      @include Font;
       appearance: none; /* 3 */
       padding: 0;
       border: none;
       background: transparent;
-      font-size: $softFontSizeS;
-      color: $softTextColor;
-      margin: $softSizeXS;
-      line-height: $softLineHeight; /* 4 */
+      font-size: $FontSizeS;
+      color: $TextColor;
+      margin: $SizeXS;
+      line-height: $LineHeight; /* 4 */
     }
   }
 
-  &.softComboBox-isOpen {
-    .softComboBox__inputWrap {
-      @include softFormControlFocusStyle;
+  &.c-combo-box-isOpen {
+    .c-combo-box__inputWrap {
+      @include FormControlFocusStyle;
     }
   }
 
-  &.softComboBox-isInvalid {
-    .softComboBox__inputWrap {
-      @include softFormControlInvalidStyle;
+  &.c-combo-box-isInvalid {
+    .c-combo-box__inputWrap {
+      @include FormControlInvalidStyle;
     }
   }
 
-  &.softComboBox-isDisabled {
-    .softComboBox__inputWrap {
-      @include softFormControlDisabledStyle;
+  &.c-combo-box-isDisabled {
+    .c-combo-box__inputWrap {
+      @include FormControlDisabledStyle;
     }
   }
 
-  &.softComboBox--compressed {
-    .softComboBox__inputWrap {
-      line-height: $softFormControlCompressedHeight; /* 2 */
+  &.c-combo-box--compressed {
+    .c-combo-box__inputWrap {
+      line-height: $FormControlCompressedHeight; /* 2 */
       padding-top: 0;
       padding-bottom: 0;
     }

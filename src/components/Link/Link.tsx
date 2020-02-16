@@ -15,8 +15,6 @@ const colorsToClassNameMap = {
     'text': 'c-link--text',
 };
 
-export const SOFT_LINK_COLORS = Object.keys(colorsToClassNameMap);
-
 export class Link extends Component<LinkInterface> {
     static defaultProps = {color: ''};
     static propTypes: {};
@@ -41,6 +39,7 @@ export class Link extends Component<LinkInterface> {
                 <button
                     title={title}
                     className={classes}
+                    // @ts-ignore
                     type={type}
                     onClick={onClick}
                     {...rest}
@@ -70,18 +69,4 @@ export class Link extends Component<LinkInterface> {
 
 Link.defaultProps = {
     color: ''
-};
-Link.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element
-    ]),
-    color: PropTypes.string,
-    className: PropTypes.string,
-    href: PropTypes.string,
-    target: PropTypes.string,
-    rel: PropTypes.string,
-    type: PropTypes.string,
-    onClick: PropTypes.func,
-    title: PropTypes.string,
 };

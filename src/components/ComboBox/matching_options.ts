@@ -27,6 +27,7 @@ export const getSelectedOptionForSearchValue = (
   );
 };
 
+// @ts-ignore
 const collectMatchingOption = (
   accumulator: any[],
   option: any,

@@ -1,38 +1,33 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {isColorDark, hexToRgb} from '../../services/color';
-import {SoftKeyboardAccessible} from '../Accessibility';
+import {KeyboardAccessible} from '../Accessibility';
 
 import {
-    SoftIcon,
+    Icon,
 } from '../Icon';
 
-import {
-    TYPES as ICON_TYPES,
-} from '../Icon/SoftIcon';
-
 const colorToClassNameMap = {
-    default: 'softBadge--default',
-    primary: 'softBadge--primary',
-    secondary: 'softBadge--secondary',
-    accent: 'softBadge--accent',
-    warning: 'softBadge--warning',
-    danger: 'softBadge--danger',
-    hollow: 'softBadge--hollow',
-    info: 'softBadge--info',
+    default: 'c-badge-extend--default',
+    primary: 'c-badge-extend--primary',
+    secondary: 'c-badge-extend--secondary',
+    accent: 'c-badge-extend--accent',
+    warning: 'c-badge-extend--warning',
+    danger: 'c-badge-extend--danger',
+    hollow: 'c-badge-extend--hollow',
+    info: 'c-badge-extend--info',
 };
 
 export const COLORS = Object.keys(colorToClassNameMap);
 
 const iconSideToClassNameMap = {
     left: '',
-    right: 'softBadge--iconRight',
+    right: 'c-badge-extend--iconRight',
 };
 
 export const ICON_SIDES = Object.keys(iconSideToClassNameMap);
 
-export class SoftBadge extends PureComponent<{
+export class BadgeExtend extends PureComponent<{
     children?: any,
     showLabel?: boolean;
     color?: any,
@@ -51,9 +46,7 @@ export class SoftBadge extends PureComponent<{
         iconSide: 'left',
         showLabel: true,
     };
-    static propTypes: any = {
-
-    };
+    static propTypes: any = {};
 
     render() {
         let {
@@ -90,24 +83,25 @@ export class SoftBadge extends PureComponent<{
         }
 
         const classes = classNames(
-            'softBadge',
+            'c-badge-extend',
             iconSideToClassNameMap[iconSide],
             optionalColorClass,
             className,
-            {"softBadge--hide-label": !showLabel}
+            {"c-badge-extend--hide-label": !showLabel}
         );
 
         const closeClassNames = classNames(
-            'softBadge__icon',
+            'c-badge-extend__icon',
             closeButtonProps && closeButtonProps.className
         );
 
         let optionalIcon = null;
         if (iconType) {
             if (iconOnClick) {
+                // @ts-ignore
                 optionalIcon = (
-                    <SoftKeyboardAccessible>
-                        <SoftIcon
+                    <KeyboardAccessible>
+                        <Icon
                             onClick={iconOnClick}
                             type={iconType}
                             size="s"
@@ -115,12 +109,13 @@ export class SoftBadge extends PureComponent<{
                             {...closeButtonProps}
                             className={closeClassNames}
                         />
-                    </SoftKeyboardAccessible>
+                    </KeyboardAccessible>
                 );
 
             } else {
+                // @ts-ignore
                 optionalIcon = (
-                    <SoftIcon type={iconType} size="s" className="softBadge__icon"/>
+                    <Icon type={iconType} size="s" className="c-badge-extend__icon"/>
                 );
             }
         }
@@ -134,12 +129,12 @@ export class SoftBadge extends PureComponent<{
                     aria-label={onClickAriaLabel}
                     {...rest}
                 >
-        <span className="softBadge__content">
-          {optionalIcon}
-            <span>
-            {children}
-          </span>
-        </span>
+                    <span className="c-badge-extend__content">
+                      {optionalIcon}
+                        <span>
+                        {children}
+                      </span>
+                    </span>
                 </button>
             );
         } else {
@@ -149,9 +144,9 @@ export class SoftBadge extends PureComponent<{
                     style={optionalCustomStyles}
                     {...rest}
                 >
-        <span className="softBadge__content">
+        <span className="c-badge-extend__content">
           {optionalIcon}
-            <span className="softBadge__text">
+            <span className="c-badge-extend__text">
             {children}
           </span>
         </span>
@@ -162,6 +157,7 @@ export class SoftBadge extends PureComponent<{
 }
 
 
+// @ts-ignore
 function checkValidColor(props, propName, componentName) {
     const validHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(props.color);
     if (props.color != null && !validHex && !COLORS.includes(props.color)) {
@@ -171,49 +167,3 @@ function checkValidColor(props, propName, componentName) {
         );
     }
 }
-
-SoftBadge.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-
-    /**
-     * Accepts any string from our icon library
-     */
-    iconType: PropTypes.oneOf(ICON_TYPES),
-
-    /**
-     * The side of the badge the icon should sit
-     */
-    iconSide: PropTypes.string,
-    /**
-     * Will apply an onclick to icon within the badge
-     */
-    iconOnClick: PropTypes.func,
-
-    /**
-     * Aria label applied to the iconOnClick button
-     */
-    iconOnClickAriaLabel: PropTypes.string,
-
-    /**
-     * Will apply an onclick to the badge itself
-     */
-    onClick: PropTypes.func,
-
-    /**
-     * Aria label applied to the onClick button
-     */
-    onClickAriaLabel: PropTypes.string,
-
-    /**
-     * Accepts either our palette colors (primary, secondary ..etc) or a hex value `#FFFFFF`, `#000`.
-     */
-    color: checkValidColor,
-
-    /**
-     * Props passed to the close button.
-     */
-    closeButtonProps: PropTypes.object,
-};
-
-

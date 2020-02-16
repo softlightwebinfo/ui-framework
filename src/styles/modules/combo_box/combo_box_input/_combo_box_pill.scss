@@ -1,19 +1,19 @@
 // Overwrites the base styling of EuiBadge, to give it a larger size and margins
 // that make sense in the input wrap.
-.softComboBoxPill {
-  margin: $softSizeXS !important; // sass-lint:disable-line no-important
-  line-height: $softSizeL - 2px;
+.c-combo-box-pill {
+  margin:         $SizeXS !important; // sass-lint:disable-line no-important
+  line-height:    $SizeL - 2px;
   vertical-align: baseline;
 
   &--plainText {
-    @include softFont;
-    @include softTextTruncate;
+    @include Font;
+    @include TextTruncate;
 
-    line-height: $softSizeL;
-    font-size: $softFontSizeS;
-    padding: 0;
-    color: $softTextColor;
+    line-height:    $SizeL;
+    font-size:      $FontSizeS;
+    padding:        0;
+    color:          $TextColor;
     vertical-align: middle;
-    display: inline-block;
+    display:        inline-block;
   }
 }

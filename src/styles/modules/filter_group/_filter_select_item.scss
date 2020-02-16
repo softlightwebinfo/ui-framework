@@ -1,13 +1,13 @@
-.softFilterSelectItem {
-  @include softFontSizeS;
+.c-filter-select-item {
+  @include FontSizeS;
 
-  padding: $softSizeXS $softSizeM;
-  display: block; // Necessary to make sure it doesn't force the whole popover to be too wide
-  width: 100%;
-  text-align: left;
-  color: $softTextColor;
-  border-bottom: $softBorderThin;
-  border-color: darken($softColorLightestShade, 2%);
+  padding:       $SizeXS $SizeM;
+  display:       block; // Necessary to make sure it doesn't force the whole popover to be too wide
+  width:         100%;
+  text-align:    left;
+  color:         $TextColor;
+  border-bottom: $BorderThin;
+  border-color:  darken($ColorLightestShade, 2%);
 
   &:hover,
   &:focus {
@@ -16,13 +16,13 @@
 
   &:focus,
   &-isFocused {
-    cursor: pointer;
-    color: $softColorPrimary;
-    background-color: $softFocusBackgroundColor;
+    cursor:           pointer;
+    color:            $ColorPrimary;
+    background-color: $FocusBackgroundColor;
   }
 
   &[disabled] {
-    color: $softColorMediumShade;
+    color:  $ColorMediumShade;
     cursor: not-allowed;
 
     &:hover {
@@ -31,27 +31,27 @@
   }
 }
 
-.softFilterSelectItem__content {
-  @include softTextTruncate;
+.c-filter-select-item__content {
+  @include TextTruncate;
 }
 
 
-.softFilterSelect__items {
-  @include softScrollBar;
+.c-filter-select__items {
+  @include ScrollBar;
 
   overflow-y: auto;
-  max-height: $softSize * 30;
+  max-height: $Size * 30;
 }
 
-.softFilterSelect__note {
-  height: $softSize * 4;
-  text-align: center;
-  display: flex;
-  align-items: center;
+.c-filter-select__note {
+  height:          $Size * 4;
+  text-align:      center;
+  display:         flex;
+  align-items:     center;
   justify-content: space-around;
 }
 
-.softFilterSelect__noteContent {
-  color: $softColorDarkShade;
-  font-size: $softFontSizeS;
+.c-filter-select__noteContent {
+  color:     $ColorDarkShade;
+  font-size: $FontSizeS;
 }

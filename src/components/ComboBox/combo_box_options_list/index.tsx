@@ -1,3 +1,3 @@
 export {
-  SoftComboBoxOptionsList,
-} from './SoftComboBoxOptionsList';
+  ComboBoxOptionsList,
+} from './ComboBoxOptionsList';

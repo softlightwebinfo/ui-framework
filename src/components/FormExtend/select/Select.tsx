@@ -31,12 +31,12 @@ export const SelectExtra: ({className, options, id, name, inputRef, isInvalid, f
     }
 ) => {
     const classes = classNames(
-        'c-select',
+        'c-select-extend',
         {
-            'c-select--fullWidth': fullWidth,
-            'c-select--compressed': compressed,
-            'c-select--inGroup': prepend || append,
-            'c-select-isLoading': isLoading,
+            'c-select-extend--fullWidth': fullWidth,
+            'c-select-extend--compressed': compressed,
+            'c-select-extend--inGroup': prepend || append,
+            'c-select-extend-isLoading': isLoading,
         },
         className
     );
@@ -93,7 +93,7 @@ export const SelectExtra: ({className, options, id, name, inputRef, isInvalid, f
     );
 };
 // @ts-ignore
-Select.defaultProps = {
+SelectExtra.defaultProps = {
     options: [],
     fullWidth: false,
     isLoading: false,

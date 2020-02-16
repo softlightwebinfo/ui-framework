@@ -1,40 +1,40 @@
-.softNotificationBadge {
-  flex-shrink: 0; // Ensures it never scales down below it's intended size
-  display: inline-block;
-  border-radius: $softBorderRadius;
-  background: $softColorAccent;
-  color: $softColorEmptyShade;
-  font-size: $softFontSizeXS;
-  font-weight: $softFontWeightMedium;
-  line-height: $softSize;
-  height: $softSize;
-  min-width: $softSize;
-  padding-left: $softSizeXS;
-  padding-right: $softSizeXS;
+.c-notification-badge {
+  flex-shrink:    0; // Ensures it never scales down below it's intended size
+  display:        inline-block;
+  border-radius:  $BorderRadius;
+  background:     $ColorAccent;
+  color:          $ColorEmptyShade;
+  font-size:      $FontSizeXS;
+  font-weight:    $FontWeightMedium;
+  line-height:    $Size;
+  height:         $Size;
+  min-width:      $Size;
+  padding-left:   $SizeXS;
+  padding-right:  $SizeXS;
   vertical-align: middle;
-  text-align: center;
-  transition: all $softAnimSpeedFast ease-in;
+  text-align:     center;
+  transition:     all $AnimSpeedFast ease-in;
 
   &--medium {
     // Increase the default size a bit
-    $size: $softSize + $softSizeXS;
+    $size: $Size + $SizeXS;
     line-height: $size;
-    height: $size;
-    min-width: $softSizeL;
+    height:      $size;
+    min-width:   $SizeL;
   }
 
   &--subdued {
-    background-color: tint($softColorLightShade, 30%);
-    color: $softColorFullShade;
+    background-color: tint($ColorLightShade, 30%);
+    color:            $ColorFullShade;
   }
 
   &--warning {
-    background-color: tint($softColorWarning, 30%);
-    color: $softColorFullShade;
+    background-color: tint($ColorWarning, 30%);
+    color:            $ColorFullShade;
   }
 
   &--success {
-    background-color: tint($softColorSuccess, 30%);
-    color: $softColorFullShade;
+    background-color: tint($ColorSuccess, 30%);
+    color:            $ColorFullShade;
   }
 }

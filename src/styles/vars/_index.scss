@@ -255,3 +255,10 @@ $Breakpoints: (
               ) !default;
 
 $BreakpointKeys: map-keys($Breakpoints);
+
+$ButtonHeight: $SizeXXL;
+$ButtonHeightSmall: $SizeXL;
+$ButtonHeightLarge: $SizeXXXL;
+
+$ButtonColorDisabled: tintOrShade($TextColor, 70%, 70%);
+$ButtonToggleBorderColor: $ColorLightShade;

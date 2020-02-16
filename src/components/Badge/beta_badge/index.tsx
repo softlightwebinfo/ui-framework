@@ -1,3 +1,1 @@
-export {
-  SoftBetaBadge,
-} from './SoftBetaBadge';
+export {BetaBadge} from './BetaBadge';

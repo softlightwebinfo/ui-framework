@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import {omit} from '../../../services/objects';
@@ -115,21 +114,6 @@ export class Checkbox extends Component<{
         }
     }
 }
-
-Checkbox.propTypes = {
-    className: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    checked: PropTypes.bool,
-    label: PropTypes.node,
-    onChange: PropTypes.func.isRequired,
-    type: PropTypes.oneOf(TYPES),
-    disabled: PropTypes.bool,
-    indeterminate: PropTypes.bool,
-    /**
-     * when `true` creates a shorter height checkbox row
-     */
-    compressed: PropTypes.bool,
-};
 
 Checkbox.defaultProps = {
     checked: false,

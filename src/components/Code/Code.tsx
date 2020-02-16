@@ -1,26 +1,22 @@
 import React, {PureComponent} from 'react';
 
 import {
-  SoftCodeBlockImpl,
-} from './SoftCodeBlockImpl';
+    CodeBlockImpl,
+} from './CodeBlockImpl';
 
-export class SoftCode extends PureComponent {
-  static propTypes: any;
+export class Code extends PureComponent {
+    static propTypes: any;
 
-  render() {
-    let {
-      inline, // eslint-disable-line
-      ...rest
-    }: any = this.props;
-    return (
-      <SoftCodeBlockImpl
-        inline={true}
-        {...rest}
-      />
-    );
-  }
+    render() {
+        let {
+            inline, // eslint-disable-line
+            ...rest
+        }: any = this.props;
+        return (
+            <CodeBlockImpl
+                inline={true}
+                {...rest}
+            />
+        );
+    }
 }
-
-SoftCode.propTypes = {
-  ...SoftCodeBlockImpl.propTypes
-};

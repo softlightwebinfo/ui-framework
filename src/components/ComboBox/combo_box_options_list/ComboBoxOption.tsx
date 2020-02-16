@@ -34,6 +34,7 @@ export class ComboBoxOption extends Component<{
       return;
     }
 
+    // @ts-ignore
     onClick(option);
   };
 
@@ -47,6 +48,7 @@ export class ComboBoxOption extends Component<{
         return;
       }
 
+      // @ts-ignore
       onEnterKey(option);
     }
   };

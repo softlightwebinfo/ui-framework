@@ -9,6 +9,7 @@ export interface AvatarInterfaceProps extends PropsInterface {
     name?: string;
     image?: string;
     fluid?: boolean;
+    default?: boolean;
     color?: string;
     size?: number;
 }
@@ -60,6 +61,7 @@ export class Avatar extends PureComponent<AvatarInterfaceProps> {
         const classes = classNames("c-avatar", this.props.className, {
             "c-avatar--fluid": this.props.fluid,
             "c-avatar--image": !!this.props.image,
+            "c-avatar--default": !!this.props.default,
         });
         return (
             <div style={avatarStyle} className={classes}>
